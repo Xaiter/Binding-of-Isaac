@@ -242,7 +242,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
   movieClip 1038  {
 
     frame 1 {
-      gotoAndStop(_root.skiner + 1);
+      gotoAndStop(_root.characterID + 1);
     }
   }
 
@@ -543,7 +543,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         i = 0;
         while (i < 20) {
           trg = this['i' + i];
-          f1 = _root.cols[i];
+          f1 = _root.collectionScreen[i];
           if (f1 > 0) {
             trg.gotoAndStop(f1);
           } else {
@@ -597,9 +597,9 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
 
     frame 9 {
       function chal(trg) {
-        _root.tex = men.cha.skiner;
-        _root.skiner = 0;
-        _root.men.men.cha.skiner = 0;
+        _root.tex = men.cha.characterID;
+        _root.characterID = 0;
+        _root.men.men.cha.characterID = 0;
         _root.chala = trg.e;
         _root.darky(150);
       }
@@ -6713,7 +6713,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       add(so.data.bomb);
       add(so.data.deads);
       add(so.data.rocks);
-      add(so.data.cols);
+      add(so.data.collectionScreen);
       add(so.data.boss);
       add(so.data.lcomp);
       add(so.data.mwin);
@@ -6748,7 +6748,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             so.data.bomb = sub();
             so.data.deads = sub();
             so.data.rocks = sub();
-            so.data.cols = sub(true);
+            so.data.collectionScreen = sub(true);
             so.data.boss = sub(true);
             so.data.lcomp = sub(true);
             so.data.mwin = sub(true);
@@ -6912,8 +6912,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       if (so.data.rocks <= 0) {
         so.data.rocks = 0;
       }
-      if (so.data.cols == undefined) {
-        so.data.cols = [];
+      if (so.data.collectionScreen == undefined) {
+        so.data.collectionScreen = [];
       }
       if (so.data.lock == undefined) {
         so.data.lock = [];
@@ -6957,8 +6957,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       }
       aloc2();
       aloc();
-      if (so.data.cols == undefined) {
-        so.data.cols = [];
+      if (so.data.collectionScreen == undefined) {
+        so.data.collectionScreen = [];
       }
       if (so.data.lock == undefined) {
         so.data.lock = [];
@@ -6978,7 +6978,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       if (so.data.mwin == undefined) {
         so.data.mwin = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
       }
-      _root.colss = so.data.cols;
+      _root.collectedItem = so.data.collectionScreen;
       _root.bossk = so.data.boss;
       _root.lcomp = so.data.lcomp;
     }
@@ -7915,7 +7915,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       }
       ++e;
     }
-    _root.colss = [];
+    _root.collectedItem = [];
     soz();
     loslol = 0;
     intro = true;
@@ -8121,7 +8121,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
   movieClip 5948  {
 
     frame 1 {
-      gotoAndStop(_root.skiner + 1);
+      gotoAndStop(_root.characterID + 1);
     }
   }
 
@@ -9770,20 +9770,20 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         if (doub) {
           v2 += 2;
         }
-        if (ups[7]) {
+        if (haveEffect[7]) {
           ++v2;
         }
-        if (ups[90]) {
+        if (haveEffect[90]) {
           ++v2;
         }
-        if (ups[109]) {
+        if (haveEffect[109]) {
           v2 += _root.coins * 0.04;
         }
-        if (ups[122] > 0) {
-          v2 += ups[122] * ups[122] * 1.5;
+        if (haveEffect[122] > 0) {
+          v2 += haveEffect[122] * haveEffect[122] * 1.5;
         }
-        v2 += ups[50] + ups[51] + ups[70] + ups[79] + (ups[80] + ups[4] + ups[197]) * 0.5 + (ups[12] + ups[101] + ups[121] + ups[138] + ups[193] + ups[189]) * 0.3;
-        if (ups[120]) {
+        v2 += haveEffect[50] + haveEffect[51] + haveEffect[70] + haveEffect[79] + (haveEffect[80] + haveEffect[4] + haveEffect[197]) * 0.5 + (haveEffect[12] + haveEffect[101] + haveEffect[121] + haveEffect[138] + haveEffect[193] + haveEffect[189]) * 0.3;
+        if (haveEffect[120]) {
           v2 *= 0.9;
           v2 -= 0.4;
         }
@@ -9793,19 +9793,19 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         if (rage != 1) {
           v2 += rage - 1;
         }
-        if (ups[154]) {
+        if (haveEffect[154]) {
           if (sob == -1 or _root.hat[11] && random(2) == 0) {
             v2 += 2;
           }
         }
-        if (ups[69] && !ups[118]) {
+        if (haveEffect[69] && !haveEffect[118]) {
           chal = Math.max(1, Math.min(5, 1 + (fra - chaf) / 10) * 1.8 - 2);
           v2 += (chal - 1) * 1.3;
         }
         v2 += razor * 0.6;
         v2 = 3.5 * Math.sqrt(1 + v2 * 1.2);
-        if (ups[169]) {
-          if (ups[2] == 1 or ups[153]) {
+        if (haveEffect[169]) {
+          if (haveEffect[2] == 1 or haveEffect[153]) {
             v2 += 5;
           } else {
             v2 += 4;
@@ -9813,16 +9813,16 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           }
         }
         var v3 = [0, 0, 0.2, 0.35, 0.05, -0.25, 0];
-        v2 *= 1 + v3[_root.skiner];
+        v2 *= 1 + v3[_root.characterID];
         _root.firrb = v2;
-        if (trixx(35)) {
+        if (haveTrinket(35)) {
           v2 += 2;
         }
-        if (ups[182]) {
+        if (haveEffect[182]) {
           v2 *= 2.3;
           ++v2;
         }
-        if (ups[152]) {
+        if (haveEffect[152]) {
           v2 *= 0.65;
         }
         return v2;
@@ -9982,7 +9982,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             _root.SecretRoomItem.push(84);
           }
         }
-        if (_root.SecretUnlocked[3] && _root.skiner != 3) {
+        if (_root.SecretUnlocked[3] && _root.characterID != 3) {
           if (random(3) == 0) {
             _root.RegularDropPool.push(34);
           } else {
@@ -10203,8 +10203,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         _root.lastkeeps = 0;
         _root.armor = 0;
         _root.pilc = undefined;
-        _root.trix = undefined;
-        _root.atrix = undefined;
+        _root.trinketSlot1 = undefined;
+        _roottrinketSlot2 = undefined;
         _root.vamp = 0;
         _root.monbb = 0;
         if (_root.chaps > 2) {
@@ -10219,18 +10219,18 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         _root.demonz = 0;
         _root.bookster = false;
         _root.hatmode = [1, 1, 1, 1, 1];
-        _root.wtfuuz = false;
+        _root.noDice = false;
         _root.hat = [];
-        if (_root.skiner > 0 && _root.skiner < 4) {
-          hat(_root.skiner + 9);
+        if (_root.characterID > 0 && _root.characterID < 4) {
+          hat(_root.characterID + 9);
           _root.classit = true;
         }
         _root.keys = 0;
         _root.bombs = 0;
         _root.coins = 0;
         _root.minz = [0, 1, 2, 3, 5, 6];
-        _root.sk = _root.skiner + 1;
-        switch (_root.skiner) {
+        _root.sk = _root.characterID + 1;
+        switch (_root.characterID) {
           case 0:
             ++_root.bombs;
             break;
@@ -10263,7 +10263,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         }
         _root.hp = 1000;
         _root.wiptz = 0;
-        _root.cols = [];
+        _root.collectionScreen = [];
         _root.colit = 0;
         _root.piller = [];
         _root.kramper = false;
@@ -10278,17 +10278,17 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           _root.luck = -2;
         }
         _root.altb3 = false;
-        if (_root.skiner == 2) {
+        if (_root.characterID == 2) {
           _root.firrr -= 5;
         }
-        if (_root.skiner == 2) {
+        if (_root.characterID == 2) {
           _root.firrr -= 5;
           _root.firra -= 2;
         }
         var v2 = [0, 0, 0.2, 0.35, 0.05, -0.25, 0];
-        v1 = 1 + v2[_root.skiner];
+        v1 = 1 + v2[_root.characterID];
         _root.firrb = 3.5 * v1;
-        _root.ups = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        _root.pickedUp = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
         _root.samer = 0;
         _root.catlives = 0;
         _root.shitpenny = false;
@@ -10545,7 +10545,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         } else {
           for (e in _root.levz) {
             if (e < 110) {
-              if (_root.levz[e] != 0 && (_root.seenlev[e] or ups[54]) && (_root.hide != e && _root.hide2 != e or _root.beenlev[e] && (e != _root.chamb or _root.chama))) {
+              if (_root.levz[e] != 0 && (_root.seenlev[e] or haveEffect[54]) && (_root.hide != e && _root.hide2 != e or _root.beenlev[e] && (e != _root.chamb or _root.chama))) {
                 maxx = new flash.geom.Matrix();
                 f1 = (e % 10) * 25 + 15;
                 f2 = Math.round(e / 10 - 0.5) * 10 + 7;
@@ -10587,41 +10587,41 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               maxx.translate(f1, f2);
               maxx.scale(_root._xscale / 100, _root._yscale / 100);
               mpiece.gotoAndStop(1);
-              if (_root.shopl == e && (_root.shopaz or ups[21])) {
+              if (_root.shopl == e && (_root.shopaz or haveEffect[21])) {
                 mpiece.gotoAndStop(4);
               } else {
-                if (_root.boner == e && (ups[21] or _root.treasd) or _root.boner2 == e && (ups[21] or _root.treasd2)) {
+                if (_root.boner == e && (haveEffect[21] or _root.treasd) or _root.boner2 == e && (haveEffect[21] or _root.treasd2)) {
                   mpiece.gotoAndStop(5);
                 } else {
-                  if ((_root.bossl == e && (!_root.double or _root.bosss == _root.bosss2) or _root.bossl2 == e && _root.bosss != _root.bosss2) && (ups[21] or _root.bossd)) {
+                  if ((_root.bossl == e && (!_root.double or _root.bosss == _root.bosss2) or _root.bossl2 == e && _root.bosss != _root.bosss2) && (haveEffect[21] or _root.bossd)) {
                     mpiece.gotoAndStop(6);
                   } else {
-                    if (_root.hide == e && (ups[54] or _root.hider)) {
+                    if (_root.hide == e && (haveEffect[54] or _root.hider)) {
                       mpiece.gotoAndStop(7);
                     } else {
                       if (_root.hide2 == e && _root.hider2) {
                         mpiece.gotoAndStop(16);
                       } else {
-                        if (_root.minb == e && (ups[21] or _root.minbb)) {
+                        if (_root.minb == e && (haveEffect[21] or _root.minbb)) {
                           mpiece.gotoAndStop(8);
                         } else {
-                          if (_root.gamb == e && (ups[21] or _root.gambb)) {
+                          if (_root.gamb == e && (haveEffect[21] or _root.gambb)) {
                             mpiece.gotoAndStop(9);
                           } else {
-                            if (_root.cus == e && (ups[21] or _root.cusb)) {
+                            if (_root.cus == e && (haveEffect[21] or _root.cusb)) {
                               mpiece.gotoAndStop(14);
                             } else {
-                              if (_root.chamb == e && (ups[21] or _root.chambb)) {
+                              if (_root.chamb == e && (haveEffect[21] or _root.chambb)) {
                                 if (_root.altch) {
                                   mpiece.gotoAndStop(11);
                                 } else {
                                   mpiece.gotoAndStop(10);
                                 }
                               } else {
-                                if (_root.lib == e && (ups[21] or _root.libb)) {
+                                if (_root.lib == e && (haveEffect[21] or _root.libb)) {
                                   mpiece.gotoAndStop(12);
                                 } else {
-                                  if (_root.sac == e && (ups[21] or _root.sacb)) {
+                                  if (_root.sac == e && (haveEffect[21] or _root.sacb)) {
                                     mpiece.gotoAndStop(13);
                                   }
                                 }
@@ -10741,34 +10741,34 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       }
 
       function itz(f1) {
-        if ((f1 == 79 or f1 == 80 or f1 == 82 or f1 == 83 or f1 == 81 or f1 == 113 or f1 == 122 or f1 == 118 or f1 == 157 or f1 == 159 or f1 == 145) && satan && !trixx(56)) {
+        if ((f1 == 79 or f1 == 80 or f1 == 82 or f1 == 83 or f1 == 81 or f1 == 113 or f1 == 122 or f1 == 118 or f1 == 157 or f1 == 159 or f1 == 145) && satan && !haveTrinket(56)) {
           _root.trg.d.d.gotoAndStop(10);
         } else {
           if (satan && _root.trg.d.d._currentframe == 10) {
             _root.trg.d.d.gotoAndStop(9);
           }
         }
-        if (_root.skiner == 4 && satan) {
+        if (_root.characterID == 4 && satan) {
           _root.trg.d.d.gotoAndStop(11);
         }
-        var v2 = [8, 67, 95, 99, 100, 113, 163, 167, 174, 188];
-        var v4 = false;
-        for (o in v2) {
+        var Familiars = [8, 67, 95, 99, 100, 113, 163, 167, 174, 188];
+        var isFamiliar = false;
+        for (o in Familiars) {
           if (v2[o] == f1) {
-            v4 = true;
+            isFamiliar = true;
           }
         }
-        var v5 = 0;
-        if (v4) {
-          for (o in v2) {
-            v5 += _root.ups[v2[o]];
+        var numFamiliars = 0;
+        if (isFamiliar) {
+          for (o in Familiars) {
+            numFumiliars += _root.pickedUp[v2[o]]; //Count the number of familiars you have from the above pool.
           }
         }
-        if (v4 && v5 > 2) {
-          return 0;
+        if (ifFamiliar && numFamiliars > 2) {
+          return 0; //Game throws out familiars if you have more than 2 from the above pool.
         } else {
-          if (_root.ups[f1] or _root.colss[f1] && random(5) == 0) {
-            return 0;
+          if (_root.pickedUp[f1] or _root.collectedItem[f1] && random(5) == 0) {
+            return 0; //Game throws out items you've picked up....or old items 20% of the time.
           } else {
             if (itzz(f1)) {
               return f1;
@@ -10783,15 +10783,15 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         }
       }
 
-      function giveit() {
-        var v2 = 0;
-        var v4 = 0;
-        while (v2 == 0) {
-          ++v4;
-          if (v4 > 100) {
+      function GenerateItem() {
+        var itemID = 0;
+        var tries = 0;
+        while (itemID == 0) {
+          ++tries;
+          if (tries > 100) {
             var v3 = random(_root.RegularDropPool.length);
-            v2 = itz(_root.RegularDropPool[v3]);
-            if (v2 > 0) {
+            itemID = itz(_root.RegularDropPool[v3]);
+            if (itemID > 0) {
               _root.RegularDropPool.splice(v3, 1);
             }
             if (_root.RegularDropPool.length <= 5) {
@@ -10800,18 +10800,18 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           } else {
             if (_root.lev == _root.lib) {
               var v3 = random(_root.Library.length);
-              v2 = itz(_root.Library[v3]);
-              if (v2 > 0) {
+              itemID = itz(_root.Library[v3]);
+              if (itemID > 0) {
                 if (lib == v3) {
-                  v2 = -1;
+                  itemID = -1;
                   lib = v3;
                 }
               }
             } else {
               if (_root.ArenaItem.length > 0 && _root.lev == _root.chamb && !_root.altch) {
                 var v3 = random(_root.ArenaItem.length);
-                v2 = itz(_root.ArenaItem[v3]);
-                if (v2 > 0) {
+                itemID = itz(_root.ArenaItem[v3]);
+                if (itemID > 0) {
                   _root.ArenaItem.splice(v3, 1);
                 }
               } else {
@@ -10819,48 +10819,48 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   bummer = false;
                   if (_root.altsat) {
                     var v3 = random(_root.GodRoom.length);
-                    v2 = itz(_root.GodRoom[v3]);
+                    itemID = itz(_root.GodRoom[v3]);
                   } else {
                     var v3 = random(_root.DevilRoom.length);
-                    v2 = itz(_root.DevilRoom[v3]);
-                    if (v2 > 0) {
+                    itemID = itz(_root.DevilRoom[v3]);
+                    if (itemID > 0) {
                       _root.DevilRoom.splice(v3, 1);
                     }
                   }
                 } else {
                   if (_root.GoldChest.length > 0 && treas && _root.chaps != 11) {
                     var v3 = random(_root.GoldChest.length);
-                    v2 = itz(_root.GoldChest[v3]);
-                    if (v2 > 0) {
+                    itemID = itz(_root.GoldChest[v3]);
+                    if (itemID > 0) {
                       _root.GoldChest.splice(v3, 1);
                     }
                   } else {
                     if ((_root.lev == _root.shopl or bummer) && _root.ShopItem.length > 1) {
                       bummer = false;
                       var v3 = random(_root.ShopItem.length);
-                      v2 = itz(_root.ShopItem[v3]);
-                      if (v2 > 0) {
+                      itemID = itz(_root.ShopItem[v3]);
+                      if (itemID > 0) {
                         _root.ShopItem.splice(v3, 1);
                       }
                     } else {
                       if ((_root.lev == _root.boner or _root.lev == _root.boner2) && random(2) == 0 && _root.UnknownPool.length > 1) {
                         var v3 = random(_root.UnknownPool.length);
-                        v2 = itz(_root.UnknownPool[v3]);
-                        if (v2 > 0) {
+                        itemID = itz(_root.UnknownPool[v3]);
+                        if (itemID > 0) {
                           _root.UnknownPool.splice(v3, 1);
                         }
                       } else {
                         if (_root.lev == _root.hide) {
                           var v3 = random(_root.SecretRoomItem.length);
-                          v2 = itz(_root.SecretRoomItem[v3]);
-                          if (v2 > 0) {
+                          itemID = itz(_root.SecretRoomItem[v3]);
+                          if (itemID > 0) {
                             _root.SecretRoomItem.splice(v3, 1);
                           }
                         } else {
                           if (_root.lev == _root.chamb && _root.altch) {
                             var v3 = random(_root.BossDrop.length);
-                            v2 = itz(_root.BossDrop[v3]);
-                            if (v2 > 0) {
+                            itemID = itz(_root.BossDrop[v3]);
+                            if (itemID > 0) {
                               _root.BossDrop.splice(v3, 1);
                             }
                           } else {
@@ -10869,43 +10869,43 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                                 e = 0;
                                 while (e < 100) {
                                   var v3 = _root.DevilRoom[random(_root.DevilRoom.length)];
-                                  if (!ups[v3]) {
-                                    v2 = v3;
+                                  if (!haveEffect[v3]) {
+                                    itemID = v3;
                                     e = 1000;
                                   }
                                   ++e;
                                 }
                               } else {
-                                if (_root.bosss == 38 && !ups[181]) {
-                                  v2 = 181;
+                                if (_root.bosss == 38 && !haveEffect[181]) {
+                                  itemID = 181;
                                 } else {
-                                  if (_root.bosss == 22 && !ups[130]) {
+                                  if (_root.bosss == 22 && !haveEffect[130]) {
                                     _root.SecretUnlocked[32] = true;
-                                    v2 = 130;
+                                    itemID = 130;
                                   } else {
-                                    if (_root.bosss == 21 && !ups[96]) {
+                                    if (_root.bosss == 21 && !haveEffect[96]) {
                                       _root.SecretUnlocked[32] = true;
-                                      v2 = 96;
+                                      itemID = 96;
                                     } else {
-                                      if (_root.bosss == 19 && !ups[99]) {
+                                      if (_root.bosss == 19 && !haveEffect[99]) {
                                         _root.SecretUnlocked[30] = true;
-                                        v2 = 99;
+                                        itemID = 99;
                                       } else {
-                                        if (_root.bosss == 20 && (!ups[100] or !ups[50])) {
+                                        if (_root.bosss == 20 && (!haveEffect[100] or !haveEffect[50])) {
                                           _root.SecretUnlocked[31] = true;
-                                          if (ups[100] or random(6) == 0) {
-                                            v2 = 50;
+                                          if (haveEffect[100] or random(6) == 0) {
+                                            itemID = 50;
                                           } else {
-                                            v2 = 100;
+                                            itemID = 100;
                                           }
                                         } else {
                                           if (_root.bosss > 8 && _root.bosss < 13) {
                                             _root.SecretUnlocked[7] = true;
-                                            v2 = 73;
+                                            itemID = 73;
                                           } else {
                                             var v3 = random(_root.BossDrop.length);
-                                            v2 = itz(_root.BossDrop[v3]);
-                                            if (v2 > 0) {
+                                            itemID = itz(_root.BossDrop[v3]);
+                                            if (itemID > 0) {
                                               _root.BossDrop.splice(v3, 1);
                                             }
                                           }
@@ -10917,8 +10917,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                               }
                             } else {
                               var v3 = random(_root.RegularDropPool.length);
-                              v2 = itz(_root.RegularDropPool[v3]);
-                              if (v2 > 0) {
+                              itemID = itz(_root.RegularDropPool[v3]);
+                              if (itemID > 0) {
                                 _root.RegularDropPool.splice(v3, 1);
                               }
                             }
@@ -10932,7 +10932,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             }
           }
         }
-        return v2;
+        return itemID;
       }
 
       function speco(trg) {
@@ -11286,7 +11286,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             v2.hp *= 1.1;
             v2.mhp = v2.hp;
             f4 = ['Isaac', 'Magdalena', 'Cain', 'Judas', 'XXX', 'Eve', 'Samson'];
-            displayBannerMessage(f4[_root.skiner] + ' vs ' + 'Krampus');
+            displayBannerMessage(f4[_root.characterID] + ' vs ' + 'Krampus');
           } else {
             v2.alter = 1;
           }
@@ -11823,9 +11823,9 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               if (v2.d._currentframe == 35) {
                 v2.d.gotoAndStop(7);
                 v5 = 0;
-                v2.col = junx();
+                v2.col = dropTrinket();
               }
-              if (v2.d._currentframe == 36 or (v2.d._currentframe == 5 or trixx(61) && v2.d._currentframe == 6) && ((trixx(61) or random(20) == 0) && !firsttime or _root.lev == _root.cus or _root.lev == _root.hide2)) {
+              if (v2.d._currentframe == 36 or (v2.d._currentframe == 5 or haveTrinket(61) && v2.d._currentframe == 6) && ((haveTrinket(61) or random(20) == 0) && !firsttime or _root.lev == _root.cus or _root.lev == _root.hide2)) {
                 v2.d.gotoAndStop(5);
                 v5 = 0;
                 v2.col = 2;
@@ -11850,7 +11850,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                 if (v2.d._currentframe == 4 && random(10) == 0) {
                   v2.col = 3;
                 }
-                if (v2.d._currentframe == 1 && (random(10) == 0 or random(16) == 0 && _root.skiner == 5 or trixx(38) && random(10) == 0 or ups[173] && random(2) == 0)) {
+                if (v2.d._currentframe == 1 && (random(10) == 0 or random(16) == 0 && _root.characterID == 5 or haveTrinket(38) && random(10) == 0 or haveEffect[173] && random(2) == 0)) {
                   v2.col = 3;
                 }
                 if (v2.d._currentframe == 1 && _root.lev == _root.hide2) {
@@ -11935,7 +11935,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                 if (v5 >= 0.1504 && v5 < 0.4) {
                   v2.it = Math.round((v5 - 0.15 - v2.d.d._currentframe * 0.001) * 1000000);
                 } else {
-                  v2.it = giveit();
+                  v2.it = GenerateItem();
                 }
                 v2.d.d.d.gotoAndStop(v2.it);
               }
@@ -11944,7 +11944,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                 if (v5 > 0.1 && v5 < 0.4) {
                   v2.it = Math.round((v5 - 0.1) * 10000);
                 } else {
-                  v2.it = giveit();
+                  v2.it = GenerateItem();
                 }
                 v2.d.d.d.d.gotoAndStop(v2.it);
               }
@@ -12005,9 +12005,9 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             v2.dm = rand() * 0.2;
             break;
           case 2:
-            if (ups[143] or ups[165] or ups[183] or ups[176] or ups[182] or ups[194] or _root.skiner == 6) {
-              var v7 = 1 + ups[143] * 0.2 + ups[165] * 0.23 + ups[176] * 0.16 + (ups[183] + ups[194]) * 0.16 - ups[182] * 0.25;
-              if (_root.skiner == 6) {
+            if (haveEffect[143] or haveEffect[165] or haveEffect[183] or haveEffect[176] or haveEffect[182] or haveEffect[194] or _root.characterID == 6) {
+              var v7 = 1 + haveEffect[143] * 0.2 + haveEffect[165] * 0.23 + haveEffect[176] * 0.16 + (haveEffect[183] + haveEffect[194]) * 0.16 - haveEffect[182] * 0.25;
+              if (_root.characterID == 6) {
                 v7 += 0.31;
               }
               v7 = Math.min(v7, 1.4);
@@ -12068,17 +12068,17 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               babymode = undefined;
             } else {
               v2.dmg = dmgdo();
-              if (trixx(30)) {
+              if (haveTrinket(30)) {
                 if (random(10) == 0) {
                   v2.trixer = 1;
                 }
               }
-              if (trixx(31)) {
+              if (haveTrinket(31)) {
                 if (random(10) == 0) {
                   v2.trixer = 2;
                 }
               }
-              if (ups[150] && random(10 - _root.luck) == 0) {
+              if (haveEffect[150] && random(10 - _root.luck) == 0) {
                 v2.dmg *= 3.2;
                 attach(v2, 499);
                 if (v2.xbew < 0) {
@@ -12100,48 +12100,48 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     v2.spl = 30;
                     colorit(v2, 0.5, 0.97, 0.5, 0, 0, 0);
                   } else {
-                    if (ups[182]) {
+                    if (haveEffect[182]) {
                       colorit(v2, 1.5, 2, 2, 0, 0, 0);
                     } else {
-                      if (!ups[149] && (ups[189] or ups[7] or ups[183] or doub or demon > 0 or v2.dmg > 5.5 && (!ups[169] or v2.dmg > 15) && !ups[69] or ups[122] or sob == -1 && ups[155])) {
+                      if (!haveEffect[149] && (haveEffect[189] or haveEffect[7] or haveEffect[183] or doub or demon > 0 or v2.dmg > 5.5 && (!haveEffect[169] or v2.dmg > 15) && !haveEffect[69] or haveEffect[122] or sob == -1 && haveEffect[155])) {
                         attach(v2, 500);
                         v2.d._xscale = 90;
                         v2.d._yscale = v2.d._xscale;
                         v2.spl = 0;
                       } else {
-                        if (ups[115]) {
+                        if (haveEffect[115]) {
                           colorit(v2, 1.5, 2, 2, 0, 0, 0);
                         } else {
-                          if (ups[132]) {
+                          if (haveEffect[132]) {
                             colorit(v2, 0.2, 0.09, 0.065, 0, 0, 0);
                           } else {
-                            if (ups[103]) {
+                            if (haveEffect[103]) {
                               v2.spl = 30;
                               colorit(v2, 0.5, 0.97, 0.5, 0, 0, 0);
                             } else {
-                              if (ups[104]) {
+                              if (haveEffect[104]) {
                                 colorit(v2, 0.9, 0.3, 0.08, 0, 0, 0);
                               } else {
-                                if (ups[90]) {
+                                if (haveEffect[90]) {
                                   colorit(v2, 0.4, 0.4, 0.4, 50, 50, 50);
                                 } else {
-                                  if (ups[110]) {
+                                  if (haveEffect[110]) {
                                     v2.spl = 0;
                                     colorit(v2, 1.25, 0.05, 0.15, 0, 0, 0);
                                   } else {
-                                    if (ups[89]) {
+                                    if (haveEffect[89]) {
                                       colorit(v2, 2, 2, 2, 50, 50, 50);
                                     } else {
-                                      if (ups[69]) {
+                                      if (haveEffect[69]) {
                                         colorit(v2, 0.33, 0.18, 0.18, 66, 40, 40);
                                         v2.d._xscale *= 1 + (chal - 1) * 0.05;
                                       } else {
-                                        if (ups[6]) {
+                                        if (haveEffect[6]) {
                                           colorit(v2, 1, 1, 0, 45, 15, 0);
                                           v2.spl = 20;
                                           v2.piss = true;
                                         } else {
-                                          if (ups[3]) {
+                                          if (haveEffect[3]) {
                                             colorit(v2, 0.4, 0.15, 0.38, 71, 0, 116);
                                           }
                                         }
@@ -12158,21 +12158,21 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   }
                 }
               }
-              if (ups[132]) {
+              if (haveEffect[132]) {
                 v2.gro = 0;
                 v2.d._xscale -= 15;
                 v2.d._yscale -= 15;
               }
-              if (ups[115] or v2.trixer == 2) {
+              if (haveEffect[115] or v2.trixer == 2) {
                 v2._alpha = 50;
               }
-              if (ups[6]) {
+              if (haveEffect[6]) {
                 v2.dy += 13;
               } else {
-                if (_root.skiner == 2) {
+                if (_root.characterID == 2) {
                   v2.dy += 6;
                 } else {
-                  if (_root.skiner == 6) {
+                  if (_root.characterID == 6) {
                     v2.dy += 5;
                   }
                 }
@@ -12183,15 +12183,15 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             v2.hh = [];
             v2.shot = true;
             if (!v2.ba) {
-              if (ups[5]) {
+              if (haveEffect[5]) {
                 v2.xbew *= 1.6;
                 v2.ybew *= 1.6;
               }
-              v2.dy -= (ups[12] - ups[71] + ups[30] + ups[31] + ups[29]) * 5;
-              if (ups[4] or doub && ups[7] or ups[12]) {
+              v2.dy -= (haveEffect[12] - haveEffect[71] + haveEffect[30] + haveEffect[31] + haveEffect[29]) * 5;
+              if (haveEffect[4] or doub && haveEffect[7] or haveEffect[12]) {
                 v2.dmg *= 1.5;
               }
-              f1 = ups[12] + ups[30] + ups[31] + ups[29] + ups[71] * 3 + ups[101] + ups[110] + ups[121] + ups[182] * 1.5 + ups[197];
+              f1 = haveEffect[12] + haveEffect[30] + haveEffect[31] + haveEffect[29] + haveEffect[71] * 3 + haveEffect[101] + haveEffect[110] + haveEffect[121] + haveEffect[182] * 1.5 + haveEffect[197];
               f1 *= 0.5;
               v2.dm -= f1;
               v2.dy -= f1 * 0.5;
@@ -12208,7 +12208,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             v2.gonuts = !v5;
             v2.bnuts = random(3) == 0;
         }
-        if (trixx(53) && v2.hp > 60) {
+        if (haveTrinket(53) && v2.hp > 60) {
           v2.hp *= 0.85;
         }
         if (f7 == 45) {
@@ -12487,20 +12487,20 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               if (trg.s == 84 && trg.pow > 3) {
                 momkill();
               }
-              if (ups[157]) {
+              if (haveEffect[157]) {
                 rage = Math.min(3.3, rage + 0.28);
                 rag = rage * 0.32 + 0.6800000000000001;
               }
-              if (trixx(58) && random(15) == 0) {
+              if (haveTrinket(58) && random(15) == 0) {
                 rage = Math.min(3.3, rage + 0.5);
                 rag = rage * 0.32 + 0.6800000000000001;
               }
-              if (trixx(60) && random(20) == 0) {
+              if (haveTrinket(60) && random(20) == 0) {
                 if (!dbird && ashut > 1) {
                   dbird = 2;
                 }
               }
-              if (!trg.flyai && ups[62] && trg.s >= 10) {
+              if (!trg.flyai && haveEffect[62] && trg.s >= 10) {
                 if (_root.vamp++ >= 12 && player.mhp > 0) {
                   _root.vamp = 0;
                   player.hp += 0.5;
@@ -12698,15 +12698,15 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         _root.soundy('hell_portal2.wav');
       }
 
-      function trixx(f111) {
-        return _root.trix == f111 or _root.atrix == f111;
+      function haveTrinket(f111) {
+        return _root.trinketSlot1 == f111 or _roottrinketSlot2 == f111;
       }
 
       function playerhurt(f1, f2, f3) {
         if (_root.chaps > 6) {
           f1 = Math.max(f1, 1);
         }
-        if (ups[108]) {
+        if (haveEffect[108]) {
           f1 = 0.5;
         }
         if (f2 == 45) {
@@ -12750,19 +12750,19 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                 bossdmg = false;
               }
             }
-            if (ups[148]) {
+            if (haveEffect[148]) {
               bluf += 1 + random(3);
             }
-            if (trixx(29)) {
+            if (haveTrinket(29)) {
               ++bluf;
             }
             if (player.hp == 0 && _root.armor == 0.5 or player.hp == 0.5 && _root.armor <= 0) {
-              if (trixx(33)) {
-                ++ups[100];
+              if (haveTrinket(33)) {
+                ++haveEffect[100];
               }
-              if (ups[142]) {
+              if (haveEffect[142]) {
                 ++_root.armor;
-                ups[142] = 0;
+                haveEffect[142] = 0;
               }
             }
             if (holz != undefined) {
@@ -12776,10 +12776,10 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             if (bluf > 1) {
               blufer = highs;
             }
-            if (trixx(40) && random(5) == 0) {
+            if (haveTrinket(40) && random(5) == 0) {
               razor += 3;
             }
-            if (trixx(48) && random(20) == 1) {
+            if (haveTrinket(48) && random(20) == 1) {
               _root.over.gotoAndStop(3);
               _root.soundy('Death_Card.mp', 100);
               for (e in ball) {
@@ -12787,22 +12787,22 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                 hurt(trg2, 40);
               }
             }
-            if (ups[156] && _root.itc != 1) {
-              _root.itc += 0.5;
+            if (haveEffect[156] && _root.itemCharges != 1) {
+              _root.itemCharges += 0.5;
               _root.soundy('batterycharge.mp');
               parc('batter', player.xp, player.yp - 20, 0, 100, player.dpppp + 5000);
             }
             lasth = fra + f1 * 60;
-            if (_root.ups[122] && !ups[122] && player.hp > 0 && player.hp < 1) {
-              ups[122] = 1.2;
+            if (_root.pickedUp[122] && !haveEffect[122] && player.hp > 0 && player.hp < 1) {
+              haveEffect[122] = 1.2;
               curs();
               lasth = fra + 90;
             } else {
-              if (ups[117]) {
-                ups[117] = 0.55;
+              if (haveEffect[117]) {
+                haveEffect[117] = 0.55;
               }
             }
-            if (ups[162] && random(5) == 0) {
+            if (haveEffect[162] && random(5) == 0) {
               playsave = 200;
             }
             if (demon > 0) {
@@ -12810,7 +12810,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             } else {
               _root.soundy('Isaac_Hurt_Grunt' + random(3) + '.mp');
             }
-            if (ups[180]) {
+            if (haveEffect[180]) {
               farter = true;
             }
             if ((player.hp <= 0 && _root.armor <= 0 or !(player.mhp > 0 or _root.armor > 0)) && !f3) {
@@ -12824,10 +12824,10 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             }
             player.d.gotoAndStop(2);
             if (player.hp <= 0.5 or !(player.mhp > 0 or _root.armor > 0)) {
-              if (trixx(47)) {
+              if (haveTrinket(47)) {
                 playsave = 150;
               }
-              if (trixx(43)) {
+              if (haveTrinket(43)) {
                 teller();
                 tar = _root.lastl;
                 if (_root.lev <= 0) {
@@ -12918,41 +12918,41 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       }
 
       function upa() {
-        ups = _root.ups.slice(0, -1);
-        if (_root.ceye) {
-          ups[21] = true;
+        haveEffect = _root.pickedUp.slice(0, -1);
+        if (_root.cainsEye) { //Cain's Eye effect activates the compass.
+          haveEffect[21] = true;
         }
-        if (_root.world) {
-          ups[54] = true;
-          ups[21] = ups[54];
+        if (_root.world) { //World Card activates both map and compass.
+          haveEffect[54] = true;
+          haveEffect[21] = haveEffect[54]; //why not just set it to true wtf
         }
-        if (ups[69] && ups[52]) {
-          ups[69] = 0;
+        if (haveEffect[69] && haveEffect[52]) { //Dr. Fetus gets rid of Chocolate Milk.
+          haveEffect[69] = 0;
         }
-        if (ups[168]) {
-          ups[69] = 0;
-          ups[118] = 0;
-          ups[114] = 0;
+        if (haveEffect[168]) { //Epic Fetus gets rid of...
+          haveEffect[69] = 0;  //Chocolate Milk
+          haveEffect[118] = 0; //Brimstone
+          haveEffect[114] = 0; //Mom's Knife
         }
-        if (ups[114]) {
-          ups[118] = 0;
+        if (haveEffect[114]) { //Mom's Knife gets rid of...
+          haveEffect[118] = 0; //Brimstone
         }
-        if (ups[191]) {
+        if (haveEffect[191]) { //3 Dollar Bill Effects
           f1 = [1, 2, 3, 5, 6, 46, 53, 110, 115, 143, 150];
-          ups[f1[random(f1.length)]] = 1;
+          haveEffect[f1[random(f1.length)]] = 1;
         }
-        if (_root.ups[122]) {
+        if (_root.pickedUp[122]) { //Whore of Babylon check
           if (player.hp < 1) {
-            ups[122] = 1;
+            haveEffect[122] = 1;
             sk = 7;
             cus = true;
           } else {
-            ups[122] = 0;
+            haveEffect[122] = 0;
           }
         }
-        if (trixx(32) && random(4) == 0) {
-          f1 = [21, 71, 120, 121];
-          ups[f1[random(f1.length)]] = 1;
+        if (haveTrinket(32) && random(4) == 0) { //Liberty Cap Effects
+          f1 = [21, 71, 120, 121]; //The Compass, Mini Mush, Odd Mushroom, Odd Mushroom
+          haveEffect[f1[random(f1.length)]] = 1;
         }
       }
 
@@ -12966,61 +12966,61 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
 
       function golev() {
         upa();
-        if (_root.ups[122]) {
+        if (_root.pickedUp[122]) { //Whore of Babylon check
           if (player.hp < 1) {
-            ups[122] = 1;
+            haveEffect[122] = 1;
             cus = true;
           } else {
-            ups[122] = 0;
+            haveEffect[122] = 0;
           }
         }
-        if (_root.skiner > 0 && _root.classit) {
+        if (_root.characterID > 0 && _root.classit) {
           _root.classit = false;
-          f10 = [0, 45, 46, 34, 36, 117, 157];
-          highs = player;
-          player.it = f10[_root.skiner];
-          powerlevel();
-          if (_root.skiner == 5) {
-            _root.ups[122] = 1;
-            _root.cols.push(122);
-          }
+          f10 = [0, 45, 46, 34, 36, 117, 157]; //Character's starting items.
+          highs = player;                     //Get ready to load up the item...
+          player.it = f10[_root.characterID]; //Load it up, hold it over their head...
+          powerlevel();						  //And give it to them.
+          if (_root.characterID == 5) {       //Eve has two starting items...
+            _root.pickedUp[122] = 1;		  //So Let's give her The Dead Bird silently.
+            _root.collectionScreen.push(122); //And add The Dead Bird to the Collection Screen...
+          }									  //...since you didn't actually pick it up.
         }
-        if (_root.chala != 0) {
-          if (!_root.wtfuuz) {
-            _root.wtfuuz = true;
-            f1 = [0, 0, 0, 0, [81], [151, 148], [52, 47], [73, 73, 73, 73], [153, 89], [101, 184]];
-            f2 = f1[_root.chala];
-            gofind = true;
-            for (e in f2) {
+        if (_root.chala != 0) {				  //Are you playing a challenge?
+          if (!_root.noDice) {
+            _root.noDice = true;
+            challengeStartingItems = [0, 0, 0, 0, [81], [151, 148], [52, 47], [73, 73, 73, 73], [153, 89], [101, 184]];
+            startItems = challengeStartingItems[_root.chala];
+            challengeItem = true;
+            for (e in startItems) {
               lastcra = -100;
               player.empty = false;
               highs = player;
-              player.it = f2[e];
+              player.it = startItems[e];
               powerlevel();
             }
-            gofind = undefined;
+            challengeItem = undefined;
           }
         }
-        if (!_root.wtfuuz && _root.SecretUnlocked[38] && _root.skiner == 0 && _root.chala == 0) {
+        if (!_root.noDice && _root.SecretUnlocked[38] && _root.characterID == 0 && _root.chala == 0) {
           player.empty = false;
           lastcra = -100;
-          _root.wtfuuz = true;
+          _root.noDice = true;
           highs = player;
           player.it = 105;
           powerlevel();
         }
-        if (_root.shroom) {
+        if (_root.shroom) { //When you respawn on a floor, hold it over your head.
           player.d.gotoAndStop(4);
           if (_root.shroom == 4) {
-            player.it = 161;
+            player.it = 161;	//Ankh
           } else {
             if (_root.shroom == 3) {
-              player.it = 127;
+              player.it = 127;	//Forget Me Now
             } else {
               if (_root.shroom == 2) {
-                player.it = 81;
+                player.it = 81; //Dead Cat
               } else {
-                player.it = 11;
+                player.it = 11;	//1-up Mushroom
                 _root.soundy('1up.wav');
               }
             }
@@ -13364,7 +13364,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           if (trg._visible) {
             trg.blo = ingrid(trg._x, trg._y);
             _root.seenlev[trg.gol] = true;
-            if (ups[91]) {
+            if (haveEffect[91]) {
               if (trg.gol == _root.sac) {
                 _root.sacb = true;
               }
@@ -13392,12 +13392,12 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               trg.cus = true;
               trg.gotoAndStop(36);
             } else {
-              if (_root.lev == _root.hide && (_root.lastl == trg.gol or ups[76]) or ups[76] && trg.gol == _root.hide && _root.lev != _root.bossl2 && _root.lev != _root.bossl && _root.lev != _root.minb) {
+              if (_root.lev == _root.hide && (_root.lastl == trg.gol or haveEffect[76]) or haveEffect[76] && trg.gol == _root.hide && _root.lev != _root.bossl2 && _root.lev != _root.bossl && _root.lev != _root.minb) {
                 trg.hide = true;
                 trg.gotoAndStop(17);
                 levz[trg.blo] = 0;
               } else {
-                if (_root.lev == _root.hide2 && (_root.hide != trg.gol or ups[76]) or ups[76] && trg.gol == _root.hide2 && _root.lev != _root.bossl2 && _root.lev != _root.bossl && _root.lev != _root.minb) {
+                if (_root.lev == _root.hide2 && (_root.hide != trg.gol or haveEffect[76]) or haveEffect[76] && trg.gol == _root.hide2 && _root.lev != _root.bossl2 && _root.lev != _root.bossl && _root.lev != _root.minb) {
                   trg.hide2 = true;
                   trg.gotoAndStop(17);
                   levz[trg.blo] = 0;
@@ -13993,9 +13993,9 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               }
             }
           }
-          ++_root.ups[highs.it];
-          if (!gofind) {
-            _root.colss[highs.it] = true;
+          ++_root.pickedUp[highs.it];
+          if (!challengeItem) {
+            _root.collectedItem[highs.it] = true;
           }
           if (highs != player) {
             highs.d.d.d.gotoAndPlay(21);
@@ -14015,12 +14015,12 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             hat(27);
           }
           if (highs.it == 81) {
-            if (_root.skiner == 4) {
+            if (_root.characterID == 4) {
               _root.armor = 1;
             } else {
-              _root.ups[23] += 1 - player.mhp;
+              _root.pickedUp[23] += 1 - player.mhp;
             }
-            ups[23] = _root.ups[23];
+            haveEffect[23] = _root.pickedUp[23];
           }
           if (highs.it == 52) {
             _root.RegularDropPool.push(125, 125, 125, 125, 125, 125, 106, 106, 106, 106, 106, 106);
@@ -14029,7 +14029,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             eta();
           }
           if (highs.it == 137) {
-            if (_root.ups[137] == 1) {
+            if (_root.pickedUp[137] == 1) {
               _root.bombs += 5;
             }
           } else {
@@ -14069,8 +14069,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                               kogs = [5.35, 5.07, 5.02, 5.010000003, 5.3, 5.03, 5.04];
                             } else {
                               if (highs.it == 182) {
-                                ups[3] = 1;
-                                _root.ups[3] = 1;
+                                haveEffect[3] = 1;
+                                _root.pickedUp[3] = 1;
                                 _root.hmode = 41;
                                 ++_root.armor;
                                 player.hp += 15;
@@ -14082,9 +14082,9 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                                     _root.bmode = 24;
                                   } else {
                                     if (highs.it == 149) {
-                                      if (!ups[2]) {
-                                        _root.ups[2] = 0.5;
-                                        ups[2] = 0.5;
+                                      if (!haveEffect[2]) {
+                                        _root.pickedUp[2] = 0.5;
+                                        haveEffect[2] = 0.5;
                                       }
                                     } else {
                                       if (highs.it == 168) {
@@ -14095,9 +14095,9 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                                         } else {
                                           if (highs.it == 169) {
                                             _root.hmode = 40;
-                                            if (!ups[2]) {
-                                              _root.ups[2] = 0.3;
-                                              ups[2] = 0.3;
+                                            if (!haveEffect[2]) {
+                                              _root.pickedUp[2] = 0.3;
+                                              haveEffect[2] = 0.3;
                                             }
                                             _root.fmode = 20;
                                           } else {
@@ -14112,9 +14112,9 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                                                 } else {
                                                   if (highs.it == 153) {
                                                     hat(46);
-                                                    if (!ups[2]) {
-                                                      _root.ups[2] = 0.4;
-                                                      ups[2] = 0.4;
+                                                    if (!haveEffect[2]) {
+                                                      _root.pickedUp[2] = 0.4;
+                                                      haveEffect[2] = 0.4;
                                                     }
                                                     _root.fmode = 23;
                                                   } else {
@@ -14136,8 +14136,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                                                               sk = 7;
                                                               _root.hmode = 39;
                                                               _root.bmode = 22;
-                                                              ups[115] = 1;
-                                                              _root.ups[115] = 1;
+                                                              haveEffect[115] = 1;
+                                                              _root.pickedUp[115] = 1;
                                                             } else {
                                                               if (highs.it == 157) {
                                                                 hat(41);
@@ -14180,10 +14180,10 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                                                                                     _root.bmode = 15;
                                                                                   } else {
                                                                                     if (highs.it == 122) {
-                                                                                      ups[122] = false;
+                                                                                      haveEffect[122] = false;
                                                                                     } else {
                                                                                       if (highs.it == 116) {
-                                                                                        _root.itc = 1;
+                                                                                        _root.itemCharges = 1;
                                                                                         hat(36);
                                                                                       } else {
                                                                                         if (highs.it == 132) {
@@ -14199,8 +14199,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                                                                                             } else {
                                                                                               if (highs.it == 115 or highs.it == 185) {
                                                                                                 _root.hmode = 32;
-                                                                                                ups[115] = 1;
-                                                                                                _root.ups[115] = 1;
+                                                                                                haveEffect[115] = 1;
+                                                                                                _root.pickedUp[115] = 1;
                                                                                                 _root.fmode = 18;
                                                                                               } else {
                                                                                                 if (highs.it == 110) {
@@ -14263,8 +14263,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                                                                                                                                     hat(19);
                                                                                                                                   } else {
                                                                                                                                     if (highs.it == 81) {
-                                                                                                                                      _root.ups[81] = 8;
-                                                                                                                                      ups[81] = 8;
+                                                                                                                                      _root.pickedUp[81] = 8;
+                                                                                                                                      haveEffect[81] = 8;
                                                                                                                                       _root.catlives = 1;
                                                                                                                                     } else {
                                                                                                                                       if (highs.it == 82) {
@@ -14415,11 +14415,11 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             _root.fmode = 10;
           }
           if (highs.it >= 33 && highs.it != 46 && highs.it != 48 && highs.it < 50 or highs.it == 56 or highs.it == 58 or highs.it == 65 or highs.it == 66 or highs.it == 77 or highs.it == 78 or highs.it == 83 or highs.it == 84 or highs.it == 85 or highs.it == 86 or highs.it == 93 or highs.it == 97 or highs.it == 102 or highs.it == 105 or highs.it == 107 or highs.it == 111 or highs.it == 123 or highs.it == 124 or highs.it == 126 or highs.it == 127 or highs.it == 130 or highs.it == 133 or highs.it == 135 or highs.it == 136 or highs.it == 137 or highs.it == 145 or highs.it == 146 or highs.it == 147 or highs.it == 158 or highs.it == 164 or highs.it == 160 or highs.it == 166 or highs.it == 171 or highs.it == 175 or highs.it == 177 or highs.it == 181 or highs.it == 186 or highs.it == 192 or highs.it == 177) {
-            _root.ups[highs.it] = 1;
+            _root.pickedUp[highs.it] = 1;
             itb = 15;
             _root.hud.it.gotoAndStop(8);
             _root.colit = highs.it;
-            _root.iter[_root.it] = _root.itc;
+            _root.iter[_root.it] = _root.itemCharges;
             if (_root.it > 0) {
               if (_root.it == 90) {
                 player.flyby = false;
@@ -14439,16 +14439,16 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               _root.it = highs.it - itn(highs.it);
             }
             if (_root.it != 11) {
-              _root.itc = _root.iter[_root.it];
-              if (ups[116]) {
-                _root.itc = Math.max(0.334, _root.itc);
+              _root.itemCharges = _root.iter[_root.it];
+              if (haveEffect[116]) {
+                _root.itemCharges = Math.max(0.334, _root.itemCharges);
               }
             }
           } else {
             if (highs.d._currentframe != 10 && highs.s == 5) {
               highs.d.gotoAndStop(11);
             }
-            _root.cols.push(highs.it);
+            _root.collectionScreen.push(highs.it);
             if (!itzz(highs.it) && !satan) {
               if (highs.it == 5) {
                 _root.wiptz += 0.2;
@@ -14496,13 +14496,13 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               highs.done = true;
             }
           }
-          if (_root.ups[4] + _root.ups[38] + _root.ups[42] + Math.max(0, _root.ups[81]) >= 1.1) {
+          if (_root.pickedUp[4] + _root.pickedUp[38] + _root.pickedUp[42] + Math.max(0, _root.pickedUp[81]) >= 1.1) {
             _root.SecretUnlocked[40] = true;
           }
-          if (_root.ups[13] + _root.ups[14] + _root.ups[70] >= 2) {
+          if (_root.pickedUp[13] + _root.pickedUp[14] + _root.pickedUp[70] >= 2) {
             _root.SecretUnlocked[37] = true;
           }
-          if (_root.ups[55] && _root.ups[31] + _root.ups[30] + _root.ups[39] + _root.ups[41] >= 1) {
+          if (_root.pickedUp[55] && _root.pickedUp[31] + _root.pickedUp[30] + _root.pickedUp[39] + _root.pickedUp[41] >= 1) {
             _root.SecretUnlocked[47] = true;
           }
         } else {
@@ -14511,7 +14511,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         nohit = false;
         if (_root.fmode != v3) {
         }
-        ups[highs.it] = _root.ups[highs.it];
+        haveEffect[highs.it] = _root.pickedUp[highs.it];
       }
 
       function invp() {
@@ -14559,7 +14559,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       }
 
       function spidcol(trg) {
-        if (ups[110] && !lows.ba && random(5) == 0 && !trg.mom && trg.s != 84) {
+        if (haveEffect[110] && !lows.ba && random(5) == 0 && !trg.mom && trg.s != 84) {
           if (trg.mag) {
             for (z in trg.mags) {
               frez(trg.mags[z]);
@@ -14587,13 +14587,13 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             }
           }
         }
-        if (ups[151] or purr) {
-          if (!lows.ba && random(6) == 0 or purr && bluf < 1 && ball.length < 30 && (random(3) == 0 or !ups[152])) {
+        if (haveEffect[151] or purr) {
+          if (!lows.ba && random(6) == 0 or purr && bluf < 1 && ball.length < 30 && (random(3) == 0 or !haveEffect[152])) {
             ++bluf;
             blufer = trg;
           }
         }
-        if (ups[103] && !lows.ba && random(4) == 0 or lows.trixer == 1) {
+        if (haveEffect[103] && !lows.ba && random(4) == 0 or lows.trixer == 1) {
           if (trg.poiss > 20) {
             trg.poiss += 40;
           } else {
@@ -14607,7 +14607,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           trg.uncol = Math.round(fra + 60);
           speco(trg);
         }
-        if (ups[89] && random(4) == 0 or lows.ba == 3 && random(2) == 0) {
+        if (haveEffect[89] && random(4) == 0 or lows.ba == 3 && random(2) == 0) {
           spida(lows.ba == 3, trg);
         }
       }
@@ -14617,13 +14617,13 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         _root.eta = !_root.eta;
         if (!_root.eta) {
           ++player.hp;
-          ++ups[22];
+          ++haveEffect[22];
           _root.over.gotoAndStop(16);
-          _root.ups[22] = ups[22];
+          _root.pickedUp[22] = haveEffect[22];
         }
       }
 
-      function junx() {
+      function dropTrinket() {
         if (_root.TrinketPool.length > 0) {
           if (poli) {
             poli = false;
@@ -14670,17 +14670,17 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         f1 = _root.pilc > 0;
         f3 = f2 > 28 && f2 < 69;
         if (f3) {
-          if (!trixx(f2) && (!trixx(53) or ups[139])) {
+          if (!haveTrinket(f2) && (!haveTrinket(53) or haveEffect[139])) {
             f1 = ['Fish Head', 'Pinky Eye', 'Push Pin', 'Liberty Cap', 'Umbilical Cord', 'Childs Heart', 'Curved Horn', 'Rusted Key', 'Goat Hoof', 'Moms Pearl', 'Cancer', 'Red Patch', 'Match Stick', 'Lucky Toe', 'Cursed Skull', 'Safety Cap', 'Ace of Spades', 'Isaacs Fork', 'The Polaroid', 'A Missing Page', 'Bloody Penny', 'Burnt Penny', 'Flat Penny', 'Counterfeit Penny', 'Tick', 'Isaacs Head', 'Maggys Faith', 'Judas\' Tongue', '???\'s Soul', 'Samsons Lock', 'Cains Eye', 'Eves Bird Foot', 'The Left Hand'];
             f1 = f1[Math.max(0, f2 - 29)];
             displayBannerMessage(f1);
             _root.atrixer = _root.trixer;
             _root.trixer = f1;
             _root.soundy('shellgame' + random(2) + '.wav');
-            if (ups[139]) {
-              f1 = _root.atrix > 0;
+            if (haveEffect[139]) {
+              f1 = _root.trinketSlot2 > 0;
             } else {
-              f1 = _root.trix > 0;
+              f1 = _root.trinketSlot1 > 0;
             }
             if (f2 == 53) {
               hat(61);
@@ -14694,9 +14694,9 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           if (f2 < 7) {
             displayBannerMessage('Pills here!');
             _root.soundy('shellgame' + random(2) + '.wav');
-            _root.colss[43] = true;
+            _root.collectedItem[43] = true;
           } else {
-            _root.colss[61] = true;
+            _root.collectedItem[61] = true;
             tart(f2);
             _root.soundy('Book Page Turn 12.wav', 100);
           }
@@ -14707,13 +14707,13 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               f1 = _root.pilc;
               _root.pilc = f2;
             } else {
-              if (!ups[139]) {
-                f1 = _root.trix;
-                _root.trix = f2;
+              if (!haveEffect[139]) {
+                f1 = _root.trinketSlot1;
+                _root.trinketSlot1 = f2;
               } else {
-                f1 = _root.atrix;
-                _root.atrix = _root.trix;
-                _root.trix = f2;
+                f1 = _root.trinketSlot2;
+                _root.trinketSlot2 = _root.trinketSlot1;
+                _root.trinketSlot1 = f2;
               }
             }
             if (trg == 3 or trg == 4) {
@@ -14733,18 +14733,18 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               pilll = true;
             } else {}
             if (f3) {
-              if (ups[139]) {
-                _root.atrix = _root.trix;
+              if (haveEffect[139]) {
+                _root.trinketSlot2 = _root.trinketSlot1;
               }
-              _root.trix = f2;
+              _root.trinketSlot1 = f2;
             } else {
               _root.pilc = f2;
             }
             trg.d.d.gotoAndStop(2);
           }
-          if (_root.atrix == 53) {
-            _root.atrix = _root.trix;
-            _root.trix = 53;
+          if (_root.trinketSlot2 == 53) {
+            _root.trinketSlot2 = _root.trinketSlot1;
+            _root.trinketSlot1 = 53;
             _root.atrixer = _root.trixer;
             _root.trixer = 'Tick';
           }
@@ -14964,12 +14964,12 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                 case 27:
                 case 30:
                 case 16:
-                  if ((ups[13] or unic > 0 or demon > 0 or horse > 0) && highs.aidsdone <= fra) {
+                  if ((haveEffect[13] or unic > 0 or demon > 0 or horse > 0) && highs.aidsdone <= fra) {
                     highs.aidsdone = fra + 30;
                     if (horse > 0) {
                       nohit = true;
                     }
-                    if (ups[13]) {
+                    if (haveEffect[13]) {
                       highs.poiss = 60;
                       highs.poisd = 3.5;
                       hurt(highs, 30);
@@ -15048,7 +15048,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             highs.dones = true;
             switch (highs.d._currentframe) {
               case 34:
-                if (_root.chaps == 9 && _root.altchap && trixx(47)) {
+                if (_root.chaps == 9 && _root.altchap && haveTrinket(47)) {
                   if (beamer <= 0) {
                     beamer = 1;
                     _root.chaps = 11;
@@ -15120,16 +15120,16 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                 break;
               case 2:
                 _root.coins += coincol(highs);
-                if (trixx(49) && random(2) == 0) {
+                if (haveTrinket(49) && random(2) == 0) {
                   kogs.push(5.010000002);
                 }
-                if (trixx(50) && random(2) == 0) {
+                if (haveTrinket(50) && random(2) == 0) {
                   kogs.push(5.040000001);
                 }
-                if (trixx(51) && random(2) == 0) {
+                if (haveTrinket(51) && random(2) == 0) {
                   kogs.push(5.03);
                 }
-                if (trixx(52) && random(2) == 0) {
+                if (haveTrinket(52) && random(2) == 0) {
                   ++_root.coins;
                 }
                 break;
@@ -15230,7 +15230,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       if (highs.col == 10) {
                         highs.d.d.gotoAndStop(42);
                         highs.itt = random(4);
-                        if (random(13) == 0 && !ups[9]) {
+                        if (random(13) == 0 && !haveEffect[9]) {
                           highs.itt = 5;
                         }
                       } else {
@@ -15275,8 +15275,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                         playerhurt(3, 200);
                       }
                     } else {
-                      _root.ups[22] -= f1;
-                      ups[22] = _root.ups[22];
+                      _root.pickedUp[22] -= f1;
+                      haveEffect[22] = _root.pickedUp[22];
                       lasth = -100;
                       f11 = _root.armor;
                       f2 = f1 - player.mhp + player.hp;
@@ -15433,7 +15433,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                           if (lows.d._yscale == 135.5) {
                             v1 += 25;
                           }
-                          if (highs.s == 41 && !ups[48]) {
+                          if (highs.s == 41 && !haveEffect[48]) {
                             if (highs.d.hx.h._currentframe == 1 && lows.ybew < 0) {
                               v1 = 0;
                             }
@@ -15447,7 +15447,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                               v1 = 0;
                             }
                           }
-                          if (highs.s == 97 && !ups[48]) {
+                          if (highs.s == 97 && !haveEffect[48]) {
                             if (highs.d._currentframe == 1 && lows.ybew < 0) {
                               v1 = 0;
                             }
@@ -15471,10 +15471,10 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                             ++_root.hairb;
                           }
                         }
-                        if (ups[48] && !lows.ba or lows.ics or v6 or lows.knife or lows.trixer == 2) {
+                        if (haveEffect[48] && !lows.ba or lows.ics or v6 or lows.knife or lows.trixer == 2) {
                           nohit = true;
                         } else {
-                          if (ups[169] && !lows.ba && lows.dmg > 10 && highs.hp < -6) {
+                          if (haveEffect[169] && !lows.ba && lows.dmg > 10 && highs.hp < -6) {
                             lows.dmg *= 0.5;
                             lows.d._xscale *= 0.75;
                             lows.d._yscale *= 0.75;
@@ -16970,15 +16970,15 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             trg2.d.gotoAndStop(7);
             trg2.dec = true;
           }
-          if (f1 && f1 != 2 or ups[106]) {
+          if (f1 && f1 != 2 or haveEffect[106]) {
             trg2.dmg += 50;
             trg2._yscale = 123;
             trg2._xscale = 123;
             trg2.col = 4;
-            if (ups[140]) {
+            if (haveEffect[140]) {
             }
           }
-          if (ups[140]) {
+          if (haveEffect[140]) {
             trg2.header = 130;
             trg2.col = 6;
           }
@@ -17129,36 +17129,36 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             } else {
               if (_root.chaps == 11) {
                 f10 = [91, 92, 96, 93, 97, 94, 95];
-                _root.SecretUnlocked[f10[_root.skiner]] = true;
+                _root.SecretUnlocked[f10[_root.characterID]] = true;
                 _root.SecretUnlocked[75] = true;
               } else {
                 if (_root.chaps == 9) {
                   if (_root.altchap) {
                     f10 = [65, 66, 67, 68, 70, 69, 72];
-                    _root.SecretUnlocked[f10[_root.skiner]] = true;
+                    _root.SecretUnlocked[f10[_root.characterID]] = true;
                     if (_root.so.data.icer++ >= 5) {
                       _root.SecretUnlocked[74] = true;
                     }
-                    if (trixx(47)) {
+                    if (haveTrinket(47)) {
                     }
                   } else {
                     f10 = [55, 59, 60, 63, 62, 61, 73];
-                    _root.SecretUnlocked[f10[_root.skiner]] = true;
+                    _root.SecretUnlocked[f10[_root.characterID]] = true;
                   }
                 } else {
                   if (_root.lev != _root.bossl2) {
                     _root.SecretUnlocked[3] = true;
-                    if (_root.skiner == 5) {
+                    if (_root.characterID == 5) {
                       _root.SecretUnlocked[58] = true;
                     } else {
-                      if (_root.skiner == 4) {
+                      if (_root.characterID == 4) {
                         _root.SecretUnlocked[38] = true;
                       } else {
-                        if (_root.skiner == 6) {
+                        if (_root.characterID == 6) {
                           _root.SecretUnlocked[71] = true;
                         } else {
-                          if (_root.skiner >= 1) {
-                            _root.SecretUnlocked[25 + _root.skiner] = true;
+                          if (_root.characterID >= 1) {
+                            _root.SecretUnlocked[25 + _root.characterID] = true;
                           }
                         }
                       }
@@ -17236,23 +17236,23 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       }
 
       function firr(trg) {
-        var v3 = ups[6] * 1.5 + (ups[32] + ups[80] + ups[1] + ups[120]) * 0.7 + (ups[196] + ups[59] - ups[182]) * 0.4 + (ups[101] + ups[90] + ups[189]) * 0.2;
-        if (ups[120]) {
+        var v3 = haveEffect[6] * 1.5 + (haveEffect[32] + haveEffect[80] + haveEffect[1] + haveEffect[120]) * 0.7 + (haveEffect[196] + haveEffect[59] - haveEffect[182]) * 0.4 + (haveEffect[101] + haveEffect[90] + haveEffect[189]) * 0.2;
+        if (haveEffect[120]) {
           ++v3;
         }
-        if (_root.skiner == 6) {
+        if (_root.characterID == 6) {
           v3 -= 0.25;
         }
         f1 = Math.sqrt(Math.max(0, 1 + v3 * 1.3));
         trg.fire = Math.max(5, 16 - f1 * 6 - Math.min(v3, 0) * 6);
-        if (ups[69]) {
+        if (haveEffect[69]) {
           trg.fire *= 0.8;
         }
-        if (ups[2]) {
+        if (haveEffect[2]) {
           trg.fire *= 2.1;
           trg.fire += 3;
         }
-        if (trixx(39)) {
+        if (haveTrinket(39)) {
           trg.fire -= 2;
         }
         if (trg == player) {
@@ -17362,7 +17362,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
 
       function plff() {
         plox = Math.max(7, plox);
-        if (ups[69] or ups[118] && (xenf != 0 or yenf != 0)) {
+        if (haveEffect[69] or haveEffect[118] && (xenf != 0 or yenf != 0)) {
           chax = xenf;
           chay = yenf;
           if (chaf == undefined) {
@@ -17374,7 +17374,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           xxenf = xenf;
           yyenf = yenf;
         }
-        if (ups[152] && fra % 3 == 0) {
+        if (haveEffect[152] && fra % 3 == 0) {
           trg.xpp = xenf;
           trg.ypp = yenf;
           lasershow(trg, 5);
@@ -17386,14 +17386,14 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           secol *= 0.8;
           secol += 0.2;
         }
-        if (ups[152] && (sob == -1 or _root.hat[11]) && trg.fire < 0) {
+        if (haveEffect[152] && (sob == -1 or _root.hat[11]) && trg.fire < 0) {
           secol += 1;
           firr(trg);
           sob = 1;
         }
-        if (trg.fire < 0 && (!ups[69] && !ups[118] or chaz or _root.bombnext) && unic <= 0 && (xenf != 0 or yenf != 0)) {
+        if (trg.fire < 0 && (!haveEffect[69] && !haveEffect[118] or chaz or _root.bombnext) && unic <= 0 && (xenf != 0 or yenf != 0)) {
           firr(trg);
-          if (ups[118] && !_root.bombnext) {
+          if (haveEffect[118] && !_root.bombnext) {
             trg.fire = 20;
             f11 = true;
             trg.xpp = xenf;
@@ -17401,7 +17401,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             trg.xbew *= 0.7;
             trg.ybew *= 0.7;
           } else {
-            f11 = ups[68] && !_root.bombnext && !ups[52];
+            f11 = haveEffect[68] && !_root.bombnext && !haveEffect[52];
             if (f11) {
               trg.xpp = xenf;
               trg.ypp = yenf;
@@ -17435,7 +17435,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             sob = 1;
           }
           v1 = 0.3 + Math.random() * 0.2;
-          if (ups[2]) {
+          if (haveEffect[2]) {
             v1 = 0.8;
             sob = 1;
           }
@@ -17444,16 +17444,16 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           if (!llss) {
             _root.soundy('Tears_Fire_' + random(3) + '.mp');
           }
-          if (ups[55] && (random(2) == 0 or ups[2]) or ups[87] && random(8) == 0) {
+          if (haveEffect[55] && (random(2) == 0 or haveEffect[2]) or haveEffect[87] && random(8) == 0) {
             f1 = trg.xp;
             f2 = trg.yp;
             create(f1, f2, 0, -xxenf, -yyenf, 0, 2);
-            if (ups[87]) {
+            if (haveEffect[87]) {
               create(f1, f2, 0, -yyenf, xxenf, 0, 2);
               create(f1, f2, 0, yyenf, -xxenf, 0, 2);
             }
           }
-          if (ups[168] && !_root.bombnext) {
+          if (haveEffect[168] && !_root.bombnext) {
             trg.fire = -1;
             if (bombdrop <= 0) {
               bombdrop = 30;
@@ -17463,7 +17463,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           } else {
             if (!f11) {
               var v2 = create(f1, f2, 0, xenf, yenf, 0, 2);
-              if (ups[52] && !_root.bombnext) {
+              if (haveEffect[52] && !_root.bombnext) {
                 trg.fire *= 3;
                 trg.fire += 10;
                 enf = 14 / enfget(v2.xbew, v2.ybew);
@@ -17476,11 +17476,11 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                 v2.spl = -10;
                 v2.flyby = false;
                 v2.dmg *= 3;
-                if (ups[106]) {
+                if (haveEffect[106]) {
                   v2.dmg += 50;
                   v2._yscale = 123;
                   v2._xscale = 123;
-                  if (ups[106]) {
+                  if (haveEffect[106]) {
                     v2.col = 5;
                   }
                 }
@@ -17507,14 +17507,14 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       trg.d.d.d.gotoAndStop(29);
                     }
                     _root.bombnext = false;
-                    _root.itc = false;
+                    _root.itemCharges = false;
                   }
                 } else {
-                  if (ups[2]) {
-                    if (ups[169] && ups[2] != 1 && !ups[153] or ups[149]) {
+                  if (haveEffect[2]) {
+                    if (haveEffect[169] && haveEffect[2] != 1 && !haveEffect[153] or haveEffect[149]) {
                       v2.xp = player.xp;
                       v2.yp = player.yp;
-                      if (ups[149]) {
+                      if (haveEffect[149]) {
                         trg.fire * 2;
                         trg.fire += 10;
                         v2.bomb = true;
@@ -17530,7 +17530,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                         colorit(v2, 0.5, 0.9, 0.4, 0, 0, 0);
                       }
                     } else {
-                      if (ups[153]) {
+                      if (haveEffect[153]) {
                         v2 = 0.07000000000000001;
                       } else {
                         v2 = 0.05;
@@ -17542,7 +17542,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       create(f1, f2, 0, xenf + yenf * v2, yenf - xenf * v2, 0, 2);
                       f1 = trg.xp + xenf;
                       f2 = trg.yp + yenf;
-                      if (ups[153]) {
+                      if (haveEffect[153]) {
                         v1 = 0.02;
                         v2 = 0.32;
                         create(f1 + yenf * v2 * 1.5, f2 - xenf * v2, 0, xenf + yenf * v1, yenf - xenf * v1, 0, 2);
@@ -17557,7 +17557,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             }
           }
           plox = 7 + trg.fire * 0.45;
-          if (ups[118]) {
+          if (haveEffect[118]) {
             if (v2.bomb) {
               plo = 1;
               plox = 1;
@@ -17588,7 +17588,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               yenf *= enf;
             }
             v1 = 0.3 + Math.random() * 0.2;
-            if (ups[2]) {
+            if (haveEffect[2]) {
               v1 = 0.8;
               sob = 1;
             }
@@ -17710,7 +17710,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       }
                       doub = f10;
                     }
-                    if (!ups[52]) {
+                    if (!haveEffect[52]) {
                       ++e;
                     }
                   }
@@ -17721,8 +17721,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             plox1 = 7 + trg.fire1 * 0.45;
           }
         }
-        if (plox > 8 or _root.fmode == 7 && !ups[68] && !ups[118]) {
-          if (ups[68] && ups[59]) {
+        if (plox > 8 or _root.fmode == 7 && !haveEffect[68] && !haveEffect[118]) {
+          if (haveEffect[68] && haveEffect[59]) {
             trg.d.d.d.d.gotoAndStop(plo + 8);
           } else {
             trg.d.d.d.d.gotoAndStop(plo + 4);
@@ -17821,9 +17821,9 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         trg.dou = false;
         if (trg.meat && trg.meat != 5) {
           if (trg.me2) {
-            trg.meat = Math.min(4, ups[73] - 4);
+            trg.meat = Math.min(4, haveEffect[73] - 4);
           } else {
-            trg.meat = Math.min(4, ups[73]);
+            trg.meat = Math.min(4, haveEffect[73]);
           }
         }
         if (trg.stopi) {
@@ -17880,7 +17880,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     trg.ggh = true;
                     trg.dmg = 2 * dmgdo();
                     f12 = fra * 0.03;
-                    if (ups[112]) {
+                    if (haveEffect[112]) {
                       f12 *= 2;
                     }
                     f11 = (f12 + (blub / Math.max(1, ablub)) * 2) * Math.PI;
@@ -18028,7 +18028,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   _root.tex = trg.d.d._currentframe;
                   if (trg.d.d._currentframe == 10) {
                     emo();
-                    _root.ups[144] -= 3 + random(2);
+                    _root.pickedUp[144] -= 3 + random(2);
                     f2 = 5.1022 + random(5) * 0.0001;
                     if (random(2) == 0) {
                       if (random(3) == 0) {
@@ -18080,14 +18080,14 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     }
                     if (f13 < 30 && trg2 != trg) {
                       trg2 = trg.trg2;
-                      _root.ups[144] += coincol(trg2);
+                      _root.pickedUp[144] += coincol(trg2);
                       trg2.d.d.gotoAndStop(2);
                       trg2.dones = true;
                     }
                     if (trg2 == player) {
                       f12 = enfcheck(trg2.xp, trg2.yp, f6, f7, 100);
                       if (f12 < 80) {
-                        if (_root.ups[144] > 5) {
+                        if (_root.pickedUp[144] > 5) {
                           trg.d.gotoAndStop(135);
                         }
                       }
@@ -18164,7 +18164,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                         trg.d.gotoAndStop(128);
                         trg.dmg = 2;
                         f11 = fra * 0.013 * Math.PI;
-                        if (ups[112]) {
+                        if (haveEffect[112]) {
                           f11 *= 1.5;
                         }
                         trg.xp = f1 + Math.sin(f11) * 110;
@@ -18173,7 +18173,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                         trg.d.gotoAndStop(21);
                         trg.dmg = 5;
                         f11 = -fra * 0.02 * Math.PI;
-                        if (ups[112]) {
+                        if (haveEffect[112]) {
                           f11 *= 1.5;
                         }
                         trg.xp = f1 + Math.sin(f11) * 60;
@@ -18216,7 +18216,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       }
                       flys.push(e);
                       f12 = fra * 0.03;
-                      if (ups[112]) {
+                      if (haveEffect[112]) {
                         f12 *= 2;
                       }
                       f11 = (f12 + ffly * fll) * Math.PI;
@@ -18250,39 +18250,39 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                           trg.baa = 10;
                           lastbb = 10;
                         } else {
-                          if (ups[188] && lastbbb != 9 && lastbb != 9) {
+                          if (haveEffect[188] && lastbbb != 9 && lastbb != 9) {
                             trg.baa = 9;
                             lastbb = 9;
                           } else {
-                            if (ups[95] && lastbbb != 2 && lastbb != 2) {
+                            if (haveEffect[95] && lastbbb != 2 && lastbb != 2) {
                               trg.baa = 2;
                               lastbb = 2;
                             } else {
-                              if (ups[67] && lastbbb != 1 && lastbb != 1) {
+                              if (haveEffect[67] && lastbbb != 1 && lastbb != 1) {
                                 trg.baa = 1;
                                 lastbb = 1;
                               } else {
-                                if (ups[163] && lastbbb != 6 && lastbb != 6) {
+                                if (haveEffect[163] && lastbbb != 6 && lastbb != 6) {
                                   trg.baa = 6;
                                   lastbb = 6;
                                 } else {
-                                  if (ups[167] && lastbbb != 7 && lastbb != 7) {
+                                  if (haveEffect[167] && lastbbb != 7 && lastbb != 7) {
                                     trg.baa = 7;
                                     lastbb = 7;
                                   } else {
-                                    if (ups[174] && lastbbb != 8 && lastbb != 8) {
+                                    if (haveEffect[174] && lastbbb != 8 && lastbb != 8) {
                                       trg.baa = 8;
                                       lastbb = 8;
                                     } else {
-                                      if (ups[99] && lastbbb != 3 && lastbb != 3) {
+                                      if (haveEffect[99] && lastbbb != 3 && lastbb != 3) {
                                         trg.baa = 3;
                                         lastbb = 3;
                                       } else {
-                                        if (ups[113] && lastbbb != 5 && lastbb != 5) {
+                                        if (haveEffect[113] && lastbbb != 5 && lastbb != 5) {
                                           trg.baa = 5;
                                           lastbb = 5;
                                         } else {
-                                          if (ups[100] && lastbbb != 4 && lastbb != 4) {
+                                          if (haveEffect[100] && lastbbb != 4 && lastbb != 4) {
                                             trg.baa = 4;
                                             lastbb = 4;
                                           }
@@ -18511,7 +18511,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
 
       function slotf() {
         var v1 = 0;
-        if (ups[46]) {
+        if (haveEffect[46]) {
           v1 = 3 + random(15);
         } else {
           v1 = 3 + random(21);
@@ -18529,8 +18529,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         switch (f1) {
           case 3:
             if (random(3) == 0) {
-              _root.ups[10] += 0.5;
-              ups[10] = _root.ups[10];
+              _root.pickedUp[10] += 0.5;
+              haveEffect[10] = _root.pickedUp[10];
               displayCornerMessage('Pretty Fly');
               emo();
             } else {
@@ -18834,7 +18834,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       function deathscripts() {
         if (trg.s == 2 && trg.dones && !trg.wtfst) {
           trg.wtfst = true;
-          if (ups[104] && !trg.ba) {
+          if (haveEffect[104] && !trg.ba) {
             if (slugsp <= fra) {
               slugsp = fra + 5;
               xenf = trg.ybb;
@@ -18868,7 +18868,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                 trg3.d._yscale = trg2.d._yscale;
                 trg2.dmg = trg.dmg;
                 trg3.dmg = trg2.dmg;
-                if (ups[132]) {
+                if (haveEffect[132]) {
                   trg2.gro = trg.gro;
                   trg3.gro = trg2.gro;
                 }
@@ -19038,7 +19038,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   f1 = ' vs ' + f1[f0];
                 }
               }
-              displayBannerMessage(f4[_root.skiner] + f1);
+              displayBannerMessage(f4[_root.characterID] + f1);
             }
             if (trg.dones && helpss == 0 && !minsber) {
               minsber = true;
@@ -19067,7 +19067,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                 if (random(4) == 0 or trg.minb == 2 && random(7) == 0) {
                   f2 = true;
                 }
-                if (f2 && !_root.ups[f1[f0 + 1]]) {
+                if (f2 && !_root.pickedUp[f1[f0 + 1]]) {
                   f0 = f1[f0 + 1];
                   f0 = 5.1 + f0 / 10000;
                 } else {
@@ -19274,7 +19274,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       trg.ggh = false;
                     }
                   }
-                  if (ups[5] && !trg.ba) {
+                  if (haveEffect[5] && !trg.ba) {
                     trg2 = player;
                     enf = enfcheck(trg.xp, trg.yp, trg2.xp, trg2.yp, 500);
                     enf = 0.6 / enf;
@@ -19284,14 +19284,14 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     trg.ybew *= 0.98;
                     trg.fd = -0.045;
                   }
-                  if (ups[132] && !trg.ba && !ups[114]) {
+                  if (haveEffect[132] && !trg.ba && !haveEffect[114]) {
                     if (trg.gro++ < 150) {
                       trg.dmg += 0.14;
                       trg.d._xscale += 1;
                       trg.d._yscale += 1;
                     }
                   }
-                  if (ups[3] && !trg.ba or trg.ba == 4 or trg.ba == 11) {
+                  if (haveEffect[3] && !trg.ba or trg.ba == 4 or trg.ba == 11) {
                     if (trg.trg2 == undefined or trg.trg2.dones or trg.trg2.xp <= 0) {
                       if ((fra + trg.e) % 9 == 0) {
                         f1 = trg.xp + trg.xbew * 5;
@@ -19334,7 +19334,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                               enf = 2 / enf;
                               trg.xbew -= xenf * enf;
                               trg.ybew -= yenf * enf;
-                              if (ups[182] && !trg.ba) {
+                              if (haveEffect[182] && !trg.ba) {
                                 trg.xbew *= 0.7;
                                 trg.ybew *= 0.7;
                               } else {
@@ -19347,7 +19347,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       }
                     }
                   }
-                  if (ups[59] && trg.trg2 == undefined && !trg.ba) {
+                  if (haveEffect[59] && trg.trg2 == undefined && !trg.ba) {
                     outgrid(ingrid(trg.xp, trg.yp));
                     trg.nuts *= 0.5;
                     if (trg.dir) {
@@ -19491,7 +19491,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     trg.ybew = 0;
                   }
                   if (trg.d._currentframe == 15) {
-                    if (ups[64] && (trg.d.d._currentframe < 5 or trg.d.d._currentframe == 12 or trg.d.d._currentframe == 13)) {
+                    if (haveEffect[64] && (trg.d.d._currentframe < 5 or trg.d.d._currentframe == 12 or trg.d.d._currentframe == 13)) {
                       f1 = trg.d.d.d._currentframe;
                       trg.d.d.gotoAndStop(trg.d.d._currentframe + 4);
                       trg.d.d.d.gotoAndStop(f1);
@@ -19526,7 +19526,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       } else {
                         if (f1 == 37) {
                           if (trg.col == 31) {
-                            if (random(4 - ups[46]) == 0) {
+                            if (random(4 - haveEffect[46]) == 0) {
                               trg.d.d.gotoAndStop(38);
                             } else {
                               trg.d.d.gotoAndStop(36);
@@ -19535,7 +19535,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                             trg.wtf = false;
                           } else {
                             if (trg.col++ > random(2) + random(4) + random(4)) {
-                              if (ups[46]) {
+                              if (haveEffect[46]) {
                                 ++trg.col;
                               }
                               trg.col = 2 + random(2);
@@ -19575,7 +19575,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                         f2 = 0;
                         f12 = 1;
                         if (trg.col == 41 && f1 > 2 && f1 < 24) {
-                          f1 = 0.65 - ups[46];
+                          f1 = 0.65 - haveEffect[46];
                           if (Math.random() < f1) {
                             f1 = ['Look to la Luna', 'Don\'t Leave The House Today', 'We will all die one day', 'You are throwing your life away', 'Go outside!', 'Give Up!', 'You will die alone', 'Ask again later', 'WAKE UP', 'you are worshiping a sun god', 'Stay asleep', 'Marry and Reproduce', 'Question authority', 'think for yourself', 'Steven lives', 'Bring him the photo'];
                             displayBannerMessage(f1[random(f1.length)]);
@@ -19608,7 +19608,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                             case 43:
                             case 44:
                             case 45:
-                              if (random(3) == 0 or random(3) == 0 && ups[46]) {
+                              if (random(3) == 0 or random(3) == 0 && haveEffect[46]) {
                                 f2 = 5.01 + trg.itt * 0.01;
                                 if (f2 == 5.02) {
                                   f12 = 2 + random(2);
@@ -19674,7 +19674,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                               } else {
                                 f2 = 5.02;
                                 f12 = Math.max(1, random(3));
-                                if (ups[75]) {
+                                if (haveEffect[75]) {
                                   ++f12;
                                 }
                                 _root.soundy('bloodbank spawn' + random(2) + '.wav', 90);
@@ -19757,7 +19757,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                                 } else {
                                   if (trg.col == 1) {
                                     trg2.it = 119;
-                                    if (random(2) == 0 && !ups[135]) {
+                                    if (random(2) == 0 && !haveEffect[135]) {
                                       trg2.it = 135;
                                     }
                                     trg2.alt = 3;
@@ -19939,7 +19939,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                           }
                         }
                       }
-                      if (ups[125] or ups[52] && ups[3]) {
+                      if (haveEffect[125] or haveEffect[52] && haveEffect[3]) {
                         if (trg.trg2 == undefined or trg.trg2.dones or trg.trg2.xp <= 0) {
                           if (fra % 3 == 0) {
                             f1 = trg.xp + trg.xbew * 5;
@@ -20060,7 +20060,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       if (trgnextd(trg.d.hx.d)) {
                         trg.d.gotoAndStop(1);
                       }
-                      if (!ups[9]) {
+                      if (!haveEffect[9]) {
                         firemode(200, 4);
                       }
                       if (trg.fire > 0) {
@@ -20100,16 +20100,16 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     case 61:
                       trg.outway = fra % 2 == 0;
                       if (fra % 3 == 0) {
-                        if (ups[9] && trg.s == 18 && !trg.duke) {
+                        if (haveEffect[9] && trg.s == 18 && !trg.duke) {
                           trg.s = 13;
                           attach(trg, 13);
                           trg.ggh = true;
                         }
-                        if (ups[9] && trg.s == 80) {
+                        if (haveEffect[9] && trg.s == 80) {
                           trg.s = 13;
                         }
                         if (!trg.duke) {
-                          if (trg.s == 18 or trg.s == 61 or ups[9] or trg.s == 80) {
+                          if (trg.s == 18 or trg.s == 61 or haveEffect[9] or trg.s == 80) {
                             trg.goshit = 1;
                           } else {
                             f1 = trg.xp + crand(Math.random() * Math.random() * 240);
@@ -20125,7 +20125,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       if (trg.goshit > 0 && fra % 2 == 0) {
                         outgrid(trg.goshit);
                         v1 = 30;
-                        if (trg.s == 18 or trg.s == 61 or trg.s == 80 or ups[9]) {
+                        if (trg.s == 18 or trg.s == 61 or trg.s == 80 or haveEffect[9]) {
                           xenf = player.xp;
                           yenf = player.yp;
                           v1 = 25;
@@ -20542,7 +20542,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             if (trg.alter == 2) {
               trg.nobomb = true;
             }
-            if (ups[9]) {
+            if (haveEffect[9]) {
               f1 = 0.25;
             } else {
               f1 = 0.45;
@@ -26562,7 +26562,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               }
             }
             if (trg.s == 2) {
-              trgdy(!trg.piss && !ups[149]);
+              trgdy(!trg.piss && !haveEffect[149]);
             } else {
               if (trg.s == 7 or trg.s == 8 or trg.s == 9) {
                 trgdy();
@@ -26688,7 +26688,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         if (!f50) {
           lsou();
         }
-        if ((fra + trg.e) % 2 == 0 or trg == player && ups[118] or f50) {
+        if ((fra + trg.e) % 2 == 0 or trg == player && haveEffect[118] or f50) {
           if (f50) {
             f1 = trg.xp;
             f2 = trg.yp;
@@ -26698,7 +26698,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               f1 += trg.xpp * 10;
               f2 += trg.ypp * 10;
               f3 = ingrid(f1, f2);
-              if (levz[f3] >= 1 && levz[f3] != 3 && (!ups[115] or !ups[68]) or f2 < 140 or f2 > 440 or f1 > 615 or f1 < 40) {
+              if (levz[f3] >= 1 && levz[f3] != 3 && (!haveEffect[115] or !haveEffect[68]) or f2 < 140 or f2 > 440 or f1 > 615 or f1 < 40) {
                 lass = i;
                 i = 1000;
               }
@@ -26709,16 +26709,16 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           }
           if (f50 != 2) {
             lassd = dmgdo();
-            if (ups[2]) {
+            if (haveEffect[2]) {
               lassd *= 3;
             }
-            if (ups[132]) {
+            if (haveEffect[132]) {
               lassd += 2;
             }
             if (brim) {
               lass = 10000;
               lassd *= 3;
-              if (ups[69]) {
+              if (haveEffect[69]) {
                 v111 = Math.max(0.1, Math.min(1, (fra - lchaf) / 60));
                 lassd *= v111;
               }
@@ -26761,7 +26761,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   if (trg2 == player) {
                     playerhurt(0.5, trg.s);
                   } else {
-                    if (f50 or !f50 && trg == player && ups[118]) {
+                    if (f50 or !f50 && trg == player && haveEffect[118]) {
                       if (enfget(xenf, yenf) - 20 < lass) {
                         hurt(trg2, lassd);
                         spidcol(trg2);
@@ -26793,7 +26793,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         if (keypoww > 0) {
           keypoww -= 0.2;
         }
-        if (_root.keys > 0 or _root.kep or ups[60] or demon > 0 or _root.coins > 0 or unic > 0 or _root.notch) {
+        if (_root.keys > 0 or _root.kep or haveEffect[60] or demon > 0 or _root.coins > 0 or unic > 0 or _root.notch) {
           f1 = roxx / enfget(player.xbew, player.ybew);
           f3 = ingrid(player.xp + player.xbew * f1, player.yp + player.ybew * f1);
           outgrid(f3);
@@ -26815,7 +26815,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           }
           if (_root.notch && f10) {
             _root.notch = false;
-            _root.itc = 0;
+            _root.itemCharges = 0;
             player.d.gotoAndStop(11);
             player.it = 147;
             player.d.d.d.it.d.gotoAndStop(player.it);
@@ -26841,7 +26841,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               }
             }
           }
-          if (levz[f3] == 3 && ups[60]) {
+          if (levz[f3] == 3 && haveEffect[60]) {
             if (ladder != ingrid(player.xp, player.yp)) {
               if (Math.abs(trg.xbew) < Math.abs(trg.ybew)) {
                 if (f3 != alad) {
@@ -26969,11 +26969,11 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       }
 
       function piller() {
-        f10 = !ups[46] && !ups[75];
+        f10 = !haveEffect[46] && !haveEffect[75];
         f1 = _root.piller[_root.pilc];
         while (f1 == undefined) {
-          if (f1 == undefined or f1 == 3 && ups[75] or f1 == 6 && (!f10 or player.hp < 1)) {
-            if ((player.hp < player.mhp or _root.skiner == 4 && _root.armor < 3) && random(10) == 0) {
+          if (f1 == undefined or f1 == 3 && haveEffect[75] or f1 == 6 && (!f10 or player.hp < 1)) {
+            if ((player.hp < player.mhp or _root.characterID == 4 && _root.armor < 3) && random(10) == 0) {
               f1 = 1;
             } else {
               if (random(13) == 0) {
@@ -26985,10 +26985,10 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   if (random(17) == 0) {
                     f1 = 14 + random(2) * 0.2;
                   } else {
-                    if (random(15) == 0 && !ups[75]) {
+                    if (random(15) == 0 && !haveEffect[75]) {
                       f1 = 2;
                     } else {
-                      if (random(10) == 0 && !ups) {
+                      if (random(10) == 0 && !haveEffect) {
                         f1 = 3;
                       } else {
                         if (random(10) == 0) {
@@ -27006,13 +27006,13 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                                 if (random(6) == 0 && (_root.bombs > 0 or _root.keys > 0)) {
                                   f1 = 8;
                                 } else {
-                                  if (random(5) == 0 or random(4) == 0 && ups) {
+                                  if (random(5) == 0 or random(4) == 0 && haveEffect) {
                                     f1 = 9 + random(2) * 0.2;
                                   } else {
                                     if (random(3) == 0) {
                                       f1 = 10 + random(2) * 0.2;
                                     } else {
-                                      if (random(3) == 0 or ups[75]) {
+                                      if (random(3) == 0 or haveEffect[75]) {
                                         f1 = 11 + random(2) * 0.2;
                                       } else {
                                         f1 = 126;
@@ -27066,8 +27066,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           playx = f2;
           playy = f3;
         }
-        if (fra < 10 && (player.hp < 1 && _root.skiner != 4 or _root.armor < 1 && _root.skiner == 4)) {
-          if (_root.skiner == 5) {
+        if (fra < 10 && (player.hp < 1 && _root.characterID != 4 or _root.armor < 1 && _root.characterID == 4)) {
+          if (_root.characterID == 5) {
             splater(trg.xp, trg.yp, random(10) + 1, 0.3 + Math.random() * 0.5);
           } else {
             splater(trg.xp, trg.yp, random(10) + 20, 0.3 + Math.random() * 0.5);
@@ -27094,19 +27094,19 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             bomf.push([drop.xp, drop.yp, 4]);
             drop.done = true;
           }
-          if (ups[168]) {
+          if (haveEffect[168]) {
             player.fire = 10;
           }
         }
         trg2 = player;
-        if (random(4) == 0 && ups[189]) {
+        if (random(4) == 0 && haveEffect[189]) {
           splater(trg2.xp, trg2.yp + 5, 1 + random(10), Math.random() * 0.5 + 0.3);
         }
         for (a in ball) {
           trg = ball[a];
           siz = 270;
           if (trg.s == 5) {
-            if (ups[53] or trg.d._currentframe == 4 && trg.col == 5) {
+            if (haveEffect[53] or trg.d._currentframe == 4 && trg.col == 5) {
               if (!trg.empty && trg.d._currentframe <= 4 && trg.bh && (trg.d._currentframe != 1 or trg.col == 3 or player.hp < player.mhp)) {
                 if (enfcheck(trg2.xp, trg2.yp, trg.xp, trg.yp, siz)) {
                   enf = 0.5 / enf;
@@ -27354,8 +27354,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   case 27:
                     _root.over.gotoAndStop(15);
                     player.hp = 1000;
-                    ups[54] = true;
-                    ups[21] = ups[54];
+                    haveEffect[54] = true;
+                    haveEffect[21] = haveEffect[54];
                     _root.world = true;
                     mapd();
                     for (e in ball) {
@@ -27365,7 +27365,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     break;
                   case 26:
                     curs();
-                    ups[122] = 1.5;
+                    haveEffect[122] = 1.5;
                     break;
                   case 25:
                     f1 = 0;
@@ -27396,8 +27396,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     spaw(player.xp, player.yp, 45, 5.04);
                     break;
                   case 19:
-                    ups[54] = true;
-                    ups[21] = ups[54];
+                    haveEffect[54] = true;
+                    haveEffect[21] = haveEffect[54];
                     _root.world = true;
                     mapd();
                     break;
@@ -27458,14 +27458,14 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     break;
                   case 10:
                     ++player.hp;
-                    ++ups[12];
+                    ++haveEffect[12];
                     break;
                   case 11:
                     teller();
                     tar = 35;
                     break;
                   case 12:
-                    ++ups[3];
+                    ++haveEffect[3];
                     break;
                   case 13:
                     teller();
@@ -27477,7 +27477,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     tar = _root.hide;
                     break;
                   case 15:
-                    ++ups[20];
+                    ++haveEffect[20];
                 }
               } else {
                 piller();
@@ -27506,7 +27506,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       displayCornerMessage('Bad Trip!');
                     } else {
                     case 1:
-                      if (_root.skiner == 4) {
+                      if (_root.characterID == 4) {
                         if (_root.armor < 3) {
                           _root.armor = 3;
                         }
@@ -27543,38 +27543,38 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       emo();
                       break;
                     case 5:
-                      _root.ups[10] += 0.5;
-                      ups[10] = _root.ups[10];
+                      _root.pickedUp[10] += 0.5;
+                      haveEffect[10] = _root.pickedUp[10];
                       displayCornerMessage('Pretty Fly');
                       goodpill();
                       emo();
                       break;
                     case 7:
-                      if (_root.skiner != 4) {
+                      if (_root.characterID != 4) {
                         f13 = player.mhp;
                       } else {
                         f13 = _root.armor;
                       }
                       if (f13 <= 1 or f2) {
                         displayCornerMessage('Health Up');
-                        if (_root.skiner == 4) {
+                        if (_root.characterID == 4) {
                           ++_root.armor;
                         } else {
-                          ++_root.ups[15];
+                          ++_root.pickedUp[15];
                         }
                         pilcol(100, 50, 50);
                         goodpill();
                         emo();
                       } else {
-                        if (_root.skiner == 4) {
+                        if (_root.characterID == 4) {
                           --_root.armor;
                         } else {
-                          --_root.ups[15];
+                          --_root.pickedUp[15];
                         }
                         displayCornerMessage('Health Down');
                         emo(true);
                       }
-                      ups[15] = _root.ups[15];
+                      haveEffect[15] = _root.pickedUp[15];
                       break;
                     case 8:
                       f1 = _root.bombs;
@@ -27585,45 +27585,45 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       break;
                     case 9:
                       if (f2) {
-                        _root.ups[32] += 0.5;
+                        _root.pickedUp[32] += 0.5;
                         displayCornerMessage('Tears Up');
                         pilcol(80, 80, 100);
                         goodpill();
                         emo();
                       } else {
-                        _root.ups[32] -= 0.4;
+                        _root.pickedUp[32] -= 0.4;
                         displayCornerMessage('Tears Down');
                         emo(true);
                       }
-                      ups[32] = _root.ups[32];
+                      haveEffect[32] = _root.pickedUp[32];
                       break;
                     case 10:
-                      if (f2 or ups[6] && _root.chaps < 8) {
-                        _root.ups[31] += 0.5;
+                      if (f2 or haveEffect[6] && _root.chaps < 8) {
+                        _root.pickedUp[31] += 0.5;
                         displayCornerMessage('Range Up');
                         pilcol(50, 100, 100);
                         emo();
                         goodpill();
                       } else {
-                        _root.ups[31] -= 0.4;
+                        _root.pickedUp[31] -= 0.4;
                         displayCornerMessage('Range Down');
                         emo(true);
                       }
-                      ups[31] = _root.ups[31];
+                      haveEffect[31] = _root.pickedUp[31];
                       break;
                     case 11:
                       if (f2) {
-                        ++_root.ups[27];
+                        ++_root.pickedUp[27];
                         displayCornerMessage('Speed Up');
                         pilcol(100, 100, 50);
                         goodpill();
                         emo();
                       } else {
-                        _root.ups[27] -= 0.8;
+                        _root.pickedUp[27] -= 0.8;
                         displayCornerMessage('Speed Down');
                         emo(true);
                       }
-                      ups[27] = _root.ups[27];
+                      haveEffect[27] = _root.pickedUp[27];
                       break;
                     case 12:
                       fart();
@@ -27651,7 +27651,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             if (spac && (fra > 30 or _root.it == 90 && _root.lev != _root.bossl2 && _root.lev != _root.bossl && _root.lev != 35) && player._visible) {
               if (!nosp) {
                 nosp = true;
-                if (_root.it > 0 && _root.itc >= 1) {
+                if (_root.it > 0 && _root.itemCharges >= 1) {
                   doit = true;
                   showit = true;
                   pacman = false;
@@ -27668,7 +27668,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   }
                   switch (_root.it) {
                     case 152:
-                      ups[3] = 1;
+                      haveEffect[3] = 1;
                       break;
                     case 146:
                       ader();
@@ -27748,8 +27748,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       showit = false;
                       break;
                     case 118:
-                      ups[54] = true;
-                      ups[21] = ups[54];
+                      haveEffect[54] = true;
+                      haveEffect[21] = haveEffect[54];
                       _root.world = true;
                       mapd();
                       if (random(2) == 0) {
@@ -27780,7 +27780,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     case 95:
                       ader();
                       f12 = Math.max(1, random(3));
-                      if (ups[75]) {
+                      if (haveEffect[75]) {
                         ++f12;
                       }
                       f11 = 0;
@@ -27793,9 +27793,9 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     case 93:
                       if (player.mhp > 0) {
                         _root.armor += 3;
-                        --_root.ups[22];
+                        --_root.pickedUp[22];
                         player.hp = Math.max(player.hp - 1, 0.5);
-                        --ups[22];
+                        --haveEffect[22];
                         _root.soundy('Vamp_Gulp.mp');
                       } else {
                         showit = false;
@@ -27812,16 +27812,16 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       _root.soundy('satan grow.mp', 70);
                       f1 = [8, 73, 10, 57, 67, 88, 95, 99, 100, 112, 113, 128];
                       for (e in f1) {
-                        if (ups[f1[e]]) {
+                        if (haveEffect[f1[e]]) {
                           f1.splice(e, 1);
                         }
                       }
                       if (f1.length > 0) {
                         f1 = f1[random(f1.length)];
-                        ups[f1] = 1;
+                        haveEffect[f1] = 1;
                       }
                       if (f1 == 73) {
-                        ups[f1] = random(2) + 2;
+                        haveEffect[f1] = random(2) + 2;
                       }
                       displayCornerMessage(_root.st1[f1]);
                       _root.over.gotoAndStop(12);
@@ -27868,7 +27868,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       fart();
                       break;
                     case 67:
-                      ++ups[20];
+                      ++haveEffect[20];
                       bodd = true;
                       _root.soundy('bloodbank spawn1.wav', 300);
                       break;
@@ -27876,7 +27876,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       for (a in ball) {
                         trg2 = ball[a];
                         if (trg2.s == 5 && trg2.it && !trg2.empty) {
-                          trg2.it = giveit();
+                          trg2.it = GenerateItem();
                           if (trg2.d._currentframe == 10) {
                             trg2.d.d.gotoAndPlay(1);
                           }
@@ -28088,11 +28088,11 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     player.d.d.d.it.d.gotoAndStop(player.it);
                     player.d.d.d.it.d.p.gotoAndStop(player.pilc);
                   }
-                  if (itc[_root.it] > 0 && doit) {
-                    if (ups[116]) {
-                      _root.itc = 0.334;
+                  if (itemChargeRates[_root.it] > 0 && doit) {
+                    if (haveEffect[116]) {
+                      _root.itemCharges = 0.334;
                     } else {
-                      _root.itc = 0;
+                      _root.itemCharges = 0;
                     }
                     nocharge = 10;
                   }
@@ -28107,24 +28107,24 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             }
           }
           f1 = _root.bmode;
-          if (demon > 0 or ups[122]) {
+          if (demon > 0 or haveEffect[122]) {
             sk = 7;
           } else {
             sk = _root.sk;
           }
-          if (ups[20]) {
+          if (haveEffect[20]) {
             f1 = 3;
             trg.flyby = true;
           }
-          if (ups[82]) {
+          if (haveEffect[82]) {
             f1 = 9;
             trg.flyby = true;
           }
-          if (bible or ups[179] or ups[184]) {
+          if (bible or haveEffect[179] or haveEffect[184]) {
             f1 = 12;
             trg.flyby = true;
           }
-          if (ups[185]) {
+          if (haveEffect[185]) {
             f1 = 23;
             trg.flyby = true;
           }
@@ -28140,10 +28140,10 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               _root.bmode = 13;
             }
           }
-          if (_root.it == 8 && !ups[20]) {
+          if (_root.it == 8 && !haveEffect[20]) {
             f1 = 2;
           }
-          if (ups[159]) {
+          if (haveEffect[159]) {
             f1 = 22;
             trg.flyby = true;
           }
@@ -28158,7 +28158,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               }
             }
           }
-          if (razor > 0 or ups[189]) {
+          if (razor > 0 or haveEffect[189]) {
             if (trg.flyby) {
               f1 = 3;
             } else {
@@ -28218,7 +28218,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               yenf = 0;
             }
           }
-          if (ups[114]) {
+          if (haveEffect[114]) {
             xxenf = xenf;
             yyenf = yenf;
           }
@@ -28252,7 +28252,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           v1 = plo;
           if (laser <= 1) {
             if (xenf != 0 or yenf != 0) {
-              if (plox <= 8 && (!ups[118] or trg.fire <= 0 or chaf == undefined or _root.bombnext)) {
+              if (plox <= 8 && (!haveEffect[118] or trg.fire <= 0 or chaf == undefined or _root.bombnext)) {
                 if (Math.abs(xenf) > Math.abs(yenf)) {
                   yenf = 0;
                   if (xenf > 0) {
@@ -28282,7 +28282,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               ++laser;
             }
           }
-          if (ups[68] && plox > 8) {
+          if (haveEffect[68] && plox > 8) {
             plo = v1;
           }
           if (laser > 1) {
@@ -28299,7 +28299,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             yenf = 0;
             xenf = 0;
           }
-          if (ups[114] && !_root.bombnext) {
+          if (haveEffect[114] && !_root.bombnext) {
             if (knil == undefined) {
               knil = 23;
               knill = 0;
@@ -28311,7 +28311,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             if (_root.knif == undefined) {
               _root.knif = 0;
             }
-            if (ups[114]) {
+            if (haveEffect[114]) {
               f1 = xxenf;
               f2 = yyenf;
               xxenf = xenf;
@@ -28382,7 +28382,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             yenf = 0;
             xenf = 0;
           }
-          if (ups[118] && trg.d.d.d.d._currentframe > 4) {
+          if (haveEffect[118] && trg.d.d.d.d._currentframe > 4) {
             trg.d.d.d.d.z.nextFrame();
             if (trg.d.d.d.d.z._currentframe == 4 or trg.d.d.d.d.z._currentframe == 11) {
               brim = true;
@@ -28399,21 +28399,21 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             f1 = 8;
             f2 = 8;
           }
-          if (ups[3] && !_root.ups[3]) {
+          if (haveEffect[3] && !_root.pickedUp[3]) {
             f1 = 4;
             f2 = 4;
           }
-          if (sk != 5 && ups[69]) {
+          if (sk != 5 && haveEffect[69]) {
             f2 = 17;
           }
-          if (ups[122]) {
+          if (haveEffect[122]) {
             f2 = 30;
           } else {
             if (sk == 7) {
-              if (ups[159]) {
+              if (haveEffect[159]) {
                 f2 = 39;
               } else {
-                if (ups[80]) {
+                if (haveEffect[80]) {
                   f2 = 20;
                 } else {
                   f2 = 22;
@@ -28421,13 +28421,13 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               }
             }
           }
-          if (ups[149]) {
+          if (haveEffect[149]) {
             f2 = 36;
           }
           if (razor > 0) {
             f2 = 29;
           }
-          if (ups[189]) {
+          if (haveEffect[189]) {
             f2 = 42;
           }
           if (purr) {
@@ -28436,7 +28436,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           if (demon > 0) {
             f2 = 21;
           }
-          if (ups[68]) {
+          if (haveEffect[68]) {
             if (sk == 5) {
               f2 = 28;
             } else {
@@ -28448,7 +28448,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             }
             f1 = 12;
           }
-          if (ups[118]) {
+          if (haveEffect[118]) {
             f2 = 31;
           }
           if (laser) {
@@ -28466,9 +28466,9 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           if (trg.d._currentframe == 1 or _root.bombnext) {
             _root.tex = chaaf;
             _root.hud.weap.gotoAndStop(f1);
-            if (Math.abs(xenf) < 0.5 && Math.abs(yenf) < 0.5 && !kkk && (ups[69] or ups[118]) && !_root.bombnext) {
+            if (Math.abs(xenf) < 0.5 && Math.abs(yenf) < 0.5 && !kkk && (haveEffect[69] or haveEffect[118]) && !_root.bombnext) {
               if (chaf > -1000 && Math.abs(chax) + Math.abs(chay) > 0) {
-                if (chaaf > 4.7 or ups[69]) {
+                if (chaaf > 4.7 or haveEffect[69]) {
                   chaz = true;
                   xenf = chax;
                   yenf = chay;
@@ -28497,13 +28497,13 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               } else {
                 plxx = trg.d.d.d.d._x;
               }
-              if (Math.abs(xenf) > 0.5 or Math.abs(yenf) > 0.5 or ups[114] && (xxenf != 0 or yyenf != 0)) {
+              if (Math.abs(xenf) > 0.5 or Math.abs(yenf) > 0.5 or haveEffect[114] && (xxenf != 0 or yyenf != 0)) {
                 plff();
               } else {
-                if (plox < 0 && laser <= 1 && !ups[118]) {
+                if (plox < 0 && laser <= 1 && !haveEffect[118]) {
                   plo = 1;
                 }
-                if (!ups[118] or trg.fire < 4) {
+                if (!haveEffect[118] or trg.fire < 4) {
                   trg.d.d.d.d.gotoAndStop(plo);
                 }
               }
@@ -28518,43 +28518,43 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   trg.d.d.d.d.d.gotoAndStop(chaaf);
                 }
               } else {
-                if (_root.hmode == 17 or ups[118]) {
+                if (_root.hmode == 17 or haveEffect[118]) {
                   if (plox > 8) {
                     trg.d.d.d.d.gotoAndStop(plo + 4);
                   }
                 }
               }
-              if (ups[68]) {
-                ups[103] = _root.ups[103];
-                if (trixx(30)) {
+              if (haveEffect[68]) {
+                haveEffect[103] = _root.pickedUp[103];
+                if (haveTrinket(30)) {
                   if (random(10) == 0) {
-                    ups[103] = 0;
+                    haveEffect[103] = 0;
                   }
                 }
                 trg2 = player.d.d.d.d.l;
-                if (ups[115]) {
+                if (haveEffect[115]) {
                   colorit(trg2, 1.5, 2, 2, 0, 0, 0);
                   trg2._alpha = 50;
                 } else {
-                  if (ups[103]) {
+                  if (haveEffect[103]) {
                     colorit(trg2, 0.4, 0.97, 0.5, 0, 150, 0);
                   } else {
-                    if (ups[104]) {
+                    if (haveEffect[104]) {
                       colorit(trg2, 1, 0.4, 0.13, 30, 0, 0);
                     } else {
-                      if (ups[89]) {
+                      if (haveEffect[89]) {
                         colorit(trg2, 3, 3, 3, 150, 150, 150);
                       } else {
-                        if (ups[90]) {
+                        if (haveEffect[90]) {
                           colorit(trg2, 0.4, 0.4, 0.4, 100, 100, 100);
                         } else {
-                          if (ups[69]) {
+                          if (haveEffect[69]) {
                             colorit(trg2, 0.33, 0.18, 0.18, 66, 40, 40);
                           } else {
-                            if (ups[6]) {
+                            if (haveEffect[6]) {
                               colorit(trg2, 0.2, 1, 0, 255, 255, 0);
                             } else {
-                              if (ups[3]) {
+                              if (haveEffect[3]) {
                                 colorit(trg2, 0.4, 0.15, 0.38, 90, 0, 180);
                               }
                             }
@@ -28605,27 +28605,27 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               horse = undefined;
             }
           }
-          f1 = 100 + (ups[12] - ups[71] + ups[122]) * 25;
+          f1 = 100 + (haveEffect[12] - haveEffect[71] + haveEffect[122]) * 25;
           if (demon > 0) {
             f1 += 25;
           }
-          if (ups[157]) {
+          if (haveEffect[157]) {
             f1 += (rag - 1) * 14;
           }
           trg._yscale = f1;
           trg._xscale = trg._yscale;
           if (trg.d._currentframe == 1) {
-            f1 = 100 + (ups[121] - ups[120]) * 20;
+            f1 = 100 + (haveEffect[121] - haveEffect[120]) * 20;
             trg.d.d._yscale = f1;
             trg.d.d._xscale = trg.d.d._yscale;
           }
           f10 = [0, -0.15, 0.3, 0, 0.1, 0.23, 0.1];
           f1 = 1;
-          _root.playsp = 1 + Math.min(1, (ups[119] + ups[27] + ups[28] + ups[12] + ups[71] + ups[101] + ups[122] + ups[120] + ups[143]) * 0.3 + Math.min(1, ups[14]) * 0.6 - Math.min(1, ups[13] + ups[121]) * 0.1 + f10[_root.skiner] + ups[70] * 0.4 + ups[79] * 0.2 + ups[82] * 0.3) - (ups[90] + ups[129] + ups[189]) * 0.2;
+          _root.playsp = 1 + Math.min(1, (haveEffect[119] + haveEffect[27] + haveEffect[28] + haveEffect[12] + haveEffect[71] + haveEffect[101] + haveEffect[122] + haveEffect[120] + haveEffect[143]) * 0.3 + Math.min(1, haveEffect[14]) * 0.6 - Math.min(1, haveEffect[13] + haveEffect[121]) * 0.1 + f10[_root.characterID] + haveEffect[70] * 0.4 + haveEffect[79] * 0.2 + haveEffect[82] * 0.3) - (haveEffect[90] + haveEffect[129] + haveEffect[189]) * 0.2;
           if (unic > 0) {
             _root.playsp += 0.28;
           }
-          if (trixx(37)) {
+          if (haveTrinket(37)) {
             _root.playsp += 0.15;
           }
           if (demon > 0) {
@@ -28798,24 +28798,24 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       }
 
       function trixies(f3) {
-        if (trixx(34) or trixx(36) or trixx(41) or trixx(44) or trixx(45)) {
-          if (xox(f3) && trixx(45)) {
+        if (haveTrinket(34) or haveTrinket(36) or haveTrinket(41) or haveTrinket(44) or haveTrinket(45)) {
+          if (xox(f3) && haveTrinket(45)) {
             f2 = 5.3;
           } else {
-            if (xox(f3) && trixx(44)) {
+            if (xox(f3) && haveTrinket(44)) {
               f2 = 5.07;
             } else {
-              if (xox(f3) && trixx(41)) {
+              if (xox(f3) && haveTrinket(41)) {
                 f2 = 5.04;
               } else {
-                if (xox(f3) && trixx(36)) {
+                if (xox(f3) && haveTrinket(36)) {
                   if (random(2) == 0) {
                     f0 = 5.06;
                   } else {
                     f0 = 5.03;
                   }
                 } else {
-                  if (xox(f3) && trixx(34)) {
+                  if (xox(f3) && haveTrinket(34)) {
                     f2 = 5.01;
                   }
                 }
@@ -28865,7 +28865,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           if (f0 == 5.1) {
             v2.fra -= 15;
             trg.done = true;
-            if (trg == 2 && _root.SecretUnlocked[18] && !ups[90]) {
+            if (trg == 2 && _root.SecretUnlocked[18] && !haveEffect[90]) {
               v2.alt = false;
               v2.it = 90;
             }
@@ -28902,9 +28902,9 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         if (fra == 14 && curss) {
           displayBannerMessage(curss);
         }
-        if (ups[114]) {
-          ups[118] = 0;
-          ups[69] = 0;
+        if (haveEffect[114]) {
+          haveEffect[118] = 0;
+          haveEffect[69] = 0;
         }
         if (playfirst) {
           player.d.gotoAndStop(1);
@@ -28919,7 +28919,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             }
           }
           if (gameover > 1) {
-            if (!_root.ups[11] && _root.ups[81] <= 0 && !_root.ups[161]) {
+            if (!_root.pickedUp[11] && _root.pickedUp[81] <= 0 && !_root.pickedUp[161]) {
               if (!_root.dmusic) {
                 _root.dmusic = true;
                 _root.fade = true;
@@ -28927,47 +28927,47 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             }
             if (_root.prsk) {
               _root.sk = _root.prsk;
-              _root.skiner = _root.prsk2;
+              _root.characterID = _root.prsk2;
               _root.prsk = undefined;
               _root.prsk2 = undefined;
             }
           }
           if (gameover++ > 50) {
-            if (_root.ups[11] or _root.ups[81] > 0 or _root.ups[161]) {
+            if (_root.pickedUp[11] or _root.pickedUp[81] > 0 or _root.pickedUp[161]) {
               _root.armor = 0;
               if (ahsut <= 0) {
                 _root.beenlev[_root.lev] = false;
               }
               _root.shroom = true;
-              if (!_root.ups[11]) {
-                if (_root.skiner == 4) {
+              if (!_root.pickedUp[11]) {
+                if (_root.characterID == 4) {
                   _root.armor = 1;
-                  _root.ups[23] += -player.mhp;
+                  _root.pickedUp[23] += -player.mhp;
                 } else {
-                  _root.ups[23] += 1 - player.mhp;
+                  _root.pickedUp[23] += 1 - player.mhp;
                 }
-                if (!_root.ups[161]) {
+                if (!_root.pickedUp[161]) {
                   _root.shroom = 2;
-                  --_root.ups[81];
+                  --_root.pickedUp[81];
                 } else {
                   _root.shroom = 4;
-                  _root.ups[161] = 0;
-                  if (_root.skiner != 4) {
-                    --_root.ups[23];
+                  _root.pickedUp[161] = 0;
+                  if (_root.characterID != 4) {
+                    --_root.pickedUp[23];
                     hat(31);
                     _root.prsk = _root.sk;
-                    _root.prsk2 = _root.skiner;
-                    _root.skiner = 4;
+                    _root.prsk2 = _root.characterID;
+                    _root.characterID = 4;
                     _root.sk = 5;
                   }
                   _root.armor = 3;
                 }
               } else {
-                if (_root.skiner == 4) {
+                if (_root.characterID == 4) {
                   _root.armor = 3;
                 }
               }
-              _root.ups[11] = 0;
+              _root.pickedUp[11] = 0;
               _root.door = _root.door * 1 + 2;
               if (_root.door >= 4) {
                 _root.door -= 4;
@@ -28996,27 +28996,27 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                 lastk = 1;
               }
               _root.hud.paus.kill.gotoAndStop(Math.round(lastk));
-              _root.hud.paus.nam.gotoAndStop(Math.max(1, _root.skiner));
+              _root.hud.paus.nam.gotoAndStop(Math.max(1, _root.characterID));
               _root.hud.paus.loco.gotoAndStop(Math.max(1, _root.chaps));
               onEnterFrame = undefined;
             }
           }
         }
-        if (_root.catlives + ups[145] + ups[134] + ups[133] > 2) {
+        if (_root.catlives + haveEffect[145] + haveEffect[134] + haveEffect[133] > 2) {
           _root.SecretUnlocked[85] = true;
           purr = true;
         }
-        player.d.bub2._visible = ups[108] or ups[162] or ups[173] or ups[142] or ups[184];
-        if (ups[184]) {
+        player.d.bub2._visible = haveEffect[108] or haveEffect[162] or haveEffect[173] or haveEffect[142] or haveEffect[184];
+        if (haveEffect[184]) {
           player.d.bub2.gotoAndStop(5);
         } else {
-          if (ups[142]) {
+          if (haveEffect[142]) {
             player.d.bub2.gotoAndStop(2);
           } else {
-            if (ups[173]) {
+            if (haveEffect[173]) {
               player.d.bub2.gotoAndStop(3);
             } else {
-              if (ups[108]) {
+              if (haveEffect[108]) {
                 player.d.bub2.gotoAndStop(1);
               } else {
                 player.d.bub2.gotoAndStop(4);
@@ -29065,92 +29065,92 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           }
           bomf = [];
         }
-        if (ups[144] && !bumz) {
+        if (haveEffect[144] && !bumz) {
           bumz = true;
           trg2 = create(player.xp, player.yp - 10, 0, 0, 0, 0, 3);
           trg2.bum = true;
           trg2.flyby = true;
         }
-        if (ups[114] && knife == undefined && player.d._currentframe < 3) {
+        if (haveEffect[114] && knife == undefined && player.d._currentframe < 3) {
           trg = create(player.xp, player.yp - 10, 0, 0, 0, 0, 2);
           knife = trg;
           attach(trg, 501);
           trg.dy = undefined;
           trg.knife = true;
         }
-        if (ups[81] && !cats && player.d._currentframe < 3) {
+        if (haveEffect[81] && !cats && player.d._currentframe < 3) {
           cats = true;
           trg = create(player.xp, player.yp - 10, 0, 0, 0, 0, 3);
           trg.cat = true;
         }
-        if (ups[11] && !catss && player.d._currentframe < 3) {
+        if (haveEffect[11] && !catss && player.d._currentframe < 3) {
           catss = true;
           trg = create(player.xp, player.yp - 10, 0, 0, 0, 0, 3);
           trg.cat = 2;
         }
-        if (ups[94] && !monb && player.d._currentframe < 3) {
+        if (haveEffect[94] && !monb && player.d._currentframe < 3) {
           monb = true;
           trg = create(player.xp, player.yp - 10, 0, 0, 0, 0, 3);
           trg.mon = 1;
         }
-        if (ups[96] && !monb2 && player.d._currentframe < 3) {
+        if (haveEffect[96] && !monb2 && player.d._currentframe < 3) {
           monb2 = true;
           trg = create(player.xp, player.yp - 10, 0, 0, 0, 0, 3);
           trg.mon = 2;
         }
-        if (ups[98] && !monb3 && player.d._currentframe < 3) {
+        if (haveEffect[98] && !monb3 && player.d._currentframe < 3) {
           monb3 = true;
           trg = create(player.xp, player.yp - 10, 0, 0, 0, 0, 3);
           trg.mon = 3;
         }
-        if (ups[131] && !monb4 && player.d._currentframe < 3) {
+        if (haveEffect[131] && !monb4 && player.d._currentframe < 3) {
           monb4 = true;
           trg = create(player.xp, player.yp - 10, 0, 0, 0, 0, 3);
           trg.mon = 4;
         }
-        if (ups[73] && !meats && player.d._currentframe < 3) {
+        if (haveEffect[73] && !meats && player.d._currentframe < 3) {
           meats = true;
           trg = create(player.xp, player.yp - 10, 0, 0, 0, 0, 3);
           trg.meat = true;
         }
-        if (ups[73] > 4 && !meats2 && player.d._currentframe < 3) {
+        if (haveEffect[73] > 4 && !meats2 && player.d._currentframe < 3) {
           meats2 = true;
           trg = create(player.xp, player.yp - 10, 0, 0, 0, 0, 3);
           trg.meat = true;
           trg.me2 = true;
         }
-        if (Math.min(2, ups[112]) > flyby4 && player.d._currentframe < 3) {
+        if (Math.min(2, haveEffect[112]) > flyby4 && player.d._currentframe < 3) {
           ++flyby4;
           trg2 = create(player.xp, player.yp - 10, 0, 0, 0, 0, 3);
           trg2.ang = true;
         }
-        if (Math.min(3, ups[8] + ups[67] + ups[95] + ups[99] + ups[100] + ups[113] + ups[163] + ups[167] + ups[174] + ups[188]) > minions && player.d._currentframe < 3) {
+        if (Math.min(3, haveEffect[8] + haveEffect[67] + haveEffect[95] + haveEffect[99] + haveEffect[100] + haveEffect[113] + haveEffect[163] + haveEffect[167] + haveEffect[174] + haveEffect[188]) > minions && player.d._currentframe < 3) {
           ++minions;
           create(player.xp, player.yp - 10, 0, 0, 0, 0, 3);
         }
-        if (ups[155] && player.d._currentframe < 3 && !eyepie) {
+        if (haveEffect[155] && player.d._currentframe < 3 && !eyepie) {
           eyepie = true;
           trg2 = create(player.xp, player.yp - 10, 0, crand(10), crand(10), 0, 3);
           trg2.eye = true;
         }
-        if (ups[187] && player.d._currentframe < 3 && !hairb) {
+        if (haveEffect[187] && player.d._currentframe < 3 && !hairb) {
           hairb = true;
           trg2 = create(player.xp, player.yp - 10, 0, crand(10), crand(10), 0, 3);
           trg2.hairb = true;
         }
-        if (ups[178] && player.d._currentframe < 3 && !holp) {
+        if (haveEffect[178] && player.d._currentframe < 3 && !holp) {
           holp = true;
           trg2 = create(player.xp, player.yp - 10, 0, crand(10), crand(10), 0, 3);
           trg2.hol = true;
           holz = trg2;
         }
-        if (ups[172] && player.d._currentframe < 3 && !knip) {
+        if (haveEffect[172] && player.d._currentframe < 3 && !knip) {
           knip = true;
           trg2 = create(player.xp, player.yp - 10, 0, crand(10), crand(10), 0, 3);
           trg2.ni = true;
         }
-        if (ups[117] == 0.55) {
-          ups[117] = 0;
+        if (haveEffect[117] == 0.55) {
+          haveEffect[117] = 0;
           trg2 = create(player.xp, player.yp - 10, 0, 0, 0, 0, 3);
           trg2.bird = true;
         }
@@ -29159,25 +29159,25 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           trg2 = create(player.xp, player.yp - 10, 0, 0, 0, 0, 3);
           trg2.bird = 2;
         }
-        if (trixx(57) && ggho == undefined && player.d._currentframe < 3) {
+        if (haveTrinket(57) && ggho == undefined && player.d._currentframe < 3) {
           trg2 = create(player.xp, player.yp - 10, 0, 0, 0, 0, 3);
           ggho = trg2;
           trg2.ggho = true;
         }
-        if (!trixx(57) && ggho) {
+        if (!haveTrinket(57) && ggho) {
           ggho.done = true;
           ggho = undefined;
         }
-        if (trixx(54) && ggho2 == undefined && player.d._currentframe < 3) {
+        if (haveTrinket(54) && ggho2 == undefined && player.d._currentframe < 3) {
           trg2 = create(player.xp, player.yp - 10, 0, 0, 0, 0, 3);
           ggho2 = trg2;
           trg2.ggho = 2;
         }
-        if (!trixx(54) && ggho2) {
+        if (!haveTrinket(54) && ggho2) {
           ggho2.done = true;
           ggho2 = undefined;
         }
-        if (ups[170] && !dad) {
+        if (haveEffect[170] && !dad) {
           dad = true;
           trg2 = create(player.xp, player.yp - 10, 0, 0, 0, 0, 3);
           trg2.dad = true;
@@ -29190,24 +29190,24 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           trg2.meat = 5;
           colorit(trg2, _root.playcol[0], _root.playcol[1], _root.playcol[2], 0, 0, 0);
         }
-        if (Math.min(3, ups[10] * 2) > flyby && player.d._currentframe < 3) {
+        if (Math.min(3, haveEffect[10] * 2) > flyby && player.d._currentframe < 3) {
           ++flyby;
           trg = create(player.xp, player.yp, 0, 0, 0, 0, 3);
           trg.fly = true;
         }
-        if (Math.min(1, ups[57]) > flyby2 && player.d._currentframe < 3) {
+        if (Math.min(1, haveEffect[57]) > flyby2 && player.d._currentframe < 3) {
           ++flyby2;
           trg = create(player.xp, player.yp, 0, 0, 0, 0, 3);
           trg.fly = true;
           trg.alt = true;
         }
-        if (Math.min(1, ups[128]) > flyby3 && player.d._currentframe < 3) {
+        if (Math.min(1, haveEffect[128]) > flyby3 && player.d._currentframe < 3) {
           ++flyby3;
           trg = create(player.xp, player.yp, 0, 0, 0, 0, 3);
           trg.fly = true;
           trg.alt = 2;
         }
-        if (ups[88] && !magsss && player.d._currentframe < 3) {
+        if (haveEffect[88] && !magsss && player.d._currentframe < 3) {
           magsss = true;
           trg = create(player.xp, player.yp - 10, 0, 0, 0, 0, 3);
           trg.maga = true;
@@ -29256,22 +29256,22 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             levz[trg.blo] = 0.9;
           }
         }
-        if (ups[75] && random(150) == 0) {
+        if (haveEffect[75] && random(150) == 0) {
           piller();
         }
         f1 = _root.it;
         if (f1 < 1) {
           f1 = 'empty';
-          _root.itc = 1;
+          _root.itemCharges = 1;
           _root.hud.it.gotoAndStop(7);
           _root.hud.it.d.gotoAndStop(20);
         }
         f10 = [3, 4, 2, 1, 3, 2, 1];
-        player.mhp = Math.min(f10[_root.skiner] + ups[22] + ups[23] + ups[121] + ups[24] + ups[25] + ups[26] + ups[12] + ups[101] + ups[15] + ups[92] + ups[119] + ups[16] * 2 + ups[129] * 2 + ups[176] + ups[184] + ups[193] + ups[189] + ups[138], 12);
-        if (_root.skiner == 4) {
+        player.mhp = Math.min(f10[_root.characterID] + haveEffect[22] + haveEffect[23] + haveEffect[121] + haveEffect[24] + haveEffect[25] + haveEffect[26] + haveEffect[12] + haveEffect[101] + haveEffect[15] + haveEffect[92] + haveEffect[119] + haveEffect[16] * 2 + haveEffect[129] * 2 + haveEffect[176] + haveEffect[184] + haveEffect[193] + haveEffect[189] + haveEffect[138], 12);
+        if (_root.characterID == 4) {
           if (player.mhp > 0) {
-            --_root.ups[22];
-            ups[22] = _root.ups[22];
+            --_root.pickedUp[22];
+            haveEffect[22] = _root.pickedUp[22];
             ++_root.armor;
           }
           player.mhp = 0;
@@ -29297,8 +29297,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         if (player.hp > 0) {
           player.hp = Math.max(0.5, Math.min(player.mhp, player.hp));
         }
-        if (_root.itc >= 0.9) {
-          _root.itc = 1;
+        if (_root.itemCharges >= 0.9) {
+          _root.itemCharges = 1;
           if (_root.hud.it._currentframe <= 14) {
             _root.hud.it.nextFrame();
           } else {
@@ -29311,13 +29311,13 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             _root.hud.it.gotoAndStop(16);
           } else {
             hudder = _root.hud.it._currentframe;
-            _root.hud.it.gotoAndStop(Math.round(_root.itc * 6 - 0.5) + 1);
+            _root.hud.it.gotoAndStop(Math.round(_root.itemCharges * 6 - 0.5) + 1);
           }
         }
-        _root.hud.extra2._visible = _root.trix != undefined;
+        _root.hud.extra2._visible = _root.trinketSlot1 != undefined;
         if (_root.hud.extra2._visible) {
           _root.hud.extra2.d.gotoAndStop(11);
-          _root.hud.extra2.d.p.gotoAndStop(_root.trix);
+          _root.hud.extra2.d.p.gotoAndStop(_root.trinketSlot1);
           _root.hud.tex2 = _root.trixer;
           f11 = _root.hud.tex2.split('');
           _root.hud.black._xscale = f11.length * 7 + 20;
@@ -29333,10 +29333,10 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           _root.hud.tex2 = '';
           _root.hud.black._xscale = 0.1;
         }
-        _root.hud.extra3._visible = _root.atrix != undefined;
+        _root.hud.extra3._visible = _root.trinketSlot2 != undefined;
         if (_root.hud.extra3._visible) {
           _root.hud.extra3.d.gotoAndStop(11);
-          _root.hud.extra3.d.p.gotoAndStop(_root.atrix);
+          _root.hud.extra3.d.p.gotoAndStop(_root.trinketSlot2);
           _root.hud.tex3 = _root.atrixer;
           f11 = _root.hud.tex3.split('');
           _root.hud.black2._xscale = f11.length * 7 + 20;
@@ -29360,7 +29360,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           if (_root.pilc > 6) {
             _root.hud.pilll.tex = tart(_root.pilc, true);
           } else {
-            f10 = !ups[46] && !ups[75];
+            f10 = !haveEffect[46] && !haveEffect[75];
             f11 = Math.round(_root.piller[_root.pilc]);
             if (f11 != _root.piller[_root.pilc]) {
               f2 = true;
@@ -29404,7 +29404,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     f11 = 'Pretty Fly';
                     break;
                   case 7:
-                    if (_root.skiner != 4) {
+                    if (_root.characterID != 4) {
                       f13 = player.mhp;
                     } else {
                       f13 = _root.armor;
@@ -29426,7 +29426,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     }
                     break;
                   case 10:
-                    if (f2 or ups[6] && _root.chaps < 8) {
+                    if (f2 or haveEffect[6] && _root.chaps < 8) {
                       f11 = 'Range Up';
                     } else {
                       f11 = 'Range Down';
@@ -29479,16 +29479,16 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         _root.hud.bombs = _root.bombs;
         _root.hud.keys = _root.keys;
         f1 = 1;
-        if (ups[11]) {
+        if (haveEffect[11]) {
           ++f1;
         }
-        if (ups[81]) {
-          f1 += ups[81];
+        if (haveEffect[81]) {
+          f1 += haveEffect[81];
         }
         if (f1 > 1) {
-          _root.hud.ups = 'x' + f1;
+          _root.hud.haveEffect = 'x' + f1;
         } else {
-          _root.hud.ups = '';
+          _root.hud.haveEffect = '';
         }
         _root.hud.chaps = levn[_root.chaps];
         if (_root.altchap) {
@@ -29823,7 +29823,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                                       trg.gotoAndStop(19);
                                     }
                                   } else {
-                                    f1 = Math.min(0.3, ups[51] * 0.2) + 0.01;
+                                    f1 = Math.min(0.3, haveEffect[51] * 0.2) + 0.01;
                                     if (_root.it == 2) {
                                       f1 += 0.25;
                                     }
@@ -29901,15 +29901,15 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   }
                 }
                 if (fra > 30 && shutdoor == 0) {
-                  if (ups[94] or ups[96] or ups[98] or ups[131]) {
-                    f1 = ups[94] + (ups[96] + ups[98] * 2 + ups[131]) * 1.1;
+                  if (haveEffect[94] or haveEffect[96] or haveEffect[98] or haveEffect[131]) {
+                    f1 = haveEffect[94] + (haveEffect[96] + haveEffect[98] * 2 + haveEffect[131]) * 1.1;
                     _root.monbb += 0.5 / f1;
                   }
-                  f1 = itc[_root.it];
-                  if (_root.itc < 1) {
-                    _root.itc += 1 / f1;
+                  f1 = itemChargeRates[_root.it];
+                  if (_root.itemCharges < 1) {
+                    _root.itemCharges += 1 / f1;
                     itb = 5;
-                    if (_root.itc < 1) {
+                    if (_root.itemCharges < 1) {
                       _root.soundy('beep.wav');
                     } else {
                       _root.soundy('itemrecharge.wav');
@@ -29928,7 +29928,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       _root.bossmusic = true;
                     }
                     f1 = Math.random();
-                    if (ups[46]) {
+                    if (haveEffect[46]) {
                       f1 = f1 * 0.9 + 0.1;
                     }
                     if (_root.luck > 0) {
@@ -29939,14 +29939,14 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     }
                     f2 = 0;
                     trixies(false);
-                    if (trixx(42)) {
-                      if (ups[46] && _root.luck > 0) {
+                    if (haveTrinket(42)) {
+                      if (haveEffect[46] && _root.luck > 0) {
                         f1 = f1 * 0.98 + 0.02;
                       } else {
                         f1 = f1 * 0.9 + 0.1;
                       }
                     }
-                    if (ups[134]) {
+                    if (haveEffect[134]) {
                       if (random(3) == 0) {
                         f1 = 1;
                         f2 = 5.05 + random(2) * 0.01;
@@ -29956,7 +29956,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                         }
                       }
                     }
-                    if (trixx(46)) {
+                    if (haveTrinket(46)) {
                       if (random(10) == 0) {
                         if (player.mhp > 0) {
                           player.hp += 0.5;
@@ -30064,14 +30064,14 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             if (nofun) {
               nofun = false;
             } else {
-              _root.itc += 0.02;
+              _root.itemCharges += 0.02;
             }
           }
-          if (ups[63] && shutdoor != 0 && _root.itc - 0.5 < tictic && _root.itc < 1 && nocharge-- < 0 && _root.lev != _root.gamb) {
-            tictic = Math.min(_root.itc, tictic);
-            _root.itc += 0.0004;
+          if (haveEffect[63] && shutdoor != 0 && _root.itemCharges - 0.5 < tictic && _root.itemCharges < 1 && nocharge-- < 0 && _root.lev != _root.gamb) {
+            tictic = Math.min(_root.itemCharges, tictic);
+            _root.itemCharges += 0.0004;
             if (hudder != _root.hud.it._currentframe && _root.hud.it._currentframe < 15) {
-              if (_root.itc < 1) {
+              if (_root.itemCharges < 1) {
               } else {}
               _root.soundy('batterycharge.mp');
               parc('batter', player.xp, player.yp - 20, 0, 100, player.dpppp + 5000);
@@ -30275,7 +30275,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     f1.push(134);
                   }
                   f1 = f1[random(f1.length)];
-                  if (!ups[f1] && random(10) == 0) {
+                  if (!haveEffect[f1] && random(10) == 0) {
                     var trg2 = create(chestox, chestoy, 0, 0, 0, 0, 5.1);
                     trg2.alt = true;
                     trg2.fra -= 15;
@@ -30329,7 +30329,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   f2 = 0;
                   if (random(3) != 0) {
                     trixies(true);
-                    if (trixx(42) or f2 > 0) {
+                    if (haveTrinket(42) or f2 > 0) {
                       ++f10;
                     }
                   }
@@ -30350,7 +30350,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                         f0 = f2;
                         f2 = 0;
                       } else {
-                        if ((_root.SecretUnlocked[18] && random(10) == 0 && trg == 2 or random(5) == 0 && trg.d._currentframe == 6) && z == 0 && (trg != 2 or !ups[90]) or _root.chaps == 11) {
+                        if ((_root.SecretUnlocked[18] && random(10) == 0 && trg == 2 or random(5) == 0 && trg.d._currentframe == 6) && z == 0 && (trg != 2 or !haveEffect[90]) or _root.chaps == 11) {
                           f1 = 70;
                           enf = enfcheck(chestox, chestoy, player.xp, player.yp, f1);
                           if (enf < f1) {
@@ -30435,7 +30435,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         for (e in ball) {
           trg = ball[e];
           if (trg.s == 4) {
-            if (trg.d._currentframe == 3 && ups[140]) {
+            if (trg.d._currentframe == 3 && haveEffect[140]) {
               trg.dfr = true;
               trg.d.gotoAndStop(5);
             }
@@ -30581,17 +30581,17 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               if (_root.colit == 86 && z == 0) {
                 f3 = 18;
               }
-              if (_root.ups[161] && z == 0) {
+              if (_root.pickedUp[161] && z == 0) {
               }
               if (z == 4) {
-                if (ups[117]) {
+                if (haveEffect[117]) {
                   f3 = 38;
                 }
                 if (bra && freez > 0) {
                   f3 = 28;
                 }
               }
-              if (_root.ups[152] && z == 4) {
+              if (_root.pickedUp[152] && z == 4) {
                 f3 = 45;
                 f4 = true;
                 trg2.d.gotoAndStop(9);
@@ -30795,10 +30795,10 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         _root.devil = _root.chaps != 1;
         _root.bumkill = false;
         _root.altch = _root.chaps % 2 == 0 && random(2) == 0;
-        _root.ceye = false;
-        if (trixx(59) && random(4) == 0) {
-          ups[21] = true;
-          _root.ceye = ups[21];
+        _root.cainsEye = false;
+        if (haveTrinket(59) && random(4) == 0) {
+          haveEffect[21] = true;
+          _root.cainsEye = haveEffect[21];
         }
         _root.altchap = 0;
         if (random(2) == 0 && _root.chaps < 9 or _root.heaven == 2) {
@@ -31114,10 +31114,10 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           _root.over.gotoAndStop(16);
           _root.eta = false;
           ++_root.hp;
-          ++ups[22];
-          ++_root.ups[22];
+          ++haveEffect[22];
+          ++_root.pickedUp[22];
         }
-        if (trixx(55)) {
+        if (haveTrinket(55)) {
           eta();
         }
       }
@@ -31328,7 +31328,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       p10 = 0.5235987755982988;
       v3 = 17;
       sizes = [5, 10, 8, v1, 16, 12, 0, v1, v1, 5, v1, v1, v1, v3, v3, v1, v1, v1, v3, 20, 40, v1, v1, v1, v1, v1, v1, v1, v1, v1, v1, v1, v1, v1, v1, v1, 50, 0, v1, v1, v1, v1, v1, 35, v1, 35, v1, v1, v1, v1, v1, v1, v1, v1, v1, v1, v1, v1, v1, v1, v1, v1, v1, 25, 25, 25, 25, 35, 27, 20, 0, 40, 25, v1, 40, 30, 20, v1, 35, v1, v1, 20, 20, 16, 55, v1, v1, v1, v1, v1, v1, v1, v1, v1, v1, v1, v1, 20, 30, 35, 35, 40, 25];
-      masses = [0, 5, 8 + _root.ups[4] * 30, 0, 6, 3, 0, 6, 6, 8, 5, 3, 3, 3, 4, 10, 6, 6, 3, 50, 50, 7, 7, 7, 10, 7, 7, 15, 20, 10, 10, 10, 10, 1, 10, 10, 70, 1, 10, 10, 10, 10, 20, 50, 15, 70, 30, 30, 30, 30, 30, 30, 30, 10, 10, 10, 30, 30, 10, 10, 10, 7, 30, 30, 30, 30, 30, 30, 40, 20, 0, 40, 30, 20, 30, 20, 10, 3, 100, 20, 3, 50, 30, 30, 100, 5, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 5, 30, 30, 80, 38, 80, 100];
+      masses = [0, 5, 8 + _root.pickedUp[4] * 30, 0, 6, 3, 0, 6, 6, 8, 5, 3, 3, 3, 4, 10, 6, 6, 3, 50, 50, 7, 7, 7, 10, 7, 7, 15, 20, 10, 10, 10, 10, 1, 10, 10, 70, 1, 10, 10, 10, 10, 20, 50, 15, 70, 30, 30, 30, 30, 30, 30, 30, 10, 10, 10, 30, 30, 10, 10, 10, 7, 30, 30, 30, 30, 30, 30, 40, 20, 0, 40, 30, 20, 30, 20, 10, 3, 100, 20, 3, 50, 30, 30, 100, 5, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 5, 30, 30, 80, 38, 80, 100];
       hps = [0, 10, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10, 10, 3, 8, 15, 13, 13, 5, 22, 250, 15, 20, 20, 33, 20, 20, 15, 350, 10, 20, 10, 20, 0, 25, 25, 700, 0, 25, 25, 25, 20, 20, 550, 100, 530, v2, v2, v2 * 1.6, v2, v2, v2 * 0.5, v2, 20, 20, 25, 30, 40, 35, 20, 20, 10, 300, 240, 280, 400, 450, 110, 450, 350, 0, 60, 15, 8, 190, 75, 30, 12, 950, 140, 10, v2 * 3, v2 * 2, 100, 600, 10, 40, 40, 40, 40, 40, 40, 40, 40, 20, 40, 300, 200, 200, 250, 250, 300, 1000];
       hard = [1.570796326794897, 0.1570796326794897, p10 * 5, p10, p10, p10 * 2, 0, 0, 0, p10 * 5, p10, p10, p10, 0, 0, p10, p10, p10, 0, 0, p10, p10, p10, p10, p10, p10, 0, p10, p10, 0, p10, p10, p10, 0, 0, p10, p10, 0, p10, p10, p10, p10, 0, p10, p10, 0, p10, p10, p10, p10, p10, p10, p10, p10, p10, p10, p10, p10, p10, p10, p10, 0, p10, 0, 0, 0, 0, p10, p10, p10, 0, p10, p10, p10, p10, p10, p10, p10, 0, p10, 0, 0, 0, 0, 0, 0, p10, p10, p10, p10, p10, p10, p10, p10, p10, p10, 0, p10, p10, p10, p10, p10];
       hard[85] = p10;
@@ -31440,7 +31440,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       player.mhp = _root.mhp;
       player.hp = _root.hp;
       if (_root.lev == _root.bossl && !firsttime) {
-        if (trixx(53)) {
+        if (haveTrinket(53)) {
           ++player.hp;
         }
       }
@@ -31494,18 +31494,18 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       }
       gameover = 0;
       justnow = 9;
-      itc = [0, 6, 3, 6, 1, 2, 1, 3, 0, 3, 3, 0, 2, 4, 0, 3, 2, 3, 3, 0, 0, 0, 0, 0, 0, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 6, 0, 0, 0, 0, 6, 6, 6, 3, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 4, 0, 0, 0, 0, 6, 0, 0, 3, 0, 6, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 0, 0, 0, 0, 0, 4];
-      itc[96] = 3;
-      itc[106] = 6;
-      itc[105] = 1;
-      itc[107] = 1;
-      itc[118] = 6;
-      itc[131] = 2;
-      itc[126] = 6;
-      itc[120] = 4;
-      itc[135] = 2;
-      itc[141] = 6;
-      itc[152] = 2;
+      itemChargeRates = [0, 6, 3, 6, 1, 2, 1, 3, 0, 3, 3, 0, 2, 4, 0, 3, 2, 3, 3, 0, 0, 0, 0, 0, 0, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 6, 0, 0, 0, 0, 6, 6, 6, 3, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 4, 0, 0, 0, 0, 6, 0, 0, 3, 0, 6, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 0, 0, 0, 0, 0, 4];
+      itemChargeRates[96] = 3;
+      itemChargeRates[106] = 6;
+      itemChargeRates[105] = 1;
+      itemChargeRates[107] = 1;
+      itemChargeRates[118] = 6;
+      itemChargeRates[131] = 2;
+      itemChargeRates[126] = 6;
+      itemChargeRates[120] = 4;
+      itemChargeRates[135] = 2;
+      itemChargeRates[141] = 6;
+      itemChargeRates[152] = 2;
       wtfps2 = getTimer();
       wtfps = 35;
       wtfpsh = true;
@@ -31553,7 +31553,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         player.fire = -10;
         chaf = -20;
       }
-      tictic = _root.itc;
+      tictic = _root.itemCharges;
       nocharge = 0;
       chamb = 0;
       mhpp = 0;
@@ -31561,7 +31561,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       red = 0;
       blue = 0;
       shiz = [];
-      if (_root.ups[122] && player.hp < 1) {
+      if (_root.pickedUp[122] && player.hp < 1) {
         player._visible = false;
       }
     }
@@ -31792,7 +31792,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
   movieClip 6773  {
 
     frame 1 {
-      gotoAndStop(_root.skiner + 1);
+      gotoAndStop(_root.characterID + 1);
     }
   }
 
@@ -31960,7 +31960,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
   movieClip 6988  {
 
     frame 1 {
-      gotoAndStop(_root.skiner + 1);
+      gotoAndStop(_root.characterID + 1);
     }
   }
 
@@ -32015,7 +32015,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               if (xp == 0) {
                 pos = 3;
               } else {
-                if (_root.skiner == 0 or _root.SecretUnlocked[_root.skiner] && _root.skiner < 5 or _root.skiner == 5 && _root.SecretUnlocked[54] or _root.skiner == 6 && _root.SecretUnlocked[88]) {
+                if (_root.characterID == 0 or _root.SecretUnlocked[_root.characterID] && _root.characterID < 5 or _root.characterID == 5 && _root.SecretUnlocked[54] or _root.characterID == 6 && _root.SecretUnlocked[88]) {
                   _root.chala = undefined;
                   _root.darky(150);
                 }
@@ -32092,7 +32092,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
 
     on (release) {
       if (_parent.pos == 3) {
-        --skiner;
+        --characterID;
         _root.soundy('character_select_left.wav');
       }
     }
@@ -32102,7 +32102,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
 
     on (release) {
       if (_parent.pos == 3) {
-        ++skiner;
+        ++characterID;
         _root.soundy('character_select_right.wav');
       }
     }
@@ -32172,14 +32172,14 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       function rander() {
         if (!done) {
           done = true;
-          f2 = skiner;
+          f2 = characterID;
           if (rand.length > 1) {
             f1 = rand[random(rand.length)];
-            skiner = f1;
+            characterID = f1;
             _parent.pos = 3;
             _root.chala = undefined;
             _root.darky(150);
-            _root.tex = rand + ' ' + skiner;
+            _root.tex = rand + ' ' + characterID;
           }
         }
       }
@@ -32199,34 +32199,34 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           chars = 7;
         }
         if (chars == 6) {
-          while (skiner > 5) {
-            skiner -= 6;
+          while (characterID > 5) {
+            characterID -= 6;
           }
-          while (skiner < 0) {
-            skiner += 6;
+          while (characterID < 0) {
+            characterID += 6;
           }
         } else {
-          while (skiner > 6) {
-            skiner -= 7;
+          while (characterID > 6) {
+            characterID -= 7;
           }
-          while (skiner < 0) {
-            skiner += 7;
+          while (characterID < 0) {
+            characterID += 7;
           }
         }
         f2 = 360 / chars;
-        _root.skiner = skiner;
-        if (skiner == 5) {
+        _root.characterID = characterID;
+        if (characterID == 5) {
           if (chars == 6) {
-            _root.skiner = 6;
+            _root.characterID = 6;
           } else {
-            _root.skiner = 4;
+            _root.characterID = 4;
           }
         } else {
-          if (skiner == 4) {
-            _root.skiner = 5;
+          if (characterID == 4) {
+            _root.characterID = 5;
           }
         }
-        xenf = rp + rbew * 3 - skiner * f2;
+        xenf = rp + rbew * 3 - characterID * f2;
         while (xenf >= 180) {
           xenf -= 360;
         }
@@ -32239,9 +32239,9 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         rbew -= xenf * 0.1;
         rbew *= 0.8;
         rp += rbew;
-        inc.gotoAndStop(skiner + 1);
-        f1 = _root.SecretUnlocked[skiner] && skiner != 4 or skiner == 4 && _root.SecretUnlocked[54];
-        if (_root.skiner == 6) {
+        inc.gotoAndStop(characterID + 1);
+        f1 = _root.SecretUnlocked[characterID] && characterID != 4 or characterID == 4 && _root.SecretUnlocked[54];
+        if (_root.characterID == 6) {
           inc.gotoAndStop(7);
           f1 = _root.SecretUnlocked[88];
         }
@@ -32298,7 +32298,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       }
 
       rp = 360;
-      skiner = 0;
+      characterID = 0;
       rbew = 0;
     }
   }
@@ -32307,7 +32307,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
 
     on (release) {
       if (pos == 3) {
-        if (_root.skiner == 0 or _root.SecretUnlocked[_root.skiner] && _root.skiner < 5 or _root.skiner == 5 && _root.SecretUnlocked[54] or _root.skiner == 6 && _root.SecretUnlocked[88]) {
+        if (_root.characterID == 0 or _root.SecretUnlocked[_root.characterID] && _root.characterID < 5 or _root.characterID == 5 && _root.SecretUnlocked[54] or _root.characterID == 6 && _root.SecretUnlocked[88]) {
           _root.chala = undefined;
           _root.darky(150);
         }
