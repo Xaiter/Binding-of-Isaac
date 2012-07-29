@@ -606,7 +606,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
 
       _root.lox = [0, 76, 78, 77, 79, 81, 80, 82, 83, 84, 86];
       lox = 4;
-      if (_root.locker[4]) {
+      if (_root.SecretUnlocked[4]) {
         lox = 9;
       }
       if (_root.so.data.icer > 0) {
@@ -619,7 +619,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         if (lox < e) {
           trg.gotoAndStop(3);
         } else {
-          if (_root.locker[_root.lox[e]]) {
+          if (_root.SecretUnlocked[_root.lox[e]]) {
             trg.gotoAndStop(2);
           } else {
             trg.gotoAndStop(1);
@@ -2862,7 +2862,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
   movieClip 3542  {
 
     frame 1 {
-      if (_root.locker[45]) {
+      if (_root.SecretUnlocked[45]) {
         gotoAndStop(2);
       } else {
         gotoAndStop(1);
@@ -6685,9 +6685,9 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         checker1[e] = checker[e];
         ++e;
       }
-      for (e in locker) {
+      for (e in SecretUnlocked) {
         if (e > 0) {
-          if (locker[e]) {
+          if (SecretUnlocked[e]) {
             f1 = e * 2 + 11;
             checker1[f1] += e % 4 + 1;
             if (checker1[f1] > 9) {
@@ -6759,15 +6759,15 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         checker1 = checker2[0].split('');
         e = 0;
         while (e < 100) {
-          if (!locker[e]) {
+          if (!SecretUnlocked[e]) {
             f1 = e * 2 + 11;
             f2 = checker[f1] * 1 + (e % 4) * 1 + 1;
             if (f2 > 9) {
               f2 -= 9;
             }
             if (f2 == checker1[f1]) {
-              ulocker[e] = true;
-              locker[e] = ulocker[e];
+              uSecretUnlocked[e] = true;
+              SecretUnlocked[e] = uSecretUnlocked[e];
               _root.lockor.unshift(e);
             }
           }
@@ -6946,9 +6946,9 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         so.data.lock[e] = f1[e];
         ++e;
       }
-      _root.locker = so.data.lock;
+      _root.SecretUnlocked = so.data.lock;
       _root.lockor = so.data.lockor;
-      _root.ulocker = so.data.ulock;
+      _root.uSecretUnlocked = so.data.ulock;
       _root.res = so.data.res;
       if (so.data.wind == undefined) {
         _root.hdd = true;
@@ -6989,8 +6989,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         _root.unl.gogo = false;
         f1 = 0;
         f3 = 1000;
-        for (z in _root.locker) {
-          if (_root.locker[z] && !_root.ulocker[z]) {
+        for (z in _root.SecretUnlocked) {
+          if (_root.SecretUnlocked[z] && !_root.uSecretUnlocked[z]) {
             f4 = z;
             if (f4 < f3) {
               f3 = f4;
@@ -7002,7 +7002,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         } else {
           _root.unl.nogo = true;
           _root.unl.gotoAndPlay(4);
-          _root.ulocker[f1] = true;
+          _root.uSecretUnlocked[f1] = true;
           _root.lockor.unshift(f1);
           _root.unlll = f3;
           _root.unl.gotoAndPlay(2);
@@ -7016,41 +7016,41 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       if (_root._currentframe > 2) {
         _root.winners = so.data.wins;
         if (_root.winners >= 2) {
-          _root.locker[8] = true;
+          _root.SecretUnlocked[8] = true;
         }
         if (_root.winners >= 3) {
-          _root.locker[9] = true;
+          _root.SecretUnlocked[9] = true;
         }
         if (_root.winners >= 4) {
-          _root.locker[10] = true;
+          _root.SecretUnlocked[10] = true;
         }
         if (_root.winners >= 5) {
-          _root.locker[11] = true;
+          _root.SecretUnlocked[11] = true;
         }
         if (_root.winners >= 6) {
-          _root.locker[42] = true;
+          _root.SecretUnlocked[42] = true;
         }
         if (_root.winners >= 7) {
-          _root.locker[43] = true;
+          _root.SecretUnlocked[43] = true;
         }
         if (_root.winners >= 8) {
-          _root.locker[44] = true;
+          _root.SecretUnlocked[44] = true;
         }
         if (_root.winners >= 9) {
-          _root.locker[45] = true;
+          _root.SecretUnlocked[45] = true;
         }
         if (_root.winners >= 10) {
-          _root.locker[12] = true;
-          _root.locker[41] = true;
+          _root.SecretUnlocked[12] = true;
+          _root.SecretUnlocked[41] = true;
         }
         z = 0;
         while (z < 3) {
-          _root.locker[z + 15] = _root.locker[z + 1];
+          _root.SecretUnlocked[z + 15] = _root.SecretUnlocked[z + 1];
           ++z;
         }
-        if (_root.locker[54]) {
-          _root.locker[56] = true;
-          _root.locker[57] = true;
+        if (_root.SecretUnlocked[54]) {
+          _root.SecretUnlocked[56] = true;
+          _root.SecretUnlocked[57] = true;
         }
       }
     }
@@ -7977,8 +7977,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
     fra = 0;
     f1 = '';
     f3 = false;
-    for (e in _root.locker) {
-      if (_root.locker[e]) {
+    for (e in _root.SecretUnlocked) {
+      if (_root.SecretUnlocked[e]) {
         if (acnam[e]) {
           if (f3) {
             f1 += ' ';
@@ -8050,34 +8050,34 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
   movieClip 5834  {
 
     frame 1 {
-      if (_root.locker[90]) {
+      if (_root.SecretUnlocked[90]) {
         gotoAndStop(14);
       } else {
         if (_root.so.data.wins > 200) {
           gotoAndStop(15);
         } else {
-          if (_root.locker[75]) {
+          if (_root.SecretUnlocked[75]) {
             gotoAndStop(13);
           } else {
-            if (_root.locker[53]) {
+            if (_root.SecretUnlocked[53]) {
               gotoAndStop(7);
             } else {
               if (_root.so.data.icer > 0) {
                 gotoAndStop(Math.min(12, 7 + _root.so.data.icer));
               } else {
-                if (_root.locker[41]) {
+                if (_root.SecretUnlocked[41]) {
                   gotoAndStop(6);
                 } else {
-                  if (_root.locker[45]) {
+                  if (_root.SecretUnlocked[45]) {
                     gotoAndStop(5);
                   } else {
-                    if (_root.locker[42]) {
+                    if (_root.SecretUnlocked[42]) {
                       gotoAndStop(4);
                     } else {
-                      if (_root.locker[3]) {
+                      if (_root.SecretUnlocked[3]) {
                         gotoAndStop(3);
                       } else {
-                        if (_root.locker[4]) {
+                        if (_root.SecretUnlocked[4]) {
                           gotoAndStop(2);
                         } else {
                           gotoAndStop(1);
@@ -9828,354 +9828,354 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         return v2;
       }
 
-      function omgz(f1) {
+      function DevilOrItemRoom(f1) {
         if (random(3) != 0) {
-          _root.ittt.push(f1);
+          _root.RegularDropPool.push(f1);
         } else {
-          _root.ittt7.push(f1);
+          _root.DevilRoom.push(f1);
         }
       }
 
-      function itemzz() {
-        _root.junxx = [30, 31, 32, 33, 34, 36, 37, 38, 39, 40, 41, 43, 44, 45, 46, 48, 51, 53];
-        if (_root.locker[68]) {
-          _root.junxx.push(35);
+      function FillItemPools() {
+        _root.TrinketPool = [30, 31, 32, 33, 34, 36, 37, 38, 39, 40, 41, 43, 44, 45, 46, 48, 51, 53];
+        if (_root.SecretUnlocked[68]) {
+          _root.TrinketPool.push(35);
         }
-        if (_root.locker[74]) {
-          _root.junxx.push(47);
+        if (_root.SecretUnlocked[74]) {
+          _root.TrinketPool.push(47);
         }
-        if (_root.locker[72]) {
-          _root.junxx.push(49);
+        if (_root.SecretUnlocked[72]) {
+          _root.TrinketPool.push(49);
         }
-        if (_root.locker[77]) {
-          _root.junxx.push(50);
+        if (_root.SecretUnlocked[77]) {
+          _root.TrinketPool.push(50);
         }
-        if (_root.locker[78]) {
-          _root.junxx.push(42);
+        if (_root.SecretUnlocked[78]) {
+          _root.TrinketPool.push(42);
         }
-        if (_root.locker[81]) {
-          _root.junxx.push(29);
+        if (_root.SecretUnlocked[81]) {
+          _root.TrinketPool.push(29);
         }
-        if (_root.locker[84]) {
+        if (_root.SecretUnlocked[84]) {
         }
-        if (_root.locker[91]) {
-          _root.junxx.push(54);
+        if (_root.SecretUnlocked[91]) {
+          _root.TrinketPool.push(54);
         }
-        if (_root.locker[92]) {
-          _root.junxx.push(55);
+        if (_root.SecretUnlocked[92]) {
+          _root.TrinketPool.push(55);
         }
-        if (_root.locker[93]) {
-          _root.junxx.push(56);
+        if (_root.SecretUnlocked[93]) {
+          _root.TrinketPool.push(56);
         }
-        if (_root.locker[94]) {
-          _root.junxx.push(57);
+        if (_root.SecretUnlocked[94]) {
+          _root.TrinketPool.push(57);
         }
-        if (_root.locker[95]) {
-          _root.junxx.push(58);
+        if (_root.SecretUnlocked[95]) {
+          _root.TrinketPool.push(58);
         }
-        if (_root.locker[96]) {
-          _root.junxx.push(59);
+        if (_root.SecretUnlocked[96]) {
+          _root.TrinketPool.push(59);
         }
-        if (_root.locker[97]) {
-          _root.junxx.push(60);
+        if (_root.SecretUnlocked[97]) {
+          _root.TrinketPool.push(60);
         }
-        if (_root.locker[98]) {
-          _root.junxx.push(61);
+        if (_root.SecretUnlocked[98]) {
+          _root.TrinketPool.push(61);
         }
-        _root.ittt = [1, 1, 2, 3, 4, 5, 6, 7, 8, 8, 10, 12, 13, 14, 15, 19, 19, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 37, 38, 39, 40, 41, 44, 47, 48, 49, 50, 51, 53, 54, 55, 56, 57, 58, 59, 60, 62, 65, 66, 67, 69, 70, 71, 72, 75, 76, 77, 85, 115, 120, 121, 124, 125, 128, 129];
-        _root.ittt.push(136, 137, 138, 140, 142, 143, 144, 147, 148, 149, 150, 151, 152, 153, 154, 155, 157, 160, 163, 167, 169, 173, 177, 178, 180, 183, 191, 192);
-        _root.ittt2 = [22, 23, 24, 25, 26, 27 + random(2), 29 + random(3), 29 + random(3), 32, 51, 141, 165, 176, 193, 194, 195, 196, 197, 198];
-        _root.ittt3 = [11, 16, 42, 77, 161];
-        _root.ittt4 = [54, 54, 60, 60, 64, 21, 21, 139, 156, 147, 195];
-        _root.ittt6 = [38, 27 + random(2), 29 + random(3), 26, 1, 50];
-        _root.ittt7 = [8, 67, 79, 80, 81, 115, 118, 133, 145, 159];
-        _root.ittt8 = [26, 17, 19, 21, 44, 70, 14, 13];
-        _root.ittt9 = [58, 65, 192];
-        _root.ittt10 = [7, 33, 101, 146, 142, 173, 182, 184, 185];
+        _root.RegularDropPool = [1, 1, 2, 3, 4, 5, 6, 7, 8, 8, 10, 12, 13, 14, 15, 19, 19, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 37, 38, 39, 40, 41, 44, 47, 48, 49, 50, 51, 53, 54, 55, 56, 57, 58, 59, 60, 62, 65, 66, 67, 69, 70, 71, 72, 75, 76, 77, 85, 115, 120, 121, 124, 125, 128, 129];
+        _root.RegularDropPool.push(136, 137, 138, 140, 142, 143, 144, 147, 148, 149, 150, 151, 152, 153, 154, 155, 157, 160, 163, 167, 169, 173, 177, 178, 180, 183, 191, 192);
+        _root.BossDrop = [22, 23, 24, 25, 26, 27 + random(2), 29 + random(3), 29 + random(3), 32, 51, 141, 165, 176, 193, 194, 195, 196, 197, 198];
+        _root.SecretRoomItem = [11, 16, 42, 77, 161];
+        _root.ShopItem = [54, 54, 60, 60, 64, 21, 21, 139, 156, 147, 195];
+        _root.GoldChest = [38, 27 + random(2), 29 + random(3), 26, 1, 50];
+        _root.DevilRoom = [8, 67, 79, 80, 81, 115, 118, 133, 145, 159];
+        _root.ArenaItem = [26, 17, 19, 21, 44, 70, 14, 13];
+        _root.Library = [58, 65, 192];
+        _root.GodRoom = [7, 33, 101, 146, 142, 173, 182, 184, 185];
         if (random(2) == 0) {
-          _root.ittt3.push(11, 77);
+          _root.SecretRoomItem.push(11, 77);
         }
         if (random(2) == 0) {
-          _root.ittt10.push(184);
-          _root.ittt4.push(144);
+          _root.GodRoom.push(184);
+          _root.ShopItem.push(144);
         } else {
-          _root.ittt4.push(177);
+          _root.ShopItem.push(177);
         }
         if (random(2) == 0) {
-          _root.ittt6.push(179);
-          _root.ittt3.push(190);
+          _root.GoldChest.push(179);
+          _root.SecretRoomItem.push(190);
         }
-        if (_root.locker[65]) {
-          _root.ittt.push(166);
+        if (_root.SecretUnlocked[65]) {
+          _root.RegularDropPool.push(166);
         }
-        if (_root.locker[66]) {
-          _root.ittt.push(162);
+        if (_root.SecretUnlocked[66]) {
+          _root.RegularDropPool.push(162);
         }
-        if (_root.locker[67]) {
-          _root.ittt.push(188);
+        if (_root.SecretUnlocked[67]) {
+          _root.RegularDropPool.push(188);
         }
-        if (_root.locker[69]) {
-          _root.ittt.push(172);
+        if (_root.SecretUnlocked[69]) {
+          _root.RegularDropPool.push(172);
         }
-        if (_root.locker[70]) {
-          _root.ittt.push(174);
+        if (_root.SecretUnlocked[70]) {
+          _root.RegularDropPool.push(174);
         }
-        if (_root.locker[71]) {
-          _root.ittt7.push(157);
+        if (_root.SecretUnlocked[71]) {
+          _root.DevilRoom.push(157);
         }
-        if (_root.locker[73]) {
-          _root.ittt.push(186);
+        if (_root.SecretUnlocked[73]) {
+          _root.RegularDropPool.push(186);
         }
-        if (_root.locker[75]) {
-          _root.ittt3.push(175);
+        if (_root.SecretUnlocked[75]) {
+          _root.SecretRoomItem.push(175);
         }
-        if (_root.locker[76]) {
-          _root.ittt4.push(164);
+        if (_root.SecretUnlocked[76]) {
+          _root.ShopItem.push(164);
         }
-        if (_root.locker[79]) {
-          _root.ittt7.push(134);
+        if (_root.SecretUnlocked[79]) {
+          _root.DevilRoom.push(134);
         }
-        if (_root.locker[80]) {
-          _root.ittt3.push(168);
+        if (_root.SecretUnlocked[80]) {
+          _root.SecretRoomItem.push(168);
         }
-        if (_root.locker[82]) {
-          _root.ittt.push(189);
+        if (_root.SecretUnlocked[82]) {
+          _root.RegularDropPool.push(189);
         }
-        if (_root.locker[83]) {
-          _root.ittt.push(171);
+        if (_root.SecretUnlocked[83]) {
+          _root.RegularDropPool.push(171);
         }
-        if (_root.locker[86]) {
-          _root.ittt.push(170);
+        if (_root.SecretUnlocked[86]) {
+          _root.RegularDropPool.push(170);
         }
-        if (_root.locker[85]) {
-          _root.ittt.push(187);
+        if (_root.SecretUnlocked[85]) {
+          _root.RegularDropPool.push(187);
         }
         if (random(2) == 0) {
-          _root.ittt.push(17);
+          _root.RegularDropPool.push(17);
         }
-        if (random(3) != 0 && _root.locker[48]) {
+        if (random(3) != 0 && _root.SecretUnlocked[48]) {
           if (random(3) == 0) {
-            _root.ittt7.push(35);
+            _root.DevilRoom.push(35);
           } else {
-            _root.ittt.push(35);
+            _root.RegularDropPool.push(35);
           }
-          _root.ittt9.push(35);
+          _root.Library.push(35);
         }
         if (random(2) == 0) {
-          _root.ittt4.push(116);
+          _root.ShopItem.push(116);
         }
         if (random(2) == 0) {
-          _root.ittt4.push(63);
+          _root.ShopItem.push(63);
         }
         if (random(5) == 0) {
-          _root.ittt7.push(68);
+          _root.DevilRoom.push(68);
         } else {
-          _root.ittt.push(68);
+          _root.RegularDropPool.push(68);
         }
         if (random(3) == 0) {
-          _root.ittt7.push(82);
+          _root.DevilRoom.push(82);
         }
         if (random(3) == 0) {
-          _root.ittt7.push(84);
+          _root.DevilRoom.push(84);
         } else {
           if (random(2) == 0) {
-            _root.ittt3.push(84);
+            _root.SecretRoomItem.push(84);
           }
         }
-        if (_root.locker[3] && _root.skiner != 3) {
+        if (_root.SecretUnlocked[3] && _root.skiner != 3) {
           if (random(3) == 0) {
-            _root.ittt.push(34);
+            _root.RegularDropPool.push(34);
           } else {
             if (random(2) == 0) {
-              _root.ittt3.push(34);
+              _root.SecretRoomItem.push(34);
             } else {
-              _root.ittt7.push(34);
+              _root.DevilRoom.push(34);
             }
           }
-          _root.ittt9.push(34);
+          _root.Library.push(34);
         }
-        if (_root.locker[1]) {
-          _root.ittt.push(45);
+        if (_root.SecretUnlocked[1]) {
+          _root.RegularDropPool.push(45);
         }
-        if (_root.locker[2]) {
+        if (_root.SecretUnlocked[2]) {
           if (random(3) != 0) {
-            _root.ittt.push(46);
+            _root.RegularDropPool.push(46);
           } else {
-            _root.ittt7.push(46);
+            _root.DevilRoom.push(46);
           }
         }
-        if (_root.locker[7]) {
-          _root.ittt4.push(78);
-          _root.ittt9.push(78);
+        if (_root.SecretUnlocked[7]) {
+          _root.ShopItem.push(78);
+          _root.Library.push(78);
         }
-        if (_root.locker[8] && random(3) != 0) {
-          _root.ittt3.push(20);
+        if (_root.SecretUnlocked[8] && random(3) != 0) {
+          _root.SecretRoomItem.push(20);
         }
-        if (_root.locker[9] && random(3) != 0) {
-          _root.ittt7.push(83);
+        if (_root.SecretUnlocked[9] && random(3) != 0) {
+          _root.DevilRoom.push(83);
         }
-        if (_root.locker[10]) {
+        if (_root.SecretUnlocked[10]) {
           if (random(3) != 0) {
-            _root.ittt.push(74);
+            _root.RegularDropPool.push(74);
           } else {
-            _root.ittt7.push(74);
+            _root.DevilRoom.push(74);
           }
         }
-        if (_root.locker[11]) {
-          _root.ittt.push(52);
+        if (_root.SecretUnlocked[11]) {
+          _root.RegularDropPool.push(52);
         }
-        if (_root.locker[12]) {
-          _root.ittt.push(36);
+        if (_root.SecretUnlocked[12]) {
+          _root.RegularDropPool.push(36);
         }
-        if (_root.locker[13]) {
-          _root.ittt3.push(89);
+        if (_root.SecretUnlocked[13]) {
+          _root.SecretRoomItem.push(89);
         }
-        if (_root.locker[14]) {
-          _root.ittt.push(91);
+        if (_root.SecretUnlocked[14]) {
+          _root.RegularDropPool.push(91);
         }
-        if (_root.locker[18]) {
+        if (_root.SecretUnlocked[18]) {
         }
-        if (_root.locker[19]) {
-          _root.ittt.push(86);
+        if (_root.SecretUnlocked[19]) {
+          _root.RegularDropPool.push(86);
         }
-        if (_root.locker[20]) {
-          _root.ittt.push(87);
+        if (_root.SecretUnlocked[20]) {
+          _root.RegularDropPool.push(87);
         }
-        if (_root.locker[21]) {
-          _root.ittt.push(88);
+        if (_root.SecretUnlocked[21]) {
+          _root.RegularDropPool.push(88);
         }
-        if (_root.locker[25] && random(3) != 0) {
-          _root.ittt2.push(92);
+        if (_root.SecretUnlocked[25] && random(3) != 0) {
+          _root.BossDrop.push(92);
         }
-        if (_root.locker[26]) {
-          _root.ittt.push(98);
-          _root.ittt10.push(98);
+        if (_root.SecretUnlocked[26]) {
+          _root.RegularDropPool.push(98);
+          _root.GodRoom.push(98);
         }
-        if (_root.locker[27]) {
-          _root.ittt.push(94);
+        if (_root.SecretUnlocked[27]) {
+          _root.RegularDropPool.push(94);
         }
-        if (_root.locker[28]) {
-          _root.ittt.push(95);
+        if (_root.SecretUnlocked[28]) {
+          _root.RegularDropPool.push(95);
         }
-        if (_root.locker[33]) {
-          _root.ittt.push(93);
+        if (_root.SecretUnlocked[33]) {
+          _root.RegularDropPool.push(93);
         }
-        if (_root.locker[29]) {
+        if (_root.SecretUnlocked[29]) {
           if (random(3) != 0) {
-            _root.ittt.push(97);
+            _root.RegularDropPool.push(97);
           } else {
-            _root.ittt7.push(97);
+            _root.DevilRoom.push(97);
           }
-          _root.ittt9.push(97);
+          _root.Library.push(97);
         }
-        if (_root.locker[30]) {
-          _root.ittt.push(99);
+        if (_root.SecretUnlocked[30]) {
+          _root.RegularDropPool.push(99);
         }
-        if (_root.locker[31]) {
-          _root.ittt.push(100);
+        if (_root.SecretUnlocked[31]) {
+          _root.RegularDropPool.push(100);
         }
-        if (_root.locker[32]) {
-          _root.ittt.push(96);
+        if (_root.SecretUnlocked[32]) {
+          _root.RegularDropPool.push(96);
         }
-        if (_root.locker[34]) {
-          _root.ittt.push(101);
+        if (_root.SecretUnlocked[34]) {
+          _root.RegularDropPool.push(101);
         }
-        if (_root.locker[36]) {
-          _root.ittt.push(102);
+        if (_root.SecretUnlocked[36]) {
+          _root.RegularDropPool.push(102);
         }
-        if (_root.locker[37]) {
+        if (_root.SecretUnlocked[37]) {
           if (random(3) != 0) {
-            _root.ittt.push(103);
+            _root.RegularDropPool.push(103);
           } else {
-            _root.ittt7.push(103);
-          }
-        }
-        if (_root.locker[40]) {
-          if (random(3) != 0) {
-            _root.ittt.push(104);
-          } else {
-            _root.ittt7.push(104);
+            _root.DevilRoom.push(103);
           }
         }
-        if (_root.locker[38]) {
-          _root.ittt.push(105);
-        }
-        if (_root.locker[35]) {
-          _root.ittt.push(106);
-        }
-        if (_root.locker[39]) {
-          _root.ittt.push(107);
-        }
-        if (_root.locker[43]) {
-          _root.ittt.push(108);
-        }
-        if (_root.locker[44]) {
+        if (_root.SecretUnlocked[40]) {
           if (random(3) != 0) {
-            _root.ittt.push(109);
+            _root.RegularDropPool.push(104);
           } else {
-            _root.ittt7.push(109);
+            _root.DevilRoom.push(104);
           }
         }
-        if (_root.locker[47]) {
-          _root.ittt.push(110);
+        if (_root.SecretUnlocked[38]) {
+          _root.RegularDropPool.push(105);
         }
-        if (_root.locker[46]) {
-          _root.ittt.push(111);
+        if (_root.SecretUnlocked[35]) {
+          _root.RegularDropPool.push(106);
         }
-        if (_root.locker[55]) {
-          omgz(114);
+        if (_root.SecretUnlocked[39]) {
+          _root.RegularDropPool.push(107);
         }
-        if (_root.locker[56]) {
-          _root.ittt.push(117);
+        if (_root.SecretUnlocked[43]) {
+          _root.RegularDropPool.push(108);
         }
-        if (_root.locker[57]) {
-          omgz(122);
+        if (_root.SecretUnlocked[44]) {
+          if (random(3) != 0) {
+            _root.RegularDropPool.push(109);
+          } else {
+            _root.DevilRoom.push(109);
+          }
         }
-        if (_root.locker[58]) {
-          omgz(126);
+        if (_root.SecretUnlocked[47]) {
+          _root.RegularDropPool.push(110);
         }
-        if (_root.locker[59]) {
-          _root.ittt.push(112);
-          _root.ittt10.push(112);
+        if (_root.SecretUnlocked[46]) {
+          _root.RegularDropPool.push(111);
         }
-        if (_root.locker[60]) {
-          _root.ittt.push(131);
+        if (_root.SecretUnlocked[55]) {
+          DevilOrItemRoom(114);
         }
-        if (_root.locker[61]) {
-          omgz(113);
+        if (_root.SecretUnlocked[56]) {
+          _root.RegularDropPool.push(117);
         }
-        if (_root.locker[62]) {
-          omgz(127);
+        if (_root.SecretUnlocked[57]) {
+          DevilOrItemRoom(122);
         }
-        if (_root.locker[63]) {
-          omgz(123);
-          _root.ittt9.push(123);
+        if (_root.SecretUnlocked[58]) {
+          DevilOrItemRoom(126);
         }
-        for (z in _root.ittt2) {
+        if (_root.SecretUnlocked[59]) {
+          _root.RegularDropPool.push(112);
+          _root.GodRoom.push(112);
+        }
+        if (_root.SecretUnlocked[60]) {
+          _root.RegularDropPool.push(131);
+        }
+        if (_root.SecretUnlocked[61]) {
+          DevilOrItemRoom(113);
+        }
+        if (_root.SecretUnlocked[62]) {
+          DevilOrItemRoom(127);
+        }
+        if (_root.SecretUnlocked[63]) {
+          DevilOrItemRoom(123);
+          _root.Library.push(123);
+        }
+        for (z in _root.BossDrop) {
           i = 0;
-          while (i < _root.ittt.length) {
-            if (_root.ittt2[z] == _root.ittt[i]) {
-              _root.ittt.splice(i, 1);
+          while (i < _root.RegularDropPool.length) {
+            if (_root.BossDrop[z] == _root.RegularDropPool[i]) {
+              _root.RegularDropPool.splice(i, 1);
               break;
             }
             ++i;
           }
         }
-        for (z in _root.ittt4) {
+        for (z in _root.ShopItem) {
           i = 0;
-          while (i < _root.ittt.length) {
-            if (_root.ittt4[z] == _root.ittt[i]) {
-              _root.ittt.splice(i, 1);
+          while (i < _root.RegularDropPool.length) {
+            if (_root.ShopItem[z] == _root.RegularDropPool[i]) {
+              _root.RegularDropPool.splice(i, 1);
               break;
             }
             ++i;
           }
         }
-        for (z in _root.ittt6) {
+        for (z in _root.GoldChest) {
           i = 0;
-          while (i < _root.ittt.length) {
-            if (_root.ittt6[z] == _root.ittt[i]) {
-              _root.ittt.splice(i, 1);
+          while (i < _root.RegularDropPool.length) {
+            if (_root.GoldChest[z] == _root.RegularDropPool[i]) {
+              _root.RegularDropPool.splice(i, 1);
               break;
             }
             ++i;
@@ -10293,7 +10293,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         _root.catlives = 0;
         _root.shitpenny = false;
         _root.us = false;
-        itemzz();
+        FillItemPools();
       }
 
       function ender() {
@@ -10349,7 +10349,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           _root.altb3 = true;
         }
         if (_root.chaps % 2 == 1) {
-          _root.horsem = _root.locker[5];
+          _root.horsem = _root.SecretUnlocked[5];
           _root.altb = true;
           _root.altb2 = _root.chaps < 4;
           _root.switchero = _root.chaps < 4 && random(2);
@@ -10386,7 +10386,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   }
                   f1 = 'h' + f1;
                 } else {
-                  if (_root.locker[88] && _root.chaps == 7 && random(3) == 0) {
+                  if (_root.SecretUnlocked[88] && _root.chaps == 7 && random(3) == 0) {
                     if (random(2) == 0) {
                       _root.bosss = 38;
                     } else {
@@ -10468,7 +10468,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           }
         }
         if (random(2) == 0) {
-          if (_root.bosss == 17 && _root.locker[22] or _root.bosss == 3 && _root.locker[23] or _root.bosss == 5 && _root.locker[24] or _root.bosss == 41 && _root.locker[89]) {
+          if (_root.bosss == 17 && _root.SecretUnlocked[22] or _root.bosss == 3 && _root.SecretUnlocked[23] or _root.bosss == 5 && _root.SecretUnlocked[24] or _root.bosss == 41 && _root.SecretUnlocked[89]) {
             _root.altboss = true;
             switch (_root.bosss) {
               case 17:
@@ -10485,7 +10485,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             }
           }
         }
-        if (_root.bosss == 8 && _root.locker[45]) {
+        if (_root.bosss == 8 && _root.SecretUnlocked[45]) {
           _root.bosss = 25;
         }
         _root.swww = _root.chaps;
@@ -10789,18 +10789,18 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         while (v2 == 0) {
           ++v4;
           if (v4 > 100) {
-            var v3 = random(_root.ittt.length);
-            v2 = itz(_root.ittt[v3]);
+            var v3 = random(_root.RegularDropPool.length);
+            v2 = itz(_root.RegularDropPool[v3]);
             if (v2 > 0) {
-              _root.ittt.splice(v3, 1);
+              _root.RegularDropPool.splice(v3, 1);
             }
-            if (_root.ittt.length <= 5) {
-              itemzz();
+            if (_root.RegularDropPool.length <= 5) {
+              FillItemPools();
             }
           } else {
             if (_root.lev == _root.lib) {
-              var v3 = random(_root.ittt9.length);
-              v2 = itz(_root.ittt9[v3]);
+              var v3 = random(_root.Library.length);
+              v2 = itz(_root.Library[v3]);
               if (v2 > 0) {
                 if (lib == v3) {
                   v2 = -1;
@@ -10808,67 +10808,67 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                 }
               }
             } else {
-              if (_root.ittt8.length > 0 && _root.lev == _root.chamb && !_root.altch) {
-                var v3 = random(_root.ittt8.length);
-                v2 = itz(_root.ittt8[v3]);
+              if (_root.ArenaItem.length > 0 && _root.lev == _root.chamb && !_root.altch) {
+                var v3 = random(_root.ArenaItem.length);
+                v2 = itz(_root.ArenaItem[v3]);
                 if (v2 > 0) {
-                  _root.ittt8.splice(v3, 1);
+                  _root.ArenaItem.splice(v3, 1);
                 }
               } else {
-                if (_root.ittt7.length > 0 && (satan or bummer == 2 or _root.lev == _root.cus)) {
+                if (_root.DevilRoom.length > 0 && (satan or bummer == 2 or _root.lev == _root.cus)) {
                   bummer = false;
                   if (_root.altsat) {
-                    var v3 = random(_root.ittt10.length);
-                    v2 = itz(_root.ittt10[v3]);
+                    var v3 = random(_root.GodRoom.length);
+                    v2 = itz(_root.GodRoom[v3]);
                   } else {
-                    var v3 = random(_root.ittt7.length);
-                    v2 = itz(_root.ittt7[v3]);
+                    var v3 = random(_root.DevilRoom.length);
+                    v2 = itz(_root.DevilRoom[v3]);
                     if (v2 > 0) {
-                      _root.ittt7.splice(v3, 1);
+                      _root.DevilRoom.splice(v3, 1);
                     }
                   }
                 } else {
-                  if (_root.ittt6.length > 0 && treas && _root.chaps != 11) {
-                    var v3 = random(_root.ittt6.length);
-                    v2 = itz(_root.ittt6[v3]);
+                  if (_root.GoldChest.length > 0 && treas && _root.chaps != 11) {
+                    var v3 = random(_root.GoldChest.length);
+                    v2 = itz(_root.GoldChest[v3]);
                     if (v2 > 0) {
-                      _root.ittt6.splice(v3, 1);
+                      _root.GoldChest.splice(v3, 1);
                     }
                   } else {
-                    if ((_root.lev == _root.shopl or bummer) && _root.ittt4.length > 1) {
+                    if ((_root.lev == _root.shopl or bummer) && _root.ShopItem.length > 1) {
                       bummer = false;
-                      var v3 = random(_root.ittt4.length);
-                      v2 = itz(_root.ittt4[v3]);
+                      var v3 = random(_root.ShopItem.length);
+                      v2 = itz(_root.ShopItem[v3]);
                       if (v2 > 0) {
-                        _root.ittt4.splice(v3, 1);
+                        _root.ShopItem.splice(v3, 1);
                       }
                     } else {
-                      if ((_root.lev == _root.boner or _root.lev == _root.boner2) && random(2) == 0 && _root.ittt5.length > 1) {
-                        var v3 = random(_root.ittt5.length);
-                        v2 = itz(_root.ittt5[v3]);
+                      if ((_root.lev == _root.boner or _root.lev == _root.boner2) && random(2) == 0 && _root.UnknownPool.length > 1) {
+                        var v3 = random(_root.UnknownPool.length);
+                        v2 = itz(_root.UnknownPool[v3]);
                         if (v2 > 0) {
-                          _root.ittt5.splice(v3, 1);
+                          _root.UnknownPool.splice(v3, 1);
                         }
                       } else {
                         if (_root.lev == _root.hide) {
-                          var v3 = random(_root.ittt3.length);
-                          v2 = itz(_root.ittt3[v3]);
+                          var v3 = random(_root.SecretRoomItem.length);
+                          v2 = itz(_root.SecretRoomItem[v3]);
                           if (v2 > 0) {
-                            _root.ittt3.splice(v3, 1);
+                            _root.SecretRoomItem.splice(v3, 1);
                           }
                         } else {
                           if (_root.lev == _root.chamb && _root.altch) {
-                            var v3 = random(_root.ittt2.length);
-                            v2 = itz(_root.ittt2[v3]);
+                            var v3 = random(_root.BossDrop.length);
+                            v2 = itz(_root.BossDrop[v3]);
                             if (v2 > 0) {
-                              _root.ittt2.splice(v3, 1);
+                              _root.BossDrop.splice(v3, 1);
                             }
                           } else {
                             if (_root.lev == _root.bossl or _root.lev == _root.bossl2) {
-                              if (_root.bosss == 23 && _root.ittt7.length > 0) {
+                              if (_root.bosss == 23 && _root.DevilRoom.length > 0) {
                                 e = 0;
                                 while (e < 100) {
-                                  var v3 = _root.ittt7[random(_root.ittt7.length)];
+                                  var v3 = _root.DevilRoom[random(_root.DevilRoom.length)];
                                   if (!ups[v3]) {
                                     v2 = v3;
                                     e = 1000;
@@ -10880,19 +10880,19 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                                   v2 = 181;
                                 } else {
                                   if (_root.bosss == 22 && !ups[130]) {
-                                    _root.locker[32] = true;
+                                    _root.SecretUnlocked[32] = true;
                                     v2 = 130;
                                   } else {
                                     if (_root.bosss == 21 && !ups[96]) {
-                                      _root.locker[32] = true;
+                                      _root.SecretUnlocked[32] = true;
                                       v2 = 96;
                                     } else {
                                       if (_root.bosss == 19 && !ups[99]) {
-                                        _root.locker[30] = true;
+                                        _root.SecretUnlocked[30] = true;
                                         v2 = 99;
                                       } else {
                                         if (_root.bosss == 20 && (!ups[100] or !ups[50])) {
-                                          _root.locker[31] = true;
+                                          _root.SecretUnlocked[31] = true;
                                           if (ups[100] or random(6) == 0) {
                                             v2 = 50;
                                           } else {
@@ -10900,13 +10900,13 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                                           }
                                         } else {
                                           if (_root.bosss > 8 && _root.bosss < 13) {
-                                            _root.locker[7] = true;
+                                            _root.SecretUnlocked[7] = true;
                                             v2 = 73;
                                           } else {
-                                            var v3 = random(_root.ittt2.length);
-                                            v2 = itz(_root.ittt2[v3]);
+                                            var v3 = random(_root.BossDrop.length);
+                                            v2 = itz(_root.BossDrop[v3]);
                                             if (v2 > 0) {
-                                              _root.ittt2.splice(v3, 1);
+                                              _root.BossDrop.splice(v3, 1);
                                             }
                                           }
                                         }
@@ -10916,10 +10916,10 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                                 }
                               }
                             } else {
-                              var v3 = random(_root.ittt.length);
-                              v2 = itz(_root.ittt[v3]);
+                              var v3 = random(_root.RegularDropPool.length);
+                              v2 = itz(_root.RegularDropPool[v3]);
                               if (v2 > 0) {
-                                _root.ittt.splice(v3, 1);
+                                _root.RegularDropPool.splice(v3, 1);
                               }
                             }
                           }
@@ -11292,7 +11292,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           }
         }
         f1 = [];
-        if (_root.locker[3] or _root.lev % 4 == 0) {
+        if (_root.SecretUnlocked[3] or _root.lev % 4 == 0) {
           if (altboss) {
             switch (f7) {
               case 67:
@@ -11407,7 +11407,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               v2.specoz = spezz;
             }
           } else {
-            if (_root.locker[42]) {
+            if (_root.SecretUnlocked[42]) {
               f2 = random(5);
             } else {
               f2 = random(10);
@@ -13001,7 +13001,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             gofind = undefined;
           }
         }
-        if (!_root.wtfuuz && _root.locker[38] && _root.skiner == 0 && _root.chala == 0) {
+        if (!_root.wtfuuz && _root.SecretUnlocked[38] && _root.skiner == 0 && _root.chala == 0) {
           player.empty = false;
           lastcra = -100;
           _root.wtfuuz = true;
@@ -13978,8 +13978,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             var v2 = highs.d;
           }
           highs.empty = true;
-          for (i in _root.ittt9) {
-            if (highs.it == _root.ittt9[i]) {
+          for (i in _root.Library) {
+            if (highs.it == _root.Library[i]) {
               _root.bookster = true;
             }
           }
@@ -14023,7 +14023,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             ups[23] = _root.ups[23];
           }
           if (highs.it == 52) {
-            _root.ittt.push(125, 125, 125, 125, 125, 125, 106, 106, 106, 106, 106, 106);
+            _root.RegularDropPool.push(125, 125, 125, 125, 125, 125, 106, 106, 106, 106, 106, 106);
           }
           if (highs.it == 179) {
             eta();
@@ -14274,7 +14274,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                                                                                                                                       } else {
                                                                                                                                         if (highs.it == 72) {
                                                                                                                                           _root.armor += 3;
-                                                                                                                                          _root.ittt4.push(33, 33, 33, 33, 33, 33, 33);
+                                                                                                                                          _root.ShopItem.push(33, 33, 33, 33, 33, 33, 33);
                                                                                                                                           _root.bmode = 6;
                                                                                                                                         } else {
                                                                                                                                           if (highs.it == 79) {
@@ -14497,13 +14497,13 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             }
           }
           if (_root.ups[4] + _root.ups[38] + _root.ups[42] + Math.max(0, _root.ups[81]) >= 1.1) {
-            _root.locker[40] = true;
+            _root.SecretUnlocked[40] = true;
           }
           if (_root.ups[13] + _root.ups[14] + _root.ups[70] >= 2) {
-            _root.locker[37] = true;
+            _root.SecretUnlocked[37] = true;
           }
           if (_root.ups[55] && _root.ups[31] + _root.ups[30] + _root.ups[39] + _root.ups[41] >= 1) {
-            _root.locker[47] = true;
+            _root.SecretUnlocked[47] = true;
           }
         } else {
           highs.dones = false;
@@ -14624,7 +14624,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       }
 
       function junx() {
-        if (_root.junxx.length > 0) {
+        if (_root.TrinketPool.length > 0) {
           if (poli) {
             poli = false;
             return 47;
@@ -14632,9 +14632,9 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             if (trg.gold) {
               return 52;
             } else {
-              f1 = random(_root.junxx.length);
-              var v2 = _root.junxx[f1] * 1;
-              _root.junxx.splice(f1, 1);
+              f1 = random(_root.TrinketPool.length);
+              var v2 = _root.TrinketPool[f1] * 1;
+              _root.TrinketPool.splice(f1, 1);
               return v2;
             }
           }
@@ -14790,7 +14790,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         }
         ++_root.so.data.pill;
         if (_root.so.data.pill > 20) {
-          _root.locker[36] = true;
+          _root.SecretUnlocked[36] = true;
         }
         if (!f1) {
           _root.soundy('bloodbank touched.wav', 90);
@@ -15265,7 +15265,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   if (satan) {
                     ++_root.evs;
                     if (_root.evs > 1) {
-                      _root.locker[54] = true;
+                      _root.SecretUnlocked[54] = true;
                     }
                     if (f1 == 3) {
                       lasth = -100;
@@ -16581,7 +16581,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             gibs(xenf, yenf);
             ++_root.so.data.rocks;
             if (_root.so.data.rocks > 49) {
-              _root.locker[18] = true;
+              _root.SecretUnlocked[18] = true;
             }
             if (_root.chaps < 7 or _root.chaps == 9) {
               _root.soundy('Rock_crumble ' + random(3) + '.wav', 100);
@@ -16628,7 +16628,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               chestopen = 2;
               _root.rarer[_root.lev] = -100;
               if (_root.so.data.rox++ > 30) {
-                _root.locker[87] = true;
+                _root.SecretUnlocked[87] = true;
               }
             }
           }
@@ -17024,7 +17024,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   if (!trg2.cent) {
                     ++_root.so.data.shits;
                     if (_root.so.data.shits > 50) {
-                      _root.locker[46] = true;
+                      _root.SecretUnlocked[46] = true;
                     }
                   }
                   _root.soundy('plop.wav', 100);
@@ -17106,10 +17106,10 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           if (_root.chaps == 6 && _root.lev != _root.bossl2) {
             sams();
             if (_root.samer > 1) {
-              _root.locker[88] = true;
+              _root.SecretUnlocked[88] = true;
             }
           }
-          if ((_root.chaps < 8 or _root.chaps == 8 && _root.double && _root.lev == _root.bossl2) && (_root.chaps != 6 or _root.locker[4] && (_root.chala > 4 or _root.chala == 0))) {
+          if ((_root.chaps < 8 or _root.chaps == 8 && _root.double && _root.lev == _root.bossl2) && (_root.chaps != 6 or _root.SecretUnlocked[4] && (_root.chala > 4 or _root.chala == 0))) {
             if (_root.lev != _root.bossl2) {
               create(320, 200, 0, 0, 0, 0, 5.09);
             }
@@ -17122,43 +17122,43 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             if (_root.chaps == 9 or _root.chala < 9) {
               f1 = _root.lox[_root.chala];
               if (f1 > 0) {
-                _root.locker[f1] = true;
+                _root.SecretUnlocked[f1] = true;
               }
             }
             if (_root.chaps == 6) {
             } else {
               if (_root.chaps == 11) {
                 f10 = [91, 92, 96, 93, 97, 94, 95];
-                _root.locker[f10[_root.skiner]] = true;
-                _root.locker[75] = true;
+                _root.SecretUnlocked[f10[_root.skiner]] = true;
+                _root.SecretUnlocked[75] = true;
               } else {
                 if (_root.chaps == 9) {
                   if (_root.altchap) {
                     f10 = [65, 66, 67, 68, 70, 69, 72];
-                    _root.locker[f10[_root.skiner]] = true;
+                    _root.SecretUnlocked[f10[_root.skiner]] = true;
                     if (_root.so.data.icer++ >= 5) {
-                      _root.locker[74] = true;
+                      _root.SecretUnlocked[74] = true;
                     }
                     if (trixx(47)) {
                     }
                   } else {
                     f10 = [55, 59, 60, 63, 62, 61, 73];
-                    _root.locker[f10[_root.skiner]] = true;
+                    _root.SecretUnlocked[f10[_root.skiner]] = true;
                   }
                 } else {
                   if (_root.lev != _root.bossl2) {
-                    _root.locker[3] = true;
+                    _root.SecretUnlocked[3] = true;
                     if (_root.skiner == 5) {
-                      _root.locker[58] = true;
+                      _root.SecretUnlocked[58] = true;
                     } else {
                       if (_root.skiner == 4) {
-                        _root.locker[38] = true;
+                        _root.SecretUnlocked[38] = true;
                       } else {
                         if (_root.skiner == 6) {
-                          _root.locker[71] = true;
+                          _root.SecretUnlocked[71] = true;
                         } else {
                           if (_root.skiner >= 1) {
-                            _root.locker[25 + _root.skiner] = true;
+                            _root.SecretUnlocked[25 + _root.skiner] = true;
                           }
                         }
                       }
@@ -17183,7 +17183,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   create(320, 280, 0, 0, 0, 0, 5.34);
                 }
                 if (_root.so.data.wins > 15) {
-                  _root.locker[89] = true;
+                  _root.SecretUnlocked[89] = true;
                 }
               }
             }
@@ -17191,10 +17191,10 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           if (_root.lev == _root.bossl) {
             if (_root.chaps == 2 or _root.chaps == 4 or _root.chaps == 6 or _root.chaps == 8) {
               if (_root.nodmg) {
-                _root.locker[48 + _root.chaps / 2] = true;
+                _root.SecretUnlocked[48 + _root.chaps / 2] = true;
               }
               _root.nodmg = true;
-              if (_root.chaps == 6 && _root.locker[74]) {
+              if (_root.chaps == 6 && _root.SecretUnlocked[74]) {
                 poli = true;
                 create(200, 300, 0, 0, 0, 0, 5.35);
               }
@@ -17206,31 +17206,31 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             ++_root.horsedown;
           }
           if (_root.bossk[1] && _root.bossk[2] && _root.bossk[13] && _root.bossk[17]) {
-            _root.locker[19] = true;
+            _root.SecretUnlocked[19] = true;
           }
           if (_root.bossk[3] && _root.bossk[4] && _root.bossk[14] && _root.bossk[18]) {
-            _root.locker[20] = true;
+            _root.SecretUnlocked[20] = true;
           }
           if (_root.bossk[5] && _root.bossk[6] && _root.bossk[15]) {
-            _root.locker[21] = true;
+            _root.SecretUnlocked[21] = true;
           }
           if (_root.bossk[9] && _root.bossk[10] && _root.bossk[11] && _root.bossk[12] && _root.horsedown >= 4) {
-            _root.locker[25] = true;
+            _root.SecretUnlocked[25] = true;
           }
           if (_root.chaps == 2) {
-            _root.locker[13] = true;
+            _root.SecretUnlocked[13] = true;
           }
           if (_root.chaps == 4) {
-            _root.locker[14] = true;
+            _root.SecretUnlocked[14] = true;
           }
           if (_root.lcomp[2] >= 25) {
-            _root.locker[22] = true;
+            _root.SecretUnlocked[22] = true;
           }
           if (_root.lcomp[4] >= 20) {
-            _root.locker[23] = true;
+            _root.SecretUnlocked[23] = true;
           }
           if (_root.lcomp[6] >= 15) {
-            _root.locker[24] = true;
+            _root.SecretUnlocked[24] = true;
           }
         }
       }
@@ -18760,10 +18760,10 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             f2 = 1 - f1;
             f3 = 150 * f1;
             colorit(_root, f2, f2, f2, f3, 0, 0);
-            if (momdown == 50 && (!_root.locker[4] or _root.chala > 0 && _root.chala < 5) && _root.chaps != 7) {
-              _root.locker[4] = true;
-              _root.locker[5] = true;
-              _root.locker[6] = true;
+            if (momdown == 50 && (!_root.SecretUnlocked[4] or _root.chala > 0 && _root.chala < 5) && _root.chaps != 7) {
+              _root.SecretUnlocked[4] = true;
+              _root.SecretUnlocked[5] = true;
+              _root.SecretUnlocked[6] = true;
               colorit(_root, 1, 1, 1, 0, 0, 0);
               _root.levz = undefined;
               moveon();
@@ -19018,7 +19018,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           if (trg.s == 81 && trg.alter == 2) {
             if (trg.dones) {
               trg.alter = 0;
-              _root.locker[64] = true;
+              _root.SecretUnlocked[64] = true;
               f0 = 5.1132;
               spaw(trg.xp, trg.yp, 0, f0);
             }
@@ -19044,7 +19044,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               minsber = true;
               if (trg.minb == 2) {
                 f1 = 74;
-                if (!_root.locker[10]) {
+                if (!_root.SecretUnlocked[10]) {
                   f1 = 64;
                 }
                 f1 = [5.3, 140, 5.07, 45, 5.04, 106, 5.01, 129, 5.02, f1, 5.04, 128, 5.3, 81];
@@ -19054,13 +19054,13 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               f0 = trg.s - 46;
               _root.minwin[f0] = true;
               if (_root.minwin[0] && _root.minwin[1] && _root.minwin[2] && _root.minwin[3] && _root.minwin[4] && _root.minwin[5] && _root.minwin[6]) {
-                _root.locker[29] = true;
+                _root.SecretUnlocked[29] = true;
               }
               if (trg.minb == 3) {
                 f0 = 5.07;
                 trg2 = create(trg.xp, trg.yp, 0, 0, 0, 0, f0);
                 trg2.col = 61;
-                _root.locker[98] = true;
+                _root.SecretUnlocked[98] = true;
               } else {
                 f0 *= 2;
                 f2 = false;
@@ -23456,7 +23456,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               if (lmo != momstate) {
                 trg.wave = 0;
               }
-              f5 = _root.locker[45];
+              f5 = _root.SecretUnlocked[45];
               if (f5) {
                 switch (momstate) {
                   case 1:
@@ -26118,7 +26118,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           if (trg.d.done or trg.done or trg.s <= -10) {
             if (trg.s == 4) {
               if (_root.so.data.bomb > 100) {
-                _root.locker[35] = true;
+                _root.SecretUnlocked[35] = true;
               }
             }
             if (trg.s == 30) {
@@ -27453,7 +27453,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     }
                     ++_root.so.data.dde;
                     if (_root.so.data.dde > 4) {
-                      _root.locker[48] = true;
+                      _root.SecretUnlocked[48] = true;
                     }
                     break;
                   case 10:
@@ -27975,7 +27975,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                             mom[z]._visible = false;
                           }
                           momkill();
-                          _root.locker[34] = true;
+                          _root.SecretUnlocked[34] = true;
                         }
                       }
                       bible = true;
@@ -28865,7 +28865,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           if (f0 == 5.1) {
             v2.fra -= 15;
             trg.done = true;
-            if (trg == 2 && _root.locker[18] && !ups[90]) {
+            if (trg == 2 && _root.SecretUnlocked[18] && !ups[90]) {
               v2.alt = false;
               v2.it = 90;
             }
@@ -28915,7 +28915,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           if (gameover == 2) {
             ++_root.so.data.deads;
             if (_root.so.data.deads >= 100) {
-              _root.locker[39] = true;
+              _root.SecretUnlocked[39] = true;
             }
           }
           if (gameover > 1) {
@@ -29003,7 +29003,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           }
         }
         if (_root.catlives + ups[145] + ups[134] + ups[133] > 2) {
-          _root.locker[85] = true;
+          _root.SecretUnlocked[85] = true;
           purr = true;
         }
         player.d.bub2._visible = ups[108] or ups[162] or ups[173] or ups[142] or ups[184];
@@ -29277,7 +29277,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           player.mhp = 0;
         }
         if (player.mhp >= 7) {
-          _root.locker[1] = true;
+          _root.SecretUnlocked[1] = true;
         }
         if (player.hp > mhpp) {
           if (fra > 10) {
@@ -29473,7 +29473,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         _root.coins = Math.min(99, _root.coins);
         _root.bombs = Math.min(99, _root.bombs);
         if (_root.coins >= 55) {
-          _root.locker[2] = true;
+          _root.SecretUnlocked[2] = true;
         }
         _root.hud.coins = _root.coins;
         _root.hud.bombs = _root.bombs;
@@ -30271,7 +30271,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                 if (trg.c2) {
                   f10 = 2;
                   f1 = [81, 134, 133, 145];
-                  if (_root.locker[79]) {
+                  if (_root.SecretUnlocked[79]) {
                     f1.push(134);
                   }
                   f1 = f1[random(f1.length)];
@@ -30334,7 +30334,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     }
                   }
                   if (trg.gold) {
-                    if (random(3) == 0 && _root.locker[84] && !_root.shitpenny) {
+                    if (random(3) == 0 && _root.SecretUnlocked[84] && !_root.shitpenny) {
                       _root.shitpenny = true;
                       create(trg.xp, trg.yp, 0, 0, 0, 0, 5.35);
                     } else {
@@ -30350,7 +30350,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                         f0 = f2;
                         f2 = 0;
                       } else {
-                        if ((_root.locker[18] && random(10) == 0 && trg == 2 or random(5) == 0 && trg.d._currentframe == 6) && z == 0 && (trg != 2 or !ups[90]) or _root.chaps == 11) {
+                        if ((_root.SecretUnlocked[18] && random(10) == 0 && trg == 2 or random(5) == 0 && trg.d._currentframe == 6) && z == 0 && (trg != 2 or !ups[90]) or _root.chaps == 11) {
                           f1 = 70;
                           enf = enfcheck(chestox, chestoy, player.xp, player.yp, f1);
                           if (enf < f1) {
@@ -30648,7 +30648,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       }
       if (_root.lev == _root.bossl) {
         altboss = _root.altboss;
-        if (_root.chaps == 8 or _root.chaps == 6 && !_root.locker[3]) {
+        if (_root.chaps == 8 or _root.chaps == 6 && !_root.SecretUnlocked[3]) {
           _root.unl.gotoAndStop(1);
           _root.unl.nogo = true;
         }
@@ -30694,13 +30694,13 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         _root.big = false;
         _root.darks = false;
         f1 = 80;
-        if (_root.locker[4]) {
+        if (_root.SecretUnlocked[4]) {
           f1 = 30;
         }
-        if (_root.locker[42]) {
+        if (_root.SecretUnlocked[42]) {
           f1 = 10;
         }
-        if (_root.locker[65] or _root.locker[66] or _root.locker[67] or _root.locker[68] or _root.locker[70] or _root.locker[69] or _root.locker[72]) {
+        if (_root.SecretUnlocked[65] or _root.SecretUnlocked[66] or _root.SecretUnlocked[67] or _root.SecretUnlocked[68] or _root.SecretUnlocked[70] or _root.SecretUnlocked[69] or _root.SecretUnlocked[72]) {
           f1 = 5;
         }
         sams();
@@ -31170,7 +31170,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           _root.gamaaa = true;
           ++_root.so.data.gams;
           if (_root.so.data.gams > 10) {
-            _root.locker[33] = true;
+            _root.SecretUnlocked[33] = true;
           }
         }
       }
@@ -31344,7 +31344,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       hps[85] *= 0.65;
       hps[86] *= 0.9;
       hps[102] *= 2;
-      if (_root.locker[45]) {
+      if (_root.SecretUnlocked[45]) {
         hps[78] *= 1.25;
       }
       for (e in hops) {
@@ -31930,7 +31930,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
     }
 
     frame 2 {
-      if (_root.locker[4]) {
+      if (_root.SecretUnlocked[4]) {
         f1.gotoAndStop(2);
       } else {
         f1.gotoAndStop(1);
@@ -32015,7 +32015,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               if (xp == 0) {
                 pos = 3;
               } else {
-                if (_root.skiner == 0 or _root.locker[_root.skiner] && _root.skiner < 5 or _root.skiner == 5 && _root.locker[54] or _root.skiner == 6 && _root.locker[88]) {
+                if (_root.skiner == 0 or _root.SecretUnlocked[_root.skiner] && _root.skiner < 5 or _root.skiner == 5 && _root.SecretUnlocked[54] or _root.skiner == 6 && _root.SecretUnlocked[88]) {
                   _root.chala = undefined;
                   _root.darky(150);
                 }
@@ -32117,7 +32117,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
   movieClip 7041  {
 
     frame 1 {
-      if (_root.locker[38]) {
+      if (_root.SecretUnlocked[38]) {
         gotoAndStop(2);
       } else {
         gotoAndStop(1);
@@ -32193,7 +32193,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         } else {
           nor = true;
         }
-        if (!_root.locker[41]) {
+        if (!_root.SecretUnlocked[41]) {
           chars = 6;
         } else {
           chars = 7;
@@ -32240,10 +32240,10 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         rbew *= 0.8;
         rp += rbew;
         inc.gotoAndStop(skiner + 1);
-        f1 = _root.locker[skiner] && skiner != 4 or skiner == 4 && _root.locker[54];
+        f1 = _root.SecretUnlocked[skiner] && skiner != 4 or skiner == 4 && _root.SecretUnlocked[54];
         if (_root.skiner == 6) {
           inc.gotoAndStop(7);
-          f1 = _root.locker[88];
+          f1 = _root.SecretUnlocked[88];
         }
         if (f1) {
           inc.d.gotoAndStop(1);
@@ -32287,7 +32287,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           } else {
             f1 = [0, 3, 2, 1, 54, 41, 88];
           }
-          if (_root.locker[f1[e]]) {
+          if (_root.SecretUnlocked[f1[e]]) {
             trg.gotoAndStop(1);
             rand.push(-o);
           } else {
@@ -32307,7 +32307,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
 
     on (release) {
       if (pos == 3) {
-        if (_root.skiner == 0 or _root.locker[_root.skiner] && _root.skiner < 5 or _root.skiner == 5 && _root.locker[54] or _root.skiner == 6 && _root.locker[88]) {
+        if (_root.skiner == 0 or _root.SecretUnlocked[_root.skiner] && _root.skiner < 5 or _root.skiner == 5 && _root.SecretUnlocked[54] or _root.skiner == 6 && _root.SecretUnlocked[88]) {
           _root.chala = undefined;
           _root.darky(150);
         }
