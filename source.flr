@@ -7684,7 +7684,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       } else {
         _quality = qqua;
       }
-      _root.a.st22(qqua);
+      _root.a.displayCornerMessage(qqua);
       so.data.qqal = qqua;
       qshow();
     }
@@ -11286,7 +11286,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             v2.hp *= 1.1;
             v2.mhp = v2.hp;
             f4 = ['Isaac', 'Magdalena', 'Cain', 'Judas', 'XXX', 'Eve', 'Samson'];
-            st11(f4[_root.skiner] + ' vs ' + 'Krampus');
+            displayBannerMessage(f4[_root.skiner] + ' vs ' + 'Krampus');
           } else {
             v2.alter = 1;
           }
@@ -13911,7 +13911,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         return f5 > 0;
       }
 
-      function st11(f1) {
+      function displayBannerMessage(f1) {
         _root.hud.st1.tex = f1;
         _root.hud.st1.gotoAndPlay(1);
         _root.hud.st1._visible = true;
@@ -13970,8 +13970,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           if (chama == 1 && _root.lev == _root.chamb) {
             chama = 2;
           }
-          st11(_root.st1[highs.it]);
-          st22(_root.st2x[highs.it]);
+          displayBannerMessage(_root.st1[highs.it]);
+          displayCornerMessage(_root.st2x[highs.it]);
           if (highs.d._currentframe == 10) {
             var v2 = highs.d.d;
           } else {
@@ -14524,7 +14524,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         }
       }
 
-      function st22(f1) {
+      function displayCornerMessage(f1) {
         if (f1 != 0) {
           _root.st2._visible = f1 != 0;
           _root.st2.gotoAndPlay(1);
@@ -14673,7 +14673,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           if (!trixx(f2) && (!trixx(53) or ups[139])) {
             f1 = ['Fish Head', 'Pinky Eye', 'Push Pin', 'Liberty Cap', 'Umbilical Cord', 'Childs Heart', 'Curved Horn', 'Rusted Key', 'Goat Hoof', 'Moms Pearl', 'Cancer', 'Red Patch', 'Match Stick', 'Lucky Toe', 'Cursed Skull', 'Safety Cap', 'Ace of Spades', 'Isaacs Fork', 'The Polaroid', 'A Missing Page', 'Bloody Penny', 'Burnt Penny', 'Flat Penny', 'Counterfeit Penny', 'Tick', 'Isaacs Head', 'Maggys Faith', 'Judas\' Tongue', '???\'s Soul', 'Samsons Lock', 'Cains Eye', 'Eves Bird Foot', 'The Left Hand'];
             f1 = f1[Math.max(0, f2 - 29)];
-            st11(f1);
+            displayBannerMessage(f1);
             _root.atrixer = _root.trixer;
             _root.trixer = f1;
             _root.soundy('shellgame' + random(2) + '.wav');
@@ -14692,7 +14692,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           }
         } else {
           if (f2 < 7) {
-            st11('Pills here!');
+            displayBannerMessage('Pills here!');
             _root.soundy('shellgame' + random(2) + '.wav');
             _root.colss[43] = true;
           } else {
@@ -14764,11 +14764,11 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           return 1;
         } else {
           if (trg.col == 2) {
-            st22('a Nickel');
+            displayCornerMessage('a Nickel');
             _root.soundy('nickelpickup.mp');
             return 5;
           } else {
-            st22('a Dime');
+            displayCornerMessage('a Dime');
             _root.soundy('dimepickup.wav');
             return 10;
           }
@@ -15148,14 +15148,14 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   highs.dones = false;
                   if (!highs.troll) {
                     highs.troll = true;
-                    st22('Trolololol');
+                    displayCornerMessage('Trolololol');
                   }
                 } else {
                   if (highs.col != 2) {
                     ++_root.bombs;
                   } else {
                     _root.bombs += 2;
-                    st22('1 + 1 free');
+                    displayCornerMessage('1 + 1 free');
                   }
                 }
                 if (nohit) {
@@ -18531,7 +18531,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             if (random(3) == 0) {
               _root.ups[10] += 0.5;
               ups[10] = _root.ups[10];
-              st22('Pretty Fly');
+              displayCornerMessage('Pretty Fly');
               emo();
             } else {
               f2 = 13;
@@ -19038,7 +19038,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   f1 = ' vs ' + f1[f0];
                 }
               }
-              st11(f4[_root.skiner] + f1);
+              displayBannerMessage(f4[_root.skiner] + f1);
             }
             if (trg.dones && helpss == 0 && !minsber) {
               minsber = true;
@@ -19578,7 +19578,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                           f1 = 0.65 - ups[46];
                           if (Math.random() < f1) {
                             f1 = ['Look to la Luna', 'Don\'t Leave The House Today', 'We will all die one day', 'You are throwing your life away', 'Go outside!', 'Give Up!', 'You will die alone', 'Ask again later', 'WAKE UP', 'you are worshiping a sun god', 'Stay asleep', 'Marry and Reproduce', 'Question authority', 'think for yourself', 'Steven lives', 'Bring him the photo'];
-                            st11(f1[random(f1.length)]);
+                            displayBannerMessage(f1[random(f1.length)]);
                           } else {
                             if (random(20) == 0) {
                               chestopen = trg;
@@ -26909,7 +26909,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         v1[67] = 'The Joker';
         v1 = v1[f1 - 7];
         if (!f3) {
-          st11(v1);
+          displayBannerMessage(v1);
         } else {
           return v1;
         }
@@ -27485,25 +27485,25 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   case 14:
                     if (f2) {
                       ++_root.luck;
-                      st22('Luck Up');
+                      displayCornerMessage('Luck Up');
                       goodpill();
                       emo();
                       pilcol(50, 100, 50);
                     } else {
-                      st22('Luck Down');
+                      displayCornerMessage('Luck Down');
                       --_root.luck;
                       emo(true);
                     }
                     break;
                   case 13:
                     bluf += 3;
-                    st22('Friends till the end!');
+                    displayCornerMessage('Friends till the end!');
                     break;
                   case 6:
                     if (player.hp + _root.armor > 1) {
                       lasth = 0;
                       playerhurt(1, 201);
-                      st22('Bad Trip!');
+                      displayCornerMessage('Bad Trip!');
                     } else {
                     case 1:
                       if (_root.skiner == 4) {
@@ -27515,37 +27515,37 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                           player.hp = player.mhp;
                         }
                       }
-                      st22('Full Health');
+                      displayCornerMessage('Full Health');
                       goodpill();
                       emo();
                       break;
                     case 2:
                       if (random(2) == 0) {
                         hat(54);
-                        st11('Puberty');
+                        displayBannerMessage('Puberty');
                       } else {
                         _root.hmode = 16;
-                        st11('I found Pills');
-                        st22('And ate them!');
+                        displayBannerMessage('I found Pills');
+                        displayCornerMessage('And ate them!');
                         _root.soundy('derp.mp');
                       }
                       break;
                     case 3:
                       bomberfail = 5.5;
-                      st22('Oh no!');
+                      displayCornerMessage('Oh no!');
                       emo(true);
                       _root.soundy('fart.mp');
                       break;
                     case 4:
                       _root.armor += 2;
-                      st22('Balls of Steel');
+                      displayCornerMessage('Balls of Steel');
                       goodpill();
                       emo();
                       break;
                     case 5:
                       _root.ups[10] += 0.5;
                       ups[10] = _root.ups[10];
-                      st22('Pretty Fly');
+                      displayCornerMessage('Pretty Fly');
                       goodpill();
                       emo();
                       break;
@@ -27556,7 +27556,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                         f13 = _root.armor;
                       }
                       if (f13 <= 1 or f2) {
-                        st22('Health Up');
+                        displayCornerMessage('Health Up');
                         if (_root.skiner == 4) {
                           ++_root.armor;
                         } else {
@@ -27571,7 +27571,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                         } else {
                           --_root.ups[15];
                         }
-                        st22('Health Down');
+                        displayCornerMessage('Health Down');
                         emo(true);
                       }
                       ups[15] = _root.ups[15];
@@ -27580,19 +27580,19 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       f1 = _root.bombs;
                       _root.bombs = _root.keys;
                       _root.keys = f1;
-                      st22('Bombs are Key');
+                      displayCornerMessage('Bombs are Key');
                       emo();
                       break;
                     case 9:
                       if (f2) {
                         _root.ups[32] += 0.5;
-                        st22('Tears Up');
+                        displayCornerMessage('Tears Up');
                         pilcol(80, 80, 100);
                         goodpill();
                         emo();
                       } else {
                         _root.ups[32] -= 0.4;
-                        st22('Tears Down');
+                        displayCornerMessage('Tears Down');
                         emo(true);
                       }
                       ups[32] = _root.ups[32];
@@ -27600,13 +27600,13 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     case 10:
                       if (f2 or ups[6] && _root.chaps < 8) {
                         _root.ups[31] += 0.5;
-                        st22('Range Up');
+                        displayCornerMessage('Range Up');
                         pilcol(50, 100, 100);
                         emo();
                         goodpill();
                       } else {
                         _root.ups[31] -= 0.4;
-                        st22('Range Down');
+                        displayCornerMessage('Range Down');
                         emo(true);
                       }
                       ups[31] = _root.ups[31];
@@ -27614,20 +27614,20 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     case 11:
                       if (f2) {
                         ++_root.ups[27];
-                        st22('Speed Up');
+                        displayCornerMessage('Speed Up');
                         pilcol(100, 100, 50);
                         goodpill();
                         emo();
                       } else {
                         _root.ups[27] -= 0.8;
-                        st22('Speed Down');
+                        displayCornerMessage('Speed Down');
                         emo(true);
                       }
                       ups[27] = _root.ups[27];
                       break;
                     case 12:
                       fart();
-                      st22('Bad Gas');
+                      displayCornerMessage('Bad Gas');
                       break;
                     case 126:
                       f1 = random(15);
@@ -27640,7 +27640,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                           }
                         }
                       }
-                      st22('TelePills');
+                      displayCornerMessage('TelePills');
                       teller();
                     }
                 }
@@ -27661,7 +27661,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       f1 = f1[random(f1.length)];
                       _root.it = f1;
                       f1 += itn2(f1);
-                      st22(_root.st1[f1]);
+                      displayCornerMessage(_root.st1[f1]);
                     }
                     _root.over.gotoAndStop(14);
                     goper = true;
@@ -27823,7 +27823,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       if (f1 == 73) {
                         ups[f1] = random(2) + 2;
                       }
-                      st22(_root.st1[f1]);
+                      displayCornerMessage(_root.st1[f1]);
                       _root.over.gotoAndStop(12);
                       break;
                     case 84:
@@ -28900,7 +28900,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           bluf = _root.bluf;
         }
         if (fra == 14 && curss) {
-          st11(curss);
+          displayBannerMessage(curss);
         }
         if (ups[114]) {
           ups[118] = 0;
