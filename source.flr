@@ -2766,7 +2766,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
 
     frame 1 {
       stop();
-      if (_root.altsat && _root.lev != _root.bossl) {
+      if (_root.godRoomFloor && _root.lev != _root.bossl) {
         gotoAndStop(2);
       }
     }
@@ -6794,17 +6794,17 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           f1 = false;
           f2 = f1;
           if (_root.bossl == _root.lev or _root.bossl2 == _root.lev) {
-            if (nam == 'bossintro.mp3' && _root.chaps == 6) {
+            if (nam == 'bossintro.mp3' && _root.floor == 6) {
               f1 = true;
               nam = 'm10-0.mp3';
               _root.bossmusic = true;
             } else {
-              if (nam == 'bossintro.mp3' && _root.chaps == 8) {
+              if (nam == 'bossintro.mp3' && _root.floor == 8) {
                 f1 = true;
                 nam = 'm8-0.mp3';
                 _root.bossmusic = true;
               } else {
-                if (nam == 'bossintro.mp3' && _root.chaps == 9 && !_root.altchap) {
+                if (nam == 'bossintro.mp3' && _root.floor == 9 && !_root.altchap) {
                   f1 = true;
                   nam = 'm20-0.mp3';
                   _root.bossmusic = true;
@@ -7113,7 +7113,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           f9 = _root._currentframe == 2 && _root.lev == _root.hide2;
           f5 = _root._currentframe == 2 && _root.lev == _root.gamb;
           f6 = _root._currentframe == 2 && _root.lev == _root.shopl && _root.lev != _root.minb;
-          f7 = _root._currentframe == 2 && _root.lev == 166 && _root.kramper != _root.chaps;
+          f7 = _root._currentframe == 2 && _root.lev == 166 && _root.kramper != _root.floor;
           f8 = _root._currentframe == 2 && _root.lev == _root.hide && _root.lev != _root.minb;
           if (_root.musc == undefined && _root.amusc == undefined) {
             --menubeen;
@@ -7188,7 +7188,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                             if (_root.bossmusic && !_root.dmusic) {
                               if (_root.a.ashut > 0.9 or _root._currentframe == 4) {
                                 f1 = _root.lev == _root.bossl or _root.bossl2 == _root.lev;
-                                if (_root.chaps == 11 or _root.chaps == 9 && _root.altchap) {
+                                if (_root.floor == 11 or _root.floor == 9 && _root.altchap) {
                                   if (_root.intro) {
                                     soundy('m29-0.mp3');
                                     _root.intro = false;
@@ -7196,13 +7196,13 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                                     soundy('m29-1.mp3');
                                   }
                                 } else {
-                                  if (_root.chaps == 6 && f1) {
+                                  if (_root.floor == 6 && f1) {
                                     soundy('m10-1.mp3');
                                   } else {
-                                    if (_root.chaps == 8 && f1) {
+                                    if (_root.floor == 8 && f1) {
                                       soundy('m8-1.mp3');
                                     } else {
-                                      if (_root.chaps == 9 && f1 && !_root.altchap) {
+                                      if (_root.floor == 9 && f1 && !_root.altchap) {
                                         soundy('m20-1.mp3');
                                       } else {
                                         if (_root.altchap) {
@@ -7253,14 +7253,14 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                                 }
                               }
                             } else {
-                              f1 = Math.min(Math.round(_root.chaps / 2), 4);
+                              f1 = Math.min(Math.round(_root.floor / 2), 4);
                               if (f1 <= 0) {
                                 f1 = 1;
                               }
                               if (_root.altchap && f1 != 4) {
                                 f1 += 20;
                               }
-                              if (_root.chaps == 9) {
+                              if (_root.floor == 9) {
                                 if (_root.altchap) {
                                   f1 = 25;
                                 } else {
@@ -7273,15 +7273,15 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                               } else {
                                 if (_root.amusic) {
                                   f1 = 6;
-                                  if (_root.lev == _root.chamb && _root.altch or (_root.lev == _root.shopl or _root.lev == _root.minb) && _root.altm) {
+                                  if (_root.lev == _root.arenaRoom && _root.bossArena or (_root.lev == _root.shopl or _root.lev == _root.minb) && _root.altm) {
                                     f1 = 27;
                                   }
-                                  if (_root.lev != chamb) {
+                                  if (_root.lev != arenaRoom) {
                                     _root.amas = true;
                                   }
                                 }
                               }
-                              if (_root.chaps == 11) {
+                              if (_root.floor == 11) {
                                 if (intro) {
                                   soundy('m-b0.mp3');
                                   intro = false;
@@ -7316,7 +7316,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           }
           if (_root.musc.nam != undefined && !fader) {
             if (_root.bossmusic) {
-              if (_root.lev != _root.bossl && _root.bossl2 != _root.lev && _root.lev != _root.gamb && (_root.lev != 166 or _root.kramper != _root.chaps) && _root.lev != _root.minb && _root.lev != _root.chamb && _root._currentframe != 4) {
+              if (_root.lev != _root.bossl && _root.bossl2 != _root.lev && _root.lev != _root.gamb && (_root.lev != 166 or _root.kramper != _root.floor) && _root.lev != _root.minb && _root.lev != _root.arenaRoom && _root._currentframe != 4) {
                 _root.bossmusic = false;
                 fade = true;
               }
@@ -7740,7 +7740,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         }
         _root.intro = true;
         _root.fade = false;
-        _root.chaps = 1;
+        _root.floor = 1;
       }
       if (dark > 0 or undark) {
         f1 = 2.5;
@@ -7759,7 +7759,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         dark -= f1;
         undark = dark > 0;
         f1 = 1 - dark / 100;
-        if (_root.chaps == 9 && _root.altchap) {
+        if (_root.floor == 9 && _root.altchap) {
           f2 = 255 * (1 - f1);
         } else {
           f2 = 0;
@@ -7875,8 +7875,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
     }
 
     linx = false;
-    st1 = [0, 'The Sad Onion', 'The Inner Eye', 'Spoon Bender', 'Max\'s Head', 'My Reflection', 'Number one', 'Blood of the Martyr', 'Brother Bobby', 'Skatole', 'Halo of Flies', '1up!', 'Magic Mushroom', 'The Virus', 'Roid Rage', '<3', 'Raw Liver', 'Skeleton Key', 'A dollar!', 'Boom!', 'Transcendence', 'The Compass', 'Lunch', 'Dinner', 'Dessert', 'Breakfast', 'Rotten Meat ', 'Wooden Spoon', 'The Belt', 'Moms Underwear', 'Moms Heels ', 'Moms Lipstick', 'Wire Coat hanger!', 'The Bible', 'The Book of Belial', 'The Necronomicon', 'The Poop!', 'Mr. Boom!', 'Tammys Head', 'Moms Bra', 'kamikaze!', 'Moms Pad ', 'Bobs Rotten Head', 'Pills here!', 'Teleport!', 'Yum Heart', 'Lucky Foot', 'Doctors Remote', 'Cupids arrow', 'Shoop da Whoop!', 'Steven', 'Pentagram', 'Dr Fetus', 'Magneto', 'Treasure Map', 'Moms Eye', 'Lemon Mishap', 'Distant Admiration', 'Book of shadows', 'Wiggle Worm', 'The Ladder', 'Tarot Card', 'Charm of the vampire', 'The Battery', 'Steam Sale', 'Anarchist Cookbook', 'The Hourglass', 'Sister Maggy', 'Technology', 'Chocolate Milk', 'Growth Hormones', 'Mini Mush', 'Rosary', 'Cube of Meat', 'A Quarter', 'PHD', 'Xray-Vision', 'My little Unicorn', 'Book of Revelations', 'The Mark', 'The Pact', 'Dead Cat', 'Lord of the Pit', 'the Nail', 'We need to go deeper!', 'Deck of Cards', 'Monstros Tooth', 'Lokis Horns', 'Lil Chubby', 'Spider Bite', 'The Small Rock', 'Spelunker Hat', 'Super Bandage', 'The Gamekid', 'Sack of pennies', 'Robo-Baby', 'Little Chad', 'The Book of Sin', 'The Relic', 'Little Gish', 'Little Steve', 'The Halo', 'Moms Bottle of Pills', 'The common cold', 'The Parasite', 'The Dice', 'Mr. Mega', 'The Pinking Shears', 'The Wafer', 'Money = Power', 'Moms Contacts', 'The Bean', 'Guardian Angel', 'Demon Baby', 'Moms Knife', 'Ouija Board', '9 Volt', 'Dead Bird', 'Brimstone', 'Blood Bag', 'Odd Mushroom', 'Odd Mushroom', 'Whore of Babylon', 'Monster Manuel', 'Dead Sea Scrolls', 'Bobby - Bomb', 'Razor Blade', 'Forget Me Now', 'Forever alone', 'Bucket of Lard', 'A Pony', 'Bomb Bag', 'A Lump of Coal', 'Guppys Paw', 'Guppys Tail', 'IV Bag', 'Best Friend', 'Remote Detonator', 'Stigmata', 'Moms Purse', 'Bobs Curse', 'Pageant Boy', 'Scapular', 'Speed Ball', 'Bum friend', 'Guppys Head', 'Prayer Card', 'Notched Axe', 'Infestation', 'Ipecac', 'Tough love', 'The Mulligan', 'Technology 2', 'Mutant Spider', 'Chemical peel', 'The Peeper!', 'Habit', 'Bloody Lust', 'Crystal Ball', 'Spirit of the night', 'Crack the Sky', 'Ankh', 'Celtic cross', 'Ghost Baby', 'The Candle', 'Cat-o-nine-tails', 'D20', 'Harlequin baby', 'Epic Fetus', 'Polyphemus', 'Daddy longlegs', 'Spider Butt', 'Sacrificial Dagger', 'Mitre', 'Rainbow Baby', 'Dads Key', 'Stem cells', 'Portable Slot!', 'Holy Water', 'Fate', 'The Black Bean', 'White Pony', 'Sacred Heart', 'Tooth Picks', 'Holy Grail', 'Dead Dove', 'Blood Rights', 'Guppys Hairball', 'Abel', 'SMB Super Fan!', 'Pyro', '3 Dollar bill', 'Telepathy for Dummies', 'MEAT!', 'Magic 8 ball', 'Moms coin purse', 'Squeezy', 'Jesus Juice', 'BOX'];
-    st2x = [0, 'Tears up!', 'Triple Shot', 'Homing shots', 'Dmg up!', 0, 'Tears up!', 'Dmg up!', 0, 'Fly Love', 0, '1up!', 'All stats up!', 'Poison touch', 'Speed & Range up!', 'HP up!', 'HP up!', 0, '$$$', 0, 0, 0, 'HP up!', 'HP up!', 'HP up!', 'HP up!', 'HP up!', 'Speed up!', 'Speed up!', 'Range up!', 'Range up!', 'Range up!', 'Tears up!', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 0, 'SPACE to use', 'Piercing shots', 'SPACE to use', 'Damage Up', 'Damage Up', '???', 'Item snatcher', 0, 'Tears Up', 'SPACE to use', 'Attack Fly', 'SPACE to use', 'SSSSS!  ', 'Building Bridges', 0, 'kills heal', 'items recharge', '50% off', 'Space to Use', 0, 0, 'Laser Tears', 'Charge Shots', 'Speed + Dmg', 'Speed + Range', 'Faith Up!', 0, '+25 coins', 'better Pills!', 'Ive seen everything!', 'SPACE to use', 'SPACE to use', 'Dmg up!', 'Dmg up!', '9 lives', 'Deamon wings!', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'Tears Up', 0, 'Slow Effect', 'Dmg Up', 'see thru doors', '+2 hearts', 'SPACE to use', 'Gives Money', 0, 'Gives Hearts', 'SPACE to use', 0, 0, 0, 'all stats up', 'SPACE to use', 'Poison dmg', 'Split Shot', 'SPACE to use', 'Blast dmg', 'SPACE to use', 'dmg resistence', '$$$ = Damage', 'freeze effect', 'SPACE to use', 'Faith up', 0, 'Stab Stab Stab!', 'Spectral Tears', 'Quicker charge', 0, 0, 'HP Up', 'Fire rate up', 'Dmg up', 'Curse Up', 'SPACE to use', 'SPACE to use', 'Homing Bombs', 'SPACE to use', 'SPACE to use', 'Attack Fly', 'HP Up', 'SPACE to use', 'Gives Bombs', 'My Xmas Present', 'SPACE to use', 'Cursed?', 'Portable blood bank', 'Friends till the end!', 'SPACE to Detonate!', 'Dmg + Health +', 'more trinket room!', '+5 Poison Bombs', '', 'you have been blessed', 'Speed + Shot Speed +', 'hes greedy!', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'They grow inside!', 'explosive shots!', 'tooth shot!', 'They grow inside!', 'laser!', 'Quad shot', 'damage up!', 'plop', 'Item Martyr ', 'RAGE!', 'SPACE to use', 'scary', 'SPACE to use', 'eternal life?', 'you feel blessed', '', 'SPACE to use', 'shot speed up!', 'SPACE to use', '', '', '', 'Daddys love', 'SPACE to use', '', 'you feel blessed', '', 'SPACE to use', 'health up', 'SPACE to use', 'Don\'t spill it', '', 'Panic Farts', 'SPACE to Use', 'Tears Up', 'Tears Up', 'Hp Up', 'Spectral Shots', 'SPACE to Use', 'Yuck!', '', 'All Stats Up', '', 'Random Tears', 'SPACE to use', 'Tears + HP Up', 'Tears Up', '', 'Tears Up', 'Range + Tears Up', '', '', '', 0];
+    itemNames = [0, 'The Sad Onion', 'The Inner Eye', 'Spoon Bender', 'Max\'s Head', 'My Reflection', 'Number one', 'Blood of the Martyr', 'Brother Bobby', 'Skatole', 'Halo of Flies', '1up!', 'Magic Mushroom', 'The Virus', 'Roid Rage', '<3', 'Raw Liver', 'Skeleton Key', 'A dollar!', 'Boom!', 'Transcendence', 'The Compass', 'Lunch', 'Dinner', 'Dessert', 'Breakfast', 'Rotten Meat ', 'Wooden Spoon', 'The Belt', 'Moms Underwear', 'Moms Heels ', 'Moms Lipstick', 'Wire Coat hanger!', 'The Bible', 'The Book of Belial', 'The Necronomicon', 'The Poop!', 'Mr. Boom!', 'Tammys Head', 'Moms Bra', 'kamikaze!', 'Moms Pad ', 'Bobs Rotten Head', 'Pills here!', 'Teleport!', 'Yum Heart', 'Lucky Foot', 'Doctors Remote', 'Cupids arrow', 'Shoop da Whoop!', 'Steven', 'Pentagram', 'Dr Fetus', 'Magneto', 'Treasure Map', 'Moms Eye', 'Lemon Mishap', 'Distant Admiration', 'Book of shadows', 'Wiggle Worm', 'The Ladder', 'Tarot Card', 'Charm of the vampire', 'The Battery', 'Steam Sale', 'Anarchist Cookbook', 'The Hourglass', 'Sister Maggy', 'Technology', 'Chocolate Milk', 'Growth Hormones', 'Mini Mush', 'Rosary', 'Cube of Meat', 'A Quarter', 'PHD', 'Xray-Vision', 'My little Unicorn', 'Book of Revelations', 'The Mark', 'The Pact', 'Dead Cat', 'Lord of the Pit', 'the Nail', 'We need to go deeper!', 'Deck of Cards', 'Monstros Tooth', 'Lokis Horns', 'Lil Chubby', 'Spider Bite', 'The Small Rock', 'Spelunker Hat', 'Super Bandage', 'The Gamekid', 'Sack of pennies', 'Robo-Baby', 'Little Chad', 'The Book of Sin', 'The Relic', 'Little Gish', 'Little Steve', 'The Halo', 'Moms Bottle of Pills', 'The common cold', 'The Parasite', 'The Dice', 'Mr. Mega', 'The Pinking Shears', 'The Wafer', 'Money = Power', 'Moms Contacts', 'The Bean', 'Guardian Angel', 'Demon Baby', 'Moms Knife', 'Ouija Board', '9 Volt', 'Dead Bird', 'Brimstone', 'Blood Bag', 'Odd Mushroom', 'Odd Mushroom', 'Whore of Babylon', 'Monster Manuel', 'Dead Sea Scrolls', 'Bobby - Bomb', 'Razor Blade', 'Forget Me Now', 'Forever alone', 'Bucket of Lard', 'A Pony', 'Bomb Bag', 'A Lump of Coal', 'Guppys Paw', 'Guppys Tail', 'IV Bag', 'Best Friend', 'Remote Detonator', 'Stigmata', 'Moms Purse', 'Bobs Curse', 'Pageant Boy', 'Scapular', 'Speed Ball', 'Bum friend', 'Guppys Head', 'Prayer Card', 'Notched Axe', 'Infestation', 'Ipecac', 'Tough love', 'The Mulligan', 'Technology 2', 'Mutant Spider', 'Chemical peel', 'The Peeper!', 'Habit', 'Bloody Lust', 'Crystal Ball', 'Spirit of the night', 'Crack the Sky', 'Ankh', 'Celtic cross', 'Ghost Baby', 'The Candle', 'Cat-o-nine-tails', 'D20', 'Harlequin baby', 'Epic Fetus', 'Polyphemus', 'Daddy longlegs', 'Spider Butt', 'Sacrificial Dagger', 'Mitre', 'Rainbow Baby', 'Dads Key', 'Stem cells', 'Portable Slot!', 'Holy Water', 'Fate', 'The Black Bean', 'White Pony', 'Sacred Heart', 'Tooth Picks', 'Holy Grail', 'Dead Dove', 'Blood Rights', 'Guppys Hairball', 'Abel', 'SMB Super Fan!', 'Pyro', '3 Dollar bill', 'Telepathy for Dummies', 'MEAT!', 'Magic 8 ball', 'Moms coin purse', 'Squeezy', 'Jesus Juice', 'BOX'];
+    itenDescriptions = [0, 'Tears up!', 'Triple Shot', 'Homing shots', 'Dmg up!', 0, 'Tears up!', 'Dmg up!', 0, 'Fly Love', 0, '1up!', 'All stats up!', 'Poison touch', 'Speed & Range up!', 'HP up!', 'HP up!', 0, '$$$', 0, 0, 0, 'HP up!', 'HP up!', 'HP up!', 'HP up!', 'HP up!', 'Speed up!', 'Speed up!', 'Range up!', 'Range up!', 'Range up!', 'Tears up!', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 0, 'SPACE to use', 'Piercing shots', 'SPACE to use', 'Damage Up', 'Damage Up', '???', 'Item snatcher', 0, 'Tears Up', 'SPACE to use', 'Attack Fly', 'SPACE to use', 'SSSSS!  ', 'Building Bridges', 0, 'kills heal', 'items recharge', '50% off', 'Space to Use', 0, 0, 'Laser Tears', 'Charge Shots', 'Speed + Dmg', 'Speed + Range', 'Faith Up!', 0, '+25 coins', 'better Pills!', 'Ive seen everything!', 'SPACE to use', 'SPACE to use', 'Dmg up!', 'Dmg up!', '9 lives', 'Deamon wings!', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'Tears Up', 0, 'Slow Effect', 'Dmg Up', 'see thru doors', '+2 hearts', 'SPACE to use', 'Gives Money', 0, 'Gives Hearts', 'SPACE to use', 0, 0, 0, 'all stats up', 'SPACE to use', 'Poison dmg', 'Split Shot', 'SPACE to use', 'Blast dmg', 'SPACE to use', 'dmg resistence', '$$$ = Damage', 'freeze effect', 'SPACE to use', 'Faith up', 0, 'Stab Stab Stab!', 'Spectral Tears', 'Quicker charge', 0, 0, 'HP Up', 'Fire rate up', 'Dmg up', 'Curse Up', 'SPACE to use', 'SPACE to use', 'Homing Bombs', 'SPACE to use', 'SPACE to use', 'Attack Fly', 'HP Up', 'SPACE to use', 'Gives Bombs', 'My Xmas Present', 'SPACE to use', 'Cursed?', 'Portable blood bank', 'Friends till the end!', 'SPACE to Detonate!', 'Dmg + Health +', 'more trinket room!', '+5 Poison Bombs', '', 'you have been blessed', 'Speed + Shot Speed +', 'hes greedy!', 'SPACE to use', 'SPACE to use', 'SPACE to use', 'They grow inside!', 'explosive shots!', 'tooth shot!', 'They grow inside!', 'laser!', 'Quad shot', 'damage up!', 'plop', 'Item Martyr ', 'RAGE!', 'SPACE to use', 'scary', 'SPACE to use', 'eternal life?', 'you feel blessed', '', 'SPACE to use', 'shot speed up!', 'SPACE to use', '', '', '', 'Daddys love', 'SPACE to use', '', 'you feel blessed', '', 'SPACE to use', 'health up', 'SPACE to use', 'Don\'t spill it', '', 'Panic Farts', 'SPACE to Use', 'Tears Up', 'Tears Up', 'Hp Up', 'Spectral Shots', 'SPACE to Use', 'Yuck!', '', 'All Stats Up', '', 'Random Tears', 'SPACE to use', 'Tears + HP Up', 'Tears Up', '', 'Tears Up', 'Range + Tears Up', '', '', '', 0];
     acnam = [0, 'Maggy', 'Cain', 'Judas', 'Killed_Mom', 0, 0, 0, 'The_Noose', 'The_Nail', 'The_Quarter', 'The_Fetus', 0, 'The_Spider', 'The_Spelunker', 0, 0, 0, 'The_Rock', 'Monstros_Tooth', 'Lil_Chubby', 'Lokis_Horns', 0, 0, 0, 'The_Bandage', 'The_Cross', 'The_Bag', 'The_Robo-Baby', 'Book_of_Sin', 'Gish', 'Steven', 'Chad', 'The_Gamekid', 'The_Halo', 'Mr_Mega', 'Pill_Bottle', 'Common_Cold', 'The_D6', 'The_Shears', 'The_Parasite', 'Baby', 'Terrible', 'The_Wafer', 'Money_Power', 'It_Lives', 'The_Bean', 'Moms_Contact', 'The_Necronomicon', 'Basement_Boy', 'Cave_Boy', 'Depths_Boy', 'Womb_Boy', 'Golden_God', 'Eve', 'Moms_Knife', 0, 0, 'The_Razor_Blade', 'The_Guardian_Angel', 'bombs', 'The_Demon_Baby', 'Forget_Me_Now', 'The_Monster_Manual', 'a_gift_from_krampus'];
     acnam.push('_d20', '_cross', '_abel', '_horn', '_knife2', '_rainbow', '_bloodlust', '_bloodpenny', '_bloodrights', '_polaroid', '_dadskey', '_toe', '_candle', '_burntpenny', '_tail', '_megafetus', '_fish', '_superfan', '_spiderbutt', '_counterfeit', '_hairball', '_eggsack', 0, '_samson', 0, '_platinum');
     acnam.push('_head', '_faith', '_eye', '_tongue', '_birdfoot', '_soul', '_lock', '_hand');
@@ -8701,7 +8701,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
   movieClip 6454  {
 
     frame 1 {
-      if (_root.altch) {
+      if (_root.bossArena) {
         gotoAndStop(2);
       } else {
         gotoAndStop(1);
@@ -10207,10 +10207,10 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         _roottrinketSlot2 = undefined;
         _root.vamp = 0;
         _root.monbb = 0;
-        if (_root.chaps > 2) {
+        if (_root.floor > 2) {
           _root.fade = true;
         }
-        _root.chaps = 1;
+        _root.floor = 1;
         _root.horsedown = 0;
         _root.it = 0;
         _root.fmode = 1;
@@ -10269,7 +10269,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         _root.kramper = false;
         _root.nohead = false;
         _root.nodmg = true;
-        _root.evs = 0;
+        _root.devilDeals = 0;
         _root.firra = 10;
         _root.firrr = 23;
         _root.bluf = 0;
@@ -10345,29 +10345,29 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       }
 
       function bosschoose() {
-        if (_root.chaps % 2 == 0) {
+        if (_root.floor % 2 == 0) {
           _root.altb3 = true;
         }
-        if (_root.chaps % 2 == 1) {
+        if (_root.floor % 2 == 1) {
           _root.horsem = _root.SecretUnlocked[5];
           _root.altb = true;
-          _root.altb2 = _root.chaps < 4;
-          _root.switchero = _root.chaps < 4 && random(2);
-          _root.swww = _root.chaps + 1;
+          _root.altb2 = _root.floor < 4;
+          _root.switchero = _root.floor < 4 && random(2);
+          _root.swww = _root.floor + 1;
         }
-        f1 = 'b' + Math.min(8, _root.chaps) + '-' + random(5);
-        _root.bosss = _root.chaps;
+        f1 = 'b' + Math.min(8, _root.floor) + '-' + random(5);
+        _root.bosss = _root.floor;
         _root.horse = false;
         _root.altboss = false;
         altb = [0, 34, 37, 29, 26, 30 + random(2) * 5, 30, 31, 8];
-        if (_root.chaps != 6 && _root.chaps != 8) {
-          if (_root.chaps == 11) {
+        if (_root.floor != 6 && _root.floor != 8) {
+          if (_root.floor == 11) {
             _root.bosss = 40;
           } else {
             if (_root.bosss > 25) {
             } else {
-              if (_root.chaps > 8) {
-                _root.chaps = 9;
+              if (_root.floor > 8) {
+                _root.floor = 9;
                 if (_root.altchap) {
                   _root.bosss = 39;
                 } else {
@@ -10378,7 +10378,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                 if (_root.horsem && random(5) == 0) {
                   _root.horse = true;
                   _root.horsem = false;
-                  f1 = Math.round(_root.chaps / 2);
+                  f1 = Math.round(_root.floor / 2);
                   _root.bosss = f1 + 8;
                   if (random(10) == 0) {
                     f1 = 5;
@@ -10386,7 +10386,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   }
                   f1 = 'h' + f1;
                 } else {
-                  if (_root.SecretUnlocked[88] && _root.chaps == 7 && random(3) == 0) {
+                  if (_root.SecretUnlocked[88] && _root.floor == 7 && random(3) == 0) {
                     if (random(2) == 0) {
                       _root.bosss = 38;
                     } else {
@@ -10398,13 +10398,13 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       _root.bosss = 23;
                       f1 = 'demon';
                     } else {
-                      if (_root.chaps == 7 && random(3) == 0) {
+                      if (_root.floor == 7 && random(3) == 0) {
                         f1 = [30, 33];
                         _root.bosss = f1[random(f1.length)];
                       } else {
-                        if (_root.altb3 && _root.altchap && random(4) == 0 && _root.chaps < 6) {
+                        if (_root.altb3 && _root.altchap && random(4) == 0 && _root.floor < 6) {
                           _root.altb3 = false;
-                          f1 = Math.round(_root.chaps / 2 - 1.5);
+                          f1 = Math.round(_root.floor / 2 - 1.5);
                           if (random(2) == 0) {
                             f2 = [28, 36];
                           } else {
@@ -10414,15 +10414,15 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                         } else {
                           if (_root.altb && random(5) == 0) {
                             _root.altb = false;
-                            f1 = Math.round(_root.chaps / 2);
+                            f1 = Math.round(_root.floor / 2);
                             _root.bosss = f1 + 12;
                             f1 = 'a' + f1 + '-' + random(3);
-                            if (_root.altchap && _root.chaps == 1) {
+                            if (_root.altchap && _root.floor == 1) {
                             }
                           } else {
                             if (_root.altb2 && random(4) == 0 && (_root.chap > 2 or !_root.altchap)) {
                               _root.altb2 = false;
-                              f1 = Math.round(_root.chaps / 2) + 4;
+                              f1 = Math.round(_root.floor / 2) + 4;
                               _root.bosss = f1 + 12;
                               f1 = 'a' + f1 + '-' + random(3);
                             } else {
@@ -10434,7 +10434,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                                 }
                                 f1 = 'b' + Math.min(8, f1) + '-' + random(5);
                               } else {
-                                _root.bosss = _root.chaps;
+                                _root.bosss = _root.floor;
                                 if (_root.altchap) {
                                   _root.bosss = altb[_root.bosss];
                                 }
@@ -10488,14 +10488,14 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         if (_root.bosss == 8 && _root.SecretUnlocked[45]) {
           _root.bosss = 25;
         }
-        _root.swww = _root.chaps;
+        _root.swww = _root.floor;
       }
 
       function sams() {
-        if (_root.beenlev[_root.boner] != 2 && _root.chaps != 1 && _root.boner != undefined) {
+        if (_root.beenlev[_root.boner] != 2 && _root.floor != 1 && _root.boner != undefined) {
           ++_root.samer;
         }
-        if (_root.beenlev[_root.boner2] != 2 && _root.double && _root.chaps != 1 && _root.boner2 != undefined) {
+        if (_root.beenlev[_root.boner2] != 2 && _root.double && _root.floor != 1 && _root.boner2 != undefined) {
           ++_root.samer;
         }
       }
@@ -10545,7 +10545,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         } else {
           for (e in _root.levz) {
             if (e < 110) {
-              if (_root.levz[e] != 0 && (_root.seenlev[e] or haveEffect[54]) && (_root.hide != e && _root.hide2 != e or _root.beenlev[e] && (e != _root.chamb or _root.chama))) {
+              if (_root.levz[e] != 0 && (_root.seenlev[e] or haveEffect[54]) && (_root.hide != e && _root.hide2 != e or _root.beenlev[e] && (e != _root.arenaRoom or _root.chama))) {
                 maxx = new flash.geom.Matrix();
                 f1 = (e % 10) * 25 + 15;
                 f2 = Math.round(e / 10 - 0.5) * 10 + 7;
@@ -10611,8 +10611,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                             if (_root.cus == e && (haveEffect[21] or _root.cusb)) {
                               mpiece.gotoAndStop(14);
                             } else {
-                              if (_root.chamb == e && (haveEffect[21] or _root.chambb)) {
-                                if (_root.altch) {
+                              if (_root.arenaRoom == e && (haveEffect[21] or _root.chambb)) {
+                                if (_root.bossArena) {
                                   mpiece.gotoAndStop(11);
                                 } else {
                                   mpiece.gotoAndStop(10);
@@ -10621,7 +10621,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                                 if (_root.lib == e && (haveEffect[21] or _root.libb)) {
                                   mpiece.gotoAndStop(12);
                                 } else {
-                                  if (_root.sac == e && (haveEffect[21] or _root.sacb)) {
+                                  if (_root.sacrificeRoom == e && (haveEffect[21] or _root.sacRoomRevealed)) {
                                     mpiece.gotoAndStop(13);
                                   }
                                 }
@@ -10786,29 +10786,29 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       function GenerateItem() {
         var itemID = 0;
         var tries = 0;
-        while (itemID == 0) {
+        while (itemID == 0) {								//This function should literally never return 0! But sometimes it SOMEHOW DOES.
           ++tries;
-          if (tries > 100) {
-            var v3 = random(_root.RegularDropPool.length);
-            itemID = itz(_root.RegularDropPool[v3]);
-            if (itemID > 0) {
-              _root.RegularDropPool.splice(v3, 1);
-            }
-            if (_root.RegularDropPool.length <= 5) {
-              FillItemPools();
+          if (tries > 100) {								//AGH We couldn't drop an item what do we do?
+            var v3 = random(_root.RegularDropPool.length);	//Well, let's just get a random treasure period.
+            itemID = itz(_root.RegularDropPool[v3]);		//First checking if we shouldn't throw that one out too.
+            if (itemID > 0) {								//If it's valid, let's drop it.
+              _root.RegularDropPool.splice(v3, 1);			//And remove it as per usual.
+            }												//
+            if (_root.RegularDropPool.length <= 5) {		//If the regular item pool is looking slim...
+              FillItemPools();								//REFRESH ALL THE ITEM POOLS.
             }
           } else {
             if (_root.lev == _root.lib) {
               var v3 = random(_root.Library.length);
               itemID = itz(_root.Library[v3]);
               if (itemID > 0) {
-                if (lib == v3) {
-                  itemID = -1;
-                  lib = v3;
+                if (lib == v3) {							//I literally have no idea what this does.
+                  itemID = -1;								//None whatsoever.
+                  lib = v3;									//If the if statement were true wouldn't this already be the ca-screw it I don't even know.
                 }
               }
             } else {
-              if (_root.ArenaItem.length > 0 && _root.lev == _root.chamb && !_root.altch) {
+              if (_root.ArenaItem.length > 0 && _root.lev == _root.arenaRoom && !_root.bossArena) {
                 var v3 = random(_root.ArenaItem.length);
                 itemID = itz(_root.ArenaItem[v3]);
                 if (itemID > 0) {
@@ -10817,7 +10817,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               } else {
                 if (_root.DevilRoom.length > 0 && (satan or bummer == 2 or _root.lev == _root.cus)) {
                   bummer = false;
-                  if (_root.altsat) {
+                  if (_root.godRoomFloor) {
                     var v3 = random(_root.GodRoom.length);
                     itemID = itz(_root.GodRoom[v3]);
                   } else {
@@ -10828,7 +10828,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     }
                   }
                 } else {
-                  if (_root.GoldChest.length > 0 && treas && _root.chaps != 11) {
+                  if (_root.GoldChest.length > 0 && treas && _root.floor != 11) {
                     var v3 = random(_root.GoldChest.length);
                     itemID = itz(_root.GoldChest[v3]);
                     if (itemID > 0) {
@@ -10857,7 +10857,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                             _root.SecretRoomItem.splice(v3, 1);
                           }
                         } else {
-                          if (_root.lev == _root.chamb && _root.altch) {
+                          if (_root.lev == _root.arenaRoom && _root.bossArena) {
                             var v3 = random(_root.BossDrop.length);
                             itemID = itz(_root.BossDrop[v3]);
                             if (itemID > 0) {
@@ -11028,7 +11028,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           if (f7 == 75 or f7 == 76 or f7 == 77) {
             f7 = 74;
           }
-          if (f7 == 7 && _root.chaps > 6 && _root.chaps != 9) {
+          if (f7 == 7 && _root.floor > 6 && _root.floor != 9) {
             f7 = 'gibs-red';
           } else {
             f7 = 'b' + f7;
@@ -11260,7 +11260,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           if (f1 && v2.alter == 2) {
             v2.hp *= 1.25;
             v2.mhp = v2.hp;
-            if (_root.chaps < 9) {
+            if (_root.floor < 9) {
               v2.hallo = true;
             }
           }
@@ -11871,7 +11871,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               }
             }
             if (v2.d._currentframe == 34) {
-              if (_root.heaven && _root.chaps != 11) {
+              if (_root.heaven && _root.floor != 11) {
                 v2.d.d.gotoAndStop(5);
               } else {
                 v2.d.d.gotoAndStop(3);
@@ -12373,10 +12373,10 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         if (momdown != 100) {
           for (z in ball) {
             momdown = 100;
-            if (_root.chaps == 6) {
+            if (_root.floor == 6) {
               _root.soundy('Mom_Vox_Death_' + random(2) + '.mp');
             } else {
-              if (_root.chaps == 9) {
+              if (_root.floor == 9) {
               } else {
                 _root.soundy('Mom_Vox_Filtered_Death_1.mp');
               }
@@ -12703,7 +12703,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       }
 
       function playerhurt(f1, f2, f3) {
-        if (_root.chaps > 6) {
+        if (_root.floor > 6) {
           f1 = Math.max(f1, 1);
         }
         if (haveEffect[108]) {
@@ -12715,7 +12715,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             _root.soundy('Mom_Vox_EvilLaugh.mp');
           }
         }
-        if (_root.chaps == 9 && _root.lev == _root.bossl) {
+        if (_root.floor == 9 && _root.lev == _root.bossl) {
           plh = true;
         }
         if (mhheart) {
@@ -13087,7 +13087,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                 webs[e] = random(3) + 1;
                 tiles.gotoAndStop(158 + webs[e]);
               } else {
-                if (_root.chaps >= 7 && _root.chaps != 9) {
+                if (_root.floorNum >= 7 && _root.floorNum != 9) {
                   tiles.gotoAndStop(70);
                 } else {
                   tiles.gotoAndStop(21);
@@ -13150,7 +13150,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   tiles.gotoAndStop(random(4) + 11);
                 } else {
                   if (levz[e] == 1) {
-                    if (_root.chaps >= 7 && _root.chaps != 9) {
+                    if (_root.floorNum >= 7 && _root.floorNum != 9) {
                       tiles.gotoAndStop(80 + random(3));
                     } else {
                       if (_root.rarer[_root.lev] == e) {
@@ -13160,7 +13160,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       }
                     }
                   } else {
-                    tiles.gotoAndStop(94 + random(5) + _root.chaps * 5);
+                    tiles.gotoAndStop(94 + random(5) + _root.floorNum * 5);
                     levz[e] = 0;
                     clevc[e] = 0;
                   }
@@ -13334,8 +13334,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         if (_root.lev == _root.boner2) {
           _root.treasd2 = true;
         }
-        if (_root.lev == _root.sac) {
-          _root.sacb = true;
+        if (_root.lev == _root.sacrificeRoom) {
+          _root.sacRoomRevealed = true;
         }
         for (e in door) {
           trg = door[e];
@@ -13365,8 +13365,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             trg.blo = ingrid(trg._x, trg._y);
             _root.seenlev[trg.gol] = true;
             if (haveEffect[91]) {
-              if (trg.gol == _root.sac) {
-                _root.sacb = true;
+              if (trg.gol == _root.sacrificeRoom) {
+                _root.sacRoomRevealed = true;
               }
               if (trg.gol == _root.boner) {
                 _root.treasd = true;
@@ -13406,7 +13406,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     trg.hide = true;
                     trg.gotoAndStop(10);
                     levz[trg.blo] = 1.85;
-                    if (trg.gol == _root.bossl or trg.gol == _root.bossl2 or _root.lev == _root.bossl or _root.lev == _root.bossl2 or _root.lev == _root.minb or _root.lev == _root.chamb) {
+                    if (trg.gol == _root.bossl or trg.gol == _root.bossl2 or _root.lev == _root.bossl or _root.lev == _root.bossl2 or _root.lev == _root.minb or _root.lev == _root.arenaRoom) {
                       levz[trg.blo] = 2;
                     }
                   } else {
@@ -13414,7 +13414,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       trg.hide2 = true;
                       trg.gotoAndStop(10);
                       levz[trg.blo] = 1.85;
-                      if (trg.gol == _root.bossl or trg.gol == _root.bossl2 or _root.lev == _root.bossl or _root.lev == _root.bossl2 or _root.lev == _root.minb or _root.lev == _root.chamb) {
+                      if (trg.gol == _root.bossl or trg.gol == _root.bossl2 or _root.lev == _root.bossl or _root.lev == _root.bossl2 or _root.lev == _root.minb or _root.lev == _root.arenaRoom) {
                         levz[trg.blo] = 2;
                       }
                     } else {
@@ -13427,10 +13427,10 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                           _root.bossd = true;
                           trg.gotoAndStop(16);
                         } else {
-                          if (trg.gol == _root.chamb or _root.lev == _root.chamb) {
+                          if (trg.gol == _root.arenaRoom or _root.lev == _root.arenaRoom) {
                             chama = 1;
                             _root.chambb = true;
-                            trg.chamb = true;
+                            trg.arenaRoom = true;
                             trg.gotoAndStop(27);
                           } else {
                             if (trg.gol == _root.gamb) {
@@ -13480,7 +13480,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                 }
               }
             }
-            if (_root.chaps == 11 && !trg.hide && !trg.hide2) {
+            if (_root.floorNum == 11 && !trg.hide && !trg.hide2) {
               levz[trg.blo] = 2;
             }
           }
@@ -13939,7 +13939,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         if (!highs.empty) {
           if (fra - lastcraf > 30) {
             lastcraf = fra;
-            if (_root.lev == 35 && _root.chaps == 1 && fra < 15) {
+            if (_root.lev == 35 && _root.floorNum == 1 && fra < 15) {
             } else {
               if (highs.it == 12 or highs.it == 11 or highs.it == 71) {
                 _root.soundy('1up.wav');
@@ -13967,11 +13967,11 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         }
         maxp = true;
         if (!highs.empty && fra - lastcra >= 30) {
-          if (chama == 1 && _root.lev == _root.chamb) {
+          if (chama == 1 && _root.lev == _root.arenaRoom) {
             chama = 2;
           }
-          displayBannerMessage(_root.st1[highs.it]);
-          displayCornerMessage(_root.st2x[highs.it]);
+          displayBannerMessage(_root.itemNames[highs.it]);
+          displayCornerMessage(_root.itemDescriptions[highs.it]);
           if (highs.d._currentframe == 10) {
             var v2 = highs.d.d;
           } else {
@@ -14419,7 +14419,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             itb = 15;
             _root.hud.it.gotoAndStop(8);
             _root.colit = highs.it;
-            _root.iter[_root.it] = _root.itemCharges;
+            _root.itemChargeTable[_root.it] = _root.itemCharges;
             if (_root.it > 0) {
               if (_root.it == 90) {
                 player.flyby = false;
@@ -14439,7 +14439,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               _root.it = highs.it - itn(highs.it);
             }
             if (_root.it != 11) {
-              _root.itemCharges = _root.iter[_root.it];
+              _root.itemCharges = _root.itemChargeTable[_root.it];
               if (haveEffect[116]) {
                 _root.itemCharges = Math.max(0.334, _root.itemCharges);
               }
@@ -14776,7 +14776,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       }
 
       function ader(f1) {
-        if (_root.chaps > 6 && player.hp < 1 && _root.armor > 0 && player.mhp > 0) {
+        if (_root.floorNum > 6 && player.hp < 1 && _root.armor > 0 && player.mhp > 0) {
           _root.armor -= 0.5;
           player.hp += 0.5;
         }
@@ -15048,13 +15048,13 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             highs.dones = true;
             switch (highs.d._currentframe) {
               case 34:
-                if (_root.chaps == 9 && _root.altchap && haveTrinket(47)) {
+                if (_root.floorNum == 9 && _root.altchap && haveTrinket(47)) {
                   if (beamer <= 0) {
                     beamer = 1;
-                    _root.chaps = 11;
+                    _root.floorNum = 11;
                   }
                 } else {
-                  if (_root.heaven && _root.chaps != 11) {
+                  if (_root.heaven && _root.floorNum != 11) {
                     if (beamer <= 0) {
                       _root.heaven = 2;
                       beamer = 1;
@@ -15063,17 +15063,17 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     _root.levz = undefined;
                     moveon();
                     _root.door = undefined;
-                    if (_root.chaps == 11) {
+                    if (_root.floorNum == 11) {
                       f1 = 24;
                     } else {
-                      if (_root.chaps == 9 && _root.altchap) {
+                      if (_root.floorNum == 9 && _root.altchap) {
                         f1 = 23;
                       } else {
                         f1 = Math.min(9 + _root.so.data.wins, 21);
                         if (f1 == 20) {
                           f1 = 21;
                         }
-                        if (_root.chaps == 9) {
+                        if (_root.floorNum == 9) {
                           f1 = 22;
                         }
                       }
@@ -15263,8 +15263,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                 f1 = f1[highs.d.d._currentframe];
                 if (_root.coins >= f1 && !satan or satan && (_root.armor >= 3 or highs.d.d._currentframe != 11)) {
                   if (satan) {
-                    ++_root.evs;
-                    if (_root.evs > 1) {
+                    ++_root.devilDeals;
+                    if (_root.devilDeals > 1) {
                       _root.SecretUnlocked[54] = true;
                     }
                     if (f1 == 3) {
@@ -16412,7 +16412,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           if (levz[f1] == 0.99) {
             f44 = webs[f1] && trg == player;
           }
-          f3 = levz[f1] == 0.99 && (!f44 && !webs[f1]) && (!trg.flyby or _root.lev == _root.sac or _root.lev == _root.cus) && !trg.flyai;
+          f3 = levz[f1] == 0.99 && (!f44 && !webs[f1]) && (!trg.flyby or _root.lev == _root.sacrificeRoom or _root.lev == _root.cus) && !trg.flyai;
           if (f3) {
             f55 = f1;
           }
@@ -16467,7 +16467,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           }
         }
         if (dang) {
-          if (trg == player && (!trg.flyby or _root.lev == _root.sac or _root.lev == _root.cus)) {
+          if (trg == player && (!trg.flyby or _root.lev == _root.sacrificeRoom or _root.lev == _root.cus)) {
             if (shit(trg.xp, trg.yp)) {
               if (blackout == 2 or spidboss) {
                 if (trg == player) {
@@ -16583,7 +16583,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             if (_root.so.data.rocks > 49) {
               _root.SecretUnlocked[18] = true;
             }
-            if (_root.chaps < 7 or _root.chaps == 9) {
+            if (_root.floorNum < 7 or _root.floorNum == 9) {
               _root.soundy('Rock_crumble ' + random(3) + '.wav', 100);
               tiles.gotoAndStop(60 + random(5));
             } else {
@@ -17071,7 +17071,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       }
 
       function moveon() {
-        if (_root.chaps == 11 && _root.lev == _root.bossl) {
+        if (_root.floorNum == 11 && _root.lev == _root.bossl) {
         }
         _root.aloc();
         _root.lastl = _root.lev;
@@ -17103,13 +17103,13 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         if (!trg.firsttx && !nobob) {
           nobob = true;
           trg.firsttx = true;
-          if (_root.chaps == 6 && _root.lev != _root.bossl2) {
+          if (_root.floorNum == 6 && _root.lev != _root.bossl2) {
             sams();
             if (_root.samer > 1) {
               _root.SecretUnlocked[88] = true;
             }
           }
-          if ((_root.chaps < 8 or _root.chaps == 8 && _root.double && _root.lev == _root.bossl2) && (_root.chaps != 6 or _root.SecretUnlocked[4] && (_root.chala > 4 or _root.chala == 0))) {
+          if ((_root.floorNum < 8 or _root.floorNum == 8 && _root.double && _root.lev == _root.bossl2) && (_root.floorNum != 6 or _root.SecretUnlocked[4] && (_root.chala > 4 or _root.chala == 0))) {
             if (_root.lev != _root.bossl2) {
               create(320, 200, 0, 0, 0, 0, 5.09);
             }
@@ -17119,20 +17119,20 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             f1 = ingrid(320, 360);
             bloww(f1);
           } else {
-            if (_root.chaps == 9 or _root.chala < 9) {
+            if (_root.floorNum == 9 or _root.chala < 9) {
               f1 = _root.lox[_root.chala];
               if (f1 > 0) {
                 _root.SecretUnlocked[f1] = true;
               }
             }
-            if (_root.chaps == 6) {
+            if (_root.floorNum == 6) {
             } else {
-              if (_root.chaps == 11) {
+              if (_root.floorNum == 11) {
                 f10 = [91, 92, 96, 93, 97, 94, 95];
                 _root.SecretUnlocked[f10[_root.characterID]] = true;
                 _root.SecretUnlocked[75] = true;
               } else {
-                if (_root.chaps == 9) {
+                if (_root.floorNum == 9) {
                   if (_root.altchap) {
                     f10 = [65, 66, 67, 68, 70, 69, 72];
                     _root.SecretUnlocked[f10[_root.characterID]] = true;
@@ -17168,7 +17168,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               }
               if (_root.lev != _root.bossl2) {
                 ++_root.so.data.wins;
-                if (_root.so.data.wins > 10 && _root.chaps < 9) {
+                if (_root.so.data.wins > 10 && _root.floorNum < 9) {
                   if (_root.chala == 9) {
                     create(320, 280, 0, 0, 0, 0, 5.09);
                   } else {
@@ -17189,18 +17189,18 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             }
           }
           if (_root.lev == _root.bossl) {
-            if (_root.chaps == 2 or _root.chaps == 4 or _root.chaps == 6 or _root.chaps == 8) {
+            if (_root.floorNum == 2 or _root.floorNum == 4 or _root.floorNum == 6 or _root.floorNum == 8) {
               if (_root.nodmg) {
-                _root.SecretUnlocked[48 + _root.chaps / 2] = true;
+                _root.SecretUnlocked[48 + _root.floorNum / 2] = true;
               }
               _root.nodmg = true;
-              if (_root.chaps == 6 && _root.SecretUnlocked[74]) {
+              if (_root.floorNum == 6 && _root.SecretUnlocked[74]) {
                 poli = true;
                 create(200, 300, 0, 0, 0, 0, 5.35);
               }
             }
           }
-          ++_root.lcomp[_root.chaps];
+          ++_root.lcomp[_root.floorNum];
           _root.bossk[_root.bosss] = true;
           if (_root.bosss >= 9 && _root.bosss <= 12 or _root.bosss == 22) {
             ++_root.horsedown;
@@ -17217,10 +17217,10 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           if (_root.bossk[9] && _root.bossk[10] && _root.bossk[11] && _root.bossk[12] && _root.horsedown >= 4) {
             _root.SecretUnlocked[25] = true;
           }
-          if (_root.chaps == 2) {
+          if (_root.floorNum == 2) {
             _root.SecretUnlocked[13] = true;
           }
-          if (_root.chaps == 4) {
+          if (_root.floorNum == 4) {
             _root.SecretUnlocked[14] = true;
           }
           if (_root.lcomp[2] >= 25) {
@@ -17345,8 +17345,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           _root.newstartt = true;
         } else {
           _root.getup = true;
-          if (_root.chaps != 11) {
-            ++_root.chaps;
+          if (_root.floorNum != 11) {
+            ++_root.floorNum;
           }
           if (!f22) {
             _root.cuts = true;
@@ -18755,12 +18755,12 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           }
         }
         if (momdown-- > 0) {
-          if (_root.chaps == 6) {
+          if (_root.floorNum == 6) {
             f1 = Math.max(0, 1 - Math.abs(momdown - 50) / 40);
             f2 = 1 - f1;
             f3 = 150 * f1;
             colorit(_root, f2, f2, f2, f3, 0, 0);
-            if (momdown == 50 && (!_root.SecretUnlocked[4] or _root.chala > 0 && _root.chala < 5) && _root.chaps != 7) {
+            if (momdown == 50 && (!_root.SecretUnlocked[4] or _root.chala > 0 && _root.chala < 5) && _root.floorNum != 7) {
               _root.SecretUnlocked[4] = true;
               _root.SecretUnlocked[5] = true;
               _root.SecretUnlocked[6] = true;
@@ -19111,7 +19111,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   if (f1 < 0.6) {
                     f0 = 5.01;
                   } else {
-                    if (f1 < 0.76 - _root.chaps * 0.01) {
+                    if (f1 < 0.76 - _root.floorNum * 0.01) {
                       f0 = 5.03;
                     } else {
                       if (f1 < 0.8) {
@@ -25340,7 +25340,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             if (trg.s == 19 && !altboss) {
               if (trg.whop > 0) {
               } else {
-                if (_root.lev != _root.chamb && fra > 20 && (random(100) == 0 or random(20) == 0 && trg.whop < 0)) {
+                if (_root.lev != _root.arenaRoom && fra > 20 && (random(100) == 0 or random(20) == 0 && trg.whop < 0)) {
                   f1 = 5;
                   f2 = ingrid(trg.beenx[f1], trg.beeny[f1]);
                   if (trg.specoz != 7) {
@@ -27207,9 +27207,9 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       f55 = 1.1;
                     }
                   }
-                  if (_root.lev == _root.sac && !_root.sacer && lasth - fra < 0) {
+                  if (_root.lev == _root.sacrificeRoom && !_root.successSacrifice && lasth - fra < 0) {
                     if (random(5) == 0 or player.hp < 2 && _root.armor <= 0) {
-                      _root.sacer = true;
+                      _root.successSacrifice = true;
                       create(320, 340, 0, 0, 0, 0, 5.05 + random(2) * 0.01);
                     }
                   }
@@ -27598,7 +27598,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       haveEffect[32] = _root.pickedUp[32];
                       break;
                     case 10:
-                      if (f2 or haveEffect[6] && _root.chaps < 8) {
+                      if (f2 or haveEffect[6] && _root.floorNum < 8) {
                         _root.pickedUp[31] += 0.5;
                         displayCornerMessage('Range Up');
                         pilcol(50, 100, 100);
@@ -27631,11 +27631,11 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       break;
                     case 126:
                       f1 = random(15);
-                      if (_root.chaps != 9) {
+                      if (_root.floorNum != 9) {
                         if (f1 == 0) {
                           tar = 169;
                         } else {
-                          if (f1 == 0 && _root.chaps != 1) {
+                          if (f1 == 0 && _root.floorNum != 1) {
                             tar = 166;
                           }
                         }
@@ -27661,7 +27661,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       f1 = f1[random(f1.length)];
                       _root.it = f1;
                       f1 += itn2(f1);
-                      displayCornerMessage(_root.st1[f1]);
+                      displayCornerMessage(_root.itemNames[f1]);
                     }
                     _root.over.gotoAndStop(14);
                     goper = true;
@@ -27673,7 +27673,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     case 146:
                       ader();
                       lasth = 0;
-                      if (_root.chaps < 7) {
+                      if (_root.floorNum < 7) {
                         ader(true);
                       }
                       if (player.hp < 0.5) {
@@ -27823,7 +27823,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       if (f1 == 73) {
                         haveEffect[f1] = random(2) + 2;
                       }
-                      displayCornerMessage(_root.st1[f1]);
+                      displayCornerMessage(_root.itemNames[f1]);
                       _root.over.gotoAndStop(12);
                       break;
                     case 84:
@@ -27836,9 +27836,9 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       _root.playerx = 320;
                       _root.playery = 400;
                       _root.getup = true;
-                      --_root.chaps;
+                      --_root.floorNum;
                       if (_root.double) {
-                        --_root.chaps;
+                        --_root.floorNum;
                       }
                       newstart(false);
                       _root.gotoAndStop('reset');
@@ -27893,10 +27893,10 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       spaw(trg.xp, trg.yp, 40, f1);
                       break;
                     case 38:
-                      if (_root.horsem && _root.lev != _root.bossl && _root.chaps < 8 && _root.chaps != 6 && !_root.double) {
+                      if (_root.horsem && _root.lev != _root.bossl && _root.floorNum < 8 && _root.floorNum != 6 && !_root.double) {
                         _root.horse = true;
                         _root.horsem = false;
-                        f1 = Math.round(_root.chaps / 2);
+                        f1 = Math.round(_root.floorNum / 2);
                         _root.bosss = f1 + 8;
                         if (random(10) == 0 && !_root.nohead) {
                           _root.nohead = true;
@@ -27913,7 +27913,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       ++_root.armor;
                       break;
                     case 44:
-                      if (_root.chaps < 9) {
+                      if (_root.floorNum < 9) {
                         spaw(trg.xp, trg.yp, 0, 5.09);
                       } else {
                         showit = false;
@@ -27963,11 +27963,11 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       }
                       break;
                     case 1:
-                      if (_root.chaps == 9 && _root.lev == _root.bossl) {
+                      if (_root.floorNum == 9 && _root.lev == _root.bossl) {
                         _root.armor = 0;
                         playerhurt(1000, 200);
                       } else {
-                        if ((mom.length > 3 or mheart != undefined) && !bibs && (_root.chaps == 6 or _root.chaps == 8) && _root.lev == _root.bossl) {
+                        if ((mom.length > 3 or mheart != undefined) && !bibs && (_root.floorNum == 6 or _root.floorNum == 8) && _root.lev == _root.bossl) {
                           bibs = true;
                           mheart.dones = true;
                           for (z in mom) {
@@ -28845,7 +28845,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           while (f13++ < 10) {
             xenf = crand(5);
             yenf = crand(5);
-            if (_root.lev == _root.chamb) {
+            if (_root.lev == _root.arenaRoom) {
               xenf *= 0.4;
               yenf *= 0.4;
             }
@@ -28997,7 +28997,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               }
               _root.hud.paus.kill.gotoAndStop(Math.round(lastk));
               _root.hud.paus.nam.gotoAndStop(Math.max(1, _root.characterID));
-              _root.hud.paus.loco.gotoAndStop(Math.max(1, _root.chaps));
+              _root.hud.paus.loco.gotoAndStop(Math.max(1, _root.floorNum));
               onEnterFrame = undefined;
             }
           }
@@ -29426,7 +29426,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                     }
                     break;
                   case 10:
-                    if (f2 or haveEffect[6] && _root.chaps < 8) {
+                    if (f2 or haveEffect[6] && _root.floorNum < 8) {
                       f11 = 'Range Up';
                     } else {
                       f11 = 'Range Down';
@@ -29478,25 +29478,25 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         _root.hud.coins = _root.coins;
         _root.hud.bombs = _root.bombs;
         _root.hud.keys = _root.keys;
-        f1 = 1;
+        lives = 1;
         if (haveEffect[11]) {
-          ++f1;
+          ++lives;
         }
         if (haveEffect[81]) {
-          f1 += haveEffect[81];
+          lives += haveEffect[81];
         }
-        if (f1 > 1) {
-          _root.hud.haveEffect = 'x' + f1;
+        if (lives > 1) {
+          _root.hud.lives = 'x' + lives;
         } else {
-          _root.hud.haveEffect = '';
+          _root.hud.lives = '';
         }
-        _root.hud.chaps = levn[_root.chaps];
+        _root.hud.floorName = levelNames[_root.floorNum];
         if (_root.altchap) {
-          _root.hud.chaps = levn2[_root.chaps];
+          _root.hud.floorName = alternateLevelNames[_root.floorNum];
         }
         if (_root.double) {
-          _root.hud.chaps = (_root.hud.chaps.split(' 2')).join('');
-          _root.hud.chaps += ' XL';
+          _root.hud.floorName = (_root.hud.floorName.split(' 2')).join('');
+          _root.hud.floorName += ' XL';
         }
         if (_root.hud.keys < 10) {
           _root.hud.keys = '0' + _root.hud.keys;
@@ -29648,10 +29648,10 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           } else {
             _root.fullhp = player.hp + _root.armor >= player.mhp;
             if (chama) {
-              f1 = (_root.chama or (_root.fullhp && !_root.altch or _root.altch && player.hp < 1.5 or _root.lev == _root.chamb) && chama == 1) && shutdoor == 0 or keyd;
+              f1 = (_root.chama or (_root.fullhp && !_root.bossArena or _root.bossArena && player.hp < 1.5 or _root.lev == _root.arenaRoom) && chama == 1) && shutdoor == 0 or keyd;
               for (e in door) {
                 trg = door[e];
-                if (trg.chamb) {
+                if (trg.arenaRoom) {
                   if (!f1) {
                     v1 = trg.blo;
                     levz[v1] = 2;
@@ -29674,38 +29674,38 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                   _root.mmus.dones = true;
                 }
                 if (shutdoor == 0) {
-                  if (chamb++ > 50) {
+                  if (arenaRoom++ > 50) {
                     mhelps = 0;
                     f1 = _root.switchero;
-                    if (_root.chaps % 2 == 1) {
+                    if (_root.floorNum % 2 == 1) {
                       f1 = !f1;
                     }
-                    if (_root.altch) {
-                      if (_root.chaps < 5) {
+                    if (_root.bossArena) {
+                      if (_root.floorNum < 5) {
                         f0 = [20, 1, 19, 3];
                       } else {
-                        if (_root.chaps < 7) {
+                        if (_root.floorNum < 7) {
                           f0 = [28, 4, 68, 1];
                         } else {
                           f0 = [69, 1, 43, 1];
                         }
                       }
                     } else {
-                      if (_root.chaps < 3) {
+                      if (_root.floorNum < 3) {
                         if (f1) {
                           f0 = [18, 5, 14, 5, 10, 4];
                         } else {
                           f0 = [29, 3, 12, 3, 15, 2];
                         }
                       } else {
-                        if (_root.chaps < 5) {
+                        if (_root.floorNum < 5) {
                           if (f1) {
                             f0 = [23, 5, 24, 4, 26, 4];
                           } else {
                             f0 = [31, 5, 22, 3, 27, 3];
                           }
                         } else {
-                          if (_root.chaps < 7) {
+                          if (_root.floorNum < 7) {
                             if (f1) {
                               f0 = [38, 4, 29, 5, 41, 4];
                             } else {
@@ -29738,7 +29738,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                         if (f1 == 19 or f1 == 28) {
                           trg = spaw(f4 + 10, f5, 0, f1);
                           trg2 = spaw(f4, f5, 0, f1);
-                          if (f1 == 28 or _root.altch) {
+                          if (f1 == 28 or _root.bossArena) {
                             trg3 = spaw(f4 - 10, f5, 0, f1);
                           }
                           trg.xp = trg2.xp + 20;
@@ -29759,7 +29759,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                       justnow = 7;
                       _root.chama = true;
                     }
-                    chamb = 30;
+                    arenaRoom = 30;
                   }
                 }
               }
@@ -29810,14 +29810,14 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                                 nohit = true;
                               }
                             } else {
-                              if (trg.chamb) {
+                              if (trg.arenaRoom) {
                                 if (fra < 15) {
                                   trg.gotoAndStop(27);
                                 }
                               } else {
                                 if (trg.sat) {
                                   if (satan) {
-                                    if (_root.altsat) {
+                                    if (_root.godRoomFloor) {
                                       trg.gotoAndStop(41);
                                     } else {
                                       trg.gotoAndStop(19);
@@ -29839,19 +29839,19 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                                     if (_root.devil) {
                                       f1 += 0.99;
                                     }
-                                    if (_root.lastdev + 3 > _root.chaps) {
+                                    if (_root.lastdev + 3 > _root.floorNum) {
                                       f1 *= 0.5;
                                     }
-                                    if (_root.lastdev + 2 > _root.chaps) {
+                                    if (_root.lastdev + 2 > _root.floorNum) {
                                       f1 *= 0.5;
                                     }
-                                    if ((Math.random() < f1 or satan) && _root.devil != 3 && _root.chaps != 1 && _root.chaps < 9) {
+                                    if ((Math.random() < f1 or satan) && _root.devil != 3 && _root.floorNum != 1 && _root.floorNum < 9) {
                                       _root.devil = 2;
-                                      _root.lastdev = _root.chaps;
+                                      _root.lastdev = _root.floorNum;
                                       if (_root.demonz == 0) {
                                         _root.demonz = 1;
                                       }
-                                      if (_root.altsat) {
+                                      if (_root.godRoomFloor) {
                                         if (fra < 30) {
                                           trg.gotoAndStop(41);
                                         } else {
@@ -29983,7 +29983,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                           if (f1 < 0.6) {
                             f0 = 5.01;
                           } else {
-                            if (f1 < 0.8 - _root.chaps * 0.01) {
+                            if (f1 < 0.8 - _root.floorNum * 0.01) {
                               f0 = 5.03;
                             } else {
                               if (f1 < 0.95) {
@@ -30260,7 +30260,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               chestoy = trg.yp;
             }
             if (!trg.empty) {
-              if (chama == 1 && _root.lev == _root.chamb) {
+              if (chama == 1 && _root.lev == _root.arenaRoom) {
                 chama = 2;
               }
               trg.empty = true;
@@ -30350,7 +30350,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                         f0 = f2;
                         f2 = 0;
                       } else {
-                        if ((_root.SecretUnlocked[18] && random(10) == 0 && trg == 2 or random(5) == 0 && trg.d._currentframe == 6) && z == 0 && (trg != 2 or !haveEffect[90]) or _root.chaps == 11) {
+                        if ((_root.SecretUnlocked[18] && random(10) == 0 && trg == 2 or random(5) == 0 && trg.d._currentframe == 6) && z == 0 && (trg != 2 or !haveEffect[90]) or _root.floorNum == 11) {
                           f1 = 70;
                           enf = enfcheck(chestox, chestoy, player.xp, player.yp, f1);
                           if (enf < f1) {
@@ -30637,8 +30637,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       llev2 = [2, 116, 57, 176, 2, 115, 60, 168, 2, 103, 53, 153, 2, 91, 46, 135, 2, 90, 0, 0, 6, 34];
       specol = [[1, 0.1, 0.1], [0.5, 0.5, 0], [0.2, 0.5, 0.4], [1, 0.5, 0.5], [0.7, 0.45, 0.4], [0.1, 0.8, 0.2], [0.1, 1, 0.5], [0, 0.15, 0.15], [0.55, 0.55, 1.35], [1.6, 0.7, 1]];
       specol2 = [0, [1, 0.6, 0.6], [0.6, 0.6, 0.6], [0.6, 1, 0.6], [0.6, 1, 1], [0.5, 0.7, 0.5], [1, 0.7, 0.5], [0.5, 0.7, 1], [0.5, 0.7, 0.7], [1, 0.7, 0.5], [0, 1.7, 1.1], [0.6, 0.7, 0.6], [1, 1, 0.5], [0.3, 0.7, 0.6], [1, 0.6, 0.6], [0.5, 0.5, 0.6], [0.44, 0.44, 0.44], [0.5, 0.5, 0.5, 50, 50, 50], [0.24, 0.24, 0.24], [1.2, 0.7, 0.7], [2.5, 1.2, 1.5], [1, 1, 1, 20, -50, -222], [1.5, 1, 1.15]];
-      levn = [0, 'Basement 1', 'Basement 2', 'Caves 1', 'Caves 2', 'The Depths 1', 'The Depths 2', 'The Womb 1', 'The Womb 2', 'Sheol', 0, 'The Chest'];
-      levn2 = [0, 'Cellar 1', 'Cellar 2', 'Catacombs 1', 'Catacombs 2', 'Necropolis 1', 'Necropolis 2', 'Utero 1', 'Utero 2', 'Cathedral', 0, 'The Chest'];
+      levelNames = [0, 'Basement 1', 'Basement 2', 'Caves 1', 'Caves 2', 'The Depths 1', 'The Depths 2', 'The Womb 1', 'The Womb 2', 'Sheol', 0, 'The Chest'];
+      alternateLevelNames = [0, 'Cellar 1', 'Cellar 2', 'Catacombs 1', 'Catacombs 2', 'Necropolis 1', 'Necropolis 2', 'Utero 1', 'Utero 2', 'Cathedral', 0, 'The Chest'];
       _root.tex = undefined;
       if (_root.chala <= 0) {
         _root.chala = 0;
@@ -30648,7 +30648,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       }
       if (_root.lev == _root.bossl) {
         altboss = _root.altboss;
-        if (_root.chaps == 8 or _root.chaps == 6 && !_root.SecretUnlocked[3]) {
+        if (_root.floorNum == 8 or _root.floorNum == 6 && !_root.SecretUnlocked[3]) {
           _root.unl.gotoAndStop(1);
           _root.unl.nogo = true;
         }
@@ -30704,13 +30704,13 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           f1 = 5;
         }
         sams();
-        _root.altm = random(f1) == 0 && _root.chaps != 1 && (_root.chaps != 2 or !_root.double);
+        _root.altm = random(f1) == 0 && _root.floorNum != 1 && (_root.floorNum != 2 or !_root.double);
         _root.big = false;
         _root.double = false;
         _root.darks = false;
-        if (_root.chaps == 11) {
+        if (_root.floorNum == 11) {
         } else {
-          if (random(f1) == 0 && _root.chaps % 2 == 1 && _root.chaps < 8) {
+          if (random(f1) == 0 && _root.floorNum % 2 == 1 && _root.floorNum < 8) {
             _root.double = true;
           } else {
             _root.double = false;
@@ -30734,7 +30734,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           _root.darks = false;
         }
         if (_root.double) {
-          ++_root.chaps;
+          ++_root.floorNum;
           curss = 'Curse of the Labyrinth';
         } else {
           if (_root.big) {
@@ -30762,7 +30762,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         _root.rax24 = random(5);
         _root.kep = false;
         _root.mapsize = 0;
-        f6 = Math.min(20, random(2) + 5 + _root.chaps * 2.6);
+        f6 = Math.min(20, random(2) + 5 + _root.floorNum * 2.6);
         _root.rarer = [];
         _root.levblow = [];
         _root.levsav = [];
@@ -30773,7 +30773,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         _root.bomf = [];
         _root.shopa = false;
         _root.liba = false;
-        _root.bona = _root.chaps == 1;
+        _root.bona = _root.floorNum == 1;
         _root.bona2 = false;
         _root.hider = false;
         _root.hider2 = false;
@@ -30790,22 +30790,22 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         _root.gamaaa = false;
         _root.levcol = [];
         _root.world = false;
-        _root.altsat = random(2) == 0 && _root.evs == 0 && _root.lastdev > 0;
-        _root.iter = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-        _root.devil = _root.chaps != 1;
+        _root.godRoomFloor = random(2) == 0 && _root.devilDeals == 0 && _root.lastdev > 0;
+        _root.itemChargeTable = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+        _root.devil = _root.floorNum != 1;
         _root.bumkill = false;
-        _root.altch = _root.chaps % 2 == 0 && random(2) == 0;
+        _root.bossArena = _root.floorNum % 2 == 0 && random(2) == 0;
         _root.cainsEye = false;
         if (haveTrinket(59) && random(4) == 0) {
           haveEffect[21] = true;
           _root.cainsEye = haveEffect[21];
         }
         _root.altchap = 0;
-        if (random(2) == 0 && _root.chaps < 9 or _root.heaven == 2) {
+        if (random(2) == 0 && _root.floorNum < 9 or _root.heaven == 2) {
           _root.altchap = 9;
         }
         fuckup = 0;
-        if (_root.chaps == 1 or _root.chaps == 3 or _root.chaps == 5 or _root.chaps == 7) {
+        if (_root.floorNum == 1 or _root.floorNum == 3 or _root.floorNum == 5 or _root.floorNum == 7) {
           _root.nodmg = true;
         }
         if (_root.hairb > 1) {
@@ -30822,7 +30822,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           }
         }
         for (;;) {
-          if (!((_root.mapsize < f6 or _root.levz.length <= 1 or _root.bossl == 45 or _root.hide == undefined && _root.chaps < 3 or _root.bossl == 25 or _root.bossl == 36 or _root.bossl == 34) && fuckup++ < 1000)) break;
+          if (!((_root.mapsize < f6 or _root.levz.length <= 1 or _root.bossl == 45 or _root.hide == undefined && _root.floorNum < 3 or _root.bossl == 25 or _root.bossl == 36 or _root.bossl == 34) && fuckup++ < 1000)) break;
           endrooms = [];
           _root.levz = new Array(80);
           e = 0;
@@ -30950,18 +30950,18 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           }
           _root.minb = undefined;
           _root.gamb = undefined;
-          _root.chamb = undefined;
-          _root.sacb = undefined;
+          _root.arenaRoom = undefined;
+          _root.sacRoomRevealed = undefined;
           _root.libb = undefined;
           _root.cusb = undefined;
           _root.cus = undefined;
-          _root.sac = undefined;
-          _root.sacer = false;
+          _root.sacrificeRoom = undefined;
+          _root.successSacrifice = false;
           _root.lib = undefined;
           _root.boner2 = undefined;
           _root.boner = _root.boner2;
-          if ((endrooms.length >= 4 or _root.chaps == 1 && endrooms.length >= 3) && _root.bossl != _root.lev && _root.bossl > 0) {
-            if (_root.chaps != 11) {
+          if ((endrooms.length >= 4 or _root.floorNum == 1 && endrooms.length >= 3) && _root.bossl != _root.lev && _root.bossl > 0) {
+            if (_root.floorNum != 11) {
               _root.shopl = ender();
               if (_root.chala < 5 && (_root.chala != 2 or random(3) != 1)) {
                 _root.boner = ender();
@@ -30970,7 +30970,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                 _root.boner2 = ender();
               }
               if (endrooms.length > 0 && (random(7) == 0 or random(4) == 0 && _root.fullhp)) {
-                _root.sac = ender();
+                _root.sacrificeRoom = ender();
               }
               if (endrooms.length > 0 && (random(20) == 0 or _root.bookster && random(4) == 0)) {
                 _root.lib = ender();
@@ -30978,13 +30978,13 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               if (endrooms.length > 0 && (random(2) == 0 or _root.lastdev && random(4) == 0)) {
                 _root.cus = ender();
               }
-              if (endrooms.length > 0 && (random(4) == 0 or _root.chaps == 1 && random(3) == 0) && _root.minz.length > 0) {
+              if (endrooms.length > 0 && (random(4) == 0 or _root.floorNum == 1 && random(3) == 0) && _root.minz.length > 0) {
                 _root.minb = ender();
               }
-              if (endrooms.length > 0 && _root.fullhp && _root.chaps > 1 && (random(2) == 0 or _root.chaps > 2)) {
-                _root.chamb = ender();
+              if (endrooms.length > 0 && _root.fullhp && _root.floorNum > 1 && (random(2) == 0 or _root.floorNum > 2)) {
+                _root.arenaRoom = ender();
               }
-              if (endrooms.length > 0 && _root.coins >= 5 && _root.chaps % 2 == 0) {
+              if (endrooms.length > 0 && _root.coins >= 5 && _root.floorNum % 2 == 0) {
                 _root.gamb = ender();
               }
             }
@@ -30992,7 +30992,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
             _root.levz = [];
             _root.mapsize = 0;
           }
-          if (_root.chaps > 6) {
+          if (_root.floorNum > 6) {
             _root.boner = undefined;
             _root.boner2 = undefined;
             _root.shopl = undefined;
@@ -31001,14 +31001,14 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         if (fuckup >= 399) {
           _root.levz = undefined;
           if (_root.double) {
-            --_root.chaps;
+            --_root.floorNum;
           }
           _root.cuts = true;
           moveon();
           _root.gotoAndStop('reset');
         }
-        f13 = Math.min(llev.length - 2, _root.chaps * 2 - 2);
-        f15 = Math.min(llev.length - 2, _root.chaps * 2 - 4);
+        f13 = Math.min(llev.length - 2, _root.floorNum * 2 - 2);
+        f15 = Math.min(llev.length - 2, _root.floorNum * 2 - 4);
         f14 = true;
         for (e in _root.levz) {
           if (random(2) == 0 && _root.double) {
@@ -31026,14 +31026,14 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           }
         }
         if (_root.double) {
-          --_root.chaps;
+          --_root.floorNum;
         }
         bosschoose();
         if (_root.double) {
           _root.levz[_root.bossl2] = f1;
           _root.bosss2 = _root.bosss;
           _root.altboss2 = _root.altboss;
-          ++_root.chaps;
+          ++_root.floorNum;
           while (_root.bosss2 == _root.bosss) {
             bosschoose();
           }
@@ -31046,22 +31046,22 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         }
         _root.levz[35] = 2;
         _root.levz[166] = 'satan';
-        if (_root.altsat) {
+        if (_root.godRoomFloor) {
           _root.levz[166] = 'sata';
         } else {
-          if (!_root.kramper && (random(10) == 0 or random(3) == 0 && _root.evs > 0)) {
+          if (!_root.kramper && (random(10) == 0 or random(3) == 0 && _root.devilDeals > 0)) {
             _root.levz[166] = 'krampus';
-            _root.kramper = _root.chaps;
+            _root.kramper = _root.floorNum;
           }
         }
-        if (_root.chaps == 8) {
+        if (_root.floorNum == 8) {
           _root.levz[166] = 'satan1';
         }
-        if (_root.chaps < 9) {
+        if (_root.floorNum < 9) {
           _root.levz[169] = 'error' + random(4);
         }
         _root.levz[_root.shopl] = 'shop' + (random(6) + 1) * 1;
-        _root.levz[_root.sac] = 'sac';
+        _root.levz[_root.sacrificeRoom] = 'sac';
         _root.levz[_root.lib] = 'lib';
         _root.levz[_root.cus] = 'c';
         _root.levz[_root.hide2] = 'hi' + _root.hid2;
@@ -31080,33 +31080,33 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         }
         f3 = f2;
         f2 += _root.minz[f1];
-        if (_root.chaps > 2 && !_root.us && random(10) == 0) {
+        if (_root.floorNum > 2 && !_root.us && random(10) == 0) {
           f2 = 'us';
           _root.us = true;
         }
         _root.levz[_root.minb] = f2;
         _root.levz[_root.gamb] = 'gam' + random(6);
-        _root.levz[_root.chamb] = 'cha' + random(6);
-        if (_root.chaps == 11) {
+        _root.levz[_root.arenaRoom] = 'cha' + random(6);
+        if (_root.floorNum == 11) {
           _root.levz[35] = 5;
         }
-        if (_root.altch) {
-          _root.levz[_root.chamb] = 'cha5';
+        if (_root.bossArena) {
+          _root.levz[_root.arenaRoom] = 'cha5';
         }
-        if (_root.chaps > 3 && _root.minb == undefined) {
-          if (_root.chaps > 4) {
-            if (random(3) == 0 && _root.chaps - 1 > _root.lastkeeps) {
+        if (_root.floorNum > 3 && _root.minb == undefined) {
+          if (_root.floorNum > 4) {
+            if (random(3) == 0 && _root.floorNum - 1 > _root.lastkeeps) {
               _root.levz[_root.hide] = f3 + 4;
               _root.minb = _root.hide;
             }
           }
           if (_root.levz[_root.hide] == f3 + 4) {
-            _root.lastkeeps = _root.chaps;
+            _root.lastkeeps = _root.floorNum;
           }
-          if (random(6 - Math.min(_root.chaps, 5)) == 0 && _root.chaps - 1 > _root.lastkeeps) {
+          if (random(6 - Math.min(_root.floorNum, 5)) == 0 && _root.floorNum - 1 > _root.lastkeeps) {
             _root.minb = _root.shopl;
             _root.levz[_root.shopl] = f3 + 4;
-            _root.lastkeeps = _root.chaps;
+            _root.lastkeeps = _root.floorNum;
           }
         }
         _root.minz.splice(f1, 1);
@@ -31129,11 +31129,11 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
           if (_root.lev == _root.bossl or _root.lev == _root.bossl2) {
             _root.soundy('castleportcullis.wav', 100);
           } else {
-            if (_root.lev == _root.chamb) {
+            if (_root.lev == _root.arenaRoom) {
               _root.mmus = _root.soundy('weapon room.mp', 100);
             } else {
               if (_root.lev == 166) {
-                if (_root.kramper == _root.chaps) {
+                if (_root.kramper == _root.floorNum) {
                   _root.bossmusic = true;
                   _root.soundy('bossintro.mp3');
                 } else {
@@ -31205,10 +31205,10 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         gotoAndStop(2);
       } else {
         if (f1 * 1 > 1) {
-          if (_root.chaps == 11) {
+          if (_root.floorNum == 11) {
             f15 = 15;
           } else {
-            f15 = Math.round(_root.chaps / 2 + _root.altchap);
+            f15 = Math.round(_root.floorNum / 2 + _root.altchap);
           }
           gotoAndStop('levs' + f15);
           inl.gotoAndStop(f1 - 2);
@@ -31220,7 +31220,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         }
       }
       error = false;
-      if (_root.lev == _root.chamb) {
+      if (_root.lev == _root.arenaRoom) {
         f1 = 19;
       } else {
         if (_root.lev == _root.gamb) {
@@ -31234,7 +31234,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               if (_root.door <= -1) {
                 _root.door = random(4);
               }
-              if (_root.altsat) {
+              if (_root.godRoomFloor) {
                 f1 = 26;
               }
             }
@@ -31243,7 +31243,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               error = true;
               f1 = 40;
             } else {
-              if (_root.chaps > 8) {
+              if (_root.floorNum > 8) {
                 if (_root.altchap) {
                   f1 = 26;
                 } else {
@@ -31251,7 +31251,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
                 }
               } else {
                 altgo = true;
-                f1 = 1 + Math.round(_root.chaps / 2 - 1) * 3;
+                f1 = 1 + Math.round(_root.floorNum / 2 - 1) * 3;
               }
             }
           }
@@ -31260,7 +31260,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       if (_root.shopl == _root.lev) {
         f1 = 2;
       } else {
-        if ((_root.bossl == _root.lev or _root.bossl2 == _root.lev) && _root.chaps != 9) {
+        if ((_root.bossl == _root.lev or _root.bossl2 == _root.lev) && _root.floorNum != 9) {
           f1 += 2;
         } else {
           if (_root.hide == _root.lev) {
@@ -31270,18 +31270,18 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
               f1 = [10, 26, 19, 23, 21];
               f1 = f1[_root.hid2];
             } else {
-              if (altgo && _root.altchap != 0 && _root.chaps != 7 && _root.chaps != 8) {
-                f1 = 21 + Math.round(_root.chaps / 2 - 1);
+              if (altgo && _root.altchap != 0 && _root.floorNum != 7 && _root.floorNum != 8) {
+                f1 = 21 + Math.round(_root.floorNum / 2 - 1);
               }
             }
           }
         }
       }
       f2 = f1;
-      if (_root.lev == 35 && !satan && _root.chaps == 1) {
+      if (_root.lev == 35 && !satan && _root.floorNum == 1) {
         f2 = 50;
       }
-      if (_root.lev == _root.sac) {
+      if (_root.lev == _root.sacrificeRoom) {
         f1 = 24;
         f2 = 24;
       }
@@ -31289,7 +31289,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
         f1 = 25;
         f2 = 25;
       }
-      if (_root.chaps == 11) {
+      if (_root.floorNum == 11) {
         f1 = 27;
         f2 = 27;
       }
@@ -31316,13 +31316,13 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       alltimer = [0, 0, 0, 0, 0, 0, 0, 0, 0];
       ballz = 0;
       ball = [];
-      if (_root.chaps >= 5) {
+      if (_root.floorNum >= 5) {
         mux = 1.25;
       } else {
         mux = 1;
       }
       v1 = 13;
-      v2 = 60 + 15 * Math.min(10, _root.chaps);
+      v2 = 60 + 15 * Math.min(10, _root.floorNum);
       v2 /= mux;
       p180 = 0.0174532925199433;
       p10 = 0.5235987755982988;
@@ -31378,7 +31378,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       flyer = 0;
       hearts = [];
       masks = [];
-      if (_root.chaps != 9 && (_root.chala <= 0 or _root.chala == 10)) {
+      if (_root.floorNum != 9 && (_root.chala <= 0 or _root.chala == 10)) {
         _root.heaven = _root.so.data.wins >= 10;
       } else {
         _root.heaven = false;
@@ -31555,7 +31555,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       }
       tictic = _root.itemCharges;
       nocharge = 0;
-      chamb = 0;
+      arenaRoom = 0;
       mhpp = 0;
       ahpp = 0;
       red = 0;
@@ -31768,7 +31768,7 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
   movieClip 6760  {
 
     frame 1 {
-      f1 = Math.round(_root.chaps / 2);
+      f1 = Math.round(_root.floorNum / 2);
       _root.tex = f1;
       gotoAndStop(f1);
     }
@@ -31935,8 +31935,8 @@ movie 'C:\Users\Momo\Desktop\9110000 - 8.swf' {
       } else {
         f1.gotoAndStop(1);
       }
-      f2.gotoAndStop(_root.chaps);
-      f1.d.gotoAndStop(_root.chaps);
+      f2.gotoAndStop(_root.floorNum);
+      f1.d.gotoAndStop(_root.floorNum);
     }
 
     frame 224 {
