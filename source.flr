@@ -10200,7 +10200,7 @@ movie {
         _root.pillfirst = true;
         _root.bombnext = false;
         _root.notch = false;
-        _root.lastkeeps = 0;
+        _root.lastGreedFloor = 0;
         _root.armor = 0;
         _root.pillItem = undefined;
         _root.trinketSlot1 = undefined;
@@ -10545,7 +10545,7 @@ movie {
         } else {
           for (e in _root.levz) {
             if (e < 110) {
-              if (_root.levz[e] != 0 && (_root.seenlev[e] or haveEffect[54]) && (_root.secretRoom != e && _root.secretRoom2 != e or _root.beenlev[e] && (e != _root.arenaRoom or _root.chama))) {
+              if (_root.levz[e] != 0 && (_root.seenRoom[e] or haveEffect[54]) && (_root.secretRoom != e && _root.secretRoom2 != e or _root.beenlev[e] && (e != _root.arenaRoom or _root.chama))) {
                 maxx = new flash.geom.Matrix();
                 f1 = (e % 10) * 25 + 15;
                 f2 = Math.round(e / 10 - 0.5) * 10 + 7;
@@ -12692,7 +12692,7 @@ movie {
         }
       }
 
-      function teller() {
+      function teleport() {
         player.d.gotoAndStop(7);
         telf = fra + player.d.d._totalframes - 3;
         _root.soundy('hell_portal2.wav');
@@ -12828,10 +12828,10 @@ movie {
                 playsave = 150;
               }
               if (haveTrinket(43)) {
-                teller();
-                tar = _root.lastl;
+                teleport();
+                teleportTarget = _root.lastl;
                 if (_root.lev <= 0) {
-                  tar = 35;
+                  teleportTarget = 35;
                   _root.lastl = 35;
                 }
               }
@@ -13363,7 +13363,7 @@ movie {
           }
           if (trg._visible) {
             trg.blo = ingrid(trg._x, trg._y);
-            _root.seenlev[trg.gol] = true;
+            _root.seenRoom[trg.gol] = true;
             if (haveEffect[91]) {
               if (trg.gol == _root.sacrificeRoom) {
                 _root.sacRoomRevealed = true;
@@ -14587,8 +14587,8 @@ movie {
             }
           }
         }
-        if (haveEffect[151] or purr) {
-          if (!lows.ba && random(6) == 0 or purr && blueFlies < 1 && ball.length < 30 && (random(3) == 0 or !haveEffect[152])) {
+        if (haveEffect[151] or catMode) {
+          if (!lows.ba && random(6) == 0 or catMode && blueFlies < 1 && ball.length < 30 && (random(3) == 0 or !haveEffect[152])) {
             ++blueFlies;
             blueFlyTarget = trg;
           }
@@ -27343,12 +27343,12 @@ movie {
                     _root.coins = cardDoubler(_root.coins);
                     break;
                   case 74:
-                    tar = 166;
-                    teller();
+                    teleportTarget = 166;
+                    teleport();
                     break;
                   case 28:
-                    teller();
-                    tar = _root.boner;
+                    teleport();
+                    teleportTarget = _root.boner;
                     _root.bona = true;
                     break;
                   case 27:
@@ -27428,8 +27428,8 @@ movie {
                     _root.soundy('summonsound.wav', 120);
                     break;
                   case 22:
-                    teller();
-                    tar = _root.bossRoom;
+                    teleport();
+                    teleportTarget = _root.bossRoom;
                     break;
                   case 16:
                     spaw(player.xp, player.yp, 45, 5.32);
@@ -27461,20 +27461,20 @@ movie {
                     ++haveEffect[12];
                     break;
                   case 11:
-                    teller();
-                    tar = 35;
+                    teleport();
+                    teleportTarget = 35;
                     break;
                   case 12:
                     ++haveEffect[3];
                     break;
                   case 13:
-                    teller();
-                    tar = _root.shopl;
+                    teleport();
+                    teleportTarget = _root.shopl;
                     _root.shopa = true;
                     break;
                   case 14:
-                    teller();
-                    tar = _root.secretRoom;
+                    teleport();
+                    teleportTarget = _root.secretRoom;
                     break;
                   case 15:
                     ++haveEffect[20];
@@ -27633,15 +27633,15 @@ movie {
                       f1 = random(15);
                       if (_root.floorNum != 9) {
                         if (f1 == 0) {
-                          tar = 169;
+                          teleportTarget = 169;
                         } else {
                           if (f1 == 0 && _root.floorNum != 1) {
-                            tar = 166;
+                            teleportTarget = 166;
                           }
                         }
                       }
                       displayCornerMessage('TelePills');
-                      teller();
+                      teleport();
                     }
                 }
               }
@@ -28063,7 +28063,7 @@ movie {
                       break;
                     case 12:
                       showit = false;
-                      teller();
+                      teleport();
                       break;
                     case 13:
                       ++player.hp;
@@ -28165,7 +28165,7 @@ movie {
               f1 = 27;
             }
           }
-          if (purr) {
+          if (catMode) {
             f1 = 25;
             trg.flyby = true;
           }
@@ -28430,7 +28430,7 @@ movie {
           if (haveEffect[189]) {
             f2 = 42;
           }
-          if (purr) {
+          if (catMode) {
             f2 = 43;
           }
           if (demon > 0) {
@@ -29004,7 +29004,7 @@ movie {
         }
         if (_root.catlives + haveEffect[145] + haveEffect[134] + haveEffect[133] > 2) {
           _root.SecretUnlocked[85] = true;
-          purr = true;
+          catMode = true;
         }
         player.d.bub2._visible = haveEffect[108] or haveEffect[162] or haveEffect[173] or haveEffect[142] or haveEffect[184];
         if (haveEffect[184]) {
@@ -29044,8 +29044,8 @@ movie {
             _root.beenlev[_root.lev] = false;
           }
           moveon();
-          if (tar) {
-            _root.lev = tar;
+          if (teleportTarget) {
+            _root.lev = teleportTarget;
           } else {
             while (_root.lev == _root.lastl or !_root.levz[_root.lev] or _root.lev > 150) {
               _root.lev = random(_root.levz.length) + 1;
@@ -30067,8 +30067,8 @@ movie {
               _root.itemCharges += 0.02;
             }
           }
-          if (haveEffect[63] && shutdoor != 0 && _root.itemCharges - 0.5 < tictic && _root.itemCharges < 1 && nocharge-- < 0 && _root.lev != _root.arcadeRoom) {
-            tictic = Math.min(_root.itemCharges, tictic);
+          if (haveEffect[63] && shutdoor != 0 && _root.itemCharges - 0.5 < batteryTimer && _root.itemCharges < 1 && nocharge-- < 0 && _root.lev != _root.arcadeRoom) {
+            batteryTimer = Math.min(_root.itemCharges, batteryTimer);
             _root.itemCharges += 0.0004;
             if (hudder != _root.hud.it._currentframe && _root.hud.it._currentframe < 15) {
               if (_root.itemCharges < 1) {
@@ -30291,8 +30291,8 @@ movie {
                     }
                   } else {
                     if (random(18) == 0) {
-                      tar = 166;
-                      teller();
+                      teleportTarget = 166;
+                      teleport();
                     } else {
                       if (random(5) == 0) {
                         boil(false);
@@ -30678,7 +30678,7 @@ movie {
       razor = 0;
       rage = 1;
       rag = 1;
-      if (_root.levz.length <= 1) {
+      if (_root.levz.length <= 1) { //This all happens when you first enter a floor.
         f1 = getTimer() % 100;
         e = 0;
         while (e < f1) {
@@ -30769,7 +30769,7 @@ movie {
         _root.levit = [];
         _root.beenlev = [];
         _root.beenlev2 = [];
-        _root.seenlev = [];
+        _root.seenRoom = [];
         _root.bomf = [];
         _root.shopa = false;
         _root.liba = false;
@@ -31095,18 +31095,18 @@ movie {
         }
         if (_root.floorNum > 3 && _root.minibossRoom == undefined) {
           if (_root.floorNum > 4) {
-            if (random(3) == 0 && _root.floorNum - 1 > _root.lastkeeps) {
+            if (random(3) == 0 && _root.floorNum - 1 > _root.lastGreedFloor) {
               _root.levz[_root.secretRoom] = f3 + 4;
               _root.minibossRoom = _root.secretRoom;
             }
           }
           if (_root.levz[_root.secretRoom] == f3 + 4) {
-            _root.lastkeeps = _root.floorNum;
+            _root.lastGreedFloor = _root.floorNum;
           }
-          if (random(6 - Math.min(_root.floorNum, 5)) == 0 && _root.floorNum - 1 > _root.lastkeeps) {
+          if (random(6 - Math.min(_root.floorNum, 5)) == 0 && _root.floorNum - 1 > _root.lastGreedFloor) {
             _root.minibossRoom = _root.shopl;
             _root.levz[_root.shopl] = f3 + 4;
-            _root.lastkeeps = _root.floorNum;
+            _root.lastGreedFloor = _root.floorNum;
           }
         }
         _root.minibossPool.splice(f1, 1);
@@ -31174,7 +31174,7 @@ movie {
           }
         }
       }
-      _root.seenlev[_root.lev] = true;
+      _root.seenRoom[_root.lev] = true;
       door = [d1, d2, d3, d4];
       v1 = _root.lev;
       if (v1 % 10 < 9) {
@@ -31553,7 +31553,7 @@ movie {
         player.fire = -10;
         chaf = -20;
       }
-      tictic = _root.itemCharges;
+      batteryTimer = _root.itemCharges;
       nocharge = 0;
       arenaRoom = 0;
       mhpp = 0;

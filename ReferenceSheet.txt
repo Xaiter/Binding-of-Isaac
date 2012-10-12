@@ -338,3 +338,104 @@ Isaac                 | 39    |
 ???                   | 40    |
 Daddy Long Legs       | 41    |
 Triachnid             | 42    |
+----------------------+-------+
+SECRETS               |       |
+----------------------+-------+
+Maggy                 | 1     |
+Cain                  | 2     |
+Judas                 | 3     |
+Mom Kill              | 4     |
+The Horsemen          | 5     |
+NULL                  | 6     |
+Book of Revelations   | 7     |
+Transcendence         | 8     |
+The Nail              | 9     |
+The Quarter           | 10    |
+Dr. Fetus             | 11    |
+The Poop              | 12    |
+Spider Bite           | 13    |
+Spelunker Hat         | 14    |
+NULL                  | 15    |
+NULL                  | 16    |
+NULL                  | 17    |
+The Small Rock        | 18    |
+Monstro's Tooth       | 19    |
+Lil' Chubby           | 20    |
+Loki's Horns          | 21    |
+Steven                | 22    |
+C.H.A.D.              | 23    |
+Gish                  | 24    |
+Super Bandage         | 25    |
+The Relic             | 26    |
+The Sack of Pennies   | 27    |
+The Robo-Baby         | 28    |
+The Book of Sin       | 29    |
+Little Gish           | 30    |
+Little Steve          | 31    |
+Little Chad           | 32    |
+The Gamekid           | 33    |
+The Halo              | 34    |
+Mr. Mega              | 35    |
+Mom's Pill Bottle     | 36    |
+The Common Cold       | 37    |
+The D6                | 38    |
+The Pinking Shears    | 39    |
+The Parasite          | 40    |
+???                   | 41    |
+Everything is Terrible| 42    |
+The Wafer             | 43    |
+Money = Power         | 44    |
+It Lives!             | 45    |
+The Bean              | 46    |
+Mom's Contacts        | 47    |
+The Necronomicon      | 48    |
+Basement Boy          | 49    |
+Cave Boy              | 50    |
+Depths Boy            | 51    |
+Womb Boy              | 52    |
+Golden God            | 53    |
+Eve                   | 54    |
+Mom's Knife           | 55    |
+Dead Bird             | 56    |
+Whore of Babylon      | 57    |
+Razor Blade           | 58    |
+Guardian Angel        | 59    |
+Bomb Bag              | 60    |
+Demon Baby            | 61    |
+Forget Me Now         | 62    |
+Monster Manuel        | 63    |
+Lump of Coal          | 64    |
+The D20               | 65    |
+Celtic Cross          | 66    |
+Abel                  | 67    |
+Curved Horn           | 68    |
+Sacrifical Knife      | 69    |
+Rainbow Baby          | 70    |
+Blood Lust            | 71    |
+Bloody Penny          | 72    |
+Blood Rights          | 73    |
+The Polaroid          | 74    |
+Dad's Key             | 75    |
+Lucky Toe             | 76    |
+Candle                | 77    |
+Burnt Penny           | 78    |
+Guppy's Tail          | 79    |
+Epic Fetus            | 80    |
+Dead Fish             | 81    |
+SMB Super Fan         | 82    |
+Spider Butt           | 83    |
+Counterfeit Penny     | 84    |
+Guppy's Hairball      | 85    |
+Egg Sack              | 86    |
+(Unknown)             | 87    |
+Samson                | 88    |
+Triachnid             | 89    |
+Platinum God          | 90    |
+Isaac's Head          | 91    |
+Maggy's Faith         | 92    |
+Cain's Eye            | 93    |
+Judas's Tongue        | 94    |
+Eve's Bird Foot       | 95    |
+???'s Soul            | 96    |
+Samson's Lock         | 97    |
+The Left Hand         | 98    |
