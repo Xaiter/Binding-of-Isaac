@@ -1,0 +1,340 @@
+===============
+REFERENCE SHEET
+===============
+----------------------+-------+
+ITEMS		          |ITEM ID|
+----------------------+-------+
+The Sad Onion         | 1     |
+The Inner Eye         | 2     |
+Spoon Bender          | 3     |
+Max's Head            | 4     |
+My Reflection         | 5     |
+Number one            | 6     |
+Blood of the Martyr   | 7     |
+Brother Bobby         | 8     |
+Skatole               | 9     |
+Halo of Flies         | 10    |
+1up!                  | 11    |
+Magic Mushroom        | 12    |
+The Virus             | 13    |
+Roid Rage             | 14    |
+<3                    | 15    |
+Raw Liver             | 16    |
+Skeleton Key          | 17    |
+A dollar!             | 18    |
+Boom!                 | 19    |
+Transcendence         | 20    |
+The Compass           | 21    |
+Lunch                 | 22    |
+Dinner                | 23    |
+Dessert               | 24    |
+Breakfast             | 25    |
+Rotten Meat           | 26    |
+Wooden Spoon          | 27    |
+The Belt              | 28    |
+Moms Underwear        | 29    |
+Moms Heels            | 30    |
+Moms Lipstick         | 31    |
+Wire Coat hanger!     | 32    |
+The Bible             | 33    |
+The Book of Belial    | 34    |
+The Necronomicon      | 35    |
+The Poop!             | 36    |
+Mr. Boom!             | 37    |
+Tammys Head           | 38    |
+Moms Bra              | 39    |
+kamikaze!             | 40    |
+Moms Pad              | 41    |
+Bobs Rotten Head      | 42    |
+Pills here!           | 43    |
+Teleport!             | 44    |
+Yum Heart             | 45    |
+Lucky Foot            | 46    |
+Doctors Remote        | 47    |
+Cupids arrow          | 48    |
+Shoop da Whoop!       | 49    |
+Steven                | 50    |
+Pentagram             | 51    |
+Dr Fetus              | 52    |
+Magneto               | 53    |
+Treasure Map          | 54    |
+Moms Eye              | 55    |
+Lemon Mishap          | 56    |
+Distant Admiration    | 57    |
+Book of shadows       | 58    |
+Wiggle Worm           | 59    |
+The Ladder            | 60    |
+Tarot Card            | 61    |
+Charm of the vampire  | 62    |
+The Battery           | 63    |
+Steam Sale            | 64    |
+Anarchist Cookbook    | 65    |
+The Hourglass         | 66    |
+Sister Maggy          | 67    |
+Technology            | 68    |
+Chocolate Milk        | 69    |
+Growth Hormones       | 70    |
+Mini Mush             | 71    |
+Rosary                | 72    |
+Cube of Meat          | 73    |
+A Quarter             | 74    |
+PHD                   | 75    |
+Xray-Vision           | 76    |
+My little Unicorn     | 77    |
+Book of Revelations   | 78    |
+The Mark              | 79    |
+The Pact              | 80    |
+Dead Cat              | 81    |
+Lord of the Pit       | 82    |
+the Nail              | 83    |
+We need to go deeper! | 84    |
+Deck of Cards         | 85    |
+Monstros Tooth        | 86    |
+Lokis Horns           | 87    |
+Lil Chubby            | 88    |
+Spider Bite           | 89    |
+The Small Rock        | 90    |
+Spelunker Hat         | 91    |
+Super Bandage         | 92    |
+The Gamekid           | 93    |
+Sack of pennies       | 94    |
+Robo-Baby             | 95    |
+Little Chad           | 96    |
+The Book of Sin       | 97    |
+The Relic             | 98    |
+Little Gish           | 99    |
+Little Steve          | 100   |
+The Halo              | 101   |
+Moms Bottle of Pills  | 102   |
+The common cold       | 103   |
+The Parasite          | 104   |
+The Dice              | 105   |
+Mr. Mega              | 106   |
+The Pinking Shears    | 107   |
+The Wafer             | 108   |
+Money = Power         | 109   |
+Moms Contacts         | 110   |
+The Bean              | 111   |
+Guardian Angel        | 112   |
+Demon Baby            | 113   |
+Moms Knife            | 114   |
+Ouija Board           | 115   |
+9 Volt                | 116   |
+Dead Bird             | 117   |
+Brimstone             | 118   |
+Blood Bag             | 119   |
+Odd Mushroom          | 120   |
+Odd Mushroom          | 121   |
+Whore of Babylon      | 122   |
+Monster Manuel        | 123   |
+Dead Sea Scrolls      | 124   |
+Bobby - Bomb          | 125   |
+Razor Blade           | 126   |
+Forget Me Now         | 127   |
+Forever alone         | 128   |
+Bucket of Lard        | 129   |
+A Pony                | 130   |
+Bomb Bag              | 131   |
+A Lump of Coal        | 132   |
+Guppys Paw            | 133   |
+Guppys Tail           | 134   |
+IV Bag                | 135   |
+Best Friend           | 136   |
+Remote Detonator      | 137   |
+Stigmata              | 138   |
+Moms Purse            | 139   |
+Bobs Curse            | 140   |
+Pageant Boy           | 141   |
+Scapular              | 142   |
+Speed Ball            | 143   |
+Bum friend            | 144   |
+Guppys Head           | 145   |
+Prayer Card           | 146   |
+Notched Axe           | 147   |
+Infestation           | 148   |
+Ipecac                | 149   |
+Tough love            | 150   |
+The Mulligan          | 151   |
+Technology 2          | 152   |
+Mutant Spider         | 153   |
+Chemical peel         | 154   |
+The Peeper!           | 155   |
+Habit                 | 156   |
+Bloody Lust           | 157   |
+Crystal Ball          | 158   |
+Spirit of the night   | 159   |
+Crack the Sky         | 160   |
+Ankh                  | 161   |
+Celtic cross          | 162   |
+Ghost Baby            | 163   |
+The Candle            | 164   |
+Cat-o-nine-tails      | 165   |
+D20                   | 166   |
+Harlequin baby        | 167   |
+Epic Fetus            | 168   |
+Polyphemus            | 169   |
+Daddy longlegs        | 170   |
+Spider Butt           | 171   |
+Sacrificial Dagger    | 172   |
+Mitre                 | 173   |
+Rainbow Baby          | 174   |
+Dads Key              | 175   |
+Stem cells            | 176   |
+Portable Slot!        | 177   |
+Holy Water            | 178   |
+Fate                  | 179   |
+The Black Bean        | 180   |
+White Pony            | 181   |
+Sacred Heart          | 182   |
+Tooth Picks           | 183   |
+Holy Grail            | 184   |
+Dead Dove             | 185   |
+Blood Rights          | 186   |
+Guppys Hairball       | 187   |
+Abel                  | 188   |
+SMB Super Fan!        | 189   |
+Pyro                  | 190   |
+3 Dollar bill         | 191   |
+Telepathy for Dummies | 192   |
+MEAT!                 | 193   |
+Magic 8 ball          | 194   |
+Moms coin purse       | 195   |
+Squeezy               | 196   |
+Jesus Juice           | 197   |
+BOX                   | 198   |
+----------------------+-------+
+CHARACTERS            | ID    |
+----------------------+-------+
+Isaac                 | 0     |
+Maggy/Magdelena       | 1     |
+Cain                  | 2     |
+Judas                 | 3     |
+???/XXX               | 4     |
+Eve                   | 5     |
+Sampson               | 6     |
+----------------------+-------+
+TRINKETS/CARDS        | ID    |
+----------------------+-------+
+Wheel of Fortune      | 7     |
+The Devil             | 8     |
+Death                 | 9     |
+Strength              | 10    |
+The Fool              | 11    |
+The Magician          | 12    |
+The Hermit            | 13    |
+The Moon              | 14    |
+The Hanged Man        | 15    |
+Judgement             | 16    |
+The Chariot           | 17    |
+The Lovers            | 18    |
+The World             | 19    |
+Justice               | 20    |
+Temperance            | 21    |
+The Emperor           | 22    |
+The Tower             | 23    |
+The Hierophant        | 24    |
+The Hih Priestess     | 25    |
+The Empress           | 26    |
+The Sun               | 27    |
+The Stars             | 28    |
+Fish Head             | 29    |
+Pinky Eye             | 30    |
+Push Pin              | 31    |
+Liberty Cap           | 32    |
+Umbilical Cord        | 33    |
+Child's Heart         | 34    |
+Curved Horn           | 35    |
+Rusted Key            | 36    |
+Goat Hoof             | 37    |
+Mom's Pearl           | 38    |
+Cancer                | 39    |
+Red Patch             | 40    |
+Match Stick           | 41    |
+Lucky Toe             | 42    |
+Cursed Skull          | 43    |
+Safety Cap            | 44    |
+Ace of Spades         | 45    |
+Isaac's Fork          | 46    |
+The Polaroid          | 47    |
+A Missing Page        | 48    |
+Bloody Penny          | 49    |
+Burnt Penny           | 50    |
+Flat Penny            | 51    |
+Counterfeit Penny     | 52    |
+Tick                  | 53    |
+Isaac's Head          | 54    |
+Maggy's Faith         | 55    |
+Judas's Tongue        | 56    |
+???'s Soul            | 57    |
+Samson's Lock         | 58    |
+Cain's Eye            | 59    |
+Eve's Bird Foot       | 60    |
+The Left Hand         | 61    |
+2 of Spades           | 70    |
+2 of Clubs            | 71    |
+2 of Hearts           | 72    |
+2 of Diamonds         | 73    |
+The Joker             | 74    |
+----------------------+-------+
+PILLS                 | ID    |
+----------------------+-------+
+Full Health           | 1     |
+I Found Pills/Puberty | 2     |
+Explosive Diarrhea    | 3     |
+Balls of Steel        | 4     |
+Pretty Fly            | 5     |
+Bad Trip!             | 6     |
+Health Up/Down        | 7     |
+Bombs are Key         | 8     |
+Tears Up/Down         | 9     |
+Range Up/Down         | 10    |
+Speed Up/Down         | 11    |
+Bad Gas               | 12    |
+Friends till the end! | 13    |
+Luck Up/Down          | 14    |
+Telepills             | 126   |
+----------------------+-------+
+BOSSES				  | ID    |
+----------------------+-------+
+Monstro               |	1	  |
+Larry Jr.             | 2     |
+Chub                  | 3     |
+Gurdy                 | 4     |
+Monstro II            | 5     |
+MOM                   | 6     |
+Scolex                | 7     |
+Mom's Heart           | 8     |
+Famine                | 9     |
+Pestilence            | 10    |
+War                   | 11    |
+Death                 | 12    |
+The Duke of Flies     | 13    |
+Peep                  | 14    |
+Loki                  | 15    |
+Blastocyst            | 16    |
+Gemini                | 17    |
+Fistula               | 18    |
+Gish                  | 19    |
+Steven                | 20    |
+C.H.A.D.              | 21    |
+Headless Horseman     | 22    |
+The Fallen            | 23    |
+Satan                 | 24    |
+It Lives!             | 25    |
+The Hollow            | 26    |
+The Carrion Queen     | 27    |
+Gurdy Jr.             | 28    |
+The Husk              | 29    |
+The Bloat             | 30    |
+Lokii                 | 31    |
+The Blighted Ovum     | 32    |
+Teratoma              | 33    |
+Widow                 | 34    |
+Mask of Infamy        | 35    |
+The Wretched          | 36    |
+Pin                   | 37    |
+Conquest              | 38    |
+Isaac                 | 39    |
+???                   | 40    |
+Daddy Long Legs       | 41    |
+Triachnid             | 42    |
