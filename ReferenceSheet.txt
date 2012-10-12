@@ -2,7 +2,7 @@
 REFERENCE SHEET
 ===============
 ----------------------+-------+
-ITEMS		          |ITEM ID|
+ITEMS                 |ITEM ID|
 ----------------------+-------+
 The Sad Onion         | 1     |
 The Inner Eye         | 2     |
@@ -294,9 +294,9 @@ Friends till the end! | 13    |
 Luck Up/Down          | 14    |
 Telepills             | 126   |
 ----------------------+-------+
-BOSSES				  | ID    |
+BOSSES                | ID    |
 ----------------------+-------+
-Monstro               |	1	  |
+Monstro               |	1	    |
 Larry Jr.             | 2     |
 Chub                  | 3     |
 Gurdy                 | 4     |
