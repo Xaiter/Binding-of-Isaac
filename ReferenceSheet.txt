@@ -296,7 +296,7 @@ Telepills             | 126   |
 ----------------------+-------+
 BOSSES                | ID    |
 ----------------------+-------+
-Monstro               |	1	    |
+Monstro               |	1     |
 Larry Jr.             | 2     |
 Chub                  | 3     |
 Gurdy                 | 4     |
