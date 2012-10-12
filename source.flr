@@ -553,7 +553,7 @@ movie {
             } else {
               if (_root.spacebarItem == 11 && f3) {
                 f3 = false;
-                if (_root.pilc >= 7) {
+                if (_root.pillItem >= 7) {
                   trg.gotoAndStop(61);
                 } else {
                   trg.gotoAndStop(43);
@@ -6707,7 +6707,7 @@ movie {
       add(so.data.frog);
       add(so.data.momKills);
       add(so.data.poopsDestroyed);
-      add(so.data.pill);
+      add(so.data.bloodDonations);
       add(so.data.dde);
       add(so.data.arcadesVisited);
       add(so.data.bomb);
@@ -6715,7 +6715,7 @@ movie {
       add(so.data.rocksBombed);
       add(so.data.collectionScreen);
       add(so.data.boss);
-      add(so.data.lcomp);
+      add(so.data.levelsCompleted);
       add(so.data.mwin);
       add(so.data.rox);
       add(so.data.polaroidCounter);
@@ -6742,7 +6742,7 @@ movie {
             so.data.frog = sub();
             so.data.momKills = sub();
             so.data.poopsDestroyed = sub();
-            so.data.pill = sub();
+            so.data.bloodDonations = sub();
             so.data.dde = sub();
             so.data.arcadesVisited = sub();
             so.data.bomb = sub();
@@ -6750,7 +6750,7 @@ movie {
             so.data.rocksBombed = sub();
             so.data.collectionScreen = sub(true);
             so.data.boss = sub(true);
-            so.data.lcomp = sub(true);
+            so.data.levelsCompleted = sub(true);
             so.data.mwin = sub(true);
             so.data.rox = sub();
             so.data.polaroidCounter = sub();
@@ -6894,8 +6894,8 @@ movie {
       if (so.data.poopsDestroyed == undefined) {
         so.data.poopsDestroyed = 0;
       }
-      if (so.data.pill == undefined) {
-        so.data.pill = 0;
+      if (so.data.bloodDonations == undefined) {
+        so.data.bloodDonations = 0;
       }
       if (so.data.dde == undefined) {
         so.data.dde = 0;
@@ -6927,13 +6927,13 @@ movie {
       if (so.data.boss == undefined) {
         so.data.boss = [];
       }
-      if (so.data.lcomp == undefined) {
-        so.data.lcomp = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+      if (so.data.levelsCompleted == undefined) {
+        so.data.levelsCompleted = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
       }
       if (so.data.mwin == undefined) {
         so.data.mwin = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
       }
-      _root.minwin = so.data.mwin;
+      _root.minibossBeaten = so.data.mwin;
       f1 = [];
       e = 0;
       while (e < 100) {
@@ -6972,15 +6972,15 @@ movie {
       if (so.data.boss == undefined) {
         so.data.boss = [];
       }
-      if (so.data.lcomp == undefined) {
-        so.data.lcomp = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+      if (so.data.levelsCompleted == undefined) {
+        so.data.levelsCompleted = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
       }
       if (so.data.mwin == undefined) {
         so.data.mwin = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
       }
       _root.collectedItem = so.data.collectionScreen;
-      _root.bossk = so.data.boss;
-      _root.lcomp = so.data.lcomp;
+      _root.bossKilled = so.data.boss;
+      _root.levelsCompleted = so.data.levelsCompleted;
     }
 
     function unlos() {
@@ -10183,28 +10183,28 @@ movie {
         }
       }
 
-      function picc(f2) {
+      function replacePillColor(f2) {
         if (random(2) == 0) {
-          _root.picers[random(6)] = f2;
+          _root.pillColors[random(6)] = f2;
         }
       }
 
       function newstats() {
-        _root.picers = [1, 2, 3, 4, 5, 6];
-        picc(101);
-        picc(102);
-        picc(103);
+        _root.pillColors = [1, 2, 3, 4, 5, 6];
+        replacePillColor(101);
+        replacePillColor(102);
+        replacePillColor(103);
         _root.darky(120);
         _root.door = undefined;
-        _root.playcol = [1, 1, 1];
+        _root.playerTint = [1, 1, 1];
         _root.pillfirst = true;
         _root.bombnext = false;
         _root.notch = false;
         _root.lastkeeps = 0;
         _root.armor = 0;
-        _root.pilc = undefined;
+        _root.pillItem = undefined;
         _root.trinketSlot1 = undefined;
-        _roottrinketSlot2 = undefined;
+        _root.trinketslot2 = undefined;
         _root.vamp = 0;
         _root.monbb = 0;
         if (_root.floorNum > 2) {
@@ -10213,11 +10213,11 @@ movie {
         _root.floorNum = 1;
         _root.horsedown = 0;
         _root.spacebarItem = 0;
-        _root.fmode = 1;
-        _root.hmode = 1;
-        _root.bmode = 1;
+        _root.faceMode = 1;
+        _root.headMode = 1;
+        _root.bodyMode = 1;
         _root.demonz = 0;
-        _root.bookster = false;
+        _root.carryingBook = false;
         _root.hatmode = [1, 1, 1, 1, 1];
         _root.noDice = false;
         _root.hat = [];
@@ -10228,7 +10228,7 @@ movie {
         _root.keys = 0;
         _root.bombs = 0;
         _root.coins = 0;
-        _root.minz = [0, 1, 2, 3, 5, 6];
+        _root.minibossPool = [0, 1, 2, 3, 5, 6];
         _root.sk = _root.characterID + 1;
         switch (_root.characterID) {
           case 0:
@@ -10265,7 +10265,7 @@ movie {
         _root.wiptz = 0;
         _root.collectionScreen = [];
         _root.colit = 0;
-        _root.piller = [];
+        _root.pillEffects = [];
         _root.kramper = false;
         _root.nohead = false;
         _root.nodmg = true;
@@ -10361,7 +10361,7 @@ movie {
         _root.altboss = false;
         altBosses = [0, 34, 37, 29, 26, 30 + random(2) * 5, 30, 31, 8];
         if (_root.floorNum != 6 && _root.floorNum != 8) {
-          if (_root.floorNum == 11) {
+          if (_root.floorNum == 11) {	
             _root.bossID = 40;
           } else {
             if (_root.bossID > 25) {
@@ -11688,7 +11688,7 @@ movie {
             break;
           case 45:
             v2.alter = 1;
-            if (_root.pilc != 25) {
+            if (_root.pillItem != 25) {
               player.xp = 320;
               player.yp = 370;
             }
@@ -12632,18 +12632,18 @@ movie {
         v3.colorTransform = v1;
       }
 
-      function pilcol(f1, f2, f3) {
+      function pillTintPlayer(f1, f2, f3) {
         colorit(player, 0.3, 0.3, 0.3, f1 * 1.3, f2 * 1.3, f3 * 1.3);
         pillef = fra + 30;
-        _root.playcol[0] *= 0.4;
-        _root.playcol[1] *= 0.4;
-        _root.playcol[2] *= 0.4;
-        _root.playcol[0] += f1 / 160;
-        _root.playcol[1] += f2 / 160;
-        _root.playcol[2] += f3 / 160;
+        _root.playerTint[0] *= 0.4;
+        _root.playerTint[1] *= 0.4;
+        _root.playerTint[2] *= 0.4;
+        _root.playerTint[0] += f1 / 160;
+        _root.playerTint[1] += f2 / 160;
+        _root.playerTint[2] += f3 / 160;
       }
 
-      function playcol(f1) {
+      function colorPlayer(f1) {
         if (pillef > fra) {
           player._alpha = 100;
         } else {
@@ -12682,9 +12682,9 @@ movie {
               if (!trg.free) {
                 player._alpha = 100;
                 if (rage != 1) {
-                  colorit(player, _root.playcol[0] * rag, _root.playcol[1] / rag, _root.playcol[2] / rag, 0, 0, 0);
+                  colorit(player, _root.playerTint[0] * rag, _root.playerTint[1] / rag, _root.playerTint[2] / rag, 0, 0, 0);
                 } else {
-                  colorit(player, _root.playcol[0], _root.playcol[1], _root.playcol[2], 0, 0, 0);
+                  colorit(player, _root.playerTint[0], _root.playerTint[1], _root.playerTint[2], 0, 0, 0);
                 }
               }
             }
@@ -12699,7 +12699,7 @@ movie {
       }
 
       function haveTrinket(f111) {
-        return _root.trinketSlot1 == f111 or _roottrinketSlot2 == f111;
+        return _root.trinketSlot1 == f111 or _root.trinketslot2 == f111;
       }
 
       function playerhurt(f1, f2, f3) {
@@ -12737,8 +12737,8 @@ movie {
                 _root.armor = 0;
               }
             } else {
-              if (_root.eta) {
-                _root.eta = false;
+              if (_root.eternalHeart) {
+                _root.eternalHeart = false;
                 player.hp += 0.5;
               }
               _root.armor = 0;
@@ -12765,13 +12765,13 @@ movie {
                 haveEffect[142] = 0;
               }
             }
-            if (holz != undefined) {
-              trg3 = create(player.xp * 0.6 + holz.xp * 0.4, player.yp * 0.6 + holz.yp * 0.4, 0, 0, 0, 0, 33.1);
+            if (holyWater != undefined) {
+              trg3 = create(player.xp * 0.6 + holyWater.xp * 0.4, player.yp * 0.6 + holyWater.yp * 0.4, 0, 0, 0, 0, 33.1);
               colorit(trg3.d.d, 0.45, 0.7, 1, 0, 0, 70);
               _root.soundy('BGascan_pour.wav', 100);
-              holz.stopi = true;
-              holz.d.gotoAndStop(127);
-              holz = undefined;
+              holyWater.stopi = true;
+              holyWater.d.gotoAndStop(127);
+              holyWater = undefined;
             }
             if (blueFlies > 1) {
               blueFlyTarget = highs;
@@ -13935,7 +13935,7 @@ movie {
 
       function powerlevel() {
         _root.beenlev[_root.lev] = 2;
-        var v3 = _root.fmode;
+        var v3 = _root.faceMode;
         if (!highs.empty) {
           if (fra - lastcraf > 30) {
             lastcraf = fra;
@@ -13980,7 +13980,7 @@ movie {
           highs.empty = true;
           for (i in _root.Library) {
             if (highs.it == _root.Library[i]) {
-              _root.bookster = true;
+              _root.carryingBook = true;
             }
           }
           if (highs.it == 22 or highs.it == 23 or highs.it == 24 or highs.it == 25 or highs.it == 26) {
@@ -14003,12 +14003,12 @@ movie {
           player.d.gotoAndStop(4);
           player.it = highs.it;
           if (highs.it == 7) {
-            _root.fmode = 8;
+            _root.faceMode = 8;
             hat(7);
           } else {
             if (highs.it < 8) {
-              _root.fmode = 1 + highs.it;
-              _root.hmode = _root.fmode;
+              _root.faceMode = 1 + highs.it;
+              _root.headMode = _root.faceMode;
             }
           }
           if (highs.it == 27) {
@@ -14026,7 +14026,7 @@ movie {
             _root.RegularDropPool.push(125, 125, 125, 125, 125, 125, 106, 106, 106, 106, 106, 106);
           }
           if (highs.it == 179) {
-            eta();
+            giveEternalHeart();
           }
           if (highs.it == 137) {
             if (_root.pickedUp[137] == 1) {
@@ -14034,8 +14034,8 @@ movie {
             }
           } else {
             if (highs.it == 189) {
-              _root.hmode = 42;
-              _root.bmode = 27;
+              _root.headMode = 42;
+              _root.bodyMode = 27;
               ++player.hp;
             } else {
               if (highs.it == 190) {
@@ -14043,35 +14043,35 @@ movie {
                 _root.bombs = 99;
               } else {
                 if (highs.it == 191) {
-                  _root.hmode = 44;
+                  _root.headMode = 44;
                 } else {
                   if (highs.it == 193) {
                     hat(55);
                     ++player.hp;
                   } else {
                     if (highs.it == 194) {
-                      kogs = [5.3];
+                      itemSpawnsPickups = [5.3];
                       hat(60);
                     } else {
                       if (highs.it == 195) {
-                        kogs = [5.07, 5.07, 5.07, 5.07];
+                        itemSpawnsPickups = [5.07, 5.07, 5.07, 5.07];
                         hat(59);
                       } else {
                         if (highs.it == 196) {
                           hat(56);
-                          kogs = [5.010000003, 5.010000003];
+                          itemSpawnsPickups = [5.010000003, 5.010000003];
                         } else {
                           if (highs.it == 197) {
                             hat(57);
                           } else {
                             if (highs.it == 198) {
-                              _root.bmode = 26;
-                              kogs = [5.35, 5.07, 5.02, 5.010000003, 5.3, 5.03, 5.04];
+                              _root.bodyMode = 26;
+                              itemSpawnsPickups = [5.35, 5.07, 5.02, 5.010000003, 5.3, 5.03, 5.04];
                             } else {
                               if (highs.it == 182) {
                                 haveEffect[3] = 1;
                                 _root.pickedUp[3] = 1;
-                                _root.hmode = 41;
+                                _root.headMode = 41;
                                 ++_root.armor;
                                 player.hp += 15;
                               } else {
@@ -14079,7 +14079,7 @@ movie {
                                   hat(53);
                                 } else {
                                   if (highs.it == 180) {
-                                    _root.bmode = 24;
+                                    _root.bodyMode = 24;
                                   } else {
                                     if (highs.it == 149) {
                                       if (!haveEffect[2]) {
@@ -14091,15 +14091,15 @@ movie {
                                         hat(50);
                                       } else {
                                         if (highs.it == 139) {
-                                          _root.bmode = 20;
+                                          _root.bodyMode = 20;
                                         } else {
                                           if (highs.it == 169) {
-                                            _root.hmode = 40;
+                                            _root.headMode = 40;
                                             if (!haveEffect[2]) {
                                               _root.pickedUp[2] = 0.3;
                                               haveEffect[2] = 0.3;
                                             }
-                                            _root.fmode = 20;
+                                            _root.faceMode = 20;
                                           } else {
                                             if (highs.it == 155) {
                                               hat(47);
@@ -14116,7 +14116,7 @@ movie {
                                                       _root.pickedUp[2] = 0.4;
                                                       haveEffect[2] = 0.4;
                                                     }
-                                                    _root.fmode = 23;
+                                                    _root.faceMode = 23;
                                                   } else {
                                                     if (highs.it == 165) {
                                                       hat(51);
@@ -14126,16 +14126,16 @@ movie {
                                                         player.hp += 1.5;
                                                       } else {
                                                         if (highs.it == 154) {
-                                                          _root.hmode = 38;
+                                                          _root.headMode = 38;
                                                         } else {
                                                           if (highs.it == 143) {
-                                                            _root.hmode = 35;
+                                                            _root.headMode = 35;
                                                           } else {
                                                             if (highs.it == 159) {
                                                               _root.sk = 7;
                                                               sk = 7;
-                                                              _root.hmode = 39;
-                                                              _root.bmode = 22;
+                                                              _root.headMode = 39;
+                                                              _root.bodyMode = 22;
                                                               haveEffect[115] = 1;
                                                               _root.pickedUp[115] = 1;
                                                             } else {
@@ -14143,41 +14143,41 @@ movie {
                                                                 hat(41);
                                                               } else {
                                                                 if (highs.it == 150) {
-                                                                  _root.fmode = 24;
+                                                                  _root.faceMode = 24;
                                                                   hat(44);
                                                                 } else {
                                                                   if (highs.it == 151) {
-                                                                    _root.hmode = 37;
-                                                                    _root.fmode = 21;
+                                                                    _root.headMode = 37;
+                                                                    _root.faceMode = 21;
                                                                   } else {
                                                                     if (highs.it == 148) {
-                                                                      _root.bmode = 21;
-                                                                      pilcol(40, 100, 40);
+                                                                      _root.bodyMode = 21;
+                                                                      pillTintPlayer(40, 100, 40);
                                                                     } else {
                                                                       if (highs.it == 138) {
                                                                         hat(42);
                                                                         ++player.hp;
                                                                       } else {
                                                                         if (highs.it == 140) {
-                                                                          _root.hmode = 34;
+                                                                          _root.headMode = 34;
                                                                           _root.bombs += 5;
                                                                         } else {
                                                                           if (highs.it == 141) {
                                                                             hat(43);
-                                                                            cowss = 7;
+                                                                            pageantBoyCoins = 7;
                                                                           } else {
                                                                             if (highs.it == 125) {
                                                                               _root.bombs += 5;
                                                                             } else {
                                                                               if (highs.it == 134) {
-                                                                                _root.bmode = 19;
+                                                                                _root.bodyMode = 19;
                                                                               } else {
                                                                                 if (highs.it == 118) {
                                                                                   _root.sk = 7;
                                                                                   sk = 7;
                                                                                 } else {
                                                                                   if (highs.it == 114) {
-                                                                                    _root.bmode = 15;
+                                                                                    _root.bodyMode = 15;
                                                                                   } else {
                                                                                     if (highs.it == 122) {
                                                                                       haveEffect[122] = false;
@@ -14195,13 +14195,13 @@ movie {
                                                                                           } else {
                                                                                             if (highs.it == 129) {
                                                                                               player.hp += 0.5;
-                                                                                              _root.bmode = 14;
+                                                                                              _root.bodyMode = 14;
                                                                                             } else {
                                                                                               if (highs.it == 115 or highs.it == 185) {
-                                                                                                _root.hmode = 32;
+                                                                                                _root.headMode = 32;
                                                                                                 haveEffect[115] = 1;
                                                                                                 _root.pickedUp[115] = 1;
-                                                                                                _root.fmode = 18;
+                                                                                                _root.faceMode = 18;
                                                                                               } else {
                                                                                                 if (highs.it == 110) {
                                                                                                   hat(33);
@@ -14210,15 +14210,15 @@ movie {
                                                                                                     hat(34);
                                                                                                   } else {
                                                                                                     if (highs.it == 103) {
-                                                                                                      _root.hmode = 26;
-                                                                                                      _root.fmode = 15;
+                                                                                                      _root.headMode = 26;
+                                                                                                      _root.faceMode = 15;
                                                                                                     } else {
                                                                                                       if (highs.it == 104) {
-                                                                                                        _root.fmode = 16;
+                                                                                                        _root.faceMode = 16;
                                                                                                         hat(32);
                                                                                                       } else {
                                                                                                         if (highs.it == 106) {
-                                                                                                          _root.hmode = 9;
+                                                                                                          _root.headMode = 9;
                                                                                                           _root.bombs += 5;
                                                                                                         } else {
                                                                                                           if (highs.it == 101) {
@@ -14226,13 +14226,13 @@ movie {
                                                                                                             hat(29);
                                                                                                           } else {
                                                                                                             if (highs.it == 59) {
-                                                                                                              _root.hmode = 24;
+                                                                                                              _root.headMode = 24;
                                                                                                             } else {
                                                                                                               if (highs.it == 29) {
-                                                                                                                _root.bmode = 10;
+                                                                                                                _root.bodyMode = 10;
                                                                                                               } else {
                                                                                                                 if (highs.it == 46) {
-                                                                                                                  _root.bmode = 11;
+                                                                                                                  _root.bodyMode = 11;
                                                                                                                 } else {
                                                                                                                   if (highs.it == 64) {
                                                                                                                     hat(26);
@@ -14254,7 +14254,7 @@ movie {
                                                                                                                             } else {
                                                                                                                               if (highs.it == 89) {
                                                                                                                                 hat(20);
-                                                                                                                                _root.fmode = 14;
+                                                                                                                                _root.faceMode = 14;
                                                                                                                               } else {
                                                                                                                                 if (highs.it == 90) {
                                                                                                                                   hat(21);
@@ -14268,14 +14268,14 @@ movie {
                                                                                                                                       _root.catlives = 1;
                                                                                                                                     } else {
                                                                                                                                       if (highs.it == 82) {
-                                                                                                                                        _root.hmode = 22;
+                                                                                                                                        _root.headMode = 22;
                                                                                                                                         _root.sk = 7;
                                                                                                                                         sk = 7;
                                                                                                                                       } else {
                                                                                                                                         if (highs.it == 72) {
                                                                                                                                           _root.armor += 3;
                                                                                                                                           _root.ShopItem.push(33, 33, 33, 33, 33, 33, 33);
-                                                                                                                                          _root.bmode = 6;
+                                                                                                                                          _root.bodyMode = 6;
                                                                                                                                         } else {
                                                                                                                                           if (highs.it == 79) {
                                                                                                                                             _root.armor += 1;
@@ -14283,29 +14283,29 @@ movie {
                                                                                                                                           } else {
                                                                                                                                             if (highs.it == 80) {
                                                                                                                                               _root.armor += 2;
-                                                                                                                                              _root.bmode = 8;
-                                                                                                                                              _root.hmode = 20;
+                                                                                                                                              _root.bodyMode = 8;
+                                                                                                                                              _root.headMode = 20;
                                                                                                                                               _root.sk = 7;
                                                                                                                                               sk = 7;
                                                                                                                                             } else {
                                                                                                                                               if (highs.it == 20) {
-                                                                                                                                                _root.bmode = 3;
+                                                                                                                                                _root.bodyMode = 3;
                                                                                                                                               } else {
                                                                                                                                                 if (highs.it == 13) {
-                                                                                                                                                  _root.bmode = 4;
-                                                                                                                                                  _root.hmode = 12;
+                                                                                                                                                  _root.bodyMode = 4;
+                                                                                                                                                  _root.headMode = 12;
                                                                                                                                                 } else {
                                                                                                                                                   if (highs.it == 14) {
-                                                                                                                                                    _root.hmode = 11;
+                                                                                                                                                    _root.headMode = 11;
                                                                                                                                                   } else {
                                                                                                                                                     if (highs.it == 59) {
-                                                                                                                                                      _root.fmode = 11;
+                                                                                                                                                      _root.faceMode = 11;
                                                                                                                                                     } else {
                                                                                                                                                       if (highs.it == 31) {
-                                                                                                                                                        _root.hmode = 13;
+                                                                                                                                                        _root.headMode = 13;
                                                                                                                                                       } else {
                                                                                                                                                         if (highs.it == 30) {
-                                                                                                                                                          _root.bmode = 5;
+                                                                                                                                                          _root.bodyMode = 5;
                                                                                                                                                         } else {
                                                                                                                                                           if (highs.it == 21 or highs.it == 54) {
                                                                                                                                                             mapd();
@@ -14314,10 +14314,10 @@ movie {
                                                                                                                                                               hat(9);
                                                                                                                                                             } else {
                                                                                                                                                               if (highs.it == 69) {
-                                                                                                                                                                _root.hmode = 17;
+                                                                                                                                                                _root.headMode = 17;
                                                                                                                                                               } else {
                                                                                                                                                                 if (highs.it == 55) {
-                                                                                                                                                                  _root.hmode = 18;
+                                                                                                                                                                  _root.headMode = 18;
                                                                                                                                                                 } else {
                                                                                                                                                                   if (highs.it == 76) {
                                                                                                                                                                     hat(13);
@@ -14330,7 +14330,7 @@ movie {
                                                                                                                                                                         hat(16);
                                                                                                                                                                       } else {
                                                                                                                                                                         if (highs.it == 28) {
-                                                                                                                                                                          _root.bmode = 7;
+                                                                                                                                                                          _root.bodyMode = 7;
                                                                                                                                                                         }
                                                                                                                                                                       }
                                                                                                                                                                     }
@@ -14412,7 +14412,7 @@ movie {
             }
           }
           if (highs.it == 48) {
-            _root.fmode = 10;
+            _root.faceMode = 10;
           }
           if (highs.it >= 33 && highs.it != 46 && highs.it != 48 && highs.it < 50 or highs.it == 56 or highs.it == 58 or highs.it == 65 or highs.it == 66 or highs.it == 77 or highs.it == 78 or highs.it == 83 or highs.it == 84 or highs.it == 85 or highs.it == 86 or highs.it == 93 or highs.it == 97 or highs.it == 102 or highs.it == 105 or highs.it == 107 or highs.it == 111 or highs.it == 123 or highs.it == 124 or highs.it == 126 or highs.it == 127 or highs.it == 130 or highs.it == 133 or highs.it == 135 or highs.it == 136 or highs.it == 137 or highs.it == 145 or highs.it == 146 or highs.it == 147 or highs.it == 158 or highs.it == 164 or highs.it == 160 or highs.it == 166 or highs.it == 171 or highs.it == 175 or highs.it == 177 or highs.it == 181 or highs.it == 186 or highs.it == 192 or highs.it == 177) {
             _root.pickedUp[highs.it] = 1;
@@ -14483,10 +14483,10 @@ movie {
             hat(8);
           }
           if (highs.it == 62) {
-            _root.hmode = 15;
+            _root.headMode = 15;
           }
           if (highs.it == 69) {
-            _root.fmode = 13;
+            _root.faceMode = 13;
           }
           lastcra = fra;
           if (highs != player) {
@@ -14509,7 +14509,7 @@ movie {
           highs.dones = false;
         }
         nohit = false;
-        if (_root.fmode != v3) {
+        if (_root.faceMode != v3) {
         }
         haveEffect[highs.it] = _root.pickedUp[highs.it];
       }
@@ -14612,10 +14612,10 @@ movie {
         }
       }
 
-      function eta() {
+      function giveEternalHeart() {
         _root.soundy('superholy.wav', 100);
-        _root.eta = !_root.eta;
-        if (!_root.eta) {
+        _root.eternalHeart = !_root.eternalHeart;
+        if (!_root.eternalHeart) {
           ++player.hp;
           ++haveEffect[22];
           _root.over.gotoAndStop(16);
@@ -14625,8 +14625,8 @@ movie {
 
       function dropTrinket() {
         if (_root.TrinketPool.length > 0) {
-          if (poli) {
-            poli = false;
+          if (dropPolaroid) {
+            dropPolaroid = false;
             return 47;
           } else {
             if (trg.gold) {
@@ -14651,7 +14651,7 @@ movie {
         }
       }
 
-      function pillc(trg) {
+      function givePillItem(trg) {
         var v3 = false;
         if (trg > 7) {
           f2 = trg;
@@ -14666,8 +14666,8 @@ movie {
             }
           }
         }
-        player.pilc = pic(f2);
-        f1 = _root.pilc > 0;
+        player.pillItem = pillColor(f2);
+        f1 = _root.pillItem > 0;
         f3 = f2 > 28 && f2 < 69;
         if (f3) {
           if (!haveTrinket(f2) && (!haveTrinket(53) or haveEffect[139])) {
@@ -14704,8 +14704,8 @@ movie {
         if (!v3) {
           if (f1) {
             if (!f3) {
-              f1 = _root.pilc;
-              _root.pilc = f2;
+              f1 = _root.pillItem;
+              _root.pillItem = f2;
             } else {
               if (!haveEffect[139]) {
                 f1 = _root.trinketSlot1;
@@ -14738,7 +14738,7 @@ movie {
               }
               _root.trinketSlot1 = f2;
             } else {
-              _root.pilc = f2;
+              _root.pillItem = f2;
             }
             trg.d.d.gotoAndStop(2);
           }
@@ -14758,7 +14758,7 @@ movie {
         }
       }
 
-      function coincol(trg) {
+      function collectCoin(trg) {
         if (trg.col == 1) {
           _root.soundy('pennypickup.mp');
           return 1;
@@ -14788,8 +14788,8 @@ movie {
         } else {
           playerhurt(0.5, 201);
         }
-        ++_root.so.data.pill;
-        if (_root.so.data.pill > 20) {
+        ++_root.so.data.bloodDonations;
+        if (_root.so.data.bloodDonations > 20) {
           _root.SecretUnlocked[36] = true;
         }
         if (!f1) {
@@ -14797,9 +14797,9 @@ movie {
         }
       }
 
-      function coinzz() {
+      function greedDamage() {
         if (lasth - fra < 0 && player._visible && telf == undefined && playsave < 0 && unic < 0 && player._currentframe != 6 && horse <= 0 && dec <= 0) {
-          coinl = true;
+          loseCoins = true;
         }
       }
 
@@ -14931,7 +14931,7 @@ movie {
                 case 101:
                 case 102:
                   if (highs.s == 86 or highs.s == 50 or highs.s == 90) {
-                    coinzz();
+                    greedDamage();
                   }
                   if (highs.s == 9 && highs.doub) {
                     dodo = true;
@@ -15086,7 +15086,7 @@ movie {
                 break;
               case 1:
                 if (highs.col == 4) {
-                  eta();
+                  giveEternalHeart();
                 } else {
                   if (highs.col == 3) {
                     ++_root.armor;
@@ -15119,15 +15119,15 @@ movie {
                 }
                 break;
               case 2:
-                _root.coins += coincol(highs);
+                _root.coins += collectCoin(highs);
                 if (haveTrinket(49) && random(2) == 0) {
-                  kogs.push(5.010000002);
+                  itemSpawnsPickups.push(5.010000002);
                 }
                 if (haveTrinket(50) && random(2) == 0) {
-                  kogs.push(5.040000001);
+                  itemSpawnsPickups.push(5.040000001);
                 }
                 if (haveTrinket(51) && random(2) == 0) {
-                  kogs.push(5.03);
+                  itemSpawnsPickups.push(5.03);
                 }
                 if (haveTrinket(52) && random(2) == 0) {
                   ++_root.coins;
@@ -15184,7 +15184,7 @@ movie {
                 break;
               case 7:
                 if (fra - highs.fra > 0) {
-                  pillc(highs);
+                  givePillItem(highs);
                 } else {
                   highs.dones = false;
                   highs.fra = fra + 10;
@@ -15320,7 +15320,7 @@ movie {
                       break;
                     case 3:
                     case 7:
-                      pillc(highs);
+                      givePillItem(highs);
                       break;
                     case 2:
                     case 6:
@@ -15465,10 +15465,10 @@ movie {
                           if (lows.s == 2) {
                             spidcol(highs);
                           }
-                          if (highs.hp < 0 && lows.hairb && _root.hairb < 6 && random(_root.hairb) == 0) {
+                          if (highs.hp < 0 && lows.hairball && _root.hairball < 6 && random(_root.hairball) == 0) {
                             lows.d.gotoAndStop(149);
                             lows.d.d.gotoAndStop(1);
-                            ++_root.hairb;
+                            ++_root.hairball;
                           }
                         }
                         if (haveEffect[48] && !lows.ba or lows.ics or v6 or lows.knife or lows.trixer == 2) {
@@ -15502,7 +15502,7 @@ movie {
                         if (highs.s == 9 && lows == player) {
                           highs.dones = true;
                           if (highs.sss == 50 or highs.sss == 86 or highs.sss == 90) {
-                            coinzz();
+                            greedDamage();
                           }
                           if (highs.d._xscale > 115) {
                             playerhurt(1, highs.sss);
@@ -17195,26 +17195,26 @@ movie {
               }
               _root.nodmg = true;
               if (_root.floorNum == 6 && _root.SecretUnlocked[74]) {
-                poli = true;
+                dropPolaroid = true;
                 create(200, 300, 0, 0, 0, 0, 5.35);
               }
             }
           }
-          ++_root.lcomp[_root.floorNum];
-          _root.bossk[_root.bossID] = true;
+          ++_root.levelsCompleted[_root.floorNum];
+          _root.bossKilled[_root.bossID] = true;
           if (_root.bossID >= 9 && _root.bossID <= 12 or _root.bossID == 22) {
             ++_root.horsedown;
           }
-          if (_root.bossk[1] && _root.bossk[2] && _root.bossk[13] && _root.bossk[17]) {
+          if (_root.bossKilled[1] && _root.bossKilled[2] && _root.bossKilled[13] && _root.bossKilled[17]) {
             _root.SecretUnlocked[19] = true;
           }
-          if (_root.bossk[3] && _root.bossk[4] && _root.bossk[14] && _root.bossk[18]) {
+          if (_root.bossKilled[3] && _root.bossKilled[4] && _root.bossKilled[14] && _root.bossKilled[18]) {
             _root.SecretUnlocked[20] = true;
           }
-          if (_root.bossk[5] && _root.bossk[6] && _root.bossk[15]) {
+          if (_root.bossKilled[5] && _root.bossKilled[6] && _root.bossKilled[15]) {
             _root.SecretUnlocked[21] = true;
           }
-          if (_root.bossk[9] && _root.bossk[10] && _root.bossk[11] && _root.bossk[12] && _root.horsedown >= 4) {
+          if (_root.bossKilled[9] && _root.bossKilled[10] && _root.bossKilled[11] && _root.bossKilled[12] && _root.horsedown >= 4) {
             _root.SecretUnlocked[25] = true;
           }
           if (_root.floorNum == 2) {
@@ -17223,13 +17223,13 @@ movie {
           if (_root.floorNum == 4) {
             _root.SecretUnlocked[14] = true;
           }
-          if (_root.lcomp[2] >= 25) {
+          if (_root.levelsCompleted[2] >= 25) {
             _root.SecretUnlocked[22] = true;
           }
-          if (_root.lcomp[4] >= 20) {
+          if (_root.levelsCompleted[4] >= 20) {
             _root.SecretUnlocked[23] = true;
           }
-          if (_root.lcomp[6] >= 15) {
+          if (_root.levelsCompleted[6] >= 15) {
             _root.SecretUnlocked[24] = true;
           }
         }
@@ -17455,8 +17455,8 @@ movie {
           }
           if (haveEffect[168] && !_root.bombnext) {
             trg.fire = -1;
-            if (bombdrop <= 0) {
-              bombdrop = 30;
+            if (missileTimer <= 0) {
+              missileTimer = 30;
               drop = create(player.xp, player.yp, 0, 0, 0, 0, 37);
               drop.d.gotoAndStop(70);
             }
@@ -17721,7 +17721,7 @@ movie {
             plox1 = 7 + trg.fire1 * 0.45;
           }
         }
-        if (plox > 8 or _root.fmode == 7 && !haveEffect[68] && !haveEffect[118]) {
+        if (plox > 8 or _root.faceMode == 7 && !haveEffect[68] && !haveEffect[118]) {
           if (haveEffect[68] && haveEffect[59]) {
             trg.d.d.d.d.gotoAndStop(plo + 8);
           } else {
@@ -17815,7 +17815,7 @@ movie {
       }
 
       function friends() {
-        trg.damger = trg.s == 3 && (trg.alt && trg.fly or trg.meat or trg.charge or trg.ang or trg.bird or trg.blueFlies or trg.eye or trg.ni or trg.hairb or trg.dad);
+        trg.damger = trg.s == 3 && (trg.alt && trg.fly or trg.meat or trg.charge or trg.ang or trg.bird or trg.blueFlies or trg.eye or trg.ni or trg.hairball or trg.dad);
         trg.ggh = true;
         colorit(trg, 1, 1, 1, 0, 0, 0);
         trg.dou = false;
@@ -17828,23 +17828,23 @@ movie {
         }
         if (trg.stopi) {
         } else {
-          if (trg.hairb) {
+          if (trg.hairball) {
             enfcheck(trg.xp, trg.yp, player.xp, player.yp, 10000);
-            f1 = 15 + _root.hairb * 2;
+            f1 = 15 + _root.hairball * 2;
             enf = (Math.min(1.4, f1 - enf) / enf) * 0.07000000000000001;
             trg.xbew += xenf * enf;
             trg.ybew += yenf * enf;
-            f1 = 0.87 + _root.hairb * 0.01;
+            f1 = 0.87 + _root.hairball * 0.01;
             if (trg.d._currentframe != 149 or trg.d.d._currentframe == trg.d.d._totalframes) {
               trg.d.gotoAndStop(148);
-              trg.d.d.gotoAndStop(_root.hairb);
+              trg.d.d.gotoAndStop(_root.hairball);
             } else {
               trg.d.d.nextFrame();
-              trg.d.d.d.gotoAndStop(_root.hairb);
+              trg.d.d.d.gotoAndStop(_root.hairball);
             }
             trg.xbew *= f1;
             trg.ybew *= f1;
-            trg.dmg = 3 + _root.hairb * 2;
+            trg.dmg = 3 + _root.hairball * 2;
             if (fra % 14 == 0) {
               trg.hh = [];
             }
@@ -18080,7 +18080,7 @@ movie {
                     }
                     if (f13 < 30 && trg2 != trg) {
                       trg2 = trg.trg2;
-                      _root.pickedUp[144] += coincol(trg2);
+                      _root.pickedUp[144] += collectCoin(trg2);
                       trg2.d.d.gotoAndStop(2);
                       trg2.dones = true;
                     }
@@ -19052,11 +19052,11 @@ movie {
                 f1 = [5.3, 42, 5.07, 13, 5.04, 37, 5.01, 15, 5.02, 64, 5.04, 49, 5.3, 65];
               }
               f0 = trg.s - 46;
-              _root.minwin[f0] = true;
-              if (_root.minwin[0] && _root.minwin[1] && _root.minwin[2] && _root.minwin[3] && _root.minwin[4] && _root.minwin[5] && _root.minwin[6]) {
+              _root.minibossBeaten[f0] = true;
+              if (_root.minibossBeaten[0] && _root.minibossBeaten[1] && _root.minibossBeaten[2] && _root.minibossBeaten[3] && _root.minibossBeaten[4] && _root.minibossBeaten[5] && _root.minibossBeaten[6]) {
                 _root.SecretUnlocked[29] = true;
               }
-              if (trg.minb == 3) {
+              if (trg.minb == 3) { //Ultra Pride
                 f0 = 5.07;
                 trg2 = create(trg.xp, trg.yp, 0, 0, 0, 0, f0);
                 trg2.col = 61;
@@ -26597,7 +26597,7 @@ movie {
             if (trg.col) {
               f1 = trg.col;
               if (trg.s == 5 && trg.d._currentframe == 7) {
-                f1 = pic(f1);
+                f1 = pillColor(f1);
               }
               trg.d.d.d.d.d.p.gotoAndStop(f1);
               trg.d.d.d.d.p.gotoAndStop(f1);
@@ -26819,7 +26819,7 @@ movie {
             player.d.gotoAndStop(11);
             player.it = 147;
             player.d.d.d.it.d.gotoAndStop(player.it);
-            player.d.d.d.it.d.p.gotoAndStop(player.pilc);
+            player.d.d.d.it.d.p.gotoAndStop(player.pillItem);
           }
           trg.s = 1;
           if (_root.keys > 0 or _root.kep or _root.coins > 0) {
@@ -26968,54 +26968,54 @@ movie {
         }
       }
 
-      function piller() {
-        f10 = !haveEffect[46] && !haveEffect[75];
-        f1 = _root.piller[_root.pilc];
+      function identifyPill() {
+        badPillsAvailable = !haveEffect[46] && !haveEffect[75];
+        f1 = _root.pillEffects[_root.pillItem];
         while (f1 == undefined) {
-          if (f1 == undefined or f1 == 3 && haveEffect[75] or f1 == 6 && (!f10 or player.hp < 1)) {
+          if (f1 == undefined or f1 == 3 && haveEffect[75] or f1 == 6 && (!badPillsAvailable or player.hp < 1)) {
             if ((player.hp < player.mhp or _root.characterID == 4 && _root.armor < 3) && random(10) == 0) {
-              f1 = 1;
+              f1 = 1; //Full Health
             } else {
               if (random(13) == 0) {
-                f1 = 12;
+                f1 = 12; //Bad Gas
               } else {
                 if (random(17) == 0) {
-                  f1 = 13;
+                  f1 = 13; //Friends Till The End!
                 } else {
                   if (random(17) == 0) {
-                    f1 = 14 + random(2) * 0.2;
+                    f1 = 14 + random(2) * 0.2; //Luck Up/Down
                   } else {
                     if (random(15) == 0 && !haveEffect[75]) {
-                      f1 = 2;
+                      f1 = 2; //I Found Pills
                     } else {
                       if (random(10) == 0 && !haveEffect) {
-                        f1 = 3;
+                        f1 = 3; //Explosive Diarrhea
                       } else {
                         if (random(10) == 0) {
-                          f1 = 4;
+                          f1 = 4; //Balls of Steel
                         } else {
                           if (random(20) == 0) {
-                            f1 = 5;
+                            f1 = 5; //Pretty Fly
                           } else {
-                            if (random(9) == 0 && player.hp + _root.armor > 1 && f10) {
-                              f1 = 6;
+                            if (random(9) == 0 && player.hp + _root.armor > 1 && badPillsAvailable) {
+                              f1 = 6; //Bad Trip
                             } else {
                               if (random(7) == 0) {
-                                f1 = 7 + random(2) * 0.2;
+                                f1 = 7 + random(2) * 0.2; //Health Up/Down
                               } else {
                                 if (random(6) == 0 && (_root.bombs > 0 or _root.keys > 0)) {
-                                  f1 = 8;
+                                  f1 = 8; //Bombs Are Key
                                 } else {
                                   if (random(5) == 0 or random(4) == 0 && haveEffect) {
-                                    f1 = 9 + random(2) * 0.2;
+                                    f1 = 9 + random(2) * 0.2; //Tears Up/Down
                                   } else {
                                     if (random(3) == 0) {
-                                      f1 = 10 + random(2) * 0.2;
+                                      f1 = 10 + random(2) * 0.2; //Range Up/Down
                                     } else {
                                       if (random(3) == 0 or haveEffect[75]) {
-                                        f1 = 11 + random(2) * 0.2;
+                                        f1 = 11 + random(2) * 0.2; //Speed Up/Down
                                       } else {
-                                        f1 = 126;
+                                        f1 = 126; //Telepills
                                       }
                                     }
                                   }
@@ -27030,26 +27030,26 @@ movie {
                 }
               }
             }
-            for (z in _root.piller) {
-              if (f1 == _root.piller[z]) {
+            for (z in _root.pillEffects) {
+              if (f1 == _root.pillEffects[z]) {
                 f1 = undefined;
               }
             }
-            _root.piller[_root.pilc] = f1;
+            _root.pillEffects[_root.pillItem] = f1;
           }
         }
-        f1 = Math.round(_root.piller[_root.pilc]);
-        if (f1 != _root.piller[_root.pilc]) {
+        f1 = Math.round(_root.pillEffects[_root.pillItem]);
+        if (f1 != _root.pillEffects[_root.pillItem]) {
           f2 = true;
         } else {
           f2 = false;
         }
-        if (!f10) {
+        if (!badPillsAvailable) {
           f2 = true;
         }
       }
 
-      function toot(f1) {
+      function cardDoubler(f1) {
         return Math.max(f1 * 2, 2);
       }
 
@@ -27073,8 +27073,8 @@ movie {
             splater(trg.xp, trg.yp, random(10) + 20, 0.3 + Math.random() * 0.5);
           }
         }
-        if (coinl) {
-          coinl = false;
+        if (loseCoins) {
+          loseCoins = false;
           if (_root.coins > 0) {
             --_root.coins;
             f3 = Math.min(_root.coins, random(3) + 1);
@@ -27088,9 +27088,9 @@ movie {
             }
           }
         }
-        if (bombdrop-- > 0) {
-          drop.d.gotoAndStop(Math.max(1, Math.round(100 - bombdrop)));
-          if (bombdrop == 2) {
+        if (missileTimer-- > 0) {
+          drop.d.gotoAndStop(Math.max(1, Math.round(100 - missileTimer)));
+          if (missileTimer == 2) {
             bomf.push([drop.xp, drop.yp, 4]);
             drop.done = true;
           }
@@ -27188,7 +27188,7 @@ movie {
           unpause = false;
           trg.xbew *= 0.8;
           trg.ybew *= 0.8;
-          playcol();
+          colorPlayer();
         } else {
           f55 = 0;
           f44 = false;
@@ -27230,13 +27230,13 @@ movie {
           if (f1 > 6 or unic > 0 && (!pacman or unic < 30)) {
             if (f1 % 3 == 0 or unic > 0) {
               if (f1 % 2 == 0) {
-                playcol(true);
+                colorPlayer(true);
               } else {
-                playcol();
+                colorPlayer();
               }
             }
           } else {
-            playcol();
+            colorPlayer();
           }
           for (e in door) {
             trg = door[e];
@@ -27321,26 +27321,26 @@ movie {
               bomb(2);
               nextbo = false;
             }
-            if ((Key.isDown(81) && !_root.so.data.frog or Key.isDown(65) && _root.so.data.frog) && fra > 30 && _root.pilc != undefined) {
+            if ((Key.isDown(81) && !_root.so.data.frog or Key.isDown(65) && _root.so.data.frog) && fra > 30 && _root.pillItem != undefined) {
               _root.hud.pilll.gotoAndStop(3);
               player.d.gotoAndStop(11);
               player.it = 43;
               player.d.d.d.it.d.gotoAndStop(player.it);
-              player.d.d.d.it.d.p.gotoAndStop(pic(_root.pilc));
-              if (_root.pilc >= 7) {
-                tart(_root.pilc);
-                switch (_root.pilc) {
+              player.d.d.d.it.d.p.gotoAndStop(pillColor(_root.pillItem));
+              if (_root.pillItem >= 7) {
+                tart(_root.pillItem);
+                switch (_root.pillItem) {
                   case 70:
-                    _root.keys = toot(_root.keys);
+                    _root.keys = cardDoubler(_root.keys);
                     break;
                   case 71:
-                    _root.bombs = toot(_root.bombs);
+                    _root.bombs = cardDoubler(_root.bombs);
                     break;
                   case 72:
-                    player.hp = toot(player.hp);
+                    player.hp = cardDoubler(player.hp);
                     break;
                   case 73:
-                    _root.coins = toot(_root.coins);
+                    _root.coins = cardDoubler(_root.coins);
                     break;
                   case 74:
                     tar = 166;
@@ -27480,7 +27480,7 @@ movie {
                     ++haveEffect[20];
                 }
               } else {
-                piller();
+                identifyPill();
                 switch (Math.round(f1)) {
                   case 14:
                     if (f2) {
@@ -27488,7 +27488,7 @@ movie {
                       displayCornerMessage('Luck Up');
                       goodpill();
                       emo();
-                      pilcol(50, 100, 50);
+                      pillTintPlayer(50, 100, 50);
                     } else {
                       displayCornerMessage('Luck Down');
                       --_root.luck;
@@ -27524,7 +27524,7 @@ movie {
                         hat(54);
                         displayBannerMessage('Puberty');
                       } else {
-                        _root.hmode = 16;
+                        _root.headMode = 16;
                         displayBannerMessage('I found Pills');
                         displayCornerMessage('And ate them!');
                         _root.soundy('derp.mp');
@@ -27562,7 +27562,7 @@ movie {
                         } else {
                           ++_root.pickedUp[15];
                         }
-                        pilcol(100, 50, 50);
+                        pillTintPlayer(100, 50, 50);
                         goodpill();
                         emo();
                       } else {
@@ -27587,7 +27587,7 @@ movie {
                       if (f2) {
                         _root.pickedUp[32] += 0.5;
                         displayCornerMessage('Tears Up');
-                        pilcol(80, 80, 100);
+                        pillTintPlayer(80, 80, 100);
                         goodpill();
                         emo();
                       } else {
@@ -27601,7 +27601,7 @@ movie {
                       if (f2 or haveEffect[6] && _root.floorNum < 8) {
                         _root.pickedUp[31] += 0.5;
                         displayCornerMessage('Range Up');
-                        pilcol(50, 100, 100);
+                        pillTintPlayer(50, 100, 100);
                         emo();
                         goodpill();
                       } else {
@@ -27615,7 +27615,7 @@ movie {
                       if (f2) {
                         ++_root.pickedUp[27];
                         displayCornerMessage('Speed Up');
-                        pilcol(100, 100, 50);
+                        pillTintPlayer(100, 100, 50);
                         goodpill();
                         emo();
                       } else {
@@ -27645,8 +27645,8 @@ movie {
                     }
                 }
               }
-              player.pilc = _root.pilc;
-              _root.pilc = undefined;
+              player.pillItem = _root.pillItem;
+              _root.pillItem = undefined;
             }
             if (spac && (fra > 30 or _root.spacebarItem == 90 && _root.lev != _root.bossRoom2 && _root.lev != _root.bossRoom && _root.lev != 35) && player._visible) {
               if (!nosp) {
@@ -27766,7 +27766,7 @@ movie {
                       dec = 0;
                       break;
                     case 106:
-                      eta();
+                      giveEternalHeart();
                       break;
                     case 97:
                       for (e in ball) {
@@ -27884,7 +27884,7 @@ movie {
                       }
                       break;
                     case 62:
-                      pillc(4);
+                      givePillItem(4);
                       showit = false;
                       break;
                     case 57:
@@ -27921,7 +27921,7 @@ movie {
                       }
                       break;
                     case 45:
-                      pillc(3);
+                      givePillItem(3);
                       showit = false;
                       break;
                     case 53:
@@ -28023,8 +28023,8 @@ movie {
                       _root.bombnext = true;
                       break;
                     case 15:
-                      if (bombdrop <= 0) {
-                        bombdrop = 100;
+                      if (missileTimer <= 0) {
+                        missileTimer = 100;
                         drop = create(player.xp, player.yp, 0, 0, 0, 0, 37);
                       } else {
                         doit = false;
@@ -28086,7 +28086,7 @@ movie {
                     player.d.gotoAndStop(11);
                     player.it = _root.colit;
                     player.d.d.d.it.d.gotoAndStop(player.it);
-                    player.d.d.d.it.d.p.gotoAndStop(player.pilc);
+                    player.d.d.d.it.d.p.gotoAndStop(player.pillItem);
                   }
                   if (itemChargeRates[_root.spacebarItem] > 0 && doit) {
                     if (haveEffect[116]) {
@@ -28106,7 +28106,7 @@ movie {
               nosp = false;
             }
           }
-          f1 = _root.bmode;
+          f1 = _root.bodyMode;
           if (demon > 0 or haveEffect[122]) {
             sk = 7;
           } else {
@@ -28136,8 +28136,8 @@ movie {
             }
           } else {
             if (sk == 5) {
-              _root.hmode = 25;
-              _root.bmode = 13;
+              _root.headMode = 25;
+              _root.bodyMode = 13;
             }
           }
           if (_root.spacebarItem == 8 && !haveEffect[20]) {
@@ -28226,7 +28226,7 @@ movie {
             yenf = 0;
             xenf = 0;
           }
-          if (bombdrop > 0) {
+          if (missileTimer > 0) {
             drop.xbew *= 0.5;
             drop.ybew *= 0.5;
             if (!md) {
@@ -28392,8 +28392,8 @@ movie {
               brim = false;
             }
           }
-          f1 = _root.fmode;
-          f2 = _root.hmode;
+          f1 = _root.faceMode;
+          f2 = _root.headMode;
           nohat = false;
           if (doub) {
             f1 = 8;
@@ -28518,7 +28518,7 @@ movie {
                   trg.d.d.d.d.d.gotoAndStop(chaaf);
                 }
               } else {
-                if (_root.hmode == 17 or haveEffect[118]) {
+                if (_root.headMode == 17 or haveEffect[118]) {
                   if (plox > 8) {
                     trg.d.d.d.d.gotoAndStop(plo + 4);
                   }
@@ -28825,15 +28825,15 @@ movie {
         }
       }
 
-      function picc(f2) {
+      function replacePillColor(f2) {
         if (random(2) == 0) {
-          _root.picers[random(6)] = f2;
+          _root.pillColors[random(6)] = f2;
         }
       }
 
-      function pic(f1) {
+      function pillColor(f1) {
         if (f1 < 7) {
-          f1 = _root.picers[f1 - 1];
+          f1 = _root.pillColors[f1 - 1];
         }
         return f1;
       }
@@ -29133,16 +29133,16 @@ movie {
           trg2 = create(player.xp, player.yp - 10, 0, crand(10), crand(10), 0, 3);
           trg2.eye = true;
         }
-        if (haveEffect[187] && player.d._currentframe < 3 && !hairb) {
-          hairb = true;
+        if (haveEffect[187] && player.d._currentframe < 3 && !hairball) {
+          hairball = true;
           trg2 = create(player.xp, player.yp - 10, 0, crand(10), crand(10), 0, 3);
-          trg2.hairb = true;
+          trg2.hairball = true;
         }
         if (haveEffect[178] && player.d._currentframe < 3 && !holp) {
           holp = true;
           trg2 = create(player.xp, player.yp - 10, 0, crand(10), crand(10), 0, 3);
           trg2.hol = true;
-          holz = trg2;
+          holyWater = trg2;
         }
         if (haveEffect[172] && player.d._currentframe < 3 && !knip) {
           knip = true;
@@ -29188,7 +29188,7 @@ movie {
           bodd = false;
           trg2 = spaw(trg.xp, trg.yp, 0, 3);
           trg2.meat = 5;
-          colorit(trg2, _root.playcol[0], _root.playcol[1], _root.playcol[2], 0, 0, 0);
+          colorit(trg2, _root.playerTint[0], _root.playerTint[1], _root.playerTint[2], 0, 0, 0);
         }
         if (Math.min(3, haveEffect[10] * 2) > flyby && player.d._currentframe < 3) {
           ++flyby;
@@ -29257,7 +29257,7 @@ movie {
           }
         }
         if (haveEffect[75] && random(150) == 0) {
-          piller();
+          identifyPill();
         }
         f1 = _root.spacebarItem;
         if (f1 < 1) {
@@ -29352,17 +29352,17 @@ movie {
           _root.hud.tex3 = '';
           _root.hud.black2._xscale = 0.1;
         }
-        _root.hud.extra._visible = _root.pilc != undefined;
+        _root.hud.extra._visible = _root.pillItem != undefined;
         if (_root.hud.extra._visible) {
           f1 = _root.spacebarItem;
           _root.hud.extra.d.gotoAndStop(11);
-          _root.hud.extra.d.p.gotoAndStop(pic(_root.pilc));
-          if (_root.pilc > 6) {
-            _root.hud.pilll.tex = tart(_root.pilc, true);
+          _root.hud.extra.d.p.gotoAndStop(pillColor(_root.pillItem));
+          if (_root.pillItem > 6) {
+            _root.hud.pilll.tex = tart(_root.pillItem, true);
           } else {
             f10 = !haveEffect[46] && !haveEffect[75];
-            f11 = Math.round(_root.piller[_root.pilc]);
-            if (f11 != _root.piller[_root.pilc]) {
+            f11 = Math.round(_root.pillEffects[_root.pillItem]);
+            if (f11 != _root.pillEffects[_root.pillItem]) {
               f2 = true;
             } else {
               f2 = false;
@@ -29370,7 +29370,7 @@ movie {
             if (!f10) {
               f2 = true;
             }
-            if (!_root.piller[_root.pilc]) {
+            if (!_root.pillEffects[_root.pillItem]) {
               f11 = '???';
             } else {
               switch (Math.round(f11)) {
@@ -29534,7 +29534,7 @@ movie {
         f2 = red-- > 0;
         f3 = blue-- > 0;
         ahpp = _root.armor;
-        if (_root.eta) {
+        if (_root.eternalHeart) {
           ++f1;
           ++ahpp;
           f4 = true;
@@ -30166,12 +30166,12 @@ movie {
           if (dec == 15) {
             decer = bomb(4);
           }
-          if (cowss > 0) {
-            --cowss;
+          if (pageantBoyCoins > 0) {
+            --pageantBoyCoins;
             spaw(player.xp, player.yp, 40, 5.02);
           }
-          if (kogs.length > 0) {
-            spaw(player.xp, player.yp, 40, kogs.pop());
+          if (itemSpawnsPickups.length > 0) {
+            spaw(player.xp, player.yp, 40, itemSpawnsPickups.pop());
           }
           if (sloto != undefined) {
             --sloto;
@@ -30523,7 +30523,7 @@ movie {
           }
         }
         trg.d.d.d.it.d.gotoAndStop(trg.it);
-        trg.d.d.d.it.d.p.gotoAndStop(player.pilc);
+        trg.d.d.d.it.d.p.gotoAndStop(player.pillItem);
         trg.d.d.d.it.d._yscale = 10000 / player._xscale;
         trg.d.d.d.it.d._xscale = trg.d.d.d.it.d._yscale;
         trg.d.hs._visible = (trg.d.bo._currentframe == 16 or trg.d.bo._currentframe == 17 or trg.d.bo._currentframe == 18) && trg.d.bo.d._currentframe != 2;
@@ -30689,7 +30689,7 @@ movie {
         if (_root.newstartt or _root.spacebarItem == undefined) {
           _root.newstartt = false;
           newstats();
-          _root.eta = false;
+          _root.eternalHeart = false;
         }
         _root.lostCurse = false;
         _root.darknessCurse = false;
@@ -30808,10 +30808,10 @@ movie {
         if (_root.floorNum == 1 or _root.floorNum == 3 or _root.floorNum == 5 or _root.floorNum == 7) {
           _root.nodmg = true;
         }
-        if (_root.hairb > 1) {
-          _root.hairb = Math.round(_root.hairb * 0.5 + 0.5);
+        if (_root.hairball > 1) {
+          _root.hairball = Math.round(_root.hairball * 0.5 + 0.5);
         } else {
-          _root.hairb = 1;
+          _root.hairball = 1;
         }
         if (_root.labyrinthCurse) {
           f6 *= 1.8;
@@ -30972,13 +30972,13 @@ movie {
               if (endrooms.length > 0 && (random(7) == 0 or random(4) == 0 && _root.fullhp)) {
                 _root.sacrificeRoom = ender();
               }
-              if (endrooms.length > 0 && (random(20) == 0 or _root.bookster && random(4) == 0)) {
+              if (endrooms.length > 0 && (random(20) == 0 or _root.carryingBook && random(4) == 0)) {
                 _root.lib = ender();
               }
               if (endrooms.length > 0 && (random(2) == 0 or _root.lastdev && random(4) == 0)) {
                 _root.curseRoom = ender();
               }
-              if (endrooms.length > 0 && (random(4) == 0 or _root.floorNum == 1 && random(3) == 0) && _root.minz.length > 0) {
+              if (endrooms.length > 0 && (random(4) == 0 or _root.floorNum == 1 && random(3) == 0) && _root.minibossPool.length > 0) {
                 _root.minibossRoom = ender();
               }
               if (endrooms.length > 0 && _root.fullhp && _root.floorNum > 1 && (random(2) == 0 or _root.floorNum > 2)) {
@@ -31073,13 +31073,13 @@ movie {
         }
         _root.levz[_root.boner] = 't' + random(6);
         _root.levz[_root.boner2] = 't' + random(6);
-        f1 = random(_root.minz.length);
+        f1 = random(_root.minibossPool.length);
         f2 = 'min';
         if (_root.altm) {
           f2 = 'mi';
         }
         f3 = f2;
-        f2 += _root.minz[f1];
+        f2 += _root.minibossPool[f1];
         if (_root.floorNum > 2 && !_root.us && random(10) == 0) {
           f2 = 'us';
           _root.us = true;
@@ -31109,16 +31109,16 @@ movie {
             _root.lastkeeps = _root.floorNum;
           }
         }
-        _root.minz.splice(f1, 1);
-        if (_root.eta) {
+        _root.minibossPool.splice(f1, 1);
+        if (_root.eternalHeart) {
           _root.over.gotoAndStop(16);
-          _root.eta = false;
+          _root.eternalHeart = false;
           ++_root.hp;
           ++haveEffect[22];
           ++_root.pickedUp[22];
         }
         if (haveTrinket(55)) {
-          eta();
+          giveEternalHeart();
         }
       }
       _root.amusic = false;
@@ -31421,7 +31421,7 @@ movie {
       if (levz.length <= 1) {
         levz = new Array(200);
       }
-      kogs = [];
+      itemSpawnsPickups = [];
       itb = 0;
       lastcraf = -30;
       if (_root.playerx <= 0 or _root.newstartt) {
