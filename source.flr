@@ -198,7 +198,7 @@ movie {
   movieClip 795  {
   }
 
-  movieClip 814  {
+  movieClip 814  {		//Isaac's Will Picture
 
     frame 1 {
       gotoAndStop(random(_totalframes) + 1);
@@ -1442,21 +1442,21 @@ movie {
   movieClip 2119  {
 
     frame 1 {
-      _root.a.sloter(this);
+      _root.a.slotReeler(this);
     }
   }
 
   movieClip 2123  {
 
     frame 1 {
-      _root.a.sloter(this);
+      _root.a.slotReeler(this);
     }
   }
 
   movieClip 2126  {
 
     frame 1 {
-      _root.a.sloter(this);
+      _root.a.slotReeler(this);
     }
   }
 
@@ -1520,7 +1520,7 @@ movie {
   movieClip 2157  {
 
     frame 1 {
-      _root.a.sloter(this);
+      _root.a.slotReeler(this);
     }
   }
 
@@ -6708,7 +6708,7 @@ movie {
       add(so.data.momKills);
       add(so.data.poopsDestroyed);
       add(so.data.bloodDonations);
-      add(so.data.dde);
+      add(so.data.deathCardUses);
       add(so.data.arcadesVisited);
       add(so.data.bomb);
       add(so.data.timesDied);
@@ -6743,7 +6743,7 @@ movie {
             so.data.momKills = sub();
             so.data.poopsDestroyed = sub();
             so.data.bloodDonations = sub();
-            so.data.dde = sub();
+            so.data.deathCardUses = sub();
             so.data.arcadesVisited = sub();
             so.data.bomb = sub();
             so.data.timesDied = sub();
@@ -6897,8 +6897,8 @@ movie {
       if (so.data.bloodDonations == undefined) {
         so.data.bloodDonations = 0;
       }
-      if (so.data.dde == undefined) {
-        so.data.dde = 0;
+      if (so.data.deathCardUses == undefined) {
+        so.data.deathCardUses = 0;
       }
       if (so.data.arcadesVisited == undefined) {
         so.data.arcadesVisited = 0;
@@ -7109,11 +7109,11 @@ movie {
         }
       } else {
         if (_currentframe != 1 && _root._currentframe <= 5 or _currentframe == 20 or _currentframe == 21 or _currentframe == 24 or _currentframe == 41) {
-          f10 = _root._currentframe == 2 && _root.lev == _root.lib or _root._currentframe == 24;
+          f10 = _root._currentframe == 2 && _root.lev == _root.libraryRoom or _root._currentframe == 24;
           f9 = _root._currentframe == 2 && _root.lev == _root.secretRoom2;
           f5 = _root._currentframe == 2 && _root.lev == _root.arcadeRoom;
           f6 = _root._currentframe == 2 && _root.lev == _root.shopl && _root.lev != _root.minibossRoom;
-          f7 = _root._currentframe == 2 && _root.lev == 166 && _root.kramper != _root.floorNum;
+          f7 = _root._currentframe == 2 && _root.lev == 166 && _root.krampusFought != _root.floorNum;
           f8 = _root._currentframe == 2 && _root.lev == _root.secretRoom && _root.lev != _root.minibossRoom;
           if (_root.musc == undefined && _root.amusc == undefined) {
             --menubeen;
@@ -7273,7 +7273,7 @@ movie {
                               } else {
                                 if (_root.amusic) {
                                   f1 = 6;
-                                  if (_root.lev == _root.arenaRoom && _root.bossArena or (_root.lev == _root.shopl or _root.lev == _root.minibossRoom) && _root.altm) {
+                                  if (_root.lev == _root.arenaRoom && _root.bossArena or (_root.lev == _root.shopl or _root.lev == _root.minibossRoom) && _root.superSin) {
                                     f1 = 27;
                                   }
                                   if (_root.lev != arenaRoom) {
@@ -7316,7 +7316,7 @@ movie {
           }
           if (_root.musc.nam != undefined && !fader) {
             if (_root.bossmusic) {
-              if (_root.lev != _root.bossRoom && _root.bossRoom2 != _root.lev && _root.lev != _root.arcadeRoom && (_root.lev != 166 or _root.kramper != _root.floorNum) && _root.lev != _root.minibossRoom && _root.lev != _root.arenaRoom && _root._currentframe != 4) {
+              if (_root.lev != _root.bossRoom && _root.bossRoom2 != _root.lev && _root.lev != _root.arcadeRoom && (_root.lev != 166 or _root.krampusFought != _root.floorNum) && _root.lev != _root.minibossRoom && _root.lev != _root.arenaRoom && _root._currentframe != 4) {
                 _root.bossmusic = false;
                 fade = true;
               }
@@ -8857,7 +8857,7 @@ movie {
     }
   }
 
-  movieClip 6512  {
+  movieClip 6512  {	//Golden Poop Spawner
 
     frame 1 {
       _root.a.spawnb(this, 1.4955);
@@ -9075,7 +9075,7 @@ movie {
     }
   }
 
-  movieClip 6551  {
+  movieClip 6551  {		//Flaming Poop Spawner
 
     frame 1 {
       _root.a.spawnb(this, 1.49);
@@ -9208,7 +9208,7 @@ movie {
     }
   }
 
-  movieClip 6574  {
+  movieClip 6574  {		//Poop Spawner
 
     frame 1 {
       _root.a.spawnb(this, 1.5);
@@ -9588,7 +9588,7 @@ movie {
   movieClip 6670  {
   }
 
-  movieClip 6673  {
+  movieClip 6673  {		//Guarded Poop Spawner
 
     frame 1 {
       _root.a.spawnb(this, 1.495);
@@ -9635,7 +9635,7 @@ movie {
         }
       }
 
-      function sloter(trg) {
+      function slotReeler(trg) {
         trg.gotoAndStop(1);
         trg2 = trg._parent._parent._parent;
         if (trg2.s != 5) {
@@ -9765,9 +9765,9 @@ movie {
         }
       }
 
-      function dmgdo() {
+      function baseDamage() {
         var v2 = 0;
-        if (doub) {
+        if (belial) {
           v2 += 2;
         }
         if (haveEffect[7]) {
@@ -10199,13 +10199,13 @@ movie {
         _root.playerTint = [1, 1, 1];
         _root.pillfirst = true;
         _root.bombnext = false;
-        _root.notch = false;
+        _root.notchedAxe = false;
         _root.lastGreedFloor = 0;
         _root.armor = 0;
         _root.pillItem = undefined;
         _root.trinketSlot1 = undefined;
         _root.trinketslot2 = undefined;
-        _root.vamp = 0;
+        _root.charmOfTheVampire = 0;
         _root.monbb = 0;
         if (_root.floorNum > 2) {
           _root.fade = true;
@@ -10262,11 +10262,11 @@ movie {
             _root.armor = 1;
         }
         _root.hp = 1000;
-        _root.wiptz = 0;
+        _root.upgradeCounter = 0;
         _root.collectionScreen = [];
         _root.colit = 0;
         _root.pillEffects = [];
-        _root.kramper = false;
+        _root.krampusFought = false;
         _root.nohead = false;
         _root.nodmg = true;
         _root.devilDeals = 0;
@@ -10292,7 +10292,7 @@ movie {
         _root.treasuresSkipped = 0;
         _root.catlives = 0;
         _root.fakePennyDrop = false;
-        _root.us = false;
+        _root.ultraPride = false;
         FillItemPools();
       }
 
@@ -10304,7 +10304,7 @@ movie {
       }
 
       function nch(f5) {
-        if (_root.levz[f5]) {
+        if (_root.levz[f5]) {		//Is this room valid?
           f12 = true;
         } else {
           f12 = 2;
@@ -10332,7 +10332,7 @@ movie {
         return nch(f5 + 1) && nch(f5 - 1) && nch(f5 + 10) && nch(f5 - 10);
       }
 
-      function nxx(f1) {
+      function isValidRoom(f1) {
         if (_root.levz[f1] > 0) {
           return 1;
         } else {
@@ -10341,7 +10341,7 @@ movie {
       }
 
       function ncheck(f5) {
-        return nxx(f5 + 1) + nxx(f5 - 1) + nxx(f5 + 10) + nxx(f5 - 10);
+        return isValidRoom(f5 + 1) + isValidRoom(f5 - 1) + isValidRoom(f5 + 10) + isValidRoom(f5 - 10);
       }
 
       function bosschoose() {
@@ -10545,7 +10545,7 @@ movie {
         } else {
           for (e in _root.levz) {
             if (e < 110) {
-              if (_root.levz[e] != 0 && (_root.seenRoom[e] or haveEffect[54]) && (_root.secretRoom != e && _root.secretRoom2 != e or _root.beenlev[e] && (e != _root.arenaRoom or _root.chama))) {
+              if (_root.levz[e] != 0 && (_root.seenRoom[e] or haveEffect[54]) && (_root.secretRoom != e && _root.secretRoom2 != e or _root.beenlev[e] && (e != _root.arenaRoom or _root.arenaActive))) {
                 maxx = new flash.geom.Matrix();
                 f1 = (e % 10) * 25 + 15;
                 f2 = Math.round(e / 10 - 0.5) * 10 + 7;
@@ -10618,7 +10618,7 @@ movie {
                                   mpiece.gotoAndStop(10);
                                 }
                               } else {
-                                if (_root.lib == e && (haveEffect[21] or _root.libb)) {
+                                if (_root.libraryRoom == e && (haveEffect[21] or _root.librarySeen)) {
                                   mpiece.gotoAndStop(12);
                                 } else {
                                   if (_root.sacrificeRoom == e && (haveEffect[21] or _root.sacRoomRevealed)) {
@@ -10735,12 +10735,12 @@ movie {
         }
       }
 
-      function itzz(f1) {
+      function notUpgrade(f1) {
         var v2 = f1 != 115 && f1 != 138 && f1 != 143 && f1 != 146 && f1 != 149 && f1 != 150 && f1 != 151 && f1 != 152 && f1 != 154 && f1 != 157 && f1 != 168 && f1 != 170 && f1 != 179 && f1 != 180 && f1 != 182 && f1 != 183 && f1 != 184 && f1 != 185 && f1 != 187 && f1 != 189 && f1 != 190 && f1 != 191 && f1 != 197;
         return f1 > 8 && f1 != 12 && f1 != 16 && f1 != 48 && f1 != 50 && f1 != 51 && f1 != 55 && f1 != 57 && f1 != 52 && f1 != 59 && f1 != 67 && f1 != 68 && f1 != 70 && f1 != 87 && f1 != 89 && f1 != 88 && f1 != 90 && f1 != 92 && f1 != 95 && f1 != 99 && f1 != 100 && f1 != 101 && f1 != 103 && f1 != 104 && f1 != 108 && f1 != 109 && f1 != 110 && v2;
       }
 
-      function itz(f1) {
+      function keepItem(f1) {
         if ((f1 == 79 or f1 == 80 or f1 == 82 or f1 == 83 or f1 == 81 or f1 == 113 or f1 == 122 or f1 == 118 or f1 == 157 or f1 == 159 or f1 == 145) && satan && !haveTrinket(56)) {
           _root.trg.d.d.gotoAndStop(10);
         } else {
@@ -10754,26 +10754,26 @@ movie {
         var Familiars = [8, 67, 95, 99, 100, 113, 163, 167, 174, 188];
         var isFamiliar = false;
         for (o in Familiars) {
-          if (v2[o] == f1) {
+          if (Familiars[o] == f1) {
             isFamiliar = true;
           }
         }
         var numFamiliars = 0;
         if (isFamiliar) {
           for (o in Familiars) {
-            numFumiliars += _root.pickedUp[v2[o]]; //Count the number of familiars you have from the above pool.
+            numFumiliars += _root.pickedUp[Familiars[o]]; //Count the number of familiars you have from the above pool.
           }
         }
-        if (ifFamiliar && numFamiliars > 2) {
+        if (isFamiliar && numFamiliars > 2) {
           return 0; //Game throws out familiars if you have more than 2 from the above pool.
         } else {
           if (_root.pickedUp[f1] or _root.collectedItem[f1] && random(5) == 0) {
             return 0; //Game throws out items you've picked up....or old items 20% of the time.
           } else {
-            if (itzz(f1)) {
+            if (notUpgrade(f1)) {
               return f1;
             } else {
-              if (1 / (1.2 + _root.wiptz * 3) > Math.random()) {
+              if (1 / (1.2 + _root.upgradeCounter * 3) > Math.random()) {
                 return f1;
               } else {
                 return 0;
@@ -10790,7 +10790,7 @@ movie {
           ++tries;
           if (tries > 100) {								//AGH We couldn't drop an item what do we do?
             var v3 = random(_root.RegularDropPool.length);	//Well, let's just get a random treasure period.
-            itemID = itz(_root.RegularDropPool[v3]);		//First checking if we shouldn't throw that one out too.
+            itemID = keepItem(_root.RegularDropPool[v3]);		//First checking if we shouldn't throw that one out too.
             if (itemID > 0) {								//If it's valid, let's drop it.
               _root.RegularDropPool.splice(v3, 1);			//And remove it as per usual.
             }												//
@@ -10798,9 +10798,9 @@ movie {
               FillItemPools();								//REFRESH ALL THE ITEM POOLS.
             }
           } else {
-            if (_root.lev == _root.lib) {
+            if (_root.lev == _root.libraryRoom) {
               var v3 = random(_root.Library.length);
-              itemID = itz(_root.Library[v3]);
+              itemID = keepItem(_root.Library[v3]);
               if (itemID > 0) {
                 if (lib == v3) {							//I literally have no idea what this does.
                   itemID = -1;								//None whatsoever.
@@ -10810,7 +10810,7 @@ movie {
             } else {
               if (_root.ArenaItem.length > 0 && _root.lev == _root.arenaRoom && !_root.bossArena) {
                 var v3 = random(_root.ArenaItem.length);
-                itemID = itz(_root.ArenaItem[v3]);
+                itemID = keepItem(_root.ArenaItem[v3]);
                 if (itemID > 0) {
                   _root.ArenaItem.splice(v3, 1);
                 }
@@ -10819,10 +10819,10 @@ movie {
                   beggar = false;
                   if (_root.godRoomFloor) {
                     var v3 = random(_root.GodRoom.length);
-                    itemID = itz(_root.GodRoom[v3]);
+                    itemID = keepItem(_root.GodRoom[v3]);
                   } else {
                     var v3 = random(_root.DevilRoom.length);
-                    itemID = itz(_root.DevilRoom[v3]);
+                    itemID = keepItem(_root.DevilRoom[v3]);
                     if (itemID > 0) {
                       _root.DevilRoom.splice(v3, 1);
                     }
@@ -10830,7 +10830,7 @@ movie {
                 } else {
                   if (_root.GoldChest.length > 0 && treas && _root.floorNum != 11) {
                     var v3 = random(_root.GoldChest.length);
-                    itemID = itz(_root.GoldChest[v3]);
+                    itemID = keepItem(_root.GoldChest[v3]);
                     if (itemID > 0) {
                       _root.GoldChest.splice(v3, 1);
                     }
@@ -10838,28 +10838,28 @@ movie {
                     if ((_root.lev == _root.shopl or beggar) && _root.ShopItem.length > 1) {
                       beggar = false;
                       var v3 = random(_root.ShopItem.length);
-                      itemID = itz(_root.ShopItem[v3]);
+                      itemID = keepItem(_root.ShopItem[v3]);
                       if (itemID > 0) {
                         _root.ShopItem.splice(v3, 1);
                       }
                     } else {
                       if ((_root.lev == _root.boner or _root.lev == _root.boner2) && random(2) == 0 && _root.UnknownPool.length > 1) {
                         var v3 = random(_root.UnknownPool.length);
-                        itemID = itz(_root.UnknownPool[v3]);
+                        itemID = keepItem(_root.UnknownPool[v3]);
                         if (itemID > 0) {
                           _root.UnknownPool.splice(v3, 1);
                         }
                       } else {
                         if (_root.lev == _root.secretRoom) {
                           var v3 = random(_root.SecretRoomItem.length);
-                          itemID = itz(_root.SecretRoomItem[v3]);
+                          itemID = keepItem(_root.SecretRoomItem[v3]);
                           if (itemID > 0) {
                             _root.SecretRoomItem.splice(v3, 1);
                           }
                         } else {
                           if (_root.lev == _root.arenaRoom && _root.bossArena) {
                             var v3 = random(_root.BossDrop.length);
-                            itemID = itz(_root.BossDrop[v3]);
+                            itemID = keepItem(_root.BossDrop[v3]);
                             if (itemID > 0) {
                               _root.BossDrop.splice(v3, 1);
                             }
@@ -10904,7 +10904,7 @@ movie {
                                             itemID = 73;
                                           } else {
                                             var v3 = random(_root.BossDrop.length);
-                                            itemID = itz(_root.BossDrop[v3]);
+                                            itemID = keepItem(_root.BossDrop[v3]);
                                             if (itemID > 0) {
                                               _root.BossDrop.splice(v3, 1);
                                             }
@@ -10917,7 +10917,7 @@ movie {
                               }
                             } else {
                               var v3 = random(_root.RegularDropPool.length);
-                              itemID = itz(_root.RegularDropPool[v3]);
+                              itemID = keepItem(_root.RegularDropPool[v3]);
                               if (itemID > 0) {
                                 _root.RegularDropPool.splice(v3, 1);
                               }
@@ -10935,7 +10935,7 @@ movie {
         return itemID;
       }
 
-      function speco(trg) {
+      function specialColoring(trg) {
         trg.uncol = 200 + fra;
         if (pacman) {
           trg.uncol = unic + fra + 1;
@@ -10945,14 +10945,14 @@ movie {
             colorit(trg, 0.22, 0.22, 0.22, 40, 40, 40);
             trg.uncol = trg.frezz + fra + 2;
           } else {
-            if (trg.poiss > 0 && trg.s != 64 && trg.s != 46) {
-              f1 = Math.max(0.6, (200 - trg.poiss) / 200 - 0.1);
+            if (trg.poisonDuration > 0 && trg.s != 64 && trg.s != 46) {
+              f1 = Math.max(0.6, (200 - trg.poisonDuration) / 200 - 0.1);
               colorit(trg, f1, 1, f1, 0, (1 - f1) * 90, 0);
             } else {
               if (trg.alter == 2 && trg.s == 42) {
                 colorit(trg, 0.66, 1, 0.74, 0, 0, 0);
               } else {
-                if (trg.special or trg.specozz) {
+                if (trg.champion or trg.specozz) {
                   if (trg.specol == undefined) {
                     trg.specol = random(specol.length);
                   }
@@ -11177,7 +11177,7 @@ movie {
         v2.minb = v2.s > 45 && v2.s < 53;
         if (!_root.beenlev2[_root.lev]) {
           if (f7 > 9 && f7 != 13 && f7 != 18 && f7 != 20 && f7 != 28 && f7 != 33 && f7 != 35 && f7 != 36 && f7 != 37 && f7 != 42 && f7 != 19 && f7 != 43 && f7 != 44 && f7 != 45 && fra < 10 && !v2.minb && f7 < 62) {
-            v2.special = random(20) == 0;
+            v2.champion = random(20) == 0;
           }
         }
         var v9 = v2.minb;
@@ -11197,7 +11197,7 @@ movie {
             }
           } else {
             if ((v5 or random(21) == 0 && !f1 or random(25) == 0 && !f2 or random(100) == 0 && !v9) && f7 != 15) {
-              if (f7 == 46 && flox.s == 38) {
+              if (f7 == 46 && flox.s == 38) { //ultrapride
                 flox.minb = 3;
                 v2.minb = 3;
                 flox.alter = 3;
@@ -11217,7 +11217,7 @@ movie {
                   v2._xscale *= 1.25;
                   v2._yscale *= 1.25;
                   f1 = 1.5;
-                  switch (v2.s) {
+                  switch (v2.s) { //champion miniboss
                     case 48:
                       f1 = 1.3;
                       break;
@@ -11227,13 +11227,13 @@ movie {
                     case 51:
                       v2.specol = 8;
                       v2.specozz = true;
-                      speco(v2);
+                      specialColoring(v2);
                       f1 = 1;
                       break;
                     case 52:
                       v2.specol = 9;
                       v2.specozz = true;
-                      speco(v2);
+                      specialColoring(v2);
                       f1 = 1;
                   }
                   v2.hp *= f1;
@@ -11419,11 +11419,11 @@ movie {
           }
         }
         if (v2.s == 42) {
-          speco(v2);
+          specialColoring(v2);
         }
         if (v2.specoz) {
-          speco(v2);
-          v2.special = false;
+          specialColoring(v2);
+          v2.champion = false;
           if (v2.s == 45) {
             if (v2.specoz == 7) {
               v2.mhp *= 0.85;
@@ -11518,8 +11518,8 @@ movie {
             }
           }
         }
-        if (v2.special) {
-          speco(v2);
+        if (v2.champion) {
+          specialColoring(v2);
           v2.hp *= 2;
           v2._xscale *= 1.15;
           v2._yscale *= 1.15;
@@ -11527,7 +11527,7 @@ movie {
         if (f7 == 38) {
           flox = v2;
         }
-        v2.imba = v2.s == 42 or v2.s == 44;
+        v2.invincible = v2.s == 42 or v2.s == 44;
         switch (f7) {
           case 102:
             v2.state = 0;
@@ -11601,7 +11601,7 @@ movie {
             altboss = false;
             trg2 = spaw(v2.xp, v2.yp, 40, 98);
             v2.trg2 = trg2;
-            v2.imba = true;
+            v2.invincible = true;
             v2.xbeww = v2.xbew;
             v2.ybeww = v2.ybew;
             break;
@@ -11611,7 +11611,7 @@ movie {
           case 93:
             v2.trg2 = masks.length;
             masks.push(v2);
-            v2.imba = true;
+            v2.invincible = true;
             v2.xbeww = v2.xbew;
             v2.ybeww = v2.ybew;
             break;
@@ -11759,7 +11759,7 @@ movie {
           case 16:
             v2.noco = 0;
             break;
-          case 5:
+          case 5:  //Pickups and junk
             v2.ph = true;
             v2.bh = false;
             v2.d.gotoAndStop(Math.max(1, Math.round(v5 * 100 - 0.499)));
@@ -11780,52 +11780,52 @@ movie {
                   }
               }
             }
-            if (v2.d._currentframe == 8 or v2.d._currentframe == 38) {
-              if (random(3) == 0 && !firsttime or v2.d._currentframe == 38 or _root.lev == _root.secretRoom2) {
-                v2.col = 41;
+            if (v2.d._currentframe == 8 or v2.d._currentframe == 38) { //Slot Machine
+              if (random(3) == 0 && !beenHere or v2.d._currentframe == 38 or _root.lev == _root.secretRoom2) {
+                v2.col = 41;	//Fortune Teller Machine
               }
             }
-            if (v2.d._currentframe == 31) {
+            if (v2.d._currentframe == 31) { //Blood Donation Machines
               v2.d.gotoAndStop(8);
               v2.col = 1;
             }
-            if (v2.d._currentframe == 32 or v2.d._currentframe == 37) {
+            if (v2.d._currentframe == 32 or v2.d._currentframe == 37) { //Beggar
               v2.d.gotoAndStop(8);
-              v2.col = 2;
-              if (random(3) == 0 && !firsttime or v2.d._currentframe == 37) {
-                v2.col = 31;
+              v2.col = 2;		//Regular Beggar
+              if (random(3) == 0 && !beenHere or v2.d._currentframe == 37) {
+                v2.col = 31;	//Demon Beggar
               }
             }
             if (v2.d._currentframe == 33) {
               v2.d.gotoAndStop(8);
               v2.col = 10;
             }
-            if (f1 > 0) {
+            if (f1 > 0) {	//For specific drops.
               v2.col = f1;
               if (f1 == 2 && v2.d._currentframe == 5) {
                 v2.c2 = true;
               }
-            } else {
-              if (v2.d._currentframe == 7) {
+            } else {		//Modifiers, for random drops.
+              if (v2.d._currentframe == 7) {	//Pill
                 v2.col = random(6) + 1;
               }
-              if (v2.d._currentframe == 3) {
+              if (v2.d._currentframe == 3) {	//Golden Key
                 v2.col = 1;
                 if (random(50) == 1) {
                   v2.col = 2;
                 }
               }
-              if (v2.d._currentframe == 30) {
+              if (v2.d._currentframe == 30) {	//Tarot Card
                 v2.d.gotoAndStop(7);
                 v5 = 0;
                 v2.col = dropTarotCard();
               }
-              if (v2.d._currentframe == 35) {
+              if (v2.d._currentframe == 35) {	//Trinket
                 v2.d.gotoAndStop(7);
                 v5 = 0;
                 v2.col = dropTrinket();
               }
-              if (v2.d._currentframe == 36 or (v2.d._currentframe == 5 or haveTrinket(61) && v2.d._currentframe == 6) && ((haveTrinket(61) or random(20) == 0) && !firsttime or _root.lev == _root.curseRoom or _root.lev == _root.secretRoom2)) {
+              if (v2.d._currentframe == 36 or (v2.d._currentframe == 5 or haveTrinket(61) && v2.d._currentframe == 6) && ((haveTrinket(61) or random(20) == 0) && !beenHere or _root.lev == _root.curseRoom or _root.lev == _root.secretRoom2)) { //Red Chests
                 v2.d.gotoAndStop(5);
                 v5 = 0;
                 v2.col = 2;
@@ -11838,27 +11838,27 @@ movie {
                 } else {
                   v2.col = 1;
                 }
-                if (v2.d._currentframe == 4 && random(50) == 0) {
+                if (v2.d._currentframe == 4 && random(50) == 0) { //Super Troll Bomb
                   v2.col = 5;
                 }
-                if (v2.d._currentframe == 2 && random(100) == 0) {
+                if (v2.d._currentframe == 2 && random(100) == 0) { //Dime
                   v2.col = 3;
                 }
-                if (v2.d._currentframe == 1 && random(50) == 0) {
+                if (v2.d._currentframe == 1 && random(50) == 0) { //Eternal Heart
                   v2.col = 4;
                 }
-                if (v2.d._currentframe == 4 && random(10) == 0) {
+                if (v2.d._currentframe == 4 && random(10) == 0) { //Troll Bomb
                   v2.col = 3;
                 }
-                if (v2.d._currentframe == 1 && (random(10) == 0 or random(16) == 0 && _root.characterID == 5 or haveTrinket(38) && random(10) == 0 or haveEffect[173] && random(2) == 0)) {
+                if (v2.d._currentframe == 1 && (random(10) == 0 or random(16) == 0 && _root.characterID == 5 or haveTrinket(38) && random(10) == 0 or haveEffect[173] && random(2) == 0)) { //Soul Heart
                   v2.col = 3;
                 }
                 if (v2.d._currentframe == 1 && _root.lev == _root.secretRoom2) {
-                  if (_root.hid2 == 0) {
-                    v2.col = 1;
+                  if (_root.secretRoom2Type == 0) { //Womb Secret Room
+                    v2.col = 1;						//Half Heart
                   }
-                  if (_root.hid2 == 1) {
-                    v2.col = 4;
+                  if (_root.secretRoom2Type == 1) {	//Cathedral Secret Room
+                    v2.col = 4;						//Eternal Heart
                   }
                 }
               }
@@ -11870,7 +11870,7 @@ movie {
                 v2.d.d.gotoAndStop(3);
               }
             }
-            if (v2.d._currentframe == 34) {
+            if (v2.d._currentframe == 34) {	//Cathedral Portal, End Chest?
               if (_root.heaven && _root.floorNum != 11) {
                 v2.d.d.gotoAndStop(5);
               } else {
@@ -11884,9 +11884,9 @@ movie {
               } else {
                 if (satan) {
                   if (random(5) == 0) {
-                    v2.d.d.gotoAndStop(11);
+                    v2.d.d.gotoAndStop(11);				//3 Soul Hearts
                   } else {
-                    v2.d.d.gotoAndStop(9 + random(2));
+                    v2.d.d.gotoAndStop(9 + random(2));	//1/2 Heart Containers
                   }
                 } else {
                   f1 = -1;
@@ -11911,26 +11911,26 @@ movie {
                     }
                   }
                   v2.d.d.gotoAndStop(f1 + 1);
-                  v2.may = true;
-                  if (v2.d.d._currentframe == 3) {
+                  v2.shopProduct = true;
+                  if (v2.d.d._currentframe == 3) {	//Pill
                     v2.col = random(15) + 1;
                   }
-                  if (v2.d.d._currentframe == 13) {
+                  if (v2.d.d._currentframe == 13) {	//Soul Heart
                     v2.col = 3;
                   }
                 }
               }
-              if (v2.may && random(5) == 0 && !salefail && (v2.d.d._currentframe < 5 or v2.d.d._currentframe == 12 or v2.d.d._currentframe == 13)) {
+              if (v2.shopProduct && random(5) == 0 && !salefail && (v2.d.d._currentframe < 5 or v2.d.d._currentframe == 12 or v2.d.d._currentframe == 13)) {
                 salefail = true;
                 v2.d.d.gotoAndStop(v2.d.d._currentframe + 4);
               }
-              if (v2.d.d._currentframe == 3 or v2.d.d._currentframe == 7) {
+              if (v2.d.d._currentframe == 3 or v2.d.d._currentframe == 7) {	//Pill
                 v2.d.d.d.gotoAndStop(v2.col);
               }
-              if (v2.d.d._currentframe == 13 or v2.d.d._currentframe == 17) {
+              if (v2.d.d._currentframe == 13 or v2.d.d._currentframe == 17) {	//Soul Heart
                 v2.d.d.d.d.d.gotoAndStop(3);
               }
-              if (v2.d.d._currentframe == 4 or v2.d.d._currentframe >= 8 && v2.d.d._currentframe < 12) {
+              if (v2.d.d._currentframe == 4 or v2.d.d._currentframe >= 8 && v2.d.d._currentframe < 12) {	//Shop Treasure
                 _root.trg = v2;
                 if (v5 >= 0.1504 && v5 < 0.4) {
                   v2.it = Math.round((v5 - 0.15 - v2.d.d._currentframe * 0.001) * 1000000);
@@ -12004,7 +12004,7 @@ movie {
             v2.spl = 0;
             v2.dm = rand() * 0.2;
             break;
-          case 2:
+          case 2: //Tears
             if (haveEffect[143] or haveEffect[165] or haveEffect[183] or haveEffect[176] or haveEffect[182] or haveEffect[194] or _root.characterID == 6) {
               var tearSpeed = 1 + haveEffect[143] * 0.2 + haveEffect[165] * 0.23 + haveEffect[176] * 0.16 + (haveEffect[183] + haveEffect[194]) * 0.16 - haveEffect[182] * 0.25;
               if (_root.characterID == 6) {
@@ -12067,15 +12067,15 @@ movie {
               }
               babymode = undefined;
             } else {
-              v2.dmg = dmgdo();
+              v2.dmg = baseDamage();
               if (haveTrinket(30)) {
                 if (random(10) == 0) {
-                  v2.trixer = 1;
+                  v2.trinketTears = 1;
                 }
               }
               if (haveTrinket(31)) {
                 if (random(10) == 0) {
-                  v2.trixer = 2;
+                  v2.trinketTears = 2;
                 }
               }
               if (haveEffect[150] && random(10 - _root.luck) == 0) {
@@ -12084,7 +12084,7 @@ movie {
                 if (v2.xbew < 0) {
                   v2.d.d._xscale *= -1;
                 }
-                if (v2.trixer == 2) {
+                if (v2.trinketTears == 2) {
                   colorit(v2, 1.5, 2, 2, 0, 0, 0);
                 }
                 v2.spl = 0;
@@ -12093,17 +12093,17 @@ movie {
                 v2.d._xscale = 70;
                 v2.d._yscale = v2.d._xscale;
               } else {
-                if (v2.trixer == 2) {
+                if (v2.trinketTears == 2) {
                   colorit(v2, 1.5, 2, 2, 0, 0, 0);
                 } else {
-                  if (v2.trixer == 1) {
+                  if (v2.trinketTears == 1) {
                     v2.spl = 30;
                     colorit(v2, 0.5, 0.97, 0.5, 0, 0, 0);
                   } else {
                     if (haveEffect[182]) {
                       colorit(v2, 1.5, 2, 2, 0, 0, 0);
                     } else {
-                      if (!haveEffect[149] && (haveEffect[189] or haveEffect[7] or haveEffect[183] or doub or demon > 0 or v2.dmg > 5.5 && (!haveEffect[169] or v2.dmg > 15) && !haveEffect[69] or haveEffect[122] or sob == -1 && haveEffect[155])) {
+                      if (!haveEffect[149] && (haveEffect[189] or haveEffect[7] or haveEffect[183] or belial or demon > 0 or v2.dmg > 5.5 && (!haveEffect[169] or v2.dmg > 15) && !haveEffect[69] or haveEffect[122] or sob == -1 && haveEffect[155])) {
                         attach(v2, 500);
                         v2.d._xscale = 90;
                         v2.d._yscale = v2.d._xscale;
@@ -12159,11 +12159,11 @@ movie {
                 }
               }
               if (haveEffect[132]) {
-                v2.gro = 0;
+                v2.coalSize = 0;
                 v2.d._xscale -= 15;
                 v2.d._yscale -= 15;
               }
-              if (haveEffect[115] or v2.trixer == 2) {
+              if (haveEffect[115] or v2.trinketTears == 2) {
                 v2._alpha = 50;
               }
               if (haveEffect[6]) {
@@ -12188,7 +12188,7 @@ movie {
                 v2.ybew *= 1.6;
               }
               v2.dy -= (haveEffect[12] - haveEffect[71] + haveEffect[30] + haveEffect[31] + haveEffect[29]) * 5;
-              if (haveEffect[4] or doub && haveEffect[7] or haveEffect[12]) {
+              if (haveEffect[4] or belial && haveEffect[7] or haveEffect[12]) {
                 v2.dmg *= 1.5;
               }
               f1 = haveEffect[12] + haveEffect[30] + haveEffect[31] + haveEffect[29] + haveEffect[71] * 3 + haveEffect[101] + haveEffect[110] + haveEffect[121] + haveEffect[182] * 1.5 + haveEffect[197];
@@ -12373,11 +12373,11 @@ movie {
         if (momdown != 100) {
           for (z in ball) {
             momdown = 100;
-            if (_root.floorNum == 6) {
+            if (_root.floorNum == 6) {		//Mom Death
               _root.soundy('Mom_Vox_Death_' + random(2) + '.mp');
             } else {
               if (_root.floorNum == 9) {
-              } else {
+              } else {						//Mom Heart Death
                 _root.soundy('Mom_Vox_Filtered_Death_1.mp');
               }
             }
@@ -12386,14 +12386,14 @@ movie {
             }
           }
         }
-        mheart._visible = false;
+        momHeart._visible = false;
       }
 
       function hurt(trg, f1) {
-        if (trg == mheart) {
-          mheart.downbro -= 3;
+        if (trg == momHeart) {
+          momHeart.downbro -= 3;
         }
-        if (trg.s == 45) {
+        if (trg.s == 45) {	//Mom's cries of pain
           if (f1 > 10 + random(20)) {
             if (trriss + 25 + random(30) <= fra) {
               trriss = fra;
@@ -12401,10 +12401,10 @@ movie {
             }
           }
         }
-        if (trg.s == 102) {
-          trg.hurt = true;
+        if (trg.s == 102) {	//Isaac/???'s Retaliation
+          trg.isaacRetaliation = true;
         }
-        if (trg == mheart) {
+        if (trg == momHeart) {	//Mom's Heart's cries of pain
           if (f1 > 10 + random(20)) {
             if (trriss + 25 + random(30) <= fra) {
               trriss = fra;
@@ -12423,7 +12423,7 @@ movie {
           if (trg.s == 38) {
             trg.telp = 20;
           }
-          if (trg.imba) {
+          if (trg.invincible) {
             f1 = 0;
           }
           if (trg.s == 62) {
@@ -12468,7 +12468,7 @@ movie {
                 trg.hp -= f1;
               }
             }
-            if (trg.hp < 0) {
+            if (trg.hp < 0) { //Monster Destroyed
               if (trg.s == 99 && trg.hp < 0) {
                 _root.soundy('Monster_Roar_2.mp', 120);
               }
@@ -12478,31 +12478,31 @@ movie {
                 }
                 paccer = !paccer;
               }
-              if (trg.poiss > 0) {
+              if (trg.poisonDuration > 0) {
                 trg.spl = 30;
               }
-              if (trg == mheart) {
+              if (trg == momHeart) {	//Mom's Heart Kill
                 momkill();
               }
-              if (trg.s == 84 && trg.pow > 3) {
+              if (trg.s == 84 && trg.satanPhase > 3) { //Satan Kill
                 momkill();
               }
-              if (haveEffect[157]) {
+              if (haveEffect[157]) {	//Bloody Lust
                 rage = Math.min(3.3, rage + 0.28);
                 rag = rage * 0.32 + 0.6800000000000001;
               }
-              if (haveTrinket(58) && random(15) == 0) {
+              if (haveTrinket(58) && random(15) == 0) {	//Samson's Lock
                 rage = Math.min(3.3, rage + 0.5);
                 rag = rage * 0.32 + 0.6800000000000001;
               }
-              if (haveTrinket(60) && random(20) == 0) {
+              if (haveTrinket(60) && random(20) == 0) {	//Eve's Bird Foot
                 if (!dbird && ashut > 1) {
                   dbird = 2;
                 }
               }
-              if (!trg.flyai && haveEffect[62] && trg.s >= 10) {
-                if (_root.vamp++ >= 12 && player.mhp > 0) {
-                  _root.vamp = 0;
+              if (!trg.flyai && haveEffect[62] && trg.s >= 10) {	//Charm of the Vampire
+                if (_root.charmOfTheVampire++ >= 12 && player.mhp > 0) {
+                  _root.charmOfTheVampire = 0;
                   player.hp += 0.5;
                   parc('hearter', player.xp, player.yp - 20, 0, 100, player.dpppp + 5000);
                   _root.soundy('Vamp_Gulp.mp');
@@ -12563,8 +12563,8 @@ movie {
                         splater(trg.xp, trg.yp, random(10) + 1, Math.random() + 0.6);
                       } else {
                         if (trg.s == 84) {
-                          ++trg.pow;
-                          if (trg.pow == 4) {
+                          ++trg.satanPhase;
+                          if (trg.satanPhase == 4) {
                             trg.hp = trg.mhp;
                             trg.d.gotoAndStop(8);
                             trg.bh = false;
@@ -12703,7 +12703,7 @@ movie {
       }
 
       function playerhurt(f1, f2, f3) {
-        if (_root.floorNum > 6) {
+        if (_root.floorNum > 6) {	//All damage is at least 1 heart after Depths/Necropolis 2
           f1 = Math.max(f1, 1);
         }
         if (haveEffect[108]) {
@@ -12724,7 +12724,7 @@ movie {
             _root.soundy('Mom_Vox_Filtered_EvilLaugh.mp');
           }
         }
-        if (lasth - fra < 0 && player._visible && telf == undefined && playsave < 0 && unic < 0 && player._currentframe != 6 && horse <= 0 && dec <= 0) {
+        if (lasth - fra < 0 && player._visible && telf == undefined && playsave < 0 && unic < 0 && player._currentframe != 6 && horse <= 0 && decoy <= 0) {
           if (f1 > 0) {
             lastk = f2;
             plah = true;
@@ -12776,10 +12776,10 @@ movie {
             if (blueFlies > 1) {
               blueFlyTarget = highs;
             }
-            if (haveTrinket(40) && random(5) == 0) {
+            if (haveTrinket(40) && random(5) == 0) {	//Red Patch
               razor += 3;
             }
-            if (haveTrinket(48) && random(20) == 1) {
+            if (haveTrinket(48) && random(20) == 1) {	//Missing Page
               _root.over.gotoAndStop(3);
               _root.soundy('Death_Card.mp', 100);
               for (e in ball) {
@@ -12787,7 +12787,7 @@ movie {
                 hurt(trg2, 40);
               }
             }
-            if (haveEffect[156] && _root.itemCharges != 1) {
+            if (haveEffect[156] && _root.itemCharges != 1) {	//Habit
               _root.itemCharges += 0.5;
               _root.soundy('batterycharge.mp');
               parc('batter', player.xp, player.yp - 20, 0, 100, player.dpppp + 5000);
@@ -13185,7 +13185,7 @@ movie {
               turd('egg', e);
               break;
             case 1.4:
-              if (random(40) != 0 or firsttime) {
+              if (random(40) != 0 or beenHere) {
                 turd('fireblock', e);
               } else {
               case 1.41:
@@ -13193,12 +13193,12 @@ movie {
                 turd('fireblock2', e);
                 break;
               case 1.5:
-                if (random(40) != 0 or firsttime) {
-                  turd('breakblock', e);
+                if (random(40) != 0 or beenHere) {
+                  turd('breakblock', e);	//Poop
                 } else {
                 case 1.495:
-                  if (random(20) != 0 or firsttime) {
-                    trg = turd('breakblock3', e);
+                  if (random(20) != 0 or beenHere) {
+                    trg = turd('breakblock3', e);	//Poop w/ Guardian
                     if (trg) {
                       if (levz[e] > 1) {
                         efly(trg);
@@ -13207,12 +13207,12 @@ movie {
                     trg.shit = true;
                   } else {
                   case 1.4955:
-                    trg = turd('breakblock4', e);
-                    trg.gold = true;
+                    trg = turd('breakblock4', e);	//Golden Poop
+                    trg.goldPoop = true;
                     break;
                   case 1.49:
                     levz[e] = 1.5;
-                    turd('breakblock2', e);
+                    turd('breakblock2', e);			//Flaming Poop
                   }
                 }
               }
@@ -13246,7 +13246,7 @@ movie {
         while (e < levz.length) {
           if (levz[e] < 0) {
             f1 = 9 - levz[e];
-            if (!firsttime or f1 == 44.2 or f1 == 42.2 or f1 == 44.1 or f1 == 42.1 or f1 == 42) {
+            if (!beenHere or f1 == 44.2 or f1 == 42.2 or f1 == 44.1 or f1 == 42.1 or f1 == 42) {
               outgrid(e);
               if (f1 < 10) {
                 f1 = 5 - levz[e];
@@ -13270,7 +13270,7 @@ movie {
           }
           ++e;
         }
-        if (firsttime) {
+        if (beenHere) {
           e = 0;
           while (e < levz.length) {
             if (levz[e] < 0) {
@@ -13428,7 +13428,7 @@ movie {
                           trg.gotoAndStop(16);
                         } else {
                           if (trg.gol == _root.arenaRoom or _root.lev == _root.arenaRoom) {
-                            chama = 1;
+                            arenaActive = 1;
                             _root.chambb = true;
                             trg.arenaRoom = true;
                             trg.gotoAndStop(27);
@@ -13441,7 +13441,7 @@ movie {
                               if (trg.gol == _root.boner2 or _root.lev == _root.boner2) {
                                 _root.treasd2 = true;
                                 trg.boner2 = true;
-                                if (_root.bona2) {
+                                if (_root.treasureRoom2Opened) {
                                   trg.gotoAndStop(32);
                                 } else {
                                   trg.gotoAndStop(30);
@@ -13450,7 +13450,7 @@ movie {
                                 if (trg.gol == _root.boner or _root.lev == _root.boner) {
                                   _root.treasd = true;
                                   trg.boner = true;
-                                  if (_root.bona) {
+                                  if (_root.treasureRoomOpened) {
                                     trg.gotoAndStop(32);
                                   } else {
                                     trg.gotoAndStop(30);
@@ -13461,8 +13461,8 @@ movie {
                                     trg.shop = true;
                                     trg.gotoAndStop(9);
                                   } else {
-                                    if (trg.gol == _root.lib) {
-                                      _root.libb = true;
+                                    if (trg.gol == _root.libraryRoom) {
+                                      _root.librarySeen = true;
                                       trg.lib = true;
                                       trg.gotoAndStop(9);
                                     } else {
@@ -13494,7 +13494,7 @@ movie {
           create(_root.levit[_root.lev][e][1], _root.levit[_root.lev][e][2], 0, 0, 0, 0, 5 + _root.levit[_root.lev][e][0] * 0.01);
         }
         if (gopill) {
-          create(320, 240, 0, 0, 0, 0, 5.07);
+          create(320, 240, 0, 0, 0, 0, 5.07); //this never comes into play, debug?
         }
         if (inem) {
           inl.gotoAndStop('empty');
@@ -13967,8 +13967,8 @@ movie {
         }
         maxp = true;
         if (!highs.empty && fra - lastcra >= 30) {
-          if (chama == 1 && _root.lev == _root.arenaRoom) {
-            chama = 2;
+          if (arenaActive == 1 && _root.lev == _root.arenaRoom) {
+            arenaActive = 2;
           }
           displayBannerMessage(_root.itemNames[highs.it]);
           displayCornerMessage(_root.itemDescriptions[highs.it]);
@@ -14449,11 +14449,11 @@ movie {
               highs.d.gotoAndStop(11);
             }
             _root.collectionScreen.push(highs.it);
-            if (!itzz(highs.it) && !satan) {
+            if (!notUpgrade(highs.it) && !satan) {
               if (highs.it == 5) {
-                _root.wiptz += 0.2;
+                _root.upgradeCounter += 0.2;
               } else {
-                ++_root.wiptz;
+                ++_root.upgradeCounter;
               }
             }
           }
@@ -14538,7 +14538,7 @@ movie {
         if (trg.frezz < 0 or !trg.frezz) {
           trg.frezz = 70;
           trg.uncol = Math.round(fra + trg.freez + 1);
-          speco(trg);
+          specialColoring(trg);
         }
       }
 
@@ -14593,19 +14593,19 @@ movie {
             blueFlyTarget = trg;
           }
         }
-        if (haveEffect[103] && !lows.ba && random(4) == 0 or lows.trixer == 1) {
-          if (trg.poiss > 20) {
-            trg.poiss += 40;
+        if (haveEffect[103] && !lows.ba && random(4) == 0 or lows.trinketTears == 1) {
+          if (trg.poisonDuration > 20) {
+            trg.poisonDuration += 40;
           } else {
-            trg.poiss = 60;
+            trg.poisonDuration = 60;
           }
-          if (lows.trixer == 1) {
-            trg.poisd = 4;
+          if (lows.trinketTears == 1) {
+            trg.poisonDamage = 4;
           } else {
-            trg.poisd = 2;
+            trg.poisonDamage = 2;
           }
           trg.uncol = Math.round(fra + 60);
-          speco(trg);
+          specialColoring(trg);
         }
         if (haveEffect[89] && random(4) == 0 or lows.ba == 3 && random(2) == 0) {
           spida(lows.ba == 3, trg);
@@ -14627,10 +14627,10 @@ movie {
         if (_root.TrinketPool.length > 0) {
           if (dropPolaroid) {
             dropPolaroid = false;
-            return 47;
+            return 47; //Polaroid
           } else {
-            if (trg.gold) {
-              return 52;
+            if (trg.goldPoop) {
+              return 52; //Counterfeit Penny
             } else {
               f1 = random(_root.TrinketPool.length);
               var v2 = _root.TrinketPool[f1] * 1;
@@ -14674,8 +14674,8 @@ movie {
             f1 = ['Fish Head', 'Pinky Eye', 'Push Pin', 'Liberty Cap', 'Umbilical Cord', 'Childs Heart', 'Curved Horn', 'Rusted Key', 'Goat Hoof', 'Moms Pearl', 'Cancer', 'Red Patch', 'Match Stick', 'Lucky Toe', 'Cursed Skull', 'Safety Cap', 'Ace of Spades', 'Isaacs Fork', 'The Polaroid', 'A Missing Page', 'Bloody Penny', 'Burnt Penny', 'Flat Penny', 'Counterfeit Penny', 'Tick', 'Isaacs Head', 'Maggys Faith', 'Judas\' Tongue', '???\'s Soul', 'Samsons Lock', 'Cains Eye', 'Eves Bird Foot', 'The Left Hand'];
             f1 = f1[Math.max(0, f2 - 29)];
             displayBannerMessage(f1);
-            _root.atrixer = _root.trixer;
-            _root.trixer = f1;
+            _root.atrixer = _root.trinket1;
+            _root.trinket1 = f1;
             _root.soundy('shellgame' + random(2) + '.wav');
             if (haveEffect[139]) {
               f1 = _root.trinketSlot2 > 0;
@@ -14697,7 +14697,7 @@ movie {
             _root.collectedItem[43] = true;
           } else {
             _root.collectedItem[61] = true;
-            tart(f2);
+            tarotText(f2);
             _root.soundy('Book Page Turn 12.wav', 100);
           }
         }
@@ -14745,8 +14745,8 @@ movie {
           if (_root.trinketSlot2 == 53) {
             _root.trinketSlot2 = _root.trinketSlot1;
             _root.trinketSlot1 = 53;
-            _root.atrixer = _root.trixer;
-            _root.trixer = 'Tick';
+            _root.atrixer = _root.trinket1;
+            _root.trinket1 = 'Tick';
           }
           if (!f3) {
             _root.hud.pilll.gotoAndStop(2);
@@ -14775,7 +14775,7 @@ movie {
         }
       }
 
-      function ader(f1) {
+      function donateBlood(f1) {
         if (_root.floorNum > 6 && player.hp < 1 && _root.armor > 0 && player.mhp > 0) {
           _root.armor -= 0.5;
           player.hp += 0.5;
@@ -14798,7 +14798,7 @@ movie {
       }
 
       function greedDamage() {
-        if (lasth - fra < 0 && player._visible && telf == undefined && playsave < 0 && unic < 0 && player._currentframe != 6 && horse <= 0 && dec <= 0) {
+        if (lasth - fra < 0 && player._visible && telf == undefined && playsave < 0 && unic < 0 && player._currentframe != 6 && horse <= 0 && decoy <= 0) {
           loseCoins = true;
         }
       }
@@ -14933,7 +14933,7 @@ movie {
                   if (highs.s == 86 or highs.s == 50 or highs.s == 90) {
                     greedDamage();
                   }
-                  if (highs.s == 9 && highs.doub) {
+                  if (highs.s == 9 && highs.belial) {
                     dodo = true;
                   }
                   if (highs.s == 85 or highs.s == 94) {
@@ -14945,7 +14945,7 @@ movie {
                   if (highs.s == 99) {
                     pub = true;
                   }
-                  dodo = dodo or highs.special or trg.specoz == 7 or trg.specoz == 2;
+                  dodo = dodo or highs.champion or trg.specoz == 7 or trg.specoz == 2;
                   if (freez <= 0 && horse <= 0) {
                     if (dodo) {
                       playerhurt(1, highs.s);
@@ -14970,8 +14970,8 @@ movie {
                       nohit = true;
                     }
                     if (haveEffect[13]) {
-                      highs.poiss = 60;
-                      highs.poisd = 3.5;
+                      highs.poisonDuration = 60;
+                      highs.poisonDamage = 3.5;
                       hurt(highs, 30);
                     } else {
                       hurt(highs, 40);
@@ -15001,7 +15001,7 @@ movie {
             highs.dones = true;
           }
         }
-        if (highs.s == 44 && lows.s != 44) {
+        if (highs.s == 44 && lows.s != 44) {	//Poky stabs everyone.
           if (highs.s != 69) {
             hurt(lows, 20);
           }
@@ -15012,7 +15012,7 @@ movie {
         if (highs.s == 45 && lows.s != 45 && fra - lows.fra > 10) {
           hurt(lows, 20);
         }
-        if (lows.s == 44 && highs.s != 44) {
+        if (lows.s == 44 && highs.s != 44) {	//Eveyone gets stabbed by Poky.
           hurt(highs, 20);
         }
         if (highs.s == 63 && highs.d._currentframe == 7) {
@@ -15036,7 +15036,7 @@ movie {
           }
         }
         if (lows == player && highs.s == 5 && !highs.dones) {
-          if (_root.keys >= 1 or _root.kep or highs.d._currentframe != 6) {
+          if (_root.keys >= 1 or _root.goldenKey or highs.d._currentframe != 6) {
             nohit = true;
             if (highs.d._currentframe < 7 && (highs.col != 3 && highs.col != 5 or highs.d._currentframe != 4)) {
               if (highs.c2) {
@@ -15084,7 +15084,7 @@ movie {
                   }
                 }
                 break;
-              case 1:
+              case 1:	//Heart
                 if (highs.col == 4) {
                   giveEternalHeart();
                 } else {
@@ -15118,7 +15118,7 @@ movie {
                   }
                 }
                 break;
-              case 2:
+              case 2:	//Coin
                 _root.coins += collectCoin(highs);
                 if (haveTrinket(49) && random(2) == 0) {
                   itemSpawnsPickups.push(5.010000002);
@@ -15133,16 +15133,16 @@ movie {
                   ++_root.coins;
                 }
                 break;
-              case 3:
+              case 3:	//Key
                 if (highs.col == 2) {
-                  _root.kep = true;
+                  _root.goldenKey = true;
                   _root.soundy('goldenkey.wav', 100);
                 } else {
                   ++_root.keys;
                   _root.soundy('KeyPickup_Gauntlet.wav', 85);
                 }
                 break;
-              case 4:
+              case 4:	//Bomb
                 if (highs.col == 3 or highs.col == 5) {
                   nohit = false;
                   highs.dones = false;
@@ -15162,7 +15162,7 @@ movie {
                   _root.soundy('fetus_feet' + random(2) + '.wav', 100);
                 }
                 break;
-              case 5:
+              case 5:	//Chest
                 if (!highs.empty && chestopen == undefined) {
                   _root.soundy('Chest_Open.mp', 100);
                   chestopen = highs;
@@ -15170,10 +15170,10 @@ movie {
                 nohit = false;
                 highs.dones = false;
                 break;
-              case 6:
-                if ((_root.keys >= 1 or _root.kep) && !highs.empty && chestopen == undefined) {
+              case 6:	//Locked Chest
+                if ((_root.keys >= 1 or _root.goldenKey) && !highs.empty && chestopen == undefined) {
                   _root.soundy('Unlock00.wav', 100);
-                  if (!_root.kep) {
+                  if (!_root.goldenKey) {
                     --_root.keys;
                   }
                   chestopen = highs;
@@ -15182,7 +15182,7 @@ movie {
                 nohit = false;
                 highs.dones = false;
                 break;
-              case 7:
+              case 7:	//Pill
                 if (fra - highs.fra > 0) {
                   givePillItem(highs);
                 } else {
@@ -15190,10 +15190,10 @@ movie {
                   highs.fra = fra + 10;
                 }
                 break;
-              case 8:
-                if (highs.col == 31) {
+              case 8:	//Machine
+                if (highs.col == 31) {	//Demon Beggar
                   if (!highs.spin && !highs.busted) {
-                    ader();
+                    donateBlood();
                     highs.d.d.gotoAndStop(37);
                     highs.spin = true;
                     lastspin = fra + 100;
@@ -15201,8 +15201,8 @@ movie {
                   }
                 } else {
                   if (highs.col == 1) {
-                    if (!highs.spin && !highs.busted) {
-                      ader();
+                    if (!highs.spin && !highs.busted) {	//Blood Donation Machine
+                      donateBlood();
                       highs.d.d.gotoAndStop(33);
                       highs.d.d.d.gotoAndPlay(1);
                       highs.spin = true;
@@ -15227,11 +15227,11 @@ movie {
                     }
                     if (_root.coins >= 1 && !highs.spin && !highs.busted && (highs.col != 10 or highs.yp - lows.yp < 0)) {
                       --_root.coins;
-                      if (highs.col == 10) {
+                      if (highs.col == 10) {	//Shell Game
                         highs.d.d.gotoAndStop(42);
-                        highs.itt = random(4);
+                        highs.shellGuyItem = random(4);
                         if (random(13) == 0 && !haveEffect[9]) {
-                          highs.itt = 5;
+                          highs.shellGuyItem = 5;
                         }
                       } else {
                         if (highs.col > 1 && highs.col < 10) {
@@ -15249,7 +15249,7 @@ movie {
                 highs.dones = false;
                 nohit = false;
                 break;
-              case 9:
+              case 9:	//Trap Door
                 if (highs.d.d._currentframe > 10 && highs.d.d._currentframe < 24 && highs.open) {
                   player._visible = false;
                   plxxx = highs.xp;
@@ -15258,7 +15258,7 @@ movie {
                 }
                 highs.dones = false;
                 break;
-              case 15:
+              case 15: //Shop Item
                 f1 = [0, 3, 5, 5, 15, 2, 3, 3, 7, 1, 2, 3, 5, 5, 0, 0, 3, 3];
                 f1 = f1[highs.d.d._currentframe];
                 if (_root.coins >= f1 && !satan or satan && (_root.armor >= 3 or highs.d.d._currentframe != 11)) {
@@ -15296,44 +15296,44 @@ movie {
                     _root.coins -= f1;
                   }
                   highs.done = true;
-                  switch (highs.d.d._currentframe) {
-                    case 12:
-                    case 16:
+                  switch (highs.d.d._currentframe) { //Shop Pickups
+                    case 12:	//Key - 5 Cents
+                    case 16:	//Key on Sale - 3 Cents
                       ++_root.keys;
                       _root.soundy('KeyPickup_Gauntlet.wav', 85);
                       player.d.gotoAndStop(4);
                       player.it = 202;
                       break;
-                    case 13:
-                    case 17:
+                    case 13:	//Soul Heart - 5 Cents
+                    case 17:	//Soul Heart on Sale - 3 Cents
                       ++_root.armor;
                       _root.soundy('Holy.mp', 100);
                       player.d.gotoAndStop(4);
                       player.it = 203;
                       break;
-                    case 1:
-                    case 5:
+                    case 1:		//Heart - 3 Cents
+                    case 5:		//Heart on Sale - 2 Cents
                       _root.soundy('boss2_bubbles' + random(2) + '.wav', 100);
                       ++player.hp;
                       player.d.gotoAndStop(4);
                       player.it = 200;
                       break;
-                    case 3:
-                    case 7:
+                    case 3:		//Pill - 5 Cents
+                    case 7:		//Pill on Sale - 3 Cents
                       givePillItem(highs);
                       break;
-                    case 2:
-                    case 6:
+                    case 2:		//Bomb - 5 Cents
+                    case 6:		//Bomb on Sale - 3 Cents
                       ++_root.bombs;
                       _root.soundy('fetus_feet' + random(2) + '.wav', 100);
                       player.d.gotoAndStop(4);
                       player.it = 201;
                       break;
-                    case 4:
-                    case 8:
-                    case 9:
-                    case 10:
-                    case 11:
+                    case 4:		//Item - 15 Cents
+                    case 8:		//Item on Sale - 7 Cents
+                    case 9:		//Devil Item - 1 Heart Container
+                    case 10:	//Devil Item - 2 Heart Containers
+                    case 11:	//Devil Item - 3 Soul Hearts
                       powerlevel();
                   }
                   if (satan && player.hp <= 0) {
@@ -15343,7 +15343,7 @@ movie {
                   highs.dones = false;
                 }
                 break;
-              case 10:
+              case 10:	//Treasure
                 powerlevel();
             }
           }
@@ -15471,7 +15471,7 @@ movie {
                             ++_root.hairball;
                           }
                         }
-                        if (haveEffect[48] && !lows.ba or lows.ics or v6 or lows.knife or lows.trixer == 2) {
+                        if (haveEffect[48] && !lows.ba or lows.ics or v6 or lows.knife or lows.trinketTears == 2) {
                           nohit = true;
                         } else {
                           if (haveEffect[169] && !lows.ba && lows.dmg > 10 && highs.hp < -6) {
@@ -16109,8 +16109,8 @@ movie {
         if (trg.s == 59) {
           v1.dy += 15;
         }
-        if (trg.special or trg.s == 59 or trg.s == 57 or trg.s == 53 or trg.s == 43 or trg.s == 75 or trg.s == 76 or trg.s == 84) {
-          v1.doub = true;
+        if (trg.champion or trg.s == 59 or trg.s == 57 or trg.s == 53 or trg.s == 43 or trg.s == 75 or trg.s == 76 or trg.s == 84) {
+          v1.belial = true;
           v1.d._yscale = 140;
           v1.d._xscale = 140;
         }
@@ -16748,16 +16748,16 @@ movie {
                     trg2.xbew -= xenf * enf;
                     trg2.ybew -= yenf * enf;
                   }
-                  if ((trg2.s == 46 or trg2.s == 68 or trg2.s == 87 or trg2.s == 67 or trg2.s == 30 or trg2.s == 88 or trg2.s == 59 or trg2.s == 64 or trg2.s == 78 or trg2.s == 82 or trg2.s == 83 or trg2.s == 101) && trg.dfr && !trg.bombo or trg2.s == 45 && trg.s == 45 or trg2.s == 52 && (trg.col == 3 or trg.col == 5)) {
+                  if ((trg2.s == 46 or trg2.s == 68 or trg2.s == 87 or trg2.s == 67 or trg2.s == 30 or trg2.s == 88 or trg2.s == 59 or trg2.s == 64 or trg2.s == 78 or trg2.s == 82 or trg2.s == 83 or trg2.s == 101) && trg.dfr && !trg.ipecacBomb or trg2.s == 45 && trg.s == 45 or trg2.s == 52 && (trg.col == 3 or trg.col == 5)) {
                   } else {
-                    if (trg2.s == 48) {
-                      if (trg.man) {
+                    if (trg2.s == 48) {	//Wrath
+                      if (trg.wrathBomb) {
                         hurt(trg2, 10);
                       } else {
                         hurt(trg2, 100);
                       }
                     } else {
-                      if (trg2.s == 28) {
+                      if (trg2.s == 28) {	//Chub/C.H.A.D./Carrion Queen
                         hurt(trg2, 18);
                       } else {
                         if (trg.dmg > 0) {
@@ -16766,9 +16766,9 @@ movie {
                           hurt(trg2, 40);
                         }
                       }
-                      if (trg.header) {
-                        trg2.poiss = trg.header;
-                        trg2.poisd = 7;
+                      if (trg.poisonBombPower) {
+                        trg2.poisonDuration = trg.poisonBombPower;
+                        trg2.poisonDamage = 7;
                       }
                     }
                   }
@@ -16801,7 +16801,7 @@ movie {
                 maxx.scale(hdx, hdx);
                 splat.draw(crater, maxx);
               }
-              if (trg.header) {
+              if (trg.poisonBombPower) {
                 gibs();
                 z = 0;
                 while (z < 20) {
@@ -16882,7 +16882,7 @@ movie {
         while (i < f1) {
           ++gibb;
           f10 = Math.random() * 4;
-          f11 = trg.s == 100 or trg.s == 97 or trg.s == 98 or trg.s == 99 or trg.s == 20 or trg.s == 43 or trg.s == 36 or trg.s == 28 or trg.s == 49 or trg.s >= 62 && !trg.sic && trg.s != 73 && trg.s != 71 && trg.s != 77 && trg.s != 74 && trg.s < 85 or trg.s == 57 or trg.special or trg.minb;
+          f11 = trg.s == 100 or trg.s == 97 or trg.s == 98 or trg.s == 99 or trg.s == 20 or trg.s == 43 or trg.s == 36 or trg.s == 28 or trg.s == 49 or trg.s >= 62 && !trg.sic && trg.s != 73 && trg.s != 71 && trg.s != 77 && trg.s != 74 && trg.s < 85 or trg.s == 57 or trg.champion or trg.minb;
           if (f11) {
             f10 *= 1.7;
             big = 2;
@@ -16905,7 +16905,7 @@ movie {
           if (trg.frezz > 0) {
             colorit(v1, 0.18, 0.22, 0.22, 60, 60, 60);
           } else {
-            if (trg.poiss > 0 or trg.spl == 30) {
+            if (trg.poisonDuration > 0 or trg.spl == 30) {
               colorit(v1, 0.2, 1, 0.2, 0, 70, 17);
               v1.spl = 30;
             } else {
@@ -16968,7 +16968,7 @@ movie {
           trg2.dmg = 10;
           if (f1 == 4) {
             trg2.d.gotoAndStop(7);
-            trg2.dec = true;
+            trg2.decoy = true;
           }
           if (f1 && f1 != 2 or haveEffect[106]) {
             trg2.dmg += 50;
@@ -16979,7 +16979,7 @@ movie {
             }
           }
           if (haveEffect[140]) {
-            trg2.header = 130;
+            trg2.poisonBombPower = 130;
             trg2.col = 6;
           }
           ++_root.so.data.bomb;
@@ -17518,7 +17518,7 @@ movie {
                         trg.fire * 2;
                         trg.fire += 10;
                         v2.bomb = true;
-                        v2.bombo = true;
+                        v2.ipecacBomb = true;
                         v2.d._yscale = 160;
                         v2.d._xscale = 160;
                         f1 = Math.random() * 0.2 + 0.7;
@@ -17626,7 +17626,7 @@ movie {
                       f1 = 1 / enfget(xenf, yenf);
                       v2.xpp = xenf * f1;
                       v2.ypp = yenf * f1;
-                      lassd = 3;
+                      laserDamage = 3;
                       lasershow(v2, 2);
                       _root.soundy('RedLightning_Zap_' + random(3) + '.mp', 60);
                     } else {
@@ -17648,8 +17648,8 @@ movie {
                       }
                       f1 = v2.xp;
                       f2 = v2.yp;
-                      f10 = doub;
-                      doub = v2.dou;
+                      f10 = belial;
+                      belial = v2.dou;
                       if (babymode == 7) {
                         f3 = 0.2;
                         var v3 = create(f1, f2, 0, xenf + yenf * f3, yenf - xenf * f3, 0, 2);
@@ -17708,7 +17708,7 @@ movie {
                           }
                         }
                       }
-                      doub = f10;
+                      belial = f10;
                     }
                     if (!haveEffect[52]) {
                       ++e;
@@ -17815,7 +17815,7 @@ movie {
       }
 
       function friends() {
-        trg.damger = trg.s == 3 && (trg.alt && trg.fly or trg.meat or trg.charge or trg.ang or trg.bird or trg.blueFlies or trg.eye or trg.ni or trg.hairball or trg.dad);
+        trg.damger = trg.s == 3 && (trg.alt && trg.fly or trg.meat or trg.charge or trg.ang or trg.bird or trg.blueFlies or trg.peeper or trg.ni or trg.hairball or trg.dad);
         trg.ggh = true;
         colorit(trg, 1, 1, 1, 0, 0, 0);
         trg.dou = false;
@@ -17849,7 +17849,7 @@ movie {
               trg.hh = [];
             }
           } else {
-            if (trg.eye) {
+            if (trg.peeper) {
               if (random(4) == 0) {
                 splater(trg.xp, trg.yp, trg.spl + 1 + random(10), Math.random() * 0.3 + 0.1);
               }
@@ -17878,7 +17878,7 @@ movie {
                 } else {
                   if (trg.blueFlies) {
                     trg.ggh = true;
-                    trg.dmg = 2 * dmgdo();
+                    trg.dmg = 2 * baseDamage();
                     f12 = fra * 0.03;
                     if (haveEffect[112]) {
                       f12 *= 2;
@@ -17961,7 +17961,7 @@ movie {
                   trg.trg2 = player;
                   trg.fire = 50 - trg.dmg * 5;
                 }
-                if (trg.trg2 == undefined or trg.trg2 == mheart && !trg.trg2.bh) {
+                if (trg.trg2 == undefined or trg.trg2 == momHeart && !trg.trg2.bh) {
                   trg.trg2 = player;
                   trg.fire = 5;
                 }
@@ -18112,7 +18112,7 @@ movie {
                         trg2 = ball[z];
                         if (trg2.s > 9 && !trg2.dones) {
                           if (enfcheck(trg2.xp, trg2.yp, f6, f7, f13)) {
-                            if (trg2 != mheart && !trg2.mom && trg2.pow >= 3 or trg2.bh) {
+                            if (trg2 != momHeart && !trg2.mom && trg2.satanPhase >= 3 or trg2.bh) {
                               f2 = trg2;
                             }
                           }
@@ -18367,17 +18367,17 @@ movie {
                                   _root.monbb = 0;
                                   switch (trg.mon) {
                                     case 4:
-                                      f1 = 5.04;
+                                      f1 = 5.04; //Bomb Bag
                                       break;
                                     case 3:
-                                      f1 = 5.010000003;
+                                      f1 = 5.010000003; //The Relic
                                       break;
                                     case 2:
-                                      f1 = 5.010000002;
+                                      f1 = 5.010000002; //Little Chad
                                       _root.soundy('kiss_lips1.wav');
                                       break;
                                     case 1:
-                                      f1 = 5.02;
+                                      f1 = 5.02; //Sack of Pennies
                                   }
                                   trg2 = spaw(trg.xp, trg.yp, 0, f1);
                                   if (trg.mon > 1 && trg.mon < 4) {
@@ -18509,14 +18509,14 @@ movie {
         }
       }
 
-      function slotf() {
+      function rollSlots() {
         var v1 = 0;
         if (haveEffect[46]) {
           v1 = 3 + random(15);
         } else {
           v1 = 3 + random(21);
         }
-        if (v1 >= 9 && (random(10) != 0 or sloto)) {
+        if (v1 >= 9 && (random(10) != 0 or portableSlot)) {
           ++v1;
         }
         if (v1 == 7 && random(3) == 0) {
@@ -18525,7 +18525,7 @@ movie {
         return v1;
       }
 
-      function sloty(f1) {
+      function slotPrizes(f1) {
         switch (f1) {
           case 3:
             if (random(3) == 0) {
@@ -18569,7 +18569,7 @@ movie {
             _root.soundy('boss1_explosions' + random(3) + '.wav', 80);
             break;
           default:
-            if (sloto) {
+            if (portableSlot) {
               emo(true);
             }
         }
@@ -18869,8 +18869,8 @@ movie {
                 trg2.dmg = trg.dmg;
                 trg3.dmg = trg2.dmg;
                 if (haveEffect[132]) {
-                  trg2.gro = trg.gro;
-                  trg3.gro = trg2.gro;
+                  trg2.coalSize = trg.coalSize;
+                  trg3.coalSize = trg2.coalSize;
                 }
               }
             }
@@ -18951,11 +18951,11 @@ movie {
             trg.free = false;
           }
         }
-        if (trg.poiss > 0) {
-          --trg.poiss;
-          if (trg.poiss % 20 == 1) {
+        if (trg.poisonDuration > 0) {
+          --trg.poisonDuration;
+          if (trg.poisonDuration % 20 == 1) {
             if (trg.s != 28 or altboss != 2) {
-              hurt(trg, trg.poisd);
+              hurt(trg, trg.poisonDamage);
             }
           }
         }
@@ -18965,7 +18965,7 @@ movie {
         actions2();
         for (e in ball) {
           trg = ball[e];
-          if ((hps[trg.s] / mux > 199 && !trg.goner && trg.s != 62 && trg.s != 96 && trg.s != 18 && trg.pow != 5 or trg.s == 19 or trg.s == 20 or trg.s == 79 && (!trg.alt or altboss != 2) or trg.s == 82 or trg.s == 83 or trg.minb or trg.worm == 6 or trg.s == 67 or trg.s >= 71 && trg.s <= 77) && !trg.dones && !trg.sic && !trg.horse && !trg.weap && !mheart or trg == mheart) {
+          if ((hps[trg.s] / mux > 199 && !trg.goner && trg.s != 62 && trg.s != 96 && trg.s != 18 && trg.satanPhase != 5 or trg.s == 19 or trg.s == 20 or trg.s == 79 && (!trg.alt or altboss != 2) or trg.s == 82 or trg.s == 83 or trg.minb or trg.worm == 6 or trg.s == 67 or trg.s >= 71 && trg.s <= 77) && !trg.dones && !trg.sic && !trg.horse && !trg.weap && !momHeart or trg == momHeart) {
             ++bosser;
             trg.bosser = !trg.minb;
             trg.aboss = trg.bosser;
@@ -19015,7 +19015,7 @@ movie {
               quadf(trg.xp, trg.yp, 8);
             }
           }
-          if (trg.s == 81 && trg.alter == 2) {
+          if (trg.s == 81 && trg.alter == 2) {		//Defeated Krampus
             if (trg.dones) {
               trg.alter = 0;
               _root.SecretUnlocked[64] = true;
@@ -19073,11 +19073,11 @@ movie {
                 } else {
                   f0 = f1[f0];
                 }
-                if (f0 == 5.04 && trg.s == 51) {
+                if (f0 == 5.04 && trg.s == 51) {			//Pride and Super Pride always drop a Troll Bomb.
                   trg2 = create(trg.xp, trg.yp, 0, 0, 0, 0, f0);
                   trg2.col = 3;
                 } else {
-                  if (f0 == 5.02) {
+                  if (f0 == 5.02) {							//Greed and Super Greed always drop 4-8 coins, which scatter.
                     f3 = 4 + random(5);
                     z = 0;
                     while (z < f3) {
@@ -19086,7 +19086,7 @@ movie {
                       ++z;
                     }
                   } else {
-                    if (f0 == 5.01 or f0 == 5.04) {
+                    if (f0 == 5.01 or f0 == 5.04) {			//Gluttony and Wrath drop two hearts/bombs.
                       f1 = crand(5);
                       f2 = crand();
                       create(trg.xp, trg.yp, 0, f1, f2, 0, f0);
@@ -19100,9 +19100,9 @@ movie {
               trg.minb = false;
             }
           } else {
-            if (trg.special or trg.hallo) {
+            if (trg.champion or trg.hallo) {
               if (trg.dones) {
-                trg.special = false;
+                trg.champion = false;
                 trg.hallo = false;
                 f1 = Math.random();
                 if (f1 < 0.4) {
@@ -19245,7 +19245,7 @@ movie {
           }
           deathscripts();
           if (trg.uncol < fra) {
-            speco(trg);
+            specialColoring(trg);
           }
           if (trg.s <= 9) {
             if (!trg.dones) {
@@ -19257,7 +19257,7 @@ movie {
                   if (trg.fra + 2 < fra) {
                     trg.bh = true;
                   }
-                  if (trg.bombo) {
+                  if (trg.ipecacBomb) {
                     trg.ggh = trg.dy > -50;
                     trg.bh = trg.ggh;
                     trg.ggh = !trg.ggh;
@@ -19285,7 +19285,7 @@ movie {
                     trg.fd = -0.045;
                   }
                   if (haveEffect[132] && !trg.ba && !haveEffect[114]) {
-                    if (trg.gro++ < 150) {
+                    if (trg.coalSize++ < 150) {
                       trg.dmg += 0.14;
                       trg.d._xscale += 1;
                       trg.d._yscale += 1;
@@ -19302,7 +19302,7 @@ movie {
                           if (trg2.s > 9 && !trg2.dones && !trg.hh[trg2.e]) {
                             enf = enfcheck(f1, f2, trg2.xp, trg2.yp, siz);
                             if (enf) {
-                              if (trg2.pos >= 3 && (trg2 != mheart or trg2.bh)) {
+                              if (trg2.pos >= 3 && (trg2 != momHeart or trg2.bh)) {
                                 siz = enf;
                                 trg.trg2 = trg2;
                               }
@@ -19515,7 +19515,7 @@ movie {
                     }
                     f1 = trgnextd(trg.d.d.d, true);
                     if (trg.d.d._currentframe == 42) {
-                      trg.d.d.d.it.gotoAndStop(trg.itt + 1);
+                      trg.d.d.d.it.gotoAndStop(trg.shellGuyItem + 1);
                     }
                     if (f1 == 43 or f1 == 44 or f1 == 45) {
                       trg.spin = false;
@@ -19526,7 +19526,7 @@ movie {
                       } else {
                         if (f1 == 37) {
                           if (trg.col == 31) {
-                            if (random(4 - haveEffect[46]) == 0) {
+                            if (random(4 - haveEffect[46]) == 0) {	//Demon Beggar
                               trg.d.d.gotoAndStop(38);
                             } else {
                               trg.d.d.gotoAndStop(36);
@@ -19534,11 +19534,11 @@ movie {
                             }
                             trg.wtf = false;
                           } else {
-                            if (trg.col++ > random(2) + random(4) + random(4)) {
-                              if (haveEffect[46]) {
-                                ++trg.col;
-                              }
-                              trg.col = 2 + random(2);
+                            if (trg.col++ > random(2) + random(4) + random(4)) {	//Regular Beggar
+                              if (haveEffect[46]) {		//Lucky foot makes money
+                                ++trg.col;				//count twice.
+                              }							//OR NOT
+                              trg.col = 2 + random(2);	//BECAUSE IT'S COMPLETELY POINTLESS
                               trg.d.d.gotoAndStop(38);
                             } else {
                               trg.d.d.gotoAndStop(36);
@@ -19548,15 +19548,15 @@ movie {
                             trg.wtf = false;
                           }
                         } else {
-                          if (f1 == 2) {
-                            if (random(50) == 0 && chestopen == undefined) {
+                          if (f1 == 2) {	//Slot Machine
+                            if (random(50) == 0 && chestopen == undefined) {	//2% chance of exploding outright.
                               chestopen = trg;
                               trg.d.d.gotoAndStop(30);
                               trg.spin = false;
                               trg.busted = true;
                               _root.soundy('boss1_explosions' + random(3) + '.wav', 80);
                             } else {
-                              trg.d.d.gotoAndStop(slotf());
+                              trg.d.d.gotoAndStop(rollSlots());
                               trg.wtf = false;
                             }
                           } else {
@@ -19603,19 +19603,19 @@ movie {
                             }
                           }
                         } else {
-                          sloty(f1);
+                          slotPrizes(f1);
                           switch (f1) {
-                            case 43:
-                            case 44:
-                            case 45:
+                            case 43:	//Shell 1...
+                            case 44:	//Shell 2...
+                            case 45:	//or Shell 3?
                               if (random(3) == 0 or random(3) == 0 && haveEffect[46]) {
-                                f2 = 5.01 + trg.itt * 0.01;
+                                f2 = 5.01 + trg.shellGuyItem * 0.01;
                                 if (f2 == 5.02) {
                                   f12 = 2 + random(2);
                                 } else {
                                   f12 = Math.max(random(3), 2);
                                 }
-                                if (trg.itt == 5) {
+                                if (trg.shellGuyItem == 5) {
                                   f2 = 5.1009;
                                 }
                               } else {
@@ -19625,7 +19625,7 @@ movie {
                               break;
                             case 42:
                               break;
-                            case 38:
+                            case 38: //Beggars
                               if (trg == flox && trg.minb != 3) {
                                 flox = undefined;
                               }
@@ -19633,40 +19633,40 @@ movie {
                               if (trg.col == 31) {
                                 if (random(2) == 0) {
                                   if (random(2) == 0) {
-                                    f2 = 5.07;
+                                    f2 = 5.07;							//Pill		25%
                                   } else {
-                                    f2 = 5.3;
+                                    f2 = 5.3;							//Tarot		25%
                                   }
                                 } else {
                                   if (random(4) == 0) {
-                                    f2 = 5.35;
+                                    f2 = 5.35;							//Trinket	12.5%
                                   } else {
-                                    f2 = 5.1;
+                                    f2 = 5.1;							//Item		37.5%
                                   }
                                 }
                               } else {
                                 f2 = 5.1022 + random(5) * 0.0001;
                                 if (random(2) == 0) {
                                   if (random(3) == 0) {
-                                    f2 = 5;
-                                  } else {
-                                    f2 = 5.03 + random(2) * 0.01;
+                                    f2 = 5;								//Heart		16.66%
+                                  } else {								//Bomb		16.66%
+                                    f2 = 5.03 + random(2) * 0.01;		//Key		16.66%
                                   }
                                 } else {
                                   if (random(2) == 0) {
                                     if (random(2) == 0) {
-                                      f2 = 5.1022 + random(5) * 0.0001;
+                                      f2 = 5.1022 + random(5) * 0.0001;	//HP Up		12.5%
                                     } else {
-                                      f2 = 5.3;
+                                      f2 = 5.3;							//Tarot		12.5%
                                     }
                                   } else {
-                                    f2 = 5.1;
+                                    f2 = 5.1;							//Item		25%
                                   }
                                 }
                               }
                               trg.d.d.gotoAndStop(36);
                               break;
-                            case 33:
+                            case 33:	//Blood Donation Machines
                               if (random(15) == 0) {
                                 f2 = 5.1;
                                 trg.done = true;
@@ -19714,7 +19714,7 @@ movie {
                               beggar = 2;
                             }
                             trg2 = spaw(trg.xp, trg.yp + 80, 0, f2);
-                            if (trg.col == 41) {
+                            if (trg.col == 41) {	//Fortune Teller Machines
                               trg.empty = true;
                               trg.d.d.gotoAndStop(30);
                               trg2.it = 158;
@@ -19876,7 +19876,7 @@ movie {
                   }
                   break;
                 case 4:
-                  if (trg.bolt) {
+                  if (trg.bolt) {	//Crack The Sky
                     if (trgnextd(trg.d, true)) {
                       trg.done = true;
                     }
@@ -19926,20 +19926,20 @@ movie {
                       trg.xbew *= 0.95;
                       trg.ybew *= 0.95;
                     } else {
-                      if (trg.dec) {
-                        dec = undefined;
+                      if (trg.decoy) {
+                        decoy = undefined;
                         if (trg.d._currentframe != 7) {
                           trg.dones = true;
                         }
                       }
-                      if (_root.spacebarItem == 97) {
+                      if (_root.spacebarItem == 97) {	//Remote Detonator
                         if (trg.d._currentframe == 1) {
                           if (trg.d.d._currentframe == 10) {
                             trg.d.d.gotoAndStop(1);
                           }
                         }
                       }
-                      if (haveEffect[125] or haveEffect[52] && haveEffect[3]) {
+                      if (haveEffect[125] or haveEffect[52] && haveEffect[3]) {	//Bobby-Bomb or Dr. Fetus/Spoon Bender
                         if (trg.trg2 == undefined or trg.trg2.dones or trg.trg2.xp <= 0) {
                           if (fra % 3 == 0) {
                             f1 = trg.xp + trg.xbew * 5;
@@ -20224,7 +20224,7 @@ movie {
         tip(1);
         if (helps >= 1) {
           mhelps = Math.max(helps, mhelps);
-          if (sati.pow == 1 or sati.pow == 2) {
+          if (satanBoss.satanPhase == 1 or satanBoss.satanPhase == 2) {
             --mhelps;
             help -= 1;
           }
@@ -20436,10 +20436,10 @@ movie {
             }
             if (f11 or enfget(trg.xbew, trg.ybew) > 3 && f2) {
               trg2 = parc('bloo', trg.xp, trg.yp, 0, 123);
-              if (trg.special) {
+              if (trg.champion) {
                 trg2.specol = trg.specol;
-                trg2.special = true;
-                speco(trg2);
+                trg2.champion = true;
+                specialColoring(trg2);
               } else {
                 colorit(trg2, trg.rrr, trg.rrr, trg.rrr, 0, 0, 0);
               }
@@ -20590,8 +20590,8 @@ movie {
             trg.yp = trg.ypp;
             trg.xbew *= 0.6;
             trg.ybew *= 0.6;
-            if (trg.hurt && trg.state != 2) {
-              trg.hurt = false;
+            if (trg.isaacRetaliation && trg.state != 2) {
+              trg.isaacRetaliation = false;
               bossfire(1, true);
             }
             if (altboss && random(60) == 0 && ashut < 20) {
@@ -21057,7 +21057,7 @@ movie {
               trg.flyai = true;
               trg.ybb = 0;
               trg.xbb = 0;
-              trg.imba = false;
+              trg.invincible = false;
               attach(trg, 18);
               trg.d._yscale = 118;
               trg.d._xscale = 118;
@@ -21078,7 +21078,7 @@ movie {
                   trg.xpp = trg2.xp + Math.sin(f11) * 25;
                   trg.ypp = trg2.yp + Math.cos(f11) * 20;
                 }
-                trg.imba = true;
+                trg.invincible = true;
                 trg.xp += trg.xpp;
                 trg.yp += trg.ypp;
                 trg.xp *= 0.5;
@@ -21671,7 +21671,7 @@ movie {
               if (trg.s == 97) {
                 if (!altboss) {
                   altboss = true;
-                  trg.imba = false;
+                  trg.invincible = false;
                   trg.hp = trg.mhp;
                   trg.d.gotoAndStop(1);
                   f2 = true;
@@ -21980,7 +21980,7 @@ movie {
               }
               if (altboss == 2) {
                 if (trg.mag < 3) {
-                  trg.imba = true;
+                  trg.invincible = true;
                 }
               }
               if (trg.d._currentframe >= 10) {
@@ -22210,7 +22210,7 @@ movie {
                       trg2.spl = 30;
                       trg2.specoz = 10;
                       trg2.outway = true;
-                      speco(trg2);
+                      specialColoring(trg2);
                     }
                     xenf -= trg.xp;
                     yenf -= trg.yp;
@@ -22854,7 +22854,7 @@ movie {
               }
             }
             break;
-          case 48:
+          case 48: //Wrath
             trg.xbew *= 0.85;
             trg.ybew *= 0.85;
             walkframe();
@@ -22940,7 +22940,7 @@ movie {
                   trg.trg2.bh = false;
                 }
                 trg.xpp = undefined;
-                trg.trg2.man = true;
+                trg.trg2.wrathBomb = true;
               }
             }
             break;
@@ -23212,7 +23212,7 @@ movie {
                 if (trg2.s != 79) {
                   trg.dones = true;
                 }
-                trg.imba = true;
+                trg.invincible = true;
                 bord(580, 60, 410, 170);
                 if (trg.d._currentframe == 12) {
                   if (trgnextd()) {
@@ -23413,7 +23413,7 @@ movie {
             }
             break;
           case 78:
-            mheart = trg;
+            momHeart = trg;
             trg.outway = true;
             trg.xbew *= 0.8;
             trg.ybew *= 0.8;
@@ -23734,7 +23734,7 @@ movie {
               trg2.fra = -100;
               trg2.d.gotoAndStop(9);
               trg2.hp *= 200;
-              trg2.imba = true;
+              trg2.invincible = true;
             }
             if (trg.specoz != 13 && !altboss) {
               _root.slugeye = f3;
@@ -24419,26 +24419,26 @@ movie {
             trg.xbew *= 0.8;
             trgnextd();
             trg.alter = 2;
-            if (trg.pow == 5) {
+            if (trg.satanPhase == 5) {
               devl();
             } else {
-              if (trg.pow == undefined) {
-                trg.pow = 1;
+              if (trg.satanPhase == undefined) {
+                trg.satanPhase = 1;
                 trg.fire = 0;
-                if (trg.pow < 3) {
+                if (trg.satanPhase < 3) {
                   trg.bh = false;
                   trg.d.gotoAndStop(1);
                   trg.til = ingrid(trg.xp, trg.yp + 80);
                   levz[trg.til] = 1;
                 }
               }
-              sati = trg;
-              switch (trg.pow) {
+              satanBoss = trg;
+              switch (trg.satanPhase) {
                 case 1:
                   levz[trg.til] = 2;
                   if (trg.fire++ > 130) {
                     trg.fire = 0;
-                    ++trg.pow;
+                    ++trg.satanPhase;
                     xenf = 50;
                     yenf = 110;
                     create(trg.xp, trg.yp + yenf, 0, 0, 0, 0, 81);
@@ -24460,7 +24460,7 @@ movie {
                         trg.d.gotoAndStop(3);
                       }
                       if (trg.d.d._currentframe > 54) {
-                        ++trg.pow;
+                        ++trg.satanPhase;
                       }
                     }
                   }
@@ -24562,7 +24562,7 @@ movie {
                   if (trg.trg2 == undefined && trg.d.d._currentframe == 50 && trg.d._currentframe == 9) {
                     trg.trg2 = create(player.xp, player.yp, 0, 0, 0, 0, 84);
                     trg2 = trg.trg2;
-                    trg2.pow = 5;
+                    trg2.satanPhase = 5;
                     trg2._visible = false;
                     trg2.trg3 = trg;
                     trg2.trg2 = trg2.trg3;
@@ -25981,10 +25981,10 @@ movie {
               case 2:
                 if (trg.bomb) {
                   trg.spl = 30;
-                  if (trg.bombo) {
-                    trg.header = 20;
+                  if (trg.ipecacBomb) {
+                    trg.poisonBombPower = 20;
                   } else {
-                    trg.header = 300;
+                    trg.poisonBombPower = 300;
                   }
                   trg.dfr = true;
                   trg.s = 4;
@@ -26542,7 +26542,7 @@ movie {
               f1 = lass;
             }
             trg2._yscale = f1;
-            trg2._xscale = lassd * 30;
+            trg2._xscale = laserDamage * 30;
           }
           trg._x = trg.xp;
           trg._y = trg.yp;
@@ -26708,25 +26708,25 @@ movie {
             lasy = trg.yp;
           }
           if (f50 != 2) {
-            lassd = dmgdo();
+            laserDamage = baseDamage();
             if (haveEffect[2]) {
-              lassd *= 3;
+              laserDamage *= 3;
             }
             if (haveEffect[132]) {
-              lassd += 2;
+              laserDamage += 2;
             }
             if (brim) {
               lass = 10000;
-              lassd *= 3;
+              laserDamage *= 3;
               if (haveEffect[69]) {
                 v111 = Math.max(0.1, Math.min(1, (fra - lchaf) / 60));
-                lassd *= v111;
+                laserDamage *= v111;
               }
             }
-            _root.tearDamage = lassd;
+            _root.tearDamage = laserDamage;
           }
           if (f50 == 5) {
-            lassd *= secol * 0.2;
+            laserDamage *= secol * 0.2;
           }
           for (a in ball) {
             trg2 = ball[a];
@@ -26763,7 +26763,7 @@ movie {
                   } else {
                     if (f50 or !f50 && trg == player && haveEffect[118]) {
                       if (enfget(xenf, yenf) - 20 < lass) {
-                        hurt(trg2, lassd);
+                        hurt(trg2, laserDamage);
                         spidcol(trg2);
                       }
                     } else {
@@ -26782,7 +26782,7 @@ movie {
           }
           a = 0;
           while (a < f1) {
-            killshit(ingrid(trg.xp + trg.xpp * a, trg.yp + trg.ypp * a), f50 && lassd > 5);
+            killshit(ingrid(trg.xp + trg.xpp * a, trg.yp + trg.ypp * a), f50 && laserDamage > 5);
             a += 10;
           }
         }
@@ -26793,19 +26793,19 @@ movie {
         if (keypoww > 0) {
           keypoww -= 0.2;
         }
-        if (_root.keys > 0 or _root.kep or haveEffect[60] or demon > 0 or _root.coins > 0 or unic > 0 or _root.notch) {
+        if (_root.keys > 0 or _root.goldenKey or haveEffect[60] or demon > 0 or _root.coins > 0 or unic > 0 or _root.notchedAxe) {
           f1 = roxx / enfget(player.xbew, player.ybew);
           f3 = ingrid(player.xp + player.xbew * f1, player.yp + player.ybew * f1);
           outgrid(f3);
           trg.s = 4;
           f10 = false;
-          if (levz[f3] == 1 && (demon > 0 or _root.notch)) {
+          if (levz[f3] == 1 && (demon > 0 or _root.notchedAxe)) {
             bloww(f3, trg.xbew, trg.ybew);
             f10 = true;
           } else {
-            if (demon > 0 or unic > 0 or _root.notch) {
-              if (killshit(f3, demon > 0 or _root.notch)) {
-                if (_root.notch) {
+            if (demon > 0 or unic > 0 or _root.notchedAxe) {
+              if (killshit(f3, demon > 0 or _root.notchedAxe)) {
+                if (_root.notchedAxe) {
                   killshit(f3, true);
                   killshit(f3, true);
                 }
@@ -26813,8 +26813,8 @@ movie {
               }
             }
           }
-          if (_root.notch && f10) {
-            _root.notch = false;
+          if (_root.notchedAxe && f10) {
+            _root.notchedAxe = false;
             _root.itemCharges = 0;
             player.d.gotoAndStop(11);
             player.it = 147;
@@ -26822,17 +26822,17 @@ movie {
             player.d.d.d.it.d.p.gotoAndStop(player.pillItem);
           }
           trg.s = 1;
-          if (_root.keys > 0 or _root.kep or _root.coins > 0) {
+          if (_root.keys > 0 or _root.goldenKey or _root.coins > 0) {
             keyhole = f3;
           }
-          if (levz[f3] == 4 && (_root.kep or _root.keys > 0)) {
+          if (levz[f3] == 4 && (_root.goldenKey or _root.keys > 0)) {
             if (f3 != keypow) {
               keypow = f3;
               keypoww = 0;
             } else {
               if (keypoww++ > 2.8 && !player.flyby) {
                 _root.soundy('Unlock00.wav', 100);
-                if (!_root.kep) {
+                if (!_root.goldenKey) {
                   --_root.keys;
                 }
                 levz[f3] = 1.01;
@@ -26900,7 +26900,7 @@ movie {
         return random(roller + 1) == 0;
       }
 
-      function tart(f1, f3) {
+      function tarotText(f1, f3) {
         var v1 = ['X Wheel of fortune', 'XV The Devil', 'XIII Death', 'XI Strength', '0 The Fool', 'I The Magician', 'IX The hermit', 'XVIII The Moon', 'XII The hanged Man', 'XX Judgement', 'VII The Chariot', 'VI The Lovers', 'XXI The World', 'VIII Justice', 'XVI Temperance', 'IV The Emperor', 'XVI The Tower', 'V The Hierophant', 'II The High Priestess', 'III The Empress', 'XIX The Sun', 'XVII The Stars'];
         v1[63] = '2 of Spades';
         v1[64] = '2 of Clubs';
@@ -26934,8 +26934,8 @@ movie {
           siz = 85 + sizes[Math.round(v2.s)];
           enf = enfcheck(player.xp, player.yp, v2.xp, v2.yp, siz);
           if (enf < siz && !v2.dones && v2.s > 9 && v2.bh && !v2.shot) {
-            v2.poiss = 200;
-            v2.poisd = 3.5;
+            v2.poisonDuration = 200;
+            v2.poisonDamage = 3.5;
             hurt(v2, 5);
           }
         }
@@ -26988,7 +26988,7 @@ movie {
                     if (random(15) == 0 && !haveEffect[75]) {
                       f1 = 2; //I Found Pills
                     } else {
-                      if (random(10) == 0 && !haveEffect) {
+                      if (random(10) == 0 && !haveEffect) { //BROKEN
                         f1 = 3; //Explosive Diarrhea
                       } else {
                         if (random(10) == 0) {
@@ -27006,7 +27006,7 @@ movie {
                                 if (random(6) == 0 && (_root.bombs > 0 or _root.keys > 0)) {
                                   f1 = 8; //Bombs Are Key
                                 } else {
-                                  if (random(5) == 0 or random(4) == 0 && haveEffect) {
+                                  if (random(5) == 0 or random(4) == 0 && haveEffect) { //???
                                     f1 = 9 + random(2) * 0.2; //Tears Up/Down
                                   } else {
                                     if (random(3) == 0) {
@@ -27170,7 +27170,7 @@ movie {
                   trg = ball[a];
                   if (trg.free) {
                     trg.free = undefined;
-                    speco(trg);
+                    specialColoring(trg);
                   }
                 }
               }
@@ -27270,7 +27270,7 @@ movie {
             }
           }
           trg = player;
-          if (_root.bombnext or _root.notch) {
+          if (_root.bombnext or _root.notchedAxe) {
             if (trg.d._currentframe == 11) {
               if (trg.d.d.d._currentframe > 9) {
                 trg.d.d.d.gotoAndStop(10);
@@ -27280,7 +27280,7 @@ movie {
               if (_root.bombnext == 2) {
                 trg.it = 164;
               } else {
-                if (_root.notch) {
+                if (_root.notchedAxe) {
                   trg.it = 147;
                 } else {
                   trg.it = 42;
@@ -27294,10 +27294,10 @@ movie {
           }
           spac = Key.isDown(32) or Key.isDown(90) && !_root.so.data.frog;
           if (spac) {
-            if (_root.notch or _root.bombnext) {
+            if (_root.notchedAxe or _root.bombnext) {
               if (!nosp) {
                 nosp = true;
-                _root.notch = false;
+                _root.notchedAxe = false;
                 _root.bombnext = false;
               }
             }
@@ -27328,30 +27328,30 @@ movie {
               player.d.d.d.it.d.gotoAndStop(player.it);
               player.d.d.d.it.d.p.gotoAndStop(pillColor(_root.pillItem));
               if (_root.pillItem >= 7) {
-                tart(_root.pillItem);
+                tarotText(_root.pillItem);
                 switch (_root.pillItem) {
-                  case 70:
+                  case 70:		//2 of Spades
                     _root.keys = cardDoubler(_root.keys);
                     break;
-                  case 71:
+                  case 71:		//2 of Clubs
                     _root.bombs = cardDoubler(_root.bombs);
                     break;
-                  case 72:
+                  case 72:		//2 of Hearts
                     player.hp = cardDoubler(player.hp);
                     break;
-                  case 73:
+                  case 73:		//2 of Diamonds
                     _root.coins = cardDoubler(_root.coins);
                     break;
-                  case 74:
+                  case 74:		//The Joker
                     teleportTarget = 166;
                     teleport();
                     break;
-                  case 28:
+                  case 28:		//The Stars
                     teleport();
                     teleportTarget = _root.boner;
-                    _root.bona = true;
+                    _root.treasureRoomOpened = true;
                     break;
-                  case 27:
+                  case 27:		//The Sun
                     _root.over.gotoAndStop(15);
                     player.hp = 1000;
                     haveEffect[54] = true;
@@ -27363,17 +27363,17 @@ movie {
                       hurt(trg2, 100);
                     }
                     break;
-                  case 26:
+                  case 26:		//The Empress
                     curs();
                     haveEffect[122] = 1.5;
                     break;
-                  case 25:
+                  case 25:		//The High Priestess
                     f1 = 0;
                     f2 = 4;
                     for (z in ball) {
                       trg2 = ball[z];
                       if (trg2.s > 9 && trg2.s != 45 or trg2 == player) {
-                        if (trg2.hp > f2 && trg2.pow != 1 && trg2.pow != 2) {
+                        if (trg2.hp > f2 && trg2.satanPhase != 1 && trg2.satanPhase != 2) {
                           f2 = trg2.hp;
                           f1 = z;
                         }
@@ -27389,94 +27389,94 @@ movie {
                     trg2.fra = -100;
                     trg2.specoz = undefined;
                     break;
-                  case 20:
+                  case 20:		//Justice
                     spaw(player.xp, player.yp, 45, 5.01);
                     spaw(player.xp, player.yp, 45, 5.02);
                     spaw(player.xp, player.yp, 45, 5.03);
                     spaw(player.xp, player.yp, 45, 5.04);
                     break;
-                  case 19:
+                  case 19:		//The World
                     haveEffect[54] = true;
                     haveEffect[21] = haveEffect[54];
                     _root.world = true;
                     mapd();
                     break;
-                  case 18:
+                  case 18:		//The Lovers
                     f1 = 40;
                     trg2 = spaw(player.xp + f1, player.yp, 0, 5.01);
                     trg3 = spaw(player.xp - f1, player.yp, 0, 5.01);
                     trg2.col = 1;
                     trg3.col = 1;
                     break;
-                  case 24:
+                  case 24:		//The Hierophant
                     f1 = 40;
                     trg2 = spaw(player.xp + f1, player.yp, 0, 5.01);
                     trg3 = spaw(player.xp - f1, player.yp, 0, 5.01);
                     trg2.col = 3;
                     trg3.col = 3;
                     break;
-                  case 17:
+                  case 17:		//The Chariot
                     player.it = 77;
                     unic = 180;
                     _root.mmus = _root.soundy('isaacunicorn.mp', 100);
                     break;
-                  case 23:
+                  case 23:		//The Tower
                     anarch = 30;
                     break;
-                  case 21:
+                  case 21:		//Temperance
                     spaw(player.xp, player.yp, 45, 5.31);
                     _root.soundy('summonsound.wav', 120);
                     break;
-                  case 22:
+                  case 22:		//The Empreror
                     teleport();
                     teleportTarget = _root.bossRoom;
                     break;
-                  case 16:
+                  case 16:		//Judgement
                     spaw(player.xp, player.yp, 45, 5.32);
                     _root.soundy('summonsound.wav', 120);
                     break;
-                  case 7:
+                  case 7:		//Wheel of Fortune
                     spaw(player.xp, player.yp, 45, 5.08);
                     _root.soundy('summonsound.wav', 120);
                     break;
-                  case 8:
-                    doub = true;
+                  case 8:		//The Devil
+                    belial = true;
                     _root.over.gotoAndStop(2);
                     _root.soundy('Devil_Card.mp', 100);
                     break;
-                  case 9:
+                  case 9:		//Death
                     _root.over.gotoAndStop(11);
                     _root.soundy('Death_Card.mp', 100);
                     for (e in ball) {
                       trg2 = ball[e];
                       hurt(trg2, 60);
                     }
-                    ++_root.so.data.dde;
-                    if (_root.so.data.dde > 4) {
+                    ++_root.so.data.deathCardUses;
+                    if (_root.so.data.deathCardUses > 4) {
                       _root.SecretUnlocked[48] = true;
                     }
                     break;
-                  case 10:
+                  case 10:		//Strength
                     ++player.hp;
                     ++haveEffect[12];
                     break;
-                  case 11:
+                  case 11:		//The Fool
                     teleport();
                     teleportTarget = 35;
                     break;
-                  case 12:
+                  case 12:		//The Magician
                     ++haveEffect[3];
                     break;
-                  case 13:
+                  case 13:		//The Hermit
                     teleport();
                     teleportTarget = _root.shopl;
                     _root.shopa = true;
                     break;
-                  case 14:
+                  case 14:		//The Moon
                     teleport();
                     teleportTarget = _root.secretRoom;
                     break;
-                  case 15:
+                  case 15:		//The Hanged Man
                     ++haveEffect[20];
                 }
               } else {
@@ -27667,14 +27667,14 @@ movie {
                     goper = true;
                   }
                   switch (_root.spacebarItem) {
-                    case 152:
+                    case 152:	//Telepathy for Dummies
                       haveEffect[3] = 1;
                       break;
-                    case 146:
-                      ader();
+                    case 146:	//Blood Rights
+                      donateBlood();
                       lasth = 0;
                       if (_root.floorNum < 7) {
-                        ader(true);
+                        donateBlood(true);
                       }
                       if (player.hp < 0.5) {
                         showit = false;
@@ -27686,17 +27686,17 @@ movie {
                       }
                       sacri = 20;
                       break;
-                    case 120:
+                    case 120:	//Crack The Sky
                       anarch = 30;
                       analt = 2;
                       break;
-                    case 124:
+                    case 124:	//The Candle
                       _root.bombnext = 2;
                       break;
-                    case 135:
+                    case 135:	//Dad's Key
                       keyd = true;
                       break;
-                    case 126:
+                    case 126:	//D20
                       for (e in ball) {
                         trg2 = ball[e];
                         if (trg2.s == 5) {
@@ -27726,7 +27726,7 @@ movie {
                         }
                       }
                       break;
-                    case 131:
+                    case 131:	//Spider Butt
                       _root.soundy('Death_Card.mp', 100);
                       for (e in ball) {
                         trg2 = ball[e];
@@ -27734,20 +27734,20 @@ movie {
                         spida(undefined, trg2);
                       }
                       break;
-                    case 137:
-                      if (_root.coins > 0 && sloto == undefined) {
+                    case 137:	//Portable Slot
+                      if (_root.coins > 0 && portableSlot == undefined) {
                         --_root.coins;
-                        sloto = 25;
+                        portableSlot = 25;
                       } else {
                         showit = false;
                       }
                       break;
-                    case 107:
-                      _root.notch = !_root.notch;
+                    case 107:	//Notched Axe
+                      _root.notchedAxe = !_root.notchedAxe;
                       doit = false;
                       showit = false;
                       break;
-                    case 118:
+                    case 118:	//Crystal Ball
                       haveEffect[54] = true;
                       haveEffect[21] = haveEffect[54];
                       _root.world = true;
@@ -27759,16 +27759,16 @@ movie {
                         trg2.col = 3;
                       }
                       break;
-                    case 105:
+                    case 105:	//Guppy's Head
                       blueFlies += 2 + random(3);
                       break;
-                    case 96:
-                      dec = 0;
+                    case 96:	//Best Friend
+                      decoy = 0;
                       break;
-                    case 106:
+                    case 106:	//Prayer Card
                       giveEternalHeart();
                       break;
-                    case 97:
+                    case 97:	//Remote Detonator
                       for (e in ball) {
                         trg = ball[e];
                         if (trg.s == 4) {
@@ -27777,8 +27777,8 @@ movie {
                         }
                       }
                       break;
-                    case 95:
-                      ader();
+                    case 95:	//IV Bag
+                      donateBlood();
                       f12 = Math.max(1, random(3));
                       if (haveEffect[75]) {
                         ++f12;
@@ -27790,7 +27790,7 @@ movie {
                       }
                       showit = player.hp > 0;
                       break;
-                    case 93:
+                    case 93:	//Guppy's Paw
                       if (player.mhp > 0) {
                         _root.armor += 3;
                         --_root.pickedUp[22];
@@ -27801,14 +27801,14 @@ movie {
                         showit = false;
                       }
                       break;
-                    case 141:
+                    case 141:	//White Pony
                       anarch = 20;
                       analt = 3;
-                    case 90:
+                    case 90:	//A Pony
                       showit = false;
                       horse = 100;
                       break;
-                    case 83:
+                    case 83:	//Monster Manuel
                       _root.soundy('satan grow.mp', 70);
                       f1 = [8, 73, 10, 57, 67, 88, 95, 99, 100, 112, 113, 128];
                       for (e in f1) {
@@ -27826,9 +27826,9 @@ movie {
                       displayCornerMessage(_root.itemNames[f1]);
                       _root.over.gotoAndStop(12);
                       break;
-                    case 84:
+                    case 84: 	//Dead Sea Scrolls (see above)
                       break;
-                    case 87:
+                    case 87:	//Forget Me Now
                       _root.beenlev[_root.lev] = false;
                       _root.shroom = 3;
                       _root.spacebarItem = 0;
@@ -27843,7 +27843,7 @@ movie {
                       newstart(false);
                       _root.gotoAndStop('reset');
                       break;
-                    case 86:
+                    case 86:	//Razor Blade
                       razor += 2;
                       if (player.hp > 0.5 or _root.armor <= 0) {
                         f11 = _root.armor;
@@ -27864,15 +27864,15 @@ movie {
                       }
                       showit = false;
                       break;
-                    case 71:
+                    case 71:	//The Bean
                       fart();
                       break;
-                    case 67:
+                    case 67:	//The Pinking Shears
                       ++haveEffect[20];
                       bodd = true;
                       _root.soundy('bloodbank spawn1.wav', 300);
                       break;
-                    case 65:
+                    case 65:	//The D6
                       for (a in ball) {
                         trg2 = ball[a];
                         if (trg2.s == 5 && trg2.it && !trg2.empty) {
@@ -27883,16 +27883,16 @@ movie {
                         }
                       }
                       break;
-                    case 62:
+                    case 62:	//Mom's Bottle of Pills
                       givePillItem(4);
                       showit = false;
                       break;
-                    case 57:
+                    case 57:	//The Book of Sin
                       f1 = [5.010000001, 5.010000003, 5.040000001, 5.03, 5.07, 5.3, 5.02];
                       f1 = f1[random(f1.length)];
                       spaw(trg.xp, trg.yp, 40, f1);
                       break;
-                    case 38:
+                    case 38:	//The Book of Revelations
                       if (_root.canSpawnHorseman && _root.lev != _root.bossRoom && _root.floorNum < 8 && _root.floorNum != 6 && !_root.labyrinthCurse) {
                         _root.spawnHorseman = true;
                         _root.canSpawnHorseman = false;
@@ -27907,12 +27907,12 @@ movie {
                       }
                       ++_root.armor;
                       break;
-                    case 43:
+                    case 43:	//The Nail
                       demon = 200;
                       _root.soundy('Monster_Yell_A_0.mp');
                       ++_root.armor;
                       break;
-                    case 44:
+                    case 44:	//We Need To Go Deeper!
                       if (_root.floorNum < 9) {
                         spaw(trg.xp, trg.yp, 0, 5.09);
                       } else {
@@ -27920,11 +27920,11 @@ movie {
                         doit = false;
                       }
                       break;
-                    case 45:
+                    case 45:	//Deck of Cards
                       givePillItem(3);
                       showit = false;
                       break;
-                    case 53:
+                    case 53:	//The Gamekid
                       _root.mmus = _root.soundy('isaacunicorn.mp', 100);
                       unic = 200;
                       pacman = true;
@@ -27934,7 +27934,7 @@ movie {
                         trg2.uncol = fra + 2;
                       }
                       break;
-                    case 46:
+                    case 46:	//Monstro's Tooth
                       f1 = 0;
                       f2 = 4;
                       for (z in ball) {
@@ -27962,14 +27962,14 @@ movie {
                         doit = false;
                       }
                       break;
-                    case 1:
+                    case 1:	//The Bible
                       if (_root.floorNum == 9 && _root.lev == _root.bossRoom) {
                         _root.armor = 0;
                         playerhurt(1000, 200);
                       } else {
-                        if ((mom.length > 3 or mheart != undefined) && !bibs && (_root.floorNum == 6 or _root.floorNum == 8) && _root.lev == _root.bossRoom) {
+                        if ((mom.length > 3 or momHeart != undefined) && !bibs && (_root.floorNum == 6 or _root.floorNum == 8) && _root.lev == _root.bossRoom) {
                           bibs = true;
-                          mheart.dones = true;
+                          momHeart.dones = true;
                           for (z in mom) {
                             mom[z].dones = true;
                             mom[z]._visible = false;
@@ -27982,23 +27982,23 @@ movie {
                       _root.over.gotoAndStop(8);
                       _root.soundy('Book Page Turn 12.wav', 100);
                       break;
-                    case 37:
+                    case 37:	//My Little Unicorn
                       unic = 180;
                       _root.mmus = _root.soundy('isaacunicorn.mp', 100);
                       break;
-                    case 18:
+                    case 18:	//Book of Shadows
                       playsave = 300;
                       break;
-                    case 16:
+                    case 16:	//Lemon Mishap
                       create(trg.xp, trg.yp, 0, 0, 0, 0, 33);
                       _root.soundy('BGascan_pour.wav', 100);
                       break;
-                    case 2:
-                      doub = true;
+                    case 2:		//The Book of Belial
+                      belial = true;
                       _root.over.gotoAndStop(2);
                       _root.soundy('Devil_Card.mp', 100);
                       break;
-                    case 3:
+                    case 3:		//The Necronomicon
                       _root.over.gotoAndStop(3);
                       _root.soundy('Death_Card.mp', 100);
                       for (e in ball) {
@@ -28006,7 +28006,7 @@ movie {
                         hurt(trg2, 40);
                       }
                       break;
-                    case 4:
+                    case 4:		//The Poop
                       showit = false;
                       f1 = ingrid(trg.xp, trg.yp);
                       outgrid(f1);
@@ -28018,11 +28018,11 @@ movie {
                       doit = false;
                       showit = false;
                       break;
-                    case 10:
+                    case 10:	//Bob's Rotten Head
                       doit = false;
                       _root.bombnext = true;
                       break;
-                    case 15:
+                    case 15:	//Doctor's Remote
                       if (missileTimer <= 0) {
                         missileTimer = 100;
                         drop = create(player.xp, player.yp, 0, 0, 0, 0, 37);
@@ -28030,17 +28030,17 @@ movie {
                         doit = false;
                       }
                       break;
-                    case 7:
+                    case 7:		//Mom's Bra
                       _root.over.gotoAndStop(4);
                       freez = 220;
                       bra = true;
                       break;
-                    case 9:
+                    case 9:		//Mom's Pad
                       _root.over.gotoAndStop(5);
                       scare = 180;
                       freez = 160;
                       break;
-                    case 8:
+                    case 8:		//Kamikaze
                       showit = false;
                       if (fra - lastbo >= 30) {
                         lasth = 0;
@@ -28048,11 +28048,11 @@ movie {
                         bombfail(trg.xp, trg.yp);
                       }
                       break;
-                    case 5:
+                    case 5:		//Mr. Boom
                       showit = false;
                       bomb(true);
                       break;
-                    case 6:
+                    case 6:		//Tammy's Head
                       e = 0;
                       while (e < 10) {
                         trg2 = create(trg.xp, trg.yp, 0, Math.sin((e / 5) * Math.PI) * 10, Math.cos((e / 5) * Math.PI) * 10, 0, 2);
@@ -28061,24 +28061,24 @@ movie {
                         ++e;
                       }
                       break;
-                    case 12:
+                    case 12:	//Teleport!
                       showit = false;
                       teleport();
                       break;
-                    case 13:
+                    case 13:	//Yum Heart
                       ++player.hp;
                       _root.soundy('Vamp_Gulp.mp');
                       break;
-                    case 17:
+                    case 17:	//Shoop da Whoop
                       showit = false;
                       laser = 1;
                       break;
-                    case 25:
+                    case 25:	//Anarchist's Cookbook
                       _root.over.gotoAndStop(6);
                       _root.soundy('Book Page Turn 12.wav', 100);
                       anarch = 30;
                       break;
-                    case 26:
+                    case 26:	//The Hourglass
                       _root.over.gotoAndStop(7);
                       slow = 230;
                   }
@@ -28328,7 +28328,7 @@ movie {
             } else {
               f1 = _root.knir;
             }
-            knife.dmg = dmgdo() * (2 + Math.min(Math.max(knill, 0), 4));
+            knife.dmg = baseDamage() * (2 + Math.min(Math.max(knill, 0), 4));
             knil += knill;
             knill -= 1.4;
             f1 -= knife.d.z._rotation;
@@ -28395,7 +28395,7 @@ movie {
           f1 = _root.faceMode;
           f2 = _root.headMode;
           nohat = false;
-          if (doub) {
+          if (belial) {
             f1 = 8;
             f2 = 8;
           }
@@ -28570,7 +28570,7 @@ movie {
                   f1 = (lass / trg.d.d._xscale / trg._xscale) * 10000 + (trg2._y + 20) * trg.ypp;
                 }
                 trg2._yscale = f1;
-                trg2._xscale = lassd * 30;
+                trg2._xscale = laserDamage * 30;
                 trg2._x -= trg.xp - lasx;
                 trg2._y -= trg.yp - lasy;
                 lasx = trg.xp;
@@ -29131,7 +29131,7 @@ movie {
         if (haveEffect[155] && player.d._currentframe < 3 && !eyepie) {
           eyepie = true;
           trg2 = create(player.xp, player.yp - 10, 0, crand(10), crand(10), 0, 3);
-          trg2.eye = true;
+          trg2.peeper = true;
         }
         if (haveEffect[187] && player.d._currentframe < 3 && !hairball) {
           hairball = true;
@@ -29318,7 +29318,7 @@ movie {
         if (_root.hud.extra2._visible) {
           _root.hud.extra2.d.gotoAndStop(11);
           _root.hud.extra2.d.p.gotoAndStop(_root.trinketSlot1);
-          _root.hud.tex2 = _root.trixer;
+          _root.hud.tex2 = _root.trinket1;
           f11 = _root.hud.tex2.split('');
           _root.hud.black._xscale = f11.length * 7 + 20;
           _root.hud.extra2.d._alpha = 100;
@@ -29358,7 +29358,7 @@ movie {
           _root.hud.extra.d.gotoAndStop(11);
           _root.hud.extra.d.p.gotoAndStop(pillColor(_root.pillItem));
           if (_root.pillItem > 6) {
-            _root.hud.pilll.tex = tart(_root.pillItem, true);
+            _root.hud.pilll.tex = tarotText(_root.pillItem, true);
           } else {
             f10 = !haveEffect[46] && !haveEffect[75];
             f11 = Math.round(_root.pillEffects[_root.pillItem]);
@@ -29461,10 +29461,10 @@ movie {
           }
           _root.hud.it.d._alpha = 100;
         }
-        if (_root.kep) {
-          _root.hud.kep.gotoAndStop(2);
+        if (_root.goldenKey) {
+          _root.hud.goldenKey.gotoAndStop(2);
         } else {
-          _root.hud.kep.gotoAndStop(1);
+          _root.hud.goldenKey.gotoAndStop(1);
         }
         if (f1 > 0 or f1 == 'empty') {
           _root.hud.it.d.gotoAndStop(f1);
@@ -29647,8 +29647,8 @@ movie {
             _root.black.prevFrame();
           } else {
             _root.fullhp = player.hp + _root.armor >= player.mhp;
-            if (chama) {
-              f1 = (_root.chama or (_root.fullhp && !_root.bossArena or _root.bossArena && player.hp < 1.5 or _root.lev == _root.arenaRoom) && chama == 1) && shutdoor == 0 or keyd;
+            if (arenaActive) {
+              f1 = (_root.arenaActive or (_root.fullhp && !_root.bossArena or _root.bossArena && player.hp < 1.5 or _root.lev == _root.arenaRoom) && arenaActive == 1) && shutdoor == 0 or keyd;
               for (e in door) {
                 trg = door[e];
                 if (trg.arenaRoom) {
@@ -29667,7 +29667,7 @@ movie {
                   }
                 }
               }
-              if (chama > 1 && !_root.chama) {
+              if (arenaActive > 1 && !_root.arenaActive) {
                 if (!_root.amusic) {
                   _root.amusic = true;
                   _root.fade = true;
@@ -29721,8 +29721,8 @@ movie {
                         }
                       }
                     }
-                    f1 = f0[(chama - 2) * 2];
-                    f2 = f0[(chama - 2) * 2 + 1];
+                    f1 = f0[(arenaActive - 2) * 2];
+                    f2 = f0[(arenaActive - 2) * 2 + 1];
                     f3 = 0;
                     f6 = (Math.PI / f2) * 2;
                     e = 0;
@@ -29754,10 +29754,10 @@ movie {
                       }
                       ++e;
                     }
-                    ++chama;
-                    if (chama > 4) {
+                    ++arenaActive;
+                    if (arenaActive > 4) {
                       justnow = 7;
-                      _root.chama = true;
+                      _root.arenaActive = true;
                     }
                     arenaRoom = 30;
                   }
@@ -29783,21 +29783,21 @@ movie {
                       nohit = true;
                     } else {
                       if (trg.boner2) {
-                        if (_root.bona2) {
+                        if (_root.treasureRoom2Opened) {
                           trg.gotoAndStop(33);
                         } else {
                           nohit = true;
                         }
                       } else {
                         if (trg.boner) {
-                          if (_root.bona) {
+                          if (_root.treasureRoomOpened) {
                             trg.gotoAndStop(33);
                           } else {
                             nohit = true;
                           }
                         } else {
                           if (trg.shop or trg.lib) {
-                            if (_root.shopa && trg.shop or _root.liba && trg.lib) {
+                            if (_root.shopa && trg.shop or _root.libraryUnlocked && trg.lib) {
                               trg.gotoAndStop(1);
                             } else {
                               nohit = true;
@@ -29934,8 +29934,8 @@ movie {
                     if (_root.luck > 0) {
                       f1 = f1 * 0.9 + 0.1;
                     }
-                    if (_root.luck < 0) {
-                      f1 -= _root.luck * 0.1;
+                    if (_root.luck < 0) {		//Negative luck actually boosts room drops!
+                      f1 -= _root.luck * 0.1;	//DUMB DUMB DUMB DUMB DUMB
                     }
                     f2 = 0;
                     trinketForcedSpawn(false);
@@ -30082,41 +30082,41 @@ movie {
           if (justnow > 10) {
             for (e in door) {
               trg = door[e];
-              if ((_root.kep or _root.keys > 0) && enfcheck(trg._x, trg._y, player.xp, player.yp, 60) && keyhole == trg.blo) {
+              if ((_root.goldenKey or _root.keys > 0) && enfcheck(trg._x, trg._y, player.xp, player.yp, 60) && keyhole == trg.blo) {
                 if (trg.shop or trg.boner2 or trg.boner or trg.lib) {
                   v1 = trg.blo;
                   levz[v1] = 0;
                   clevc[v1] = 0;
-                  if (!_root.liba && trg.lib) {
+                  if (!_root.libraryUnlocked && trg.lib) {
                     trg.gotoAndStop(8);
-                    if (!_root.kep) {
+                    if (!_root.goldenKey) {
                       --_root.keys;
                     }
-                    _root.liba = true;
+                    _root.libraryUnlocked = true;
                     _root.soundy('Unlock00.wav', 100);
                   }
                   if (!_root.shopa && trg.shop) {
                     trg.gotoAndStop(8);
-                    if (!_root.kep) {
+                    if (!_root.goldenKey) {
                       --_root.keys;
                     }
                     _root.shopa = true;
                     _root.soundy('Unlock00.wav', 100);
                   }
-                  if (!_root.bona && trg.boner) {
+                  if (!_root.treasureRoomOpened && trg.boner) {
                     trg.gotoAndStop(31);
-                    if (!_root.kep) {
+                    if (!_root.goldenKey) {
                       --_root.keys;
                     }
-                    _root.bona = true;
+                    _root.treasureRoomOpened = true;
                     _root.soundy('Unlock00.wav', 100);
                   }
-                  if (!_root.bona2 && trg.boner2) {
+                  if (!_root.treasureRoom2Opened && trg.boner2) {
                     trg.gotoAndStop(31);
-                    if (!_root.kep) {
+                    if (!_root.goldenKey) {
                       --_root.keys;
                     }
-                    _root.bona2 = true;
+                    _root.treasureRoom2Opened = true;
                     _root.soundy('Unlock00.wav', 100);
                   }
                 }
@@ -30162,8 +30162,8 @@ movie {
             brr2 = [];
           }
           playc();
-          ++dec;
-          if (dec == 15) {
+          ++decoy;
+          if (decoy == 15) {
             decer = bomb(4);
           }
           if (pageantBoyCoins > 0) {
@@ -30173,12 +30173,12 @@ movie {
           if (itemSpawnsPickups.length > 0) {
             spaw(player.xp, player.yp, 40, itemSpawnsPickups.pop());
           }
-          if (sloto != undefined) {
-            --sloto;
-            if (sloto < 0) {
+          if (portableSlot != undefined) {
+            --portableSlot;
+            if (portableSlot < 0) {
               f2 = 0;
               f12 = 1;
-              sloty(slotf());
+              slotPrizes(rollSlots());
               if (f2 > 0) {
                 if (f2 < 7) {
                   emo();
@@ -30192,7 +30192,7 @@ movie {
                   ++i;
                 }
               }
-              sloto = undefined;
+              portableSlot = undefined;
             }
           }
           topz(2);
@@ -30260,15 +30260,15 @@ movie {
               chestoy = trg.yp;
             }
             if (!trg.empty) {
-              if (chama == 1 && _root.lev == _root.arenaRoom) {
-                chama = 2;
+              if (arenaActive == 1 && _root.lev == _root.arenaRoom) {
+                arenaActive = 2;
               }
               trg.empty = true;
-              if (trg.col == 31) {
+              if (trg.col == 31) { //Demon Beggar
                 boil(false);
                 boil(true);
               } else {
-                if (trg.c2) {
+                if (trg.c2) { //Red Chest
                   f10 = 2;
                   f1 = [81, 134, 133, 145];
                   if (_root.SecretUnlocked[79]) {
@@ -30290,21 +30290,21 @@ movie {
                       player.ybew -= yenf * enf;
                     }
                   } else {
-                    if (random(18) == 0) {
+                    if (random(18) == 0) { //Teleport to Devil Room
                       teleportTarget = 166;
                       teleport();
                     } else {
-                      if (random(5) == 0) {
+                      if (random(5) == 0) { //Spiders
                         boil(false);
                         boil(true);
                       } else {
-                        if (random(5) == 0) {
+                        if (random(5) == 0) { //Super Troll Bombs
                           spaw(trg.xp, trg.yp, 20, 5.040000005);
                         } else {
-                          if (random(5) == 0) {
+                          if (random(5) == 0) { //Blue Flies
                             blueFlies += 3;
                           } else {
-                            f1 = [5.010000003, 5.040000003, 5.07];
+                            f1 = [5.010000003, 5.040000003, 5.07]; //Soul Hearts, Troll Bombs, Pills
                             f1 = f1[random(f1.length)];
                             if (f1 == 5.010000003 && random(2) == 0) {
                               cspawn(f1, 1);
@@ -30317,28 +30317,28 @@ movie {
                     }
                   }
                 } else {
-                  if (trg.d._currentframe == 8 && trg.col == 1) {
+                  if (trg.d._currentframe == 8 && trg.col == 1) { //Blood Donation Machines
                     f10 = 1 + random(2);
                   } else {
                     if (trg.d._currentframe == 6) {
-                      f10 = Math.max(2, random(8) - 1);
+                      f10 = Math.max(2, random(8) - 1); //Gold chests and stuff drop 2-6 pickups.
                     } else {
-                      f10 = Math.max(2, random(4) - 1);
+                      f10 = Math.max(2, random(4) - 1); //Regular chests and stuff drop 2 pickups.
                     }
                   }
                   f2 = 0;
                   if (random(3) != 0) {
-                    trinketForcedSpawn(true);
-                    if (haveTrinket(42) or f2 > 0) {
+                    trinketForcedSpawn(true);			//Trinket spawners have a 1 in 3 chance.
+                    if (haveTrinket(42) or f2 > 0) { 	//Lucky Toe spawns extra item, as well as trinket spawners.
                       ++f10;
                     }
                   }
-                  if (trg.gold) {
+                  if (trg.goldPoop) { //Golden Poop
                     if (random(3) == 0 && _root.SecretUnlocked[84] && !_root.fakePennyDrop) {
                       _root.fakePennyDrop = true;
                       create(trg.xp, trg.yp, 0, 0, 0, 0, 5.35);
                     } else {
-                      cspawn(5.02, 5 + random(3));
+                      cspawn(5.02, 5 + random(3)); //Spawn 5-7 coins
                     }
                   } else {
                     z = 0;
@@ -30413,7 +30413,7 @@ movie {
                           }
                         }
                       }
-                      if (trg.d._currentframe == 8 && trg.col == 1) {
+                      if (trg.d._currentframe == 8 && trg.col == 1) { //Blood Donation Machines
                         if (random(2) == 0) {
                           f0 = 5.02;
                           f12 = random(4) + 1;
@@ -30682,7 +30682,7 @@ movie {
         f1 = getTimer() % 100;
         e = 0;
         while (e < f1) {
-          f2 = random(random(10)) * Math.random();
+          f2 = random(random(10)) * Math.random(); //WHAT IN GOD'S NAME
           ++e;
         }
         _root.darky(120);
@@ -30704,7 +30704,7 @@ movie {
           f1 = 5;
         }
         checkTreasureSkip();
-        _root.altm = random(f1) == 0 && _root.floorNum != 1 && (_root.floorNum != 2 or !_root.labyrinthCurse);
+        _root.superSin = random(f1) == 0 && _root.floorNum != 1 && (_root.floorNum != 2 or !_root.labyrinthCurse);
         _root.lostCurse = false;
         _root.labyrinthCurse = false;
         _root.darknessCurse = false;
@@ -30760,7 +30760,7 @@ movie {
         _root.rax22 = random(5);
         _root.rax23 = random(5);
         _root.rax24 = random(5);
-        _root.kep = false;
+        _root.goldenKey = false;
         _root.mapsize = 0;
         f6 = Math.min(20, random(2) + 5 + _root.floorNum * 2.6);
         _root.rarer = [];
@@ -30772,17 +30772,17 @@ movie {
         _root.seenRoom = [];
         _root.bomf = [];
         _root.shopa = false;
-        _root.liba = false;
-        _root.bona = _root.floorNum == 1;
-        _root.bona2 = false;
+        _root.libraryUnlocked = false;
+        _root.treasureRoomOpened = _root.floorNum == 1;
+        _root.treasureRoom2Opened = false;
         _root.foundSecretRoom = false;
         _root.foundSecretRoom2 = false;
-        _root.hid2 = random(5);
+        _root.secretRoom2Type = random(5);
         _root.minibossKnown = false;
         _root.payedArcadeFee = false;
         _root.seenArcade = false;
         _root.chambb = false;
-        _root.chama = false;
+        _root.arenaActive = false;
         _root.shopaz = false;
         _root.bossd = false;
         _root.treasd = false;
@@ -30952,12 +30952,12 @@ movie {
           _root.arcadeRoom = undefined;
           _root.arenaRoom = undefined;
           _root.sacRoomRevealed = undefined;
-          _root.libb = undefined;
+          _root.librarySeen = undefined;
           _root.seenCurseRoom = undefined;
           _root.curseRoom = undefined;
           _root.sacrificeRoom = undefined;
           _root.successSacrifice = false;
-          _root.lib = undefined;
+          _root.libraryRoom = undefined;
           _root.boner2 = undefined;
           _root.boner = _root.boner2;
           if ((endrooms.length >= 4 or _root.floorNum == 1 && endrooms.length >= 3) && _root.bossRoom != _root.lev && _root.bossRoom > 0) {
@@ -30973,7 +30973,7 @@ movie {
                 _root.sacrificeRoom = ender();
               }
               if (endrooms.length > 0 && (random(20) == 0 or _root.carryingBook && random(4) == 0)) {
-                _root.lib = ender();
+                _root.libraryRoom = ender();
               }
               if (endrooms.length > 0 && (random(2) == 0 or _root.lastdev && random(4) == 0)) {
                 _root.curseRoom = ender();
@@ -31007,8 +31007,8 @@ movie {
           moveon();
           _root.gotoAndStop('reset');
         }
-        f13 = Math.min(llev.length - 2, _root.floorNum * 2 - 2);
-        f15 = Math.min(llev.length - 2, _root.floorNum * 2 - 4);
+        f13 = Math.min(llev.length - 2, _root.floorNum * 2 - 2);	//0 2 4 6 8 10 12 14 16 20
+        f15 = Math.min(llev.length - 2, _root.floorNum * 2 - 4);	//  0   4    8    12
         f14 = true;
         for (e in _root.levz) {
           if (random(2) == 0 && _root.labyrinthCurse) {
@@ -31049,9 +31049,9 @@ movie {
         if (_root.godRoomFloor) {
           _root.levz[166] = 'sata';
         } else {
-          if (!_root.kramper && (random(10) == 0 or random(3) == 0 && _root.devilDeals > 0)) {
+          if (!_root.krampusFought && (random(10) == 0 or random(3) == 0 && _root.devilDeals > 0)) {
             _root.levz[166] = 'krampus';
-            _root.kramper = _root.floorNum;
+            _root.krampusFought = _root.floorNum;
           }
         }
         if (_root.floorNum == 8) {
@@ -31062,9 +31062,9 @@ movie {
         }
         _root.levz[_root.shopl] = 'shop' + (random(6) + 1) * 1;
         _root.levz[_root.sacrificeRoom] = 'sac';
-        _root.levz[_root.lib] = 'lib';
+        _root.levz[_root.libraryRoom] = 'lib';
         _root.levz[_root.curseRoom] = 'c';
-        _root.levz[_root.secretRoom2] = 'hi' + _root.hid2;
+        _root.levz[_root.secretRoom2] = 'hi' + _root.secretRoom2Type;
         if (random(3) == 0) {
           _root.levz[_root.curseRoom] = 'c' + random(2);
           if (random(4) == 0) {
@@ -31075,14 +31075,14 @@ movie {
         _root.levz[_root.boner2] = 't' + random(6);
         f1 = random(_root.minibossPool.length);
         f2 = 'min';
-        if (_root.altm) {
+        if (_root.superSin) {
           f2 = 'mi';
         }
         f3 = f2;
         f2 += _root.minibossPool[f1];
-        if (_root.floorNum > 2 && !_root.us && random(10) == 0) {
-          f2 = 'us';
-          _root.us = true;
+        if (_root.floorNum > 2 && !_root.ultraPride && random(10) == 0) {
+          f2 = 'ultraPride';
+          _root.ultraPride = true;
         }
         _root.levz[_root.minibossRoom] = f2;
         _root.levz[_root.arcadeRoom] = 'gam' + random(6);
@@ -31093,8 +31093,8 @@ movie {
         if (_root.bossArena) {
           _root.levz[_root.arenaRoom] = 'cha5';
         }
-        if (_root.floorNum > 3 && _root.minibossRoom == undefined) {
-          if (_root.floorNum > 4) {
+        if (_root.floorNum > 3 && _root.minibossRoom == undefined) { //GREED
+          if (_root.floorNum > 4) { //Greed can't show up in the Secret Room until the Depths
             if (random(3) == 0 && _root.floorNum - 1 > _root.lastGreedFloor) {
               _root.levz[_root.secretRoom] = f3 + 4;
               _root.minibossRoom = _root.secretRoom;
@@ -31133,7 +31133,7 @@ movie {
               _root.mmus = _root.soundy('weapon room.mp', 100);
             } else {
               if (_root.lev == 166) {
-                if (_root.kramper == _root.floorNum) {
+                if (_root.krampusFought == _root.floorNum) {
                   _root.bossmusic = true;
                   _root.soundy('bossintro.mp3');
                 } else {
@@ -31150,8 +31150,8 @@ movie {
           }
         }
       }
-      firsttime = _root.beenlev[_root.lev];
-      if (firsttime != 2) {
+      beenHere = _root.beenlev[_root.lev];
+      if (beenHere != 2) {
         _root.beenlev[_root.lev] = true;
       }
       if (_root.lev == _root.secretRoom) {
@@ -31268,7 +31268,7 @@ movie {
           } else {
             if (_root.secretRoom2 == _root.lev) {
               f1 = [10, 26, 19, 23, 21];
-              f1 = f1[_root.hid2];
+              f1 = f1[_root.secretRoom2Type];
             } else {
               if (altgo && _root.altchap != 0 && _root.floorNum != 7 && _root.floorNum != 8) {
                 f1 = 21 + Math.round(_root.floorNum / 2 - 1);
@@ -31285,7 +31285,7 @@ movie {
         f1 = 24;
         f2 = 24;
       }
-      if (_root.lev == _root.lib) {
+      if (_root.lev == _root.libraryRoom) {
         f1 = 25;
         f2 = 25;
       }
@@ -31439,7 +31439,7 @@ movie {
       }
       player.mhp = _root.mhp;
       player.hp = _root.hp;
-      if (_root.lev == _root.bossRoom && !firsttime) {
+      if (_root.lev == _root.bossRoom && !beenHere) {
         if (haveTrinket(53)) {
           ++player.hp;
         }
@@ -31515,14 +31515,14 @@ movie {
       if (_root.shopl == _root.lev) {
         _root.shopa = true;
       }
-      if (_root.lib == _root.lev) {
-        _root.liba = true;
+      if (_root.libraryRoom == _root.lev) {
+        _root.libraryUnlocked = true;
       }
       if (_root.boner == _root.lev) {
-        _root.bona = true;
+        _root.treasureRoomOpened = true;
       }
       if (_root.boner2 == _root.lev) {
-        _root.bona2 = true;
+        _root.treasureRoom2Opened = true;
       }
       secol = 0;
       minions = 0;
@@ -32068,11 +32068,11 @@ movie {
 
     frame 1 {
       stop();
-      _parent.itz();
+      _parent.keepItem();
     }
 
     frame 3 {
-      _parent.itz();
+      _parent.keepItem();
     }
   }
 

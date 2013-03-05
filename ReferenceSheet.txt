@@ -233,7 +233,7 @@ Temperance            | 21    |
 The Emperor           | 22    |
 The Tower             | 23    |
 The Hierophant        | 24    |
-The Hih Priestess     | 25    |
+The High Priestess    | 25    |
 The Empress           | 26    |
 The Sun               | 27    |
 The Stars             | 28    |
@@ -355,9 +355,9 @@ Dr. Fetus             | 11    |
 The Poop              | 12    |
 Spider Bite           | 13    |
 Spelunker Hat         | 14    |
-NULL                  | 15    |
-NULL                  | 16    |
-NULL                  | 17    |
+Yum Heart             | 15    |
+Lucky Foot            | 16    |
+The Book of Belial    | 17    |
 The Small Rock        | 18    |
 Monstro's Tooth       | 19    |
 Lil' Chubby           | 20    |
@@ -427,7 +427,7 @@ Spider Butt           | 83    |
 Counterfeit Penny     | 84    |
 Guppy's Hairball      | 85    |
 Egg Sack              | 86    |
-(Unknown)             | 87    |
+Conquest (broken)     | 87    |
 Samson                | 88    |
 Triachnid             | 89    |
 Platinum God          | 90    |
